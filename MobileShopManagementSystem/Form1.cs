@@ -73,5 +73,6 @@ namespace MobileShopManagementSystem
         {
             txt_loginPassword.PasswordChar = c_showPassword.Checked ? '\0' : '*';
         }
+
     }
 }

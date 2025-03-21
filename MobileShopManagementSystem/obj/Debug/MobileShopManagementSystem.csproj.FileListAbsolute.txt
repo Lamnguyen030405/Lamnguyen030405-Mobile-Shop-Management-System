@@ -9,3 +9,7 @@ D:\Learning\LaptrinhWin\MobileShopManagementSystem\MobileShopManagementSystem\ob
 D:\Learning\LaptrinhWin\MobileShopManagementSystem\MobileShopManagementSystem\obj\Debug\MobileShopManagementSystem.exe
 D:\Learning\LaptrinhWin\MobileShopManagementSystem\MobileShopManagementSystem\obj\Debug\MobileShopManagementSystem.pdb
 D:\Learning\LaptrinhWin\MobileShopManagementSystem\MobileShopManagementSystem\obj\Debug\MobileShopManagementSystem.sigupForm.resources
+D:\Learning\LaptrinhWin\MobileShopManagementSystem\MobileShopManagementSystem\obj\Debug\MobileShopManagementSystem.MainForm.resources
+D:\Learning\LaptrinhWin\MobileShopManagementSystem\MobileShopManagementSystem\bin\Debug\ReaLTaiizor.dll
+D:\Learning\LaptrinhWin\MobileShopManagementSystem\MobileShopManagementSystem\bin\Debug\ReaLTaiizor.xml
+D:\Learning\LaptrinhWin\MobileShopManagementSystem\MobileShopManagementSystem\obj\Debug\MobileSh.939DD5C0.Up2Date

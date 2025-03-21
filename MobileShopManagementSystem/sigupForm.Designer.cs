@@ -259,6 +259,7 @@
             this.Controls.Add(this.pictureBox4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "sigupForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "sigupForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
