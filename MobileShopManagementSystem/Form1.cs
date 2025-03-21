@@ -59,6 +59,9 @@ namespace MobileShopManagementSystem
                     if(dt.Rows.Count > 0)
                     {
                         MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MainForm mainForm = new MainForm();
+                        mainForm.Show();
+                        this.Hide();
                     }
                     else
                     {

@@ -30,27 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.btnHam = new System.Windows.Forms.Button();
             this.slidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_dashboard = new System.Windows.Forms.Button();
             this.shopContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_shop = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_bill = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btn_categories = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_inventory = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_customers = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.shopTransition = new System.Windows.Forms.Timer(this.components);
             this.slidebarTransition = new System.Windows.Forms.Timer(this.components);
-            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.panel1.SuspendLayout();
             this.slidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,6 +75,30 @@
             this.panel1.Size = new System.Drawing.Size(1357, 39);
             this.panel1.TabIndex = 0;
             // 
+            // nightControlBox1
+            // 
+            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nightControlBox1.DefaultLocation = true;
+            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMaximizeButton = true;
+            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMinimizeButton = true;
+            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.Location = new System.Drawing.Point(1218, 0);
+            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Name = "nightControlBox1";
+            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            this.nightControlBox1.TabIndex = 2;
+            // 
             // btnHam
             // 
             this.btnHam.BackColor = System.Drawing.Color.White;
@@ -98,9 +122,10 @@
             this.slidebar.Controls.Add(this.panel6);
             this.slidebar.Controls.Add(this.panel5);
             this.slidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.slidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.slidebar.Location = new System.Drawing.Point(0, 39);
             this.slidebar.Name = "slidebar";
-            this.slidebar.Size = new System.Drawing.Size(62, 749);
+            this.slidebar.Size = new System.Drawing.Size(249, 749);
             this.slidebar.TabIndex = 1;
             // 
             // pictureBox2
@@ -113,29 +138,30 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btn_dashboard);
             this.panel2.ForeColor = System.Drawing.Color.Transparent;
             this.panel2.Location = new System.Drawing.Point(3, 172);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(249, 49);
             this.panel2.TabIndex = 3;
             // 
-            // button1
+            // btn_dashboard
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::MobileShopManagementSystem.Properties.Resources.Statistics;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(249, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.btn_dashboard.FlatAppearance.BorderSize = 0;
+            this.btn_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dashboard.ForeColor = System.Drawing.Color.White;
+            this.btn_dashboard.Image = global::MobileShopManagementSystem.Properties.Resources.Statistics;
+            this.btn_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dashboard.Location = new System.Drawing.Point(0, 0);
+            this.btn_dashboard.Name = "btn_dashboard";
+            this.btn_dashboard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_dashboard.Size = new System.Drawing.Size(249, 49);
+            this.btn_dashboard.TabIndex = 2;
+            this.btn_dashboard.Text = "Dashboard";
+            this.btn_dashboard.UseVisualStyleBackColor = false;
+            this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
             // 
             // shopContainer
             // 
@@ -180,7 +206,7 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.button7);
+            this.panel8.Controls.Add(this.btn_bill);
             this.panel8.ForeColor = System.Drawing.Color.Transparent;
             this.panel8.Location = new System.Drawing.Point(0, 49);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
@@ -188,27 +214,28 @@
             this.panel8.Size = new System.Drawing.Size(249, 49);
             this.panel8.TabIndex = 5;
             // 
-            // button7
+            // btn_bill
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = global::MobileShopManagementSystem.Properties.Resources.Buy_For_Coins;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Margin = new System.Windows.Forms.Padding(0);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(249, 49);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Bill";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btn_bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
+            this.btn_bill.FlatAppearance.BorderSize = 0;
+            this.btn_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_bill.ForeColor = System.Drawing.Color.White;
+            this.btn_bill.Image = global::MobileShopManagementSystem.Properties.Resources.Buy_For_Coins;
+            this.btn_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_bill.Location = new System.Drawing.Point(0, 0);
+            this.btn_bill.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_bill.Name = "btn_bill";
+            this.btn_bill.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_bill.Size = new System.Drawing.Size(249, 49);
+            this.btn_bill.TabIndex = 3;
+            this.btn_bill.Text = "Bill";
+            this.btn_bill.UseVisualStyleBackColor = false;
+            this.btn_bill.Click += new System.EventHandler(this.btn_bill_Click);
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.button8);
+            this.panel9.Controls.Add(this.btn_categories);
             this.panel9.ForeColor = System.Drawing.Color.Transparent;
             this.panel9.Location = new System.Drawing.Point(0, 98);
             this.panel9.Margin = new System.Windows.Forms.Padding(0);
@@ -216,101 +243,105 @@
             this.panel9.Size = new System.Drawing.Size(249, 49);
             this.panel9.TabIndex = 7;
             // 
-            // button8
+            // btn_categories
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = global::MobileShopManagementSystem.Properties.Resources.iPhone_14;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 0);
-            this.button8.Margin = new System.Windows.Forms.Padding(0);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(249, 49);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Categories";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btn_categories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
+            this.btn_categories.FlatAppearance.BorderSize = 0;
+            this.btn_categories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_categories.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_categories.ForeColor = System.Drawing.Color.White;
+            this.btn_categories.Image = global::MobileShopManagementSystem.Properties.Resources.iPhone_14;
+            this.btn_categories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_categories.Location = new System.Drawing.Point(0, 0);
+            this.btn_categories.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_categories.Name = "btn_categories";
+            this.btn_categories.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_categories.Size = new System.Drawing.Size(249, 49);
+            this.btn_categories.TabIndex = 2;
+            this.btn_categories.Text = "Categories";
+            this.btn_categories.UseVisualStyleBackColor = false;
+            this.btn_categories.Click += new System.EventHandler(this.btn_categories_Click);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.btn_inventory);
             this.panel4.ForeColor = System.Drawing.Color.Transparent;
             this.panel4.Location = new System.Drawing.Point(3, 276);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(249, 49);
             this.panel4.TabIndex = 5;
             // 
-            // button3
+            // btn_inventory
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::MobileShopManagementSystem.Properties.Resources.Warehouse;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(249, 49);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Inventory";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_inventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.btn_inventory.FlatAppearance.BorderSize = 0;
+            this.btn_inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventory.ForeColor = System.Drawing.Color.White;
+            this.btn_inventory.Image = global::MobileShopManagementSystem.Properties.Resources.Warehouse;
+            this.btn_inventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inventory.Location = new System.Drawing.Point(0, 0);
+            this.btn_inventory.Name = "btn_inventory";
+            this.btn_inventory.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_inventory.Size = new System.Drawing.Size(249, 49);
+            this.btn_inventory.TabIndex = 2;
+            this.btn_inventory.Text = "Inventory";
+            this.btn_inventory.UseVisualStyleBackColor = false;
+            this.btn_inventory.Click += new System.EventHandler(this.btn_inventory_Click);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.button5);
+            this.panel6.Controls.Add(this.btn_customers);
             this.panel6.ForeColor = System.Drawing.Color.Transparent;
             this.panel6.Location = new System.Drawing.Point(3, 331);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(249, 49);
             this.panel6.TabIndex = 7;
             // 
-            // button5
+            // btn_customers
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::MobileShopManagementSystem.Properties.Resources.Staff;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(249, 49);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Customers";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_customers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.btn_customers.FlatAppearance.BorderSize = 0;
+            this.btn_customers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_customers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_customers.ForeColor = System.Drawing.Color.White;
+            this.btn_customers.Image = global::MobileShopManagementSystem.Properties.Resources.Staff;
+            this.btn_customers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_customers.Location = new System.Drawing.Point(0, 0);
+            this.btn_customers.Name = "btn_customers";
+            this.btn_customers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_customers.Size = new System.Drawing.Size(249, 49);
+            this.btn_customers.TabIndex = 2;
+            this.btn_customers.Text = "Customers";
+            this.btn_customers.UseVisualStyleBackColor = false;
+            this.btn_customers.Click += new System.EventHandler(this.btn_customers_Click);
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.btn_logout);
             this.panel5.ForeColor = System.Drawing.Color.Transparent;
             this.panel5.Location = new System.Drawing.Point(3, 386);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(249, 49);
             this.panel5.TabIndex = 9;
             // 
-            // button2
+            // btn_logout
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::MobileShopManagementSystem.Properties.Resources.Logout;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(249, 49);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Logout";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.Color.White;
+            this.btn_logout.Image = global::MobileShopManagementSystem.Properties.Resources.Logout;
+            this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logout.Location = new System.Drawing.Point(0, 0);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_logout.Size = new System.Drawing.Size(249, 49);
+            this.btn_logout.TabIndex = 2;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // shopTransition
             // 
@@ -323,37 +354,15 @@
             this.slidebarTransition.Interval = 10;
             this.slidebarTransition.Tick += new System.EventHandler(this.slidebarTransition_Tick);
             // 
-            // nightControlBox1
-            // 
-            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nightControlBox1.DefaultLocation = true;
-            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMaximizeButton = true;
-            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMinimizeButton = true;
-            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(1218, 0);
-            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Name = "nightControlBox1";
-            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
-            this.nightControlBox1.TabIndex = 2;
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1357, 788);
+            this.ControlBox = false;
             this.Controls.Add(this.slidebar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
@@ -377,24 +386,24 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel slidebar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_dashboard;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_shop;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_inventory;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_customers;
         private System.Windows.Forms.FlowLayoutPanel shopContainer;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btn_categories;
         private System.Windows.Forms.Timer shopTransition;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Timer slidebarTransition;
         private System.Windows.Forms.Button btnHam;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private System.Windows.Forms.Button btn_bill;
     }
 }
