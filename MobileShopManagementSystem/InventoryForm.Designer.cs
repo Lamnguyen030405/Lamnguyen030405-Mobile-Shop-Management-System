@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_products = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,22 +37,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_inventoryProductID = new System.Windows.Forms.TextBox();
+            this.txt_inventoryProductName = new System.Windows.Forms.TextBox();
+            this.txt_inventoryPrice = new System.Windows.Forms.TextBox();
+            this.txt_inventoryStock = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new ReaLTaiizor.Controls.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btn_inventoryImport = new ReaLTaiizor.Controls.Button();
+            this.cb_inventoryStatus = new System.Windows.Forms.ComboBox();
+            this.cb_inventoryCategory = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new ReaLTaiizor.Controls.Button();
-            this.button2 = new ReaLTaiizor.Controls.Button();
-            this.button1 = new ReaLTaiizor.Controls.Button();
-            this.ADD = new ReaLTaiizor.Controls.Button();
+            this.btn_inventoryUpdate = new ReaLTaiizor.Controls.Button();
+            this.btn_inventoryClear = new ReaLTaiizor.Controls.Button();
+            this.btn_inventoryDelete = new ReaLTaiizor.Controls.Button();
+            this.btn_inventoryAdd = new ReaLTaiizor.Controls.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -64,7 +64,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(102)))), ((int)(((byte)(155)))));
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgv_products);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
@@ -72,18 +72,18 @@
             this.panel1.Size = new System.Drawing.Size(1271, 422);
             this.panel1.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgv_products
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_products.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1245, 373);
-            this.dataGridView1.TabIndex = 3;
+            this.dgv_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_products.Location = new System.Drawing.Point(13, 36);
+            this.dgv_products.Name = "dgv_products";
+            this.dgv_products.RowHeadersWidth = 51;
+            this.dgv_products.RowTemplate.Height = 24;
+            this.dgv_products.Size = new System.Drawing.Size(1245, 373);
+            this.dgv_products.TabIndex = 3;
             // 
             // label2
             // 
@@ -147,9 +147,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(445, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 23);
+            this.label6.Size = new System.Drawing.Size(80, 23);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Prices ($) :";
+            this.label6.Text = "Price ($) :";
             // 
             // label5
             // 
@@ -162,33 +162,33 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Status : ";
             // 
-            // textBox1
+            // txt_inventoryProductID
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 22);
-            this.textBox1.TabIndex = 10;
+            this.txt_inventoryProductID.Location = new System.Drawing.Point(173, 50);
+            this.txt_inventoryProductID.Name = "txt_inventoryProductID";
+            this.txt_inventoryProductID.Size = new System.Drawing.Size(233, 22);
+            this.txt_inventoryProductID.TabIndex = 10;
             // 
-            // textBox2
+            // txt_inventoryProductName
             // 
-            this.textBox2.Location = new System.Drawing.Point(173, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(233, 22);
-            this.textBox2.TabIndex = 11;
+            this.txt_inventoryProductName.Location = new System.Drawing.Point(173, 114);
+            this.txt_inventoryProductName.Name = "txt_inventoryProductName";
+            this.txt_inventoryProductName.Size = new System.Drawing.Size(233, 22);
+            this.txt_inventoryProductName.TabIndex = 11;
             // 
-            // textBox4
+            // txt_inventoryPrice
             // 
-            this.textBox4.Location = new System.Drawing.Point(538, 114);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(233, 22);
-            this.textBox4.TabIndex = 13;
+            this.txt_inventoryPrice.Location = new System.Drawing.Point(538, 114);
+            this.txt_inventoryPrice.Name = "txt_inventoryPrice";
+            this.txt_inventoryPrice.Size = new System.Drawing.Size(233, 22);
+            this.txt_inventoryPrice.TabIndex = 13;
             // 
-            // textBox6
+            // txt_inventoryStock
             // 
-            this.textBox6.Location = new System.Drawing.Point(538, 50);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(233, 22);
-            this.textBox6.TabIndex = 15;
+            this.txt_inventoryStock.Location = new System.Drawing.Point(538, 50);
+            this.txt_inventoryStock.Name = "txt_inventoryStock";
+            this.txt_inventoryStock.Size = new System.Drawing.Size(233, 22);
+            this.txt_inventoryStock.TabIndex = 15;
             // 
             // panel3
             // 
@@ -208,62 +208,63 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button3
+            // btn_inventoryImport
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BorderColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.EnteredBorderColor = System.Drawing.Color.White;
-            this.button3.EnteredColor = System.Drawing.Color.Aqua;
-            this.button3.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = null;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.button3.Location = new System.Drawing.Point(1081, 214);
-            this.button3.Name = "button3";
-            this.button3.PressedBorderColor = System.Drawing.Color.White;
-            this.button3.PressedColor = System.Drawing.Color.White;
-            this.button3.Size = new System.Drawing.Size(130, 30);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "IMPORT";
-            this.button3.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_inventoryImport.BackColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryImport.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inventoryImport.EnteredBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryImport.EnteredColor = System.Drawing.Color.Aqua;
+            this.btn_inventoryImport.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventoryImport.Image = null;
+            this.btn_inventoryImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inventoryImport.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_inventoryImport.Location = new System.Drawing.Point(1070, 214);
+            this.btn_inventoryImport.Name = "btn_inventoryImport";
+            this.btn_inventoryImport.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryImport.PressedColor = System.Drawing.Color.White;
+            this.btn_inventoryImport.Size = new System.Drawing.Size(150, 30);
+            this.btn_inventoryImport.TabIndex = 5;
+            this.btn_inventoryImport.Text = "IMPORT";
+            this.btn_inventoryImport.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_inventoryImport.Click += new System.EventHandler(this.btn_inventoryImport_Click);
             // 
-            // comboBox1
+            // cb_inventoryStatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Active",
-            "Inactive"});
-            this.comboBox1.Location = new System.Drawing.Point(538, 179);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(233, 24);
-            this.comboBox1.TabIndex = 17;
+            this.cb_inventoryStatus.FormattingEnabled = true;
+            this.cb_inventoryStatus.Items.AddRange(new object[] {
+            "Available",
+            "Unavailable"});
+            this.cb_inventoryStatus.Location = new System.Drawing.Point(538, 179);
+            this.cb_inventoryStatus.Name = "cb_inventoryStatus";
+            this.cb_inventoryStatus.Size = new System.Drawing.Size(233, 24);
+            this.cb_inventoryStatus.TabIndex = 17;
             // 
-            // comboBox2
+            // cb_inventoryCategory
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(173, 179);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(233, 24);
-            this.comboBox2.TabIndex = 18;
+            this.cb_inventoryCategory.FormattingEnabled = true;
+            this.cb_inventoryCategory.Location = new System.Drawing.Point(173, 179);
+            this.cb_inventoryCategory.Name = "cb_inventoryCategory";
+            this.cb_inventoryCategory.Size = new System.Drawing.Size(233, 24);
+            this.cb_inventoryCategory.TabIndex = 18;
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(102)))), ((int)(((byte)(155)))));
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.ADD);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.btn_inventoryUpdate);
+            this.panel2.Controls.Add(this.btn_inventoryClear);
+            this.panel2.Controls.Add(this.btn_inventoryDelete);
+            this.panel2.Controls.Add(this.btn_inventoryAdd);
+            this.panel2.Controls.Add(this.cb_inventoryCategory);
+            this.panel2.Controls.Add(this.cb_inventoryStatus);
+            this.panel2.Controls.Add(this.btn_inventoryImport);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txt_inventoryStock);
+            this.panel2.Controls.Add(this.txt_inventoryPrice);
+            this.panel2.Controls.Add(this.txt_inventoryProductName);
+            this.panel2.Controls.Add(this.txt_inventoryProductID);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
@@ -276,85 +277,85 @@
             this.panel2.Size = new System.Drawing.Size(1271, 277);
             this.panel2.TabIndex = 3;
             // 
-            // button4
+            // btn_inventoryUpdate
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BorderColor = System.Drawing.Color.Transparent;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.EnteredBorderColor = System.Drawing.Color.White;
-            this.button4.EnteredColor = System.Drawing.Color.Aqua;
-            this.button4.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = null;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.button4.Location = new System.Drawing.Point(866, 179);
-            this.button4.Name = "button4";
-            this.button4.PressedBorderColor = System.Drawing.Color.White;
-            this.button4.PressedColor = System.Drawing.Color.White;
-            this.button4.Size = new System.Drawing.Size(130, 30);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "UPDATE";
-            this.button4.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_inventoryUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryUpdate.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inventoryUpdate.EnteredBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryUpdate.EnteredColor = System.Drawing.Color.Aqua;
+            this.btn_inventoryUpdate.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventoryUpdate.Image = null;
+            this.btn_inventoryUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inventoryUpdate.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_inventoryUpdate.Location = new System.Drawing.Point(866, 132);
+            this.btn_inventoryUpdate.Name = "btn_inventoryUpdate";
+            this.btn_inventoryUpdate.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryUpdate.PressedColor = System.Drawing.Color.White;
+            this.btn_inventoryUpdate.Size = new System.Drawing.Size(130, 30);
+            this.btn_inventoryUpdate.TabIndex = 26;
+            this.btn_inventoryUpdate.Text = "UPDATE";
+            this.btn_inventoryUpdate.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // button2
+            // btn_inventoryClear
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BorderColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.EnteredBorderColor = System.Drawing.Color.White;
-            this.button2.EnteredColor = System.Drawing.Color.Aqua;
-            this.button2.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = null;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.button2.Location = new System.Drawing.Point(866, 86);
-            this.button2.Name = "button2";
-            this.button2.PressedBorderColor = System.Drawing.Color.White;
-            this.button2.PressedColor = System.Drawing.Color.White;
-            this.button2.Size = new System.Drawing.Size(130, 30);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "CLEAR";
-            this.button2.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_inventoryClear.BackColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryClear.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inventoryClear.EnteredBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryClear.EnteredColor = System.Drawing.Color.Aqua;
+            this.btn_inventoryClear.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventoryClear.Image = null;
+            this.btn_inventoryClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inventoryClear.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_inventoryClear.Location = new System.Drawing.Point(866, 179);
+            this.btn_inventoryClear.Name = "btn_inventoryClear";
+            this.btn_inventoryClear.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryClear.PressedColor = System.Drawing.Color.White;
+            this.btn_inventoryClear.Size = new System.Drawing.Size(130, 30);
+            this.btn_inventoryClear.TabIndex = 25;
+            this.btn_inventoryClear.Text = "CLEAR";
+            this.btn_inventoryClear.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // button1
+            // btn_inventoryDelete
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BorderColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.EnteredBorderColor = System.Drawing.Color.White;
-            this.button1.EnteredColor = System.Drawing.Color.Aqua;
-            this.button1.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = null;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.button1.Location = new System.Drawing.Point(866, 134);
-            this.button1.Name = "button1";
-            this.button1.PressedBorderColor = System.Drawing.Color.White;
-            this.button1.PressedColor = System.Drawing.Color.White;
-            this.button1.Size = new System.Drawing.Size(130, 30);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "DELETE";
-            this.button1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_inventoryDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryDelete.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inventoryDelete.EnteredBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryDelete.EnteredColor = System.Drawing.Color.Aqua;
+            this.btn_inventoryDelete.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventoryDelete.Image = null;
+            this.btn_inventoryDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inventoryDelete.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_inventoryDelete.Location = new System.Drawing.Point(866, 86);
+            this.btn_inventoryDelete.Name = "btn_inventoryDelete";
+            this.btn_inventoryDelete.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryDelete.PressedColor = System.Drawing.Color.White;
+            this.btn_inventoryDelete.Size = new System.Drawing.Size(130, 30);
+            this.btn_inventoryDelete.TabIndex = 24;
+            this.btn_inventoryDelete.Text = "DELETE";
+            this.btn_inventoryDelete.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // ADD
+            // btn_inventoryAdd
             // 
-            this.ADD.BackColor = System.Drawing.Color.Transparent;
-            this.ADD.BorderColor = System.Drawing.Color.Transparent;
-            this.ADD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ADD.EnteredBorderColor = System.Drawing.Color.White;
-            this.ADD.EnteredColor = System.Drawing.Color.Aqua;
-            this.ADD.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADD.Image = null;
-            this.ADD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ADD.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.ADD.Location = new System.Drawing.Point(866, 41);
-            this.ADD.Name = "ADD";
-            this.ADD.PressedBorderColor = System.Drawing.Color.White;
-            this.ADD.PressedColor = System.Drawing.Color.White;
-            this.ADD.Size = new System.Drawing.Size(130, 30);
-            this.ADD.TabIndex = 23;
-            this.ADD.Text = "ADD";
-            this.ADD.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_inventoryAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryAdd.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_inventoryAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inventoryAdd.EnteredBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryAdd.EnteredColor = System.Drawing.Color.Aqua;
+            this.btn_inventoryAdd.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventoryAdd.Image = null;
+            this.btn_inventoryAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inventoryAdd.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_inventoryAdd.Location = new System.Drawing.Point(866, 41);
+            this.btn_inventoryAdd.Name = "btn_inventoryAdd";
+            this.btn_inventoryAdd.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_inventoryAdd.PressedColor = System.Drawing.Color.White;
+            this.btn_inventoryAdd.Size = new System.Drawing.Size(130, 30);
+            this.btn_inventoryAdd.TabIndex = 23;
+            this.btn_inventoryAdd.Text = "ADD";
+            this.btn_inventoryAdd.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // InventoryForm
             // 
@@ -370,7 +371,7 @@
             this.Load += new System.EventHandler(this.InventoryForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -382,7 +383,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_products;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -390,19 +391,19 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_inventoryProductID;
+        private System.Windows.Forms.TextBox txt_inventoryProductName;
+        private System.Windows.Forms.TextBox txt_inventoryPrice;
+        private System.Windows.Forms.TextBox txt_inventoryStock;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ReaLTaiizor.Controls.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private ReaLTaiizor.Controls.Button btn_inventoryImport;
+        private System.Windows.Forms.ComboBox cb_inventoryStatus;
+        private System.Windows.Forms.ComboBox cb_inventoryCategory;
         private System.Windows.Forms.Panel panel2;
-        private ReaLTaiizor.Controls.Button button4;
-        private ReaLTaiizor.Controls.Button button2;
-        private ReaLTaiizor.Controls.Button button1;
-        private ReaLTaiizor.Controls.Button ADD;
+        private ReaLTaiizor.Controls.Button btn_inventoryUpdate;
+        private ReaLTaiizor.Controls.Button btn_inventoryClear;
+        private ReaLTaiizor.Controls.Button btn_inventoryDelete;
+        private ReaLTaiizor.Controls.Button btn_inventoryAdd;
     }
 }

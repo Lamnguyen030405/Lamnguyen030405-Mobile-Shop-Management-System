@@ -13,7 +13,7 @@ namespace MobileShopManagementSystem
 {
     public partial class sigupForm : Form
     {
-        string connection = "Data Source=.;Initial Catalog=mobilesystem;Integrated Security=True;";
+        MobileShopManagementDataContext dataContext = new MobileShopManagementDataContext();
         public sigupForm()
         {
             InitializeComponent();
@@ -42,59 +42,46 @@ namespace MobileShopManagementSystem
 
         private void btn_register_Click(object sender, EventArgs e)
         {
-            using(SqlConnection conn = new SqlConnection(connection))
+
+            if (txt_signupUsername.Text.Trim() == "" || txt_signupPassword.Text.Trim() == "" || txt_signupConfirmPassword.Text.Trim() == "")
             {
-                conn.Open();
-
-                string checkUsername = "SELECT * FROM users WHERE username = @usern";
-
-                using(SqlCommand checkUsern =  new SqlCommand(checkUsername, conn))
+                MessageBox.Show("Please fill up all fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var user = dataContext.Users.Where(u => u.Username == txt_signupUsername.Text.Trim()).FirstOrDefault();
+                if (user != null)
                 {
-                    checkUsern.Parameters.AddWithValue("@usern", txt_signupUsername.Text.Trim());
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(checkUsern);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    if (dt.Rows.Count != 0)
+                    MessageBox.Show($"{txt_signupUsername.Text.Trim()} was taken already", "Error Message",
+                                                                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txt_signupPassword.Text.Trim().Length < 8)
+                {
+                    MessageBox.Show("Invalid Password, at least 8 characters required", "Error Message",
+                                                                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txt_signupConfirmPassword.Text.Trim() != txt_signupPassword.Text.Trim())
+                {
+                    MessageBox.Show("Password does not match", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    User newUser = new User
                     {
-                        MessageBox.Show($"{txt_signupUsername.Text.Trim()} was taken already", "Error Message",
-                                                                                    MessageBoxButtons.OK, MessageBoxIcon.Error );
-                    }
-                    else if(txt_signupPassword.Text.Trim().Length < 8)
-                    {
-                        MessageBox.Show("Invalid Password, at least 8 characters required", "Error Message",
-                                                                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else if(txt_signupConfirmPassword.Text.Trim() != txt_signupPassword.Text.Trim())
-                    {
-                        MessageBox.Show("Password does not match", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        string insertData = "INSERT INTO users (username, password, status, date_created) VALUES(@usern, @pass, @status, @date)";
-
-                        using (SqlCommand cmd = new SqlCommand(insertData, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@usern", txt_signupUsername.Text.Trim());
-                            cmd.Parameters.AddWithValue("@pass", txt_signupPassword.Text.Trim());
-                            cmd.Parameters.AddWithValue("@status", "Active");
-
-                            DateTime today = DateTime.Now;
-
-                            cmd.Parameters.AddWithValue("@date", today.ToString("yyyy-MM-dd"));
-
-                            cmd.ExecuteNonQuery();
-
-                            MessageBox.Show("Registered successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            Form1 loginform = new Form1();
-                            loginform.Show();
-                            this.Hide();
-                        }
-                    }
+                        Username = txt_signupUsername.Text.Trim(),
+                        Password = txt_signupPassword.Text.Trim(),
+                        Status = "Active",
+                        DateCreated = DateTime.Now
+                    };
+                    dataContext.Users.InsertOnSubmit(newUser);
+                    dataContext.SubmitChanges();
+                    MessageBox.Show("Registered successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form1 loginform = new Form1();
+                    loginform.Show();
+                    this.Hide();
                 }
             }
         }
+
     }
 }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MobileShopManagement">
+  <DataContextMoniker Name="/MobileShopManagementDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c16ef20a-d9a8-467c-a1eb-0e8e9d0f49a8" absoluteBounds="3.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MobileShopManagementDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5d73d6d-96f9-4eb6-be4f-03b342292f84" absoluteBounds="3.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c31b7b2-db3d-46c6-a596-54c6731dcb0d" absoluteBounds="5, 2.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/MobileShopManagementDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cce3cba2-964c-41e8-9c99-d83ec2a8e553" absoluteBounds="5.015, 3.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f474df5-64fb-43ea-a00a-32779017fe7c" absoluteBounds="0.5, 0.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/MobileShopManagementDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edd126de-c039-4822-ae50-566c76d5d963" absoluteBounds="0.51499999999999968, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

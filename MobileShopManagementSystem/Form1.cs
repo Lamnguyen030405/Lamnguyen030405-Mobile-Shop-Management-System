@@ -13,7 +13,7 @@ namespace MobileShopManagementSystem
 {
     public partial class Form1 : Form
     {
-        string connection = "Data Source=.;Initial Catalog=mobilesystem;Integrated Security=True;";
+        MobileShopManagementDataContext dataContext = new MobileShopManagementDataContext();
         public Form1()
         {
             InitializeComponent();
@@ -41,34 +41,16 @@ namespace MobileShopManagementSystem
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connection))
+            var user = dataContext.Users.Where(u => u.Username == txt_loginUsername.Text.Trim() && u.Password == txt_loginPassword.Text.Trim()).FirstOrDefault();
+            if(user != null) {
+                MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                this.Hide();
+            }
+            else
             {
-                conn.Open();
-
-                string query = "SELECT * FROM users WHERE username = @usern AND password = @pass";
-
-                using(SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@usern", txt_loginUsername.Text.Trim());
-                    cmd.Parameters.AddWithValue("@pass", txt_loginPassword.Text.Trim());
-                    
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    if(dt.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        MainForm mainForm = new MainForm();
-                        mainForm.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Incorrect Username/Password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                }
+                MessageBox.Show("Incorrect Username/Password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
