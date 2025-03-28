@@ -66,7 +66,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.nightControlBox1);
             this.panel1.Controls.Add(this.btnHam);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -101,11 +101,11 @@
             // 
             // btnHam
             // 
-            this.btnHam.BackColor = System.Drawing.Color.White;
+            this.btnHam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnHam.FlatAppearance.BorderSize = 0;
             this.btnHam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHam.Image = global::MobileShopManagementSystem.Properties.Resources.Menu;
-            this.btnHam.Location = new System.Drawing.Point(12, -1);
+            this.btnHam.Image = global::MobileShopManagementSystem.Properties.Resources.Menu2;
+            this.btnHam.Location = new System.Drawing.Point(12, 0);
             this.btnHam.Name = "btnHam";
             this.btnHam.Size = new System.Drawing.Size(42, 41);
             this.btnHam.TabIndex = 2;
@@ -114,7 +114,7 @@
             // 
             // slidebar
             // 
-            this.slidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.slidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.slidebar.Controls.Add(this.pictureBox2);
             this.slidebar.Controls.Add(this.panel2);
             this.slidebar.Controls.Add(this.shopContainer);
@@ -125,7 +125,7 @@
             this.slidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.slidebar.Location = new System.Drawing.Point(0, 39);
             this.slidebar.Name = "slidebar";
-            this.slidebar.Size = new System.Drawing.Size(249, 749);
+            this.slidebar.Size = new System.Drawing.Size(62, 749);
             this.slidebar.TabIndex = 1;
             // 
             // pictureBox2
@@ -147,7 +147,7 @@
             // 
             // btn_dashboard
             // 
-            this.btn_dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.btn_dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.btn_dashboard.FlatAppearance.BorderSize = 0;
             this.btn_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_dashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,7 +165,7 @@
             // 
             // shopContainer
             // 
-            this.shopContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
+            this.shopContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.shopContainer.Controls.Add(this.panel3);
             this.shopContainer.Controls.Add(this.panel8);
             this.shopContainer.Controls.Add(this.panel9);
@@ -187,7 +187,7 @@
             // 
             // btn_shop
             // 
-            this.btn_shop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.btn_shop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.btn_shop.FlatAppearance.BorderSize = 0;
             this.btn_shop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_shop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,7 +226,7 @@
             this.btn_bill.Location = new System.Drawing.Point(0, 0);
             this.btn_bill.Margin = new System.Windows.Forms.Padding(0);
             this.btn_bill.Name = "btn_bill";
-            this.btn_bill.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_bill.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btn_bill.Size = new System.Drawing.Size(249, 49);
             this.btn_bill.TabIndex = 3;
             this.btn_bill.Text = "Bill";
@@ -255,7 +255,7 @@
             this.btn_categories.Location = new System.Drawing.Point(0, 0);
             this.btn_categories.Margin = new System.Windows.Forms.Padding(0);
             this.btn_categories.Name = "btn_categories";
-            this.btn_categories.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_categories.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btn_categories.Size = new System.Drawing.Size(249, 49);
             this.btn_categories.TabIndex = 2;
             this.btn_categories.Text = "Categories";
@@ -273,7 +273,7 @@
             // 
             // btn_inventory
             // 
-            this.btn_inventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.btn_inventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.btn_inventory.FlatAppearance.BorderSize = 0;
             this.btn_inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,7 +300,7 @@
             // 
             // btn_customers
             // 
-            this.btn_customers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.btn_customers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.btn_customers.FlatAppearance.BorderSize = 0;
             this.btn_customers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_customers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -327,7 +327,7 @@
             // 
             // btn_logout
             // 
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.btn_logout.FlatAppearance.BorderSize = 0;
             this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -357,6 +357,7 @@
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1357, 788);
             this.ControlBox = false;
             this.Controls.Add(this.slidebar);
@@ -385,25 +386,25 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel slidebar;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_dashboard;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_shop;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_inventory;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btn_customers;
         private System.Windows.Forms.FlowLayoutPanel shopContainer;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button btn_categories;
         private System.Windows.Forms.Timer shopTransition;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Timer slidebarTransition;
         private System.Windows.Forms.Button btnHam;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Button btn_bill;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
     }
 }

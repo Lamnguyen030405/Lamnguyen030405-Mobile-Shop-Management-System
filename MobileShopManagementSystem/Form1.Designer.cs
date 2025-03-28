@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_close = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -41,7 +42,6 @@
             this.txt_loginPassword = new System.Windows.Forms.TextBox();
             this.txt_loginUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_close = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -59,6 +59,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1148, 39);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_close
+            // 
+            this.btn_close.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.Close;
+            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Location = new System.Drawing.Point(1090, 0);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(58, 39);
+            this.btn_close.TabIndex = 2;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label2
             // 
@@ -191,19 +204,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Welcome back!";
             // 
-            // btn_close
-            // 
-            this.btn_close.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.Close;
-            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Location = new System.Drawing.Point(1090, 0);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(58, 39);
-            this.btn_close.TabIndex = 2;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -214,6 +214,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // Form1
             // 
