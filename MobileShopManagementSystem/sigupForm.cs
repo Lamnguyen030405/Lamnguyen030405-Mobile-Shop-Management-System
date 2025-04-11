@@ -39,6 +39,23 @@ namespace MobileShopManagementSystem
             txt_signupPassword.PasswordChar = c_signupShowPassword.Checked ? '\0' : '*';
             txt_signupConfirmPassword.PasswordChar = c_signupShowPassword.Checked ? '\0' : '*';
         }
+        public static string getUserID()
+        {
+            using (var db = new MobileShopManagementDataContext())
+            {
+                var lastUserID = db.Users
+                    .OrderByDescending(u => u.UserID)
+                    .Select(u => u.UserID)
+                    .FirstOrDefault();
+                if (lastUserID == null)
+                {
+                    return "UID0";
+                }
+                int numberPart = int.Parse(lastUserID.Substring(3));
+                numberPart++;
+                return $"UID{numberPart}";
+            }
+        }
 
         private void btn_register_Click(object sender, EventArgs e)
         {
@@ -68,6 +85,7 @@ namespace MobileShopManagementSystem
                 {
                     User newUser = new User
                     {
+                        UserID = getUserID(),
                         Username = txt_signupUsername.Text.Trim(),
                         Password = txt_signupPassword.Text.Trim(),
                         Status = "Active",

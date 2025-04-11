@@ -1,17 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="mobilesystem" Class="MobileShopManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=mobilesystem;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="MobileShopManagementSystem.Properties.Settings" SettingsPropertyName="mobilesystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Bills" Member="Bills">
+    <Type Name="Bill">
+      <Column Name="BillID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Customer_Bill" Member="Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="Customer" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Order_Bill" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="User_Bill" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Carts" Member="Carts">
+    <Type Name="Cart">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ProductID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Order_Cart" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Product_Cart" Member="Product" ThisKey="ProductID" OtherKey="ProductID" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
   <Table Name="dbo.Categories" Member="Categories">
     <Type Name="Category">
       <Column Name="CategoryID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="CategoryName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="DateInsert" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Category_Product" Member="Products" ThisKey="CategoryID" OtherKey="Category" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customers" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="CustomerID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Customer_Bill" Member="Bills" ThisKey="CustomerID" OtherKey="CustomerID" Type="Bill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateOrder" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TotalQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Order_Bill" Member="Bills" ThisKey="OrderID" OtherKey="OrderID" Type="Bill" />
+      <Association Name="Order_Cart" Member="Carts" ThisKey="OrderID" OtherKey="OrderID" Type="Cart" />
     </Type>
   </Table>
   <Table Name="dbo.Products" Member="Products">
     <Type Name="Product">
       <Column Name="ProductID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ProductName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="Category" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Stock" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -19,15 +64,32 @@
       <Column Name="Image" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="DateInsert" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="DateUpdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Product_Cart" Member="Carts" ThisKey="ProductID" OtherKey="ProductID" Type="Cart" />
+      <Association Name="Category_Product" Member="Category1" ThisKey="Category" OtherKey="CategoryID" Type="Category" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Users" Member="Users">
     <Type Name="User">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Username" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="User_Bill" Member="Bills" ThisKey="UserID" OtherKey="UserID" Type="Bill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_BillDetails" Member="vw_BillDetails">
+    <Type Name="vw_BillDetail">
+      <Column Name="BillID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TotalQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DateOrder" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

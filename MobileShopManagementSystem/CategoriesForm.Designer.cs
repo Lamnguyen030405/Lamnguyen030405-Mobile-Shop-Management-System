@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_categoriesID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_categoriesUpdate = new ReaLTaiizor.Controls.Button();
             this.btn_categoriesClear = new ReaLTaiizor.Controls.Button();
             this.btn_categoriesDelete = new ReaLTaiizor.Controls.Button();
@@ -40,13 +42,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_categories = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_date_insert = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_categoriesID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_refresh = new ReaLTaiizor.Controls.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cb_search = new System.Windows.Forms.ComboBox();
+            this.btn_search = new ReaLTaiizor.Controls.Button();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).BeginInit();
             this.panel2.SuspendLayout();
@@ -71,6 +76,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 725);
             this.panel1.TabIndex = 0;
+            // 
+            // txt_categoriesID
+            // 
+            this.txt_categoriesID.Enabled = false;
+            this.txt_categoriesID.Location = new System.Drawing.Point(36, 47);
+            this.txt_categoriesID.Name = "txt_categoriesID";
+            this.txt_categoriesID.Size = new System.Drawing.Size(307, 22);
+            this.txt_categoriesID.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(32, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 23);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Category ID";
             // 
             // btn_categoriesUpdate
             // 
@@ -169,7 +193,9 @@
             this.cb_categoriesStatus.Location = new System.Drawing.Point(36, 185);
             this.cb_categoriesStatus.Name = "cb_categoriesStatus";
             this.cb_categoriesStatus.Size = new System.Drawing.Size(307, 24);
+            this.cb_categoriesStatus.Sorted = true;
             this.cb_categoriesStatus.TabIndex = 2;
+            this.cb_categoriesStatus.UseWaitCursor = true;
             // 
             // label3
             // 
@@ -202,10 +228,11 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 21);
+            this.label2.Location = new System.Drawing.Point(27, 692);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 23);
             this.label2.TabIndex = 3;
@@ -221,14 +248,14 @@
             this.dgv_categories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_categories.BackgroundColor = System.Drawing.Color.White;
             this.dgv_categories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_categories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_categories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_categories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_categories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id,
@@ -242,23 +269,9 @@
             this.dgv_categories.RowHeadersVisible = false;
             this.dgv_categories.RowHeadersWidth = 51;
             this.dgv_categories.RowTemplate.Height = 24;
-            this.dgv_categories.Size = new System.Drawing.Size(788, 665);
+            this.dgv_categories.Size = new System.Drawing.Size(788, 642);
             this.dgv_categories.TabIndex = 7;
             this.dgv_categories.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_categories_CellClick);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(102)))), ((int)(((byte)(155)))));
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dgv_categories);
-            this.panel2.Location = new System.Drawing.Point(465, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(818, 725);
-            this.panel2.TabIndex = 1;
             // 
             // col_id
             // 
@@ -292,23 +305,95 @@
             this.col_date_insert.Name = "col_date_insert";
             this.col_date_insert.ReadOnly = true;
             // 
-            // txt_categoriesID
+            // panel2
             // 
-            this.txt_categoriesID.Location = new System.Drawing.Point(36, 47);
-            this.txt_categoriesID.Name = "txt_categoriesID";
-            this.txt_categoriesID.Size = new System.Drawing.Size(307, 22);
-            this.txt_categoriesID.TabIndex = 0;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(102)))), ((int)(((byte)(155)))));
+            this.panel2.Controls.Add(this.btn_refresh);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.cb_search);
+            this.panel2.Controls.Add(this.btn_search);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.dgv_categories);
+            this.panel2.Controls.Add(this.txt_search);
+            this.panel2.Location = new System.Drawing.Point(465, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.panel2.Size = new System.Drawing.Size(818, 725);
+            this.panel2.TabIndex = 1;
             // 
-            // label4
+            // btn_refresh
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(32, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 23);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Category ID";
+            this.btn_refresh.BackColor = System.Drawing.Color.Transparent;
+            this.btn_refresh.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_refresh.EnteredBorderColor = System.Drawing.Color.White;
+            this.btn_refresh.EnteredColor = System.Drawing.Color.Aqua;
+            this.btn_refresh.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refresh.Image = null;
+            this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_refresh.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_refresh.Location = new System.Drawing.Point(668, 11);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_refresh.PressedColor = System.Drawing.Color.White;
+            this.btn_refresh.Size = new System.Drawing.Size(130, 24);
+            this.btn_refresh.TabIndex = 34;
+            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(201, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 23);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Input :";
+            // 
+            // cb_search
+            // 
+            this.cb_search.FormattingEnabled = true;
+            this.cb_search.Items.AddRange(new object[] {
+            "Category ID",
+            "Category Name"});
+            this.cb_search.Location = new System.Drawing.Point(25, 11);
+            this.cb_search.Name = "cb_search";
+            this.cb_search.Size = new System.Drawing.Size(170, 24);
+            this.cb_search.TabIndex = 32;
+            // 
+            // btn_search
+            // 
+            this.btn_search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_search.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_search.EnteredBorderColor = System.Drawing.Color.White;
+            this.btn_search.EnteredColor = System.Drawing.Color.Aqua;
+            this.btn_search.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Image = null;
+            this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_search.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_search.Location = new System.Drawing.Point(532, 11);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_search.PressedColor = System.Drawing.Color.White;
+            this.btn_search.Size = new System.Drawing.Size(130, 24);
+            this.btn_search.TabIndex = 30;
+            this.btn_search.Text = "Search";
+            this.btn_search.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // txt_search
+            // 
+            this.txt_search.Location = new System.Drawing.Point(281, 13);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(233, 22);
+            this.txt_search.TabIndex = 33;
             // 
             // CategoriesForm
             // 
@@ -351,5 +436,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_date_insert;
         private System.Windows.Forms.TextBox txt_categoriesID;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cb_search;
+        private System.Windows.Forms.Label label8;
+        private ReaLTaiizor.Controls.Button btn_refresh;
+        private ReaLTaiizor.Controls.Button btn_search;
+        private System.Windows.Forms.TextBox txt_search;
     }
 }

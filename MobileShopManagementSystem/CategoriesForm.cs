@@ -31,15 +31,35 @@ namespace MobileShopManagementSystem
 
         MobileShopManagementDataContext db = new MobileShopManagementDataContext();
 
+        public static string getCategoryID()
+        {
+            using (var db = new MobileShopManagementDataContext())
+            {
+                var lastCategoryID = db.Categories
+                    .OrderByDescending(c => c.CategoryID)
+                    .Select(c => c.CategoryID)
+                    .FirstOrDefault();
+                if (lastCategoryID == null)
+                {
+                    return "CID0";
+                }
+                int numberPart = int.Parse(lastCategoryID.Substring(3));
+                numberPart++;
+                return $"CID{numberPart}";
+            }
+        }
         private void LoadData()
         {
             dgv_categories.DataSource = db.Categories.ToList();
+            txt_categoriesID.Text = getCategoryID();
             dgv_categories.Refresh();
         }
 
         private void CategoriesForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            cb_categoriesStatus.SelectedIndex = 0;
+            cb_search.SelectedIndex = 0;
         }
 
         private void btn_categoriesAdd_Click(object sender, EventArgs e)
@@ -68,7 +88,7 @@ namespace MobileShopManagementSystem
                 }
                 Category cat = new Category()
                 {
-                    CategoryID = txt_categoriesID.Text.Trim().ToUpper(),
+                    CategoryID = getCategoryID(),
                     CategoryName = txt_categoriesInput.Text.Trim().ToLower(),
                     Status = cb_categoriesStatus.SelectedItem.ToString().Trim(),
                     DateInsert = DateTime.Now
@@ -77,6 +97,7 @@ namespace MobileShopManagementSystem
                 db.SubmitChanges();
                 LoadData();
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearData();
             }
             catch (Exception ex)
             {
@@ -107,6 +128,7 @@ namespace MobileShopManagementSystem
                 db.SubmitChanges();
                 LoadData();
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearData();
             }
             catch (Exception ex)
             {
@@ -149,6 +171,7 @@ namespace MobileShopManagementSystem
                 db.SubmitChanges();
                 LoadData();
                 MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearData();
             }
             catch (Exception ex)
             {
@@ -156,12 +179,63 @@ namespace MobileShopManagementSystem
             }
         }
 
+        private void clearData()
+        {
+            txt_categoriesInput.ResetText();
+            cb_categoriesStatus.SelectedIndex = 0;
+            txt_categoriesID.Text = getCategoryID();
+        }
         private void btn_categoriesClear_Click(object sender, EventArgs e)
         {
-            txt_categoriesID.ResetText();
-            txt_categoriesInput.ResetText();
-            cb_categoriesStatus.SelectedIndex = -1;
-            txt_categoriesID.Focus();
+            clearData();
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(string.IsNullOrEmpty(txt_search.Text))
+                {
+                    MessageBox.Show("Please enter search keyword!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string searchText = txt_search.Text.Trim().ToLower();
+                List<Category> search = new List<Category>();
+
+                switch (cb_search.SelectedItem?.ToString())
+                {
+                    case "Category ID":
+                        search = db.Categories
+                            .Where(x => x.CategoryID.ToLower().Contains(searchText))
+                            .ToList();
+                        break;
+
+                    case "Category Name":
+                        search = db.Categories
+                            .Where(x => x.CategoryName.ToLower().Contains(searchText))
+                            .ToList();
+                        break;
+                }
+
+                if (search.Count > 0)
+                {
+                    dgv_categories.DataSource = search;
+                    dgv_categories.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("No product found", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

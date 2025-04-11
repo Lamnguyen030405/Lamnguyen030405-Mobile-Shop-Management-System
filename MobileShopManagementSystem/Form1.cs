@@ -38,11 +38,12 @@ namespace MobileShopManagementSystem
             sigupForm.Show();
             this.Hide();
         }
-
+        public static string userID;
         private void btn_login_Click(object sender, EventArgs e)
         {
             var user = dataContext.Users.Where(u => u.Username == txt_loginUsername.Text.Trim() && u.Password == txt_loginPassword.Text.Trim()).FirstOrDefault();
             if(user != null) {
+                userID = user.UserID;
                 MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
