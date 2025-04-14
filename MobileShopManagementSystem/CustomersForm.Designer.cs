@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_customerUpdate = new ReaLTaiizor.Controls.Button();
             this.btn_customerClear = new ReaLTaiizor.Controls.Button();
@@ -42,16 +42,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_customer = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_refresh = new ReaLTaiizor.Controls.Button();
             this.btn_search = new ReaLTaiizor.Controls.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cb_search = new System.Windows.Forms.ComboBox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
             this.panel2.SuspendLayout();
@@ -235,14 +235,14 @@
             this.dgv_customer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_customer.BackgroundColor = System.Drawing.Color.White;
             this.dgv_customer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_customer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_customer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -259,6 +259,38 @@
             this.dgv_customer.Size = new System.Drawing.Size(1245, 399);
             this.dgv_customer.TabIndex = 22;
             this.dgv_customer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_customer_CellClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "CustomerID";
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "CustomerName";
+            this.name.HeaderText = "Name";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "Address";
+            this.address.HeaderText = "Address";
+            this.address.MinimumWidth = 6;
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            // 
+            // phonenumber
+            // 
+            this.phonenumber.DataPropertyName = "PhoneNumber";
+            this.phonenumber.HeaderText = "Phone Number";
+            this.phonenumber.MinimumWidth = 6;
+            this.phonenumber.Name = "phonenumber";
+            this.phonenumber.ReadOnly = true;
             // 
             // panel2
             // 
@@ -342,45 +374,13 @@
             // 
             this.cb_search.FormattingEnabled = true;
             this.cb_search.Items.AddRange(new object[] {
-            "Custome ID",
+            "Customer ID",
             "Customer Name",
             "Phone Number"});
             this.cb_search.Location = new System.Drawing.Point(13, 13);
             this.cb_search.Name = "cb_search";
             this.cb_search.Size = new System.Drawing.Size(185, 24);
             this.cb_search.TabIndex = 47;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "CustomerID";
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "CustomerName";
-            this.name.HeaderText = "Name";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "Address";
-            this.address.HeaderText = "Address";
-            this.address.MinimumWidth = 6;
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            // 
-            // phonenumber
-            // 
-            this.phonenumber.DataPropertyName = "PhoneNumber";
-            this.phonenumber.HeaderText = "Phone Number";
-            this.phonenumber.MinimumWidth = 6;
-            this.phonenumber.Name = "phonenumber";
-            this.phonenumber.ReadOnly = true;
             // 
             // CustomersForm
             // 

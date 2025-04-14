@@ -156,7 +156,7 @@ namespace MobileShopManagementSystem
                     MessageBox.Show("Please enter a search term.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                string searchText = txt_search.Text.Trim();
+                string searchText = txt_search.Text.Trim().ToLower();
                 List<Customer> search = new List<Customer>();
 
                 switch (cb_search.SelectedItem?.ToString())
