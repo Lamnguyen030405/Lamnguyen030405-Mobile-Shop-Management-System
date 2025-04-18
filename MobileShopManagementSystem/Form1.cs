@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReaLTaiizor.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,16 +22,9 @@ namespace MobileShopManagementSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = btn_login;
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Are you sure you want to close this app?","Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -55,10 +49,79 @@ namespace MobileShopManagementSystem
             }
         }
 
-        private void c_showPassword_CheckedChanged(object sender, EventArgs e)
+        
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void titlepanel_MouseDown(object sender, MouseEventArgs e)
         {
-            txt_loginPassword.PasswordChar = c_showPassword.Checked ? '\0' : '*';
+            const int WM_NCLBUTTONDOWN = 0xA1;
+            const int HTCAPTION = 0x2;
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
         }
 
+        private void titlepanel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void c_showPassword_CheckedChanged(object sender)
+        {
+            txt_loginPassword.UseSystemPasswordChar = !c_showPassword.Checked;
+        }
+
+        private void SetPlaceholder(ReaLTaiizor.Controls.DungeonTextBox textBox, string placeholder, bool isPassword = false)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.ForeColor = Color.Gray;
+                textBox.Text = placeholder;
+                if (isPassword)
+                    textBox.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void RemovePlaceholder(ReaLTaiizor.Controls.DungeonTextBox textBox, string placeholder, bool isPassword = false)
+        {
+            if (textBox.Text == placeholder)
+            {
+                textBox.Text = "";
+                textBox.ForeColor = Color.Black;
+                if (isPassword)
+                    textBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txt_username_Enter(object sender, EventArgs e)
+        {
+            RemovePlaceholder(txt_loginUsername, "Username");
+        }
+
+        private void txt_username_Leave(object sender, EventArgs e)
+        {
+            SetPlaceholder(txt_loginUsername, "Username");
+        }
+
+        private void txt_password_Enter(object sender, EventArgs e)
+        {
+            RemovePlaceholder(txt_loginPassword, "Password", true);
+        }
+
+        private void txt_password_Leave(object sender, EventArgs e)
+        {
+            SetPlaceholder(txt_loginPassword, "Password", true);
+        }
     }
 }

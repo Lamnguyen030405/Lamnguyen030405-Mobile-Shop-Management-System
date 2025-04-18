@@ -45,6 +45,7 @@
             this.col_dateinsert = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_dateupdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_image = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_fkcategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -191,7 +192,8 @@
             this.col_status,
             this.col_dateinsert,
             this.col_dateupdate,
-            this.col_image});
+            this.col_image,
+            this.col_fkcategory});
             this.dgv_products.EnableHeadersVisualStyles = false;
             this.dgv_products.Location = new System.Drawing.Point(13, 36);
             this.dgv_products.Name = "dgv_products";
@@ -282,6 +284,15 @@
             this.col_image.MinimumWidth = 6;
             this.col_image.Name = "col_image";
             this.col_image.ReadOnly = true;
+            // 
+            // col_fkcategory
+            // 
+            this.col_fkcategory.DataPropertyName = "Category1";
+            this.col_fkcategory.HeaderText = "ForeignKey";
+            this.col_fkcategory.MinimumWidth = 6;
+            this.col_fkcategory.Name = "col_fkcategory";
+            this.col_fkcategory.ReadOnly = true;
+            this.col_fkcategory.Visible = false;
             // 
             // label2
             // 
@@ -632,5 +643,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_dateinsert;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_dateupdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_image;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_fkcategory;
     }
 }

@@ -33,5 +33,17 @@ namespace MobileShopManagementSystem.Properties {
                 return ((string)(this["mobilesystemConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool cyberGroupBox1 {
+            get {
+                return ((bool)(this["cyberGroupBox1"]));
+            }
+            set {
+                this["cyberGroupBox1"] = value;
+            }
+        }
     }
 }

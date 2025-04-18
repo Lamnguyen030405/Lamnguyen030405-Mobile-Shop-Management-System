@@ -16,17 +16,6 @@ namespace MobileShopManagementSystem
         public BillForm()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
-            Gradient backgroundGradient = new Gradient
-            {
-                Dock = DockStyle.Fill,  // Phủ toàn bộ Form
-                Color1 = Color.White,   // Trắng
-                Color2 = Color.Navy,    // Xanh navy
-                GradientMode = LinearGradientMode.Vertical
-            };
-
-            this.Controls.Add(backgroundGradient);
-            backgroundGradient.SendToBack();
         }
         MobileShopManagementDataContext db = new MobileShopManagementDataContext();
         private void LoadData()
@@ -286,6 +275,16 @@ namespace MobileShopManagementSystem
             {
                 MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void btn_import_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_billID.Text))
+            {
+                MessageBox.Show("Please select a bill to print.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            r_Bill bill = new r_Bill(txt_billID.Text);
+            bill.Show();
         }
     }
 }

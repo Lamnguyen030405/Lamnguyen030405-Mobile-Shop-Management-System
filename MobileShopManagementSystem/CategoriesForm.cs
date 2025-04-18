@@ -16,17 +16,6 @@ namespace MobileShopManagementSystem
         public CategoriesForm()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
-            Gradient backgroundGradient = new Gradient
-            {
-                Dock = DockStyle.Fill,  // Phủ toàn bộ Form
-                Color1 = Color.White,   // Trắng
-                Color2 = Color.Navy,    // Xanh navy
-                GradientMode = LinearGradientMode.Vertical
-            };
-
-            this.Controls.Add(backgroundGradient);
-            backgroundGradient.SendToBack();
         }
 
         MobileShopManagementDataContext db = new MobileShopManagementDataContext();

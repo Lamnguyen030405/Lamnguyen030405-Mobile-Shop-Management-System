@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace MobileShopManagementSystem
 {
@@ -28,7 +29,7 @@ namespace MobileShopManagementSystem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            CloseAllMdiChildren();
         }
 
         bool shopExpand = false;
@@ -77,55 +78,12 @@ namespace MobileShopManagementSystem
         {
             shopForm = null;
         }
-
-        public bool slidebarExpand = true;
-        private void slidebarTransition_Tick(object sender, EventArgs e)
-        {
-            int step = 10;
-            if (slidebarExpand)
-            {
-                slidebar.Width -= step;
-                if (slidebar.Width <= 62)
-                {
-                    slidebar.Width = 62;
-                    slidebarTransition.Stop();
-                    slidebarExpand = false;
-                }
-            }
-            else
-            {
-                slidebar.Width += step;
-                if (slidebar.Width >= 249)
-                {
-                    slidebar.Width = 249;
-                    slidebarTransition.Stop();
-                    slidebarExpand = true;
-                }
-            }
-        }
-
         private void CloseAllMdiChildren()
         {
             foreach (Form child in this.MdiChildren)
             {
                 child.Close();
             }
-        }
-
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to close this app?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
-        private void btnHam_Click(object sender, EventArgs e)
-        {
-            slidebarTransition.Start();
-            //dashboardForm.MdiParent = this;
-
-            //this.ButtonClicked += dashboardForm.OnParentButtonClicked;
         }
 
         private void btn_dashboard_Click(object sender, EventArgs e)
@@ -248,6 +206,39 @@ namespace MobileShopManagementSystem
                 loginForm.Show();
                 this.Hide();
             }
+        }
+
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void titlepanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            const int WM_NCLBUTTONDOWN = 0xA1;
+            const int HTCAPTION = 0x2;
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+        private void titlepanel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void btnHam_Click(object sender, EventArgs e)
+        {
+            cyberGroupBox1.Visible = !cyberGroupBox1.Visible;
         }
     }
 }

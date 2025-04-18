@@ -29,51 +29,46 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.titlepanel = new System.Windows.Forms.Panel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            this.btnHam = new System.Windows.Forms.Button();
-            this.slidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btn_dashboard = new System.Windows.Forms.Button();
             this.shopContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btn_shop = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btn_bill = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.btn_categories = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_bill = new System.Windows.Forms.Button();
             this.btn_inventory = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.btn_customers = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
             this.shopTransition = new System.Windows.Forms.Timer(this.components);
-            this.slidebarTransition = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
-            this.slidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.parrotSlidingPanel1 = new ReaLTaiizor.Controls.ParrotSlidingPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
+            this.dungeonLabel1 = new ReaLTaiizor.Controls.DungeonLabel();
+            this.btnHam = new System.Windows.Forms.Button();
+            this.dungeonLabel2 = new ReaLTaiizor.Controls.DungeonLabel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.titlepanel.SuspendLayout();
             this.shopContainer.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.parrotSlidingPanel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cyberGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // titlepanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.nightControlBox1);
-            this.panel1.Controls.Add(this.btnHam);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1357, 39);
-            this.panel1.TabIndex = 0;
+            this.titlepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.titlepanel.Controls.Add(this.nightControlBox1);
+            this.titlepanel.Controls.Add(this.btnHam);
+            this.titlepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlepanel.Location = new System.Drawing.Point(0, 0);
+            this.titlepanel.Name = "titlepanel";
+            this.titlepanel.Size = new System.Drawing.Size(1357, 39);
+            this.titlepanel.TabIndex = 0;
+            this.titlepanel.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.titlepanel_MouseDoubleClick);
+            this.titlepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titlepanel_MouseDown);
             // 
             // nightControlBox1
             // 
@@ -99,62 +94,16 @@
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 2;
             // 
-            // btnHam
-            // 
-            this.btnHam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHam.FlatAppearance.BorderSize = 0;
-            this.btnHam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHam.Image = global::MobileShopManagementSystem.Properties.Resources.Menu2;
-            this.btnHam.Location = new System.Drawing.Point(12, 0);
-            this.btnHam.Name = "btnHam";
-            this.btnHam.Size = new System.Drawing.Size(42, 41);
-            this.btnHam.TabIndex = 2;
-            this.btnHam.UseVisualStyleBackColor = false;
-            this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
-            // 
-            // slidebar
-            // 
-            this.slidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.slidebar.Controls.Add(this.pictureBox2);
-            this.slidebar.Controls.Add(this.panel2);
-            this.slidebar.Controls.Add(this.shopContainer);
-            this.slidebar.Controls.Add(this.panel4);
-            this.slidebar.Controls.Add(this.panel6);
-            this.slidebar.Controls.Add(this.panel5);
-            this.slidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.slidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.slidebar.Location = new System.Drawing.Point(0, 39);
-            this.slidebar.Name = "slidebar";
-            this.slidebar.Size = new System.Drawing.Size(62, 749);
-            this.slidebar.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(249, 163);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btn_dashboard);
-            this.panel2.ForeColor = System.Drawing.Color.Transparent;
-            this.panel2.Location = new System.Drawing.Point(3, 172);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(249, 49);
-            this.panel2.TabIndex = 3;
-            // 
             // btn_dashboard
             // 
-            this.btn_dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_dashboard.BackColor = System.Drawing.Color.Transparent;
             this.btn_dashboard.FlatAppearance.BorderSize = 0;
             this.btn_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dashboard.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btn_dashboard.ForeColor = System.Drawing.Color.White;
             this.btn_dashboard.Image = global::MobileShopManagementSystem.Properties.Resources.Statistics;
             this.btn_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dashboard.Location = new System.Drawing.Point(0, 0);
+            this.btn_dashboard.Location = new System.Drawing.Point(3, 224);
             this.btn_dashboard.Name = "btn_dashboard";
             this.btn_dashboard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_dashboard.Size = new System.Drawing.Size(249, 49);
@@ -165,32 +114,22 @@
             // 
             // shopContainer
             // 
-            this.shopContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.shopContainer.Controls.Add(this.panel3);
-            this.shopContainer.Controls.Add(this.panel8);
-            this.shopContainer.Controls.Add(this.panel9);
-            this.shopContainer.Location = new System.Drawing.Point(0, 224);
+            this.shopContainer.BackColor = System.Drawing.Color.Transparent;
+            this.shopContainer.Controls.Add(this.btn_shop);
+            this.shopContainer.Controls.Add(this.btn_categories);
+            this.shopContainer.Controls.Add(this.btn_bill);
+            this.shopContainer.Location = new System.Drawing.Point(0, 276);
             this.shopContainer.Margin = new System.Windows.Forms.Padding(0);
             this.shopContainer.Name = "shopContainer";
             this.shopContainer.Size = new System.Drawing.Size(249, 49);
             this.shopContainer.TabIndex = 9;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btn_shop);
-            this.panel3.ForeColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(249, 49);
-            this.panel3.TabIndex = 4;
-            // 
             // btn_shop
             // 
-            this.btn_shop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_shop.BackColor = System.Drawing.Color.Transparent;
             this.btn_shop.FlatAppearance.BorderSize = 0;
             this.btn_shop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_shop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_shop.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btn_shop.ForeColor = System.Drawing.Color.White;
             this.btn_shop.Image = global::MobileShopManagementSystem.Properties.Resources.Online_Shop;
             this.btn_shop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,55 +143,16 @@
             this.btn_shop.UseVisualStyleBackColor = false;
             this.btn_shop.Click += new System.EventHandler(this.btn_shop_Click);
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.btn_bill);
-            this.panel8.ForeColor = System.Drawing.Color.Transparent;
-            this.panel8.Location = new System.Drawing.Point(0, 49);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(249, 49);
-            this.panel8.TabIndex = 5;
-            // 
-            // btn_bill
-            // 
-            this.btn_bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
-            this.btn_bill.FlatAppearance.BorderSize = 0;
-            this.btn_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_bill.ForeColor = System.Drawing.Color.White;
-            this.btn_bill.Image = global::MobileShopManagementSystem.Properties.Resources.Buy_For_Coins;
-            this.btn_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_bill.Location = new System.Drawing.Point(0, 0);
-            this.btn_bill.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_bill.Name = "btn_bill";
-            this.btn_bill.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_bill.Size = new System.Drawing.Size(249, 49);
-            this.btn_bill.TabIndex = 3;
-            this.btn_bill.Text = "Bill";
-            this.btn_bill.UseVisualStyleBackColor = false;
-            this.btn_bill.Click += new System.EventHandler(this.btn_bill_Click);
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.btn_categories);
-            this.panel9.ForeColor = System.Drawing.Color.Transparent;
-            this.panel9.Location = new System.Drawing.Point(0, 98);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(249, 49);
-            this.panel9.TabIndex = 7;
-            // 
             // btn_categories
             // 
             this.btn_categories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
             this.btn_categories.FlatAppearance.BorderSize = 0;
             this.btn_categories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_categories.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_categories.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btn_categories.ForeColor = System.Drawing.Color.White;
             this.btn_categories.Image = global::MobileShopManagementSystem.Properties.Resources.iPhone_14;
             this.btn_categories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_categories.Location = new System.Drawing.Point(0, 0);
+            this.btn_categories.Location = new System.Drawing.Point(0, 49);
             this.btn_categories.Margin = new System.Windows.Forms.Padding(0);
             this.btn_categories.Name = "btn_categories";
             this.btn_categories.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -262,25 +162,35 @@
             this.btn_categories.UseVisualStyleBackColor = false;
             this.btn_categories.Click += new System.EventHandler(this.btn_categories_Click);
             // 
-            // panel4
+            // btn_bill
             // 
-            this.panel4.Controls.Add(this.btn_inventory);
-            this.panel4.ForeColor = System.Drawing.Color.Transparent;
-            this.panel4.Location = new System.Drawing.Point(3, 276);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(249, 49);
-            this.panel4.TabIndex = 5;
+            this.btn_bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
+            this.btn_bill.FlatAppearance.BorderSize = 0;
+            this.btn_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_bill.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btn_bill.ForeColor = System.Drawing.Color.White;
+            this.btn_bill.Image = global::MobileShopManagementSystem.Properties.Resources.Buy_For_Coins;
+            this.btn_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_bill.Location = new System.Drawing.Point(0, 98);
+            this.btn_bill.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_bill.Name = "btn_bill";
+            this.btn_bill.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_bill.Size = new System.Drawing.Size(249, 49);
+            this.btn_bill.TabIndex = 3;
+            this.btn_bill.Text = "Bill";
+            this.btn_bill.UseVisualStyleBackColor = false;
+            this.btn_bill.Click += new System.EventHandler(this.btn_bill_Click);
             // 
             // btn_inventory
             // 
-            this.btn_inventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_inventory.BackColor = System.Drawing.Color.Transparent;
             this.btn_inventory.FlatAppearance.BorderSize = 0;
             this.btn_inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventory.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btn_inventory.ForeColor = System.Drawing.Color.White;
             this.btn_inventory.Image = global::MobileShopManagementSystem.Properties.Resources.Warehouse;
             this.btn_inventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inventory.Location = new System.Drawing.Point(0, 0);
+            this.btn_inventory.Location = new System.Drawing.Point(3, 328);
             this.btn_inventory.Name = "btn_inventory";
             this.btn_inventory.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_inventory.Size = new System.Drawing.Size(249, 49);
@@ -289,25 +199,16 @@
             this.btn_inventory.UseVisualStyleBackColor = false;
             this.btn_inventory.Click += new System.EventHandler(this.btn_inventory_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btn_customers);
-            this.panel6.ForeColor = System.Drawing.Color.Transparent;
-            this.panel6.Location = new System.Drawing.Point(3, 331);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(249, 49);
-            this.panel6.TabIndex = 7;
-            // 
             // btn_customers
             // 
-            this.btn_customers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_customers.BackColor = System.Drawing.Color.Transparent;
             this.btn_customers.FlatAppearance.BorderSize = 0;
             this.btn_customers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_customers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_customers.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btn_customers.ForeColor = System.Drawing.Color.White;
             this.btn_customers.Image = global::MobileShopManagementSystem.Properties.Resources.Staff;
             this.btn_customers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_customers.Location = new System.Drawing.Point(0, 0);
+            this.btn_customers.Location = new System.Drawing.Point(3, 383);
             this.btn_customers.Name = "btn_customers";
             this.btn_customers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_customers.Size = new System.Drawing.Size(249, 49);
@@ -316,25 +217,16 @@
             this.btn_customers.UseVisualStyleBackColor = false;
             this.btn_customers.Click += new System.EventHandler(this.btn_customers_Click);
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btn_logout);
-            this.panel5.ForeColor = System.Drawing.Color.Transparent;
-            this.panel5.Location = new System.Drawing.Point(3, 386);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(249, 49);
-            this.panel5.TabIndex = 9;
-            // 
             // btn_logout
             // 
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btn_logout.BackColor = System.Drawing.Color.Transparent;
             this.btn_logout.FlatAppearance.BorderSize = 0;
             this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btn_logout.ForeColor = System.Drawing.Color.White;
             this.btn_logout.Image = global::MobileShopManagementSystem.Properties.Resources.Logout;
             this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_logout.Location = new System.Drawing.Point(0, 0);
+            this.btn_logout.Location = new System.Drawing.Point(3, 548);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_logout.Size = new System.Drawing.Size(249, 49);
@@ -348,11 +240,164 @@
             this.shopTransition.Interval = 10;
             this.shopTransition.Tick += new System.EventHandler(this.shopTransition_Tick);
             // 
-            // slidebarTransition
+            // parrotSlidingPanel1
             // 
-            this.slidebarTransition.Enabled = true;
-            this.slidebarTransition.Interval = 10;
-            this.slidebarTransition.Tick += new System.EventHandler(this.slidebarTransition_Tick);
+            this.parrotSlidingPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.parrotSlidingPanel1.BottomLeft = System.Drawing.Color.Gray;
+            this.parrotSlidingPanel1.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.parrotSlidingPanel1.CollapseControl = this.btnHam;
+            this.parrotSlidingPanel1.Collapsed = false;
+            this.parrotSlidingPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+            this.parrotSlidingPanel1.Controls.Add(this.flowLayoutPanel1);
+            this.parrotSlidingPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.parrotSlidingPanel1.HideControls = false;
+            this.parrotSlidingPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.High;
+            this.parrotSlidingPanel1.Location = new System.Drawing.Point(0, 39);
+            this.parrotSlidingPanel1.Name = "parrotSlidingPanel1";
+            this.parrotSlidingPanel1.PanelWidthCollapsed = 62;
+            this.parrotSlidingPanel1.PanelWidthExpanded = 249;
+            this.parrotSlidingPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighSpeed;
+            this.parrotSlidingPanel1.PrimerColor = System.Drawing.Color.White;
+            this.parrotSlidingPanel1.Size = new System.Drawing.Size(249, 749);
+            this.parrotSlidingPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
+            this.parrotSlidingPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotSlidingPanel1.TabIndex = 3;
+            this.parrotSlidingPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotSlidingPanel1.TopLeft = System.Drawing.Color.Blue;
+            this.parrotSlidingPanel1.TopRight = System.Drawing.Color.Black;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.cyberGroupBox1);
+            this.flowLayoutPanel1.Controls.Add(this.btn_dashboard);
+            this.flowLayoutPanel1.Controls.Add(this.shopContainer);
+            this.flowLayoutPanel1.Controls.Add(this.btn_inventory);
+            this.flowLayoutPanel1.Controls.Add(this.btn_customers);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.btn_logout);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 749);
+            this.flowLayoutPanel1.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MobileShopManagementSystem.Properties.Resources.Male_User;
+            this.pictureBox1.Location = new System.Drawing.Point(68, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cyberGroupBox1
+            // 
+            this.cyberGroupBox1.Alpha = 20;
+            this.cyberGroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.cyberGroupBox1.Background = true;
+            this.cyberGroupBox1.Background_WidthPen = 3F;
+            this.cyberGroupBox1.BackgroundPen = true;
+            this.cyberGroupBox1.ColorBackground = System.Drawing.Color.Transparent;
+            this.cyberGroupBox1.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cyberGroupBox1.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.cyberGroupBox1.ColorBackground_Pen = System.Drawing.Color.White;
+            this.cyberGroupBox1.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cyberGroupBox1.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cyberGroupBox1.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.cyberGroupBox1.Controls.Add(this.dungeonLabel2);
+            this.cyberGroupBox1.Controls.Add(this.dungeonLabel1);
+            this.cyberGroupBox1.Controls.Add(this.pictureBox1);
+            this.cyberGroupBox1.CyberGroupBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.cyberGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.cyberGroupBox1.Lighting = false;
+            this.cyberGroupBox1.LinearGradient_Background = false;
+            this.cyberGroupBox1.LinearGradientPen = false;
+            this.cyberGroupBox1.Location = new System.Drawing.Point(3, 3);
+            this.cyberGroupBox1.Name = "cyberGroupBox1";
+            this.cyberGroupBox1.PenWidth = 15;
+            this.cyberGroupBox1.RGB = false;
+            this.cyberGroupBox1.Rounding = true;
+            this.cyberGroupBox1.RoundingInt = 60;
+            this.cyberGroupBox1.Size = new System.Drawing.Size(243, 215);
+            this.cyberGroupBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.cyberGroupBox1.TabIndex = 10;
+            this.cyberGroupBox1.Tag = "Cyber";
+            this.cyberGroupBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.cyberGroupBox1.Timer_RGB = 300;
+            // 
+            // dungeonLabel1
+            // 
+            this.dungeonLabel1.AutoSize = true;
+            this.dungeonLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonLabel1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.dungeonLabel1.ForeColor = System.Drawing.Color.White;
+            this.dungeonLabel1.Location = new System.Drawing.Point(80, 124);
+            this.dungeonLabel1.Name = "dungeonLabel1";
+            this.dungeonLabel1.Size = new System.Drawing.Size(97, 25);
+            this.dungeonLabel1.TabIndex = 10;
+            this.dungeonLabel1.Text = "Username";
+            // 
+            // btnHam
+            // 
+            this.btnHam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHam.FlatAppearance.BorderSize = 0;
+            this.btnHam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHam.Image = global::MobileShopManagementSystem.Properties.Resources.Menu2;
+            this.btnHam.Location = new System.Drawing.Point(12, 0);
+            this.btnHam.Name = "btnHam";
+            this.btnHam.Size = new System.Drawing.Size(42, 41);
+            this.btnHam.TabIndex = 2;
+            this.btnHam.UseVisualStyleBackColor = false;
+            this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
+            // 
+            // dungeonLabel2
+            // 
+            this.dungeonLabel2.AutoSize = true;
+            this.dungeonLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonLabel2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.dungeonLabel2.ForeColor = System.Drawing.Color.White;
+            this.dungeonLabel2.Location = new System.Drawing.Point(80, 158);
+            this.dungeonLabel2.Name = "dungeonLabel2";
+            this.dungeonLabel2.Size = new System.Drawing.Size(80, 25);
+            this.dungeonLabel2.TabIndex = 11;
+            this.dungeonLabel2.Text = "position";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::MobileShopManagementSystem.Properties.Resources.Staff;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 438);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(249, 49);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "User";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::MobileShopManagementSystem.Properties.Resources.Staff;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(3, 493);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(249, 49);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Setting";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -360,51 +405,45 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1357, 788);
             this.ControlBox = false;
-            this.Controls.Add(this.slidebar);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.parrotSlidingPanel1);
+            this.Controls.Add(this.titlepanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.slidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.titlepanel.ResumeLayout(false);
             this.shopContainer.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.parrotSlidingPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.cyberGroupBox1.ResumeLayout(false);
+            this.cyberGroupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel slidebar;
+        private System.Windows.Forms.Panel titlepanel;
         private System.Windows.Forms.Button btn_dashboard;
         private System.Windows.Forms.Button btn_shop;
         private System.Windows.Forms.Button btn_inventory;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_customers;
         private System.Windows.Forms.FlowLayoutPanel shopContainer;
         private System.Windows.Forms.Button btn_categories;
         private System.Windows.Forms.Timer shopTransition;
         private System.Windows.Forms.Button btn_logout;
-        private System.Windows.Forms.Timer slidebarTransition;
         private System.Windows.Forms.Button btnHam;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Button btn_bill;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel2;
+        private ReaLTaiizor.Controls.ParrotSlidingPanel parrotSlidingPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private ReaLTaiizor.Controls.CyberGroupBox cyberGroupBox1;
+        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel1;
+        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -16,18 +16,6 @@ namespace MobileShopManagementSystem
         public ShopForm()
         {
             InitializeComponent();
-            Gradient backgroundGradient = new Gradient
-            {
-                Dock = DockStyle.Fill,  // Phủ toàn bộ Form
-                Color1 = Color.White,   // Trắng
-                Color2 = Color.Navy,    // Xanh navy
-                GradientMode = LinearGradientMode.Vertical
-            };
-
-            this.Controls.Add(backgroundGradient);
-            backgroundGradient.SendToBack();
-            this.DoubleBuffered = true;
-            displayCategories();
         }
 
         MobileShopManagementDataContext db = new MobileShopManagementDataContext();
@@ -133,7 +121,7 @@ namespace MobileShopManagementSystem
                 flowLayoutPanel1.Controls.Clear();
                 foreach (var product in products)
                 {
-                    cardItems(product.ProductName, product.Stock.ToString(), product.Price.ToString(), Image.FromFile(product.Image), product.ProductID, product.Category, "");
+                    cardItems(product.ProductName, product.Stock.ToString(), product.Price.ToString(), Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
                 }
             }
             catch (Exception ex)
@@ -287,7 +275,7 @@ namespace MobileShopManagementSystem
                 flowLayoutPanel1.Controls.Clear();
                 foreach (var product in products)
                 {
-                    cardItems(product.ProductName, product.Stock.ToString(), product.Price.ToString(), Image.FromFile(product.Image), product.ProductID, product.Category, "");
+                    cardItems(product.ProductName, product.Stock.ToString(), product.Price.ToString(), Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
                 }
             }
             catch (Exception ex)
@@ -317,7 +305,7 @@ namespace MobileShopManagementSystem
                 foreach (var product in products)
                 {
                     cardItems(product.ProductName, product.Stock.ToString(), product.Price.ToString(),
-                              Image.FromFile(product.Image), product.ProductID, product.Category, "");
+                              Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
                 }
             }
             catch (Exception ex)

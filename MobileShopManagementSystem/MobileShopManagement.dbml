@@ -7,9 +7,19 @@
       <Column Name="UserID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="CustomerID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="User_Bill" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
       <Association Name="Customer_Bill" Member="Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="Customer" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="Order_Bill" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" DeleteRule="CASCADE" />
-      <Association Name="User_Bill" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="User_Bill" Member="Bills" ThisKey="UserID" OtherKey="UserID" Type="Bill" />
     </Type>
   </Table>
   <Table Name="dbo.Carts" Member="Carts">
@@ -30,7 +40,7 @@
       <Column Name="CategoryName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="DateInsert" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="Category_Product" Member="Products" ThisKey="CategoryID" OtherKey="Category" Type="Product" />
+      <Association Name="Category_Product" Member="Products" ThisKey="CategoryID" OtherKey="CategoryID" Type="Product" />
     </Type>
   </Table>
   <Table Name="dbo.Customers" Member="Customers">
@@ -65,17 +75,7 @@
       <Column Name="DateInsert" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="DateUpdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="Product_Cart" Member="Carts" ThisKey="ProductID" OtherKey="ProductID" Type="Cart" />
-      <Association Name="Category_Product" Member="Category1" ThisKey="Category" OtherKey="CategoryID" Type="Category" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Users" Member="Users">
-    <Type Name="User">
-      <Column Name="UserID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Username" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="User_Bill" Member="Bills" ThisKey="UserID" OtherKey="UserID" Type="Bill" />
+      <Association Name="Category_Product" Member="Category1" ThisKey="CategoryID" OtherKey="CategoryID" Type="Category" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.vw_BillDetails" Member="vw_BillDetails">

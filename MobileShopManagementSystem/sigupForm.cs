@@ -19,25 +19,11 @@ namespace MobileShopManagementSystem
             InitializeComponent();
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to close this app?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form1 loginform = new Form1();
             loginform.Show();
             this.Hide();
-        }
-
-        private void c_signupShowPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            txt_signupPassword.PasswordChar = c_signupShowPassword.Checked ? '\0' : '*';
-            txt_signupConfirmPassword.PasswordChar = c_signupShowPassword.Checked ? '\0' : '*';
         }
         public static string getUserID()
         {
@@ -101,5 +87,94 @@ namespace MobileShopManagementSystem
             }
         }
 
+        private void sigupForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btn_register;
+        }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void titlepanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            const int WM_NCLBUTTONDOWN = 0xA1;
+            const int HTCAPTION = 0x2;
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+        private void titlepanel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void c_showPassword_CheckedChanged(object sender)
+        {
+            txt_signupPassword.UseSystemPasswordChar = !c_signupShowPassword.Checked;
+            txt_signupConfirmPassword.UseSystemPasswordChar = !c_signupShowPassword.Checked;
+
+        }
+
+        private void SetPlaceholder(ReaLTaiizor.Controls.DungeonTextBox textBox, string placeholder, bool isPassword = false)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.ForeColor = Color.Gray;
+                textBox.Text = placeholder;
+                if (isPassword)
+                    textBox.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void RemovePlaceholder(ReaLTaiizor.Controls.DungeonTextBox textBox, string placeholder, bool isPassword = false)
+        {
+            if (textBox.Text == placeholder)
+            {
+                textBox.Text = "";
+                textBox.ForeColor = Color.Black;
+                if (isPassword)
+                    textBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txt_username_Enter(object sender, EventArgs e)
+        {
+            RemovePlaceholder(txt_signupUsername, "Username");
+        }
+
+        private void txt_username_Leave(object sender, EventArgs e)
+        {
+            SetPlaceholder(txt_signupUsername, "Username");
+        }
+
+        private void txt_password_Enter(object sender, EventArgs e)
+        {
+            RemovePlaceholder(txt_signupPassword, "Password", true);
+        }
+
+        private void txt_password_Leave(object sender, EventArgs e)
+        {
+            SetPlaceholder(txt_signupPassword, "Password", true);
+        }
+        private void txt_confirmpassword_Enter(object sender, EventArgs e)
+        {
+            RemovePlaceholder(txt_signupConfirmPassword, "Confirm Password", true);
+        }
+
+        private void txt_confirmpassword_Leave(object sender, EventArgs e)
+        {
+            SetPlaceholder(txt_signupConfirmPassword, "Confirm Password", true);
+        }
     }
 }

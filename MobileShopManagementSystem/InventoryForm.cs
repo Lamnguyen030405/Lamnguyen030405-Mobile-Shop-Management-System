@@ -18,18 +18,6 @@ namespace MobileShopManagementSystem
         public InventoryForm()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
-            Gradient backgroundGradient = new Gradient
-            {
-                Dock = DockStyle.Fill,  // Phủ toàn bộ Form
-                Color1 = Color.White,   // Trắng
-                Color2 = Color.Navy,    // Xanh navy
-                GradientMode = LinearGradientMode.Vertical
-            };
-
-            this.Controls.Add(backgroundGradient);
-            backgroundGradient.SendToBack();
-            displayCategories();
         }
 
         MobileShopManagementDataContext db = new MobileShopManagementDataContext();
@@ -65,10 +53,6 @@ namespace MobileShopManagementSystem
         private void LoadData()
         {
             dgv_products.DataSource = db.Products.ToList();
-            //if (dgv_products.Columns.Contains("Category1"))
-            //{
-            //    dgv_products.Columns.Remove("Category1");
-            //}
             txt_inventoryProductID.Text = getProductID();
             dgv_products.Refresh();
         }
@@ -111,7 +95,7 @@ namespace MobileShopManagementSystem
             txt_inventoryProductName.ResetText();
             txt_inventoryStock.ResetText();
             cb_inventoryCategory.SelectedIndex = -1;
-            cb_inventoryStatus.SelectedIndex = -1;
+            cb_inventoryStatus.SelectedIndex = 0;
             pictureBox1.ImageLocation = null;
             pictureBox1.Image = null;
             txt_inventoryProductID.Text = getProductID();
@@ -126,10 +110,12 @@ namespace MobileShopManagementSystem
                     || txt_inventoryStock.Text == "" || cb_inventoryStatus.Text == "" || pictureBox1.Image == null)
                 {
                     MessageBox.Show("Please fill in all fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 if (db.Products.Any(x => x.ProductID == txt_inventoryProductID.Text))
                 {
                     MessageBox.Show("Product ID already exists", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -137,7 +123,7 @@ namespace MobileShopManagementSystem
                 string relativePath = Path.Combine("product_directory", txt_inventoryProductID.Text.Trim() + ".jpg");
                 string path = Path.Combine(baseDirectory, relativePath);
 
-                string directory = Path.GetDirectoryName(path);
+                string directory = Path.GetDirectoryName(relativePath);
                 if (!Directory.Exists(directory))
                 {
                     Directory.CreateDirectory(directory);
@@ -155,7 +141,7 @@ namespace MobileShopManagementSystem
                     Status = cb_inventoryStatus.Text.Trim(),
                     DateInsert = DateTime.Now,
                     DateUpdate = DateTime.Now,
-                    Image = path.Trim()
+                    Image = relativePath.Trim()
                 };
                 db.Products.InsertOnSubmit(p);
                 db.SubmitChanges();
@@ -168,7 +154,6 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dgv_products_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -180,13 +165,16 @@ namespace MobileShopManagementSystem
                 txt_inventoryStock.Text = row.Cells[4].Value.ToString();
                 txt_inventoryPrice.Text = row.Cells[5].Value.ToString();
                 cb_inventoryStatus.Text = row.Cells[6].Value.ToString();
-                string path = row.Cells[7].Value.ToString();
-
+                string relative_path = row.Cells[7].Value.ToString();
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relative_path);
                 try
                 {
                     if (path != "")
                     {
-                        pictureBox1.Image = Image.FromFile(path);
+                        var temp = Image.FromFile(path);
+                        pictureBox1.Image = new Bitmap(temp); // copy image
+                        temp.Dispose();
+                        pictureBox1.ImageLocation = path;
                     }
                     else
                     {
@@ -262,6 +250,7 @@ namespace MobileShopManagementSystem
                     || txt_inventoryStock.Text == "" || cb_inventoryStatus.Text == "" || pictureBox1.Image == null)
                 {
                     MessageBox.Show("Please fill in all fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 if (MessageBox.Show("Are you sure you want to update this product?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
@@ -278,9 +267,10 @@ namespace MobileShopManagementSystem
                 string relativePath = Path.Combine("product_directory", txt_inventoryProductID.Text.Trim() + ".jpg");
                 string path = Path.Combine(baseDirectory, relativePath);
 
-                File.Copy(pictureBox1.ImageLocation, path, true);
+                if (!string.Equals(Path.GetFullPath(pictureBox1.ImageLocation), Path.GetFullPath(path), StringComparison.OrdinalIgnoreCase))
+                    File.Copy(pictureBox1.ImageLocation, path, true);
 
-                p.Image = path.Trim();
+                p.Image = relativePath.Trim();
 
                 p.ProductName = txt_inventoryProductName.Text.Trim();
                 p.Price = Convert.ToDouble(txt_inventoryPrice.Text.Trim());
@@ -294,6 +284,7 @@ namespace MobileShopManagementSystem
                 LoadData();
                 MessageBox.Show("Product updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearData();
+                
             }
             catch (Exception ex)
             {
@@ -360,5 +351,6 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
