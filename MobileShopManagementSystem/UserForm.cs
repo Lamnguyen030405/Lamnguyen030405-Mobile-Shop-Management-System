@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,78 @@ namespace MobileShopManagementSystem
         }
         private void LoadData()
         {
-            using (var db = new MobileShopManagementDataContext())
+            try
             {
-                var users = db.Users.ToList();
-                dgv_user.DataSource = users;
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    var users = db.Users.ToList();
+
+                    // Tạo DataTable để tùy chỉnh dữ liệu
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("UserId", typeof(string));
+                    dt.Columns.Add("name", typeof(string));
+                    dt.Columns.Add("birthdate", typeof(DateTime));
+                    dt.Columns.Add("datecreated", typeof(DateTime));
+                    dt.Columns.Add("address", typeof(string));
+                    dt.Columns.Add("phonenumber", typeof(string));
+                    dt.Columns.Add("gender", typeof(string));
+                    dt.Columns.Add("role", typeof(string));
+                    dt.Columns.Add("status", typeof(string));
+                    dt.Columns.Add("image", typeof(Image)); // Cột để lưu hình ảnh
+                    dt.Columns.Add("username", typeof(string));
+                    dt.Columns.Add("password", typeof(string));
+                    dt.Columns.Add("salary", typeof(string));
+                    dt.Columns.Add("email", typeof(string));
+
+                    foreach (var user in users)
+                    {
+                        DataRow row = dt.NewRow();
+                        row["UserId"] = user.UserID;
+                        row["name"] = user.Name;
+                        row["birthdate"] = user.BirthDate ?? DateTime.Now;
+                        row["datecreated"] = user.DateCreated ?? DateTime.Now;
+                        row["address"] = user.Address;
+                        row["phonenumber"] = user.PhoneNumber;
+                        row["gender"] = user.Gender;
+                        row["role"] = user.Role;
+                        row["status"] = user.Status;
+                        row["username"] = user.Username;
+                        row["password"] = user.Password;
+                        row["salary"] = user.Salary;
+                        row["email"] = user.Email;
+
+                        // Chuyển đổi byte[] thành Image
+                        if (user.Image != null && user.Image.Length > 0)
+                        {
+                            row["image"] = ByteArrayToImage(user.Image.ToArray());
+                        }
+                        else
+                        {
+                            row["image"] = null; // Hoặc một hình ảnh mặc định
+                        }
+
+                        dt.Rows.Add(row);
+                    }
+
+                    // Gán DataTable vào DataGridView
+                    dgv_user.DataSource = dt;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream m = new MemoryStream(byteArrayIn);
+            return Image.FromStream(m);
+        }
+        byte[] ImageToByteArray(Image imageIn)
+        {
+            MemoryStream m = new MemoryStream();
+            imageIn.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
         }
         private void UserForm_Load(object sender, EventArgs e)
         {
@@ -43,6 +111,11 @@ namespace MobileShopManagementSystem
                     cb_userRole.Text = row.Cells["role"]?.Value?.ToString() ?? "";
                     cb_userStatus.Text = row.Cells["status"]?.Value?.ToString() ?? "";
                     dt_userBirthDate.Text = row.Cells["birthdate"]?.Value?.ToString() ?? "";
+                    pictureBox1.Image = row.Cells["image"]?.Value as Image;
+                    if (pictureBox1.Image == null)
+                    {
+                        pictureBox1.Image = null;
+                    }
                 }
             }
             catch (Exception ex)
@@ -123,6 +196,8 @@ namespace MobileShopManagementSystem
                         user.BirthDate = dt_userBirthDate.Value;
                         user.Role = cb_userRole.Text;
                         user.Gender = cb_userGender.Text;
+                        user.Salary = Convert.ToDouble(txt_userSalary.TextButton);
+                        user.Email = txt_userEmail.TextButton;
                         db.SubmitChanges();
                         LoadData();
                         clearData();
@@ -189,7 +264,57 @@ namespace MobileShopManagementSystem
 
                     if (search.Count > 0)
                     {
-                        dgv_user.DataSource = search;
+                        // Tạo DataTable để tùy chỉnh dữ liệu
+                        DataTable dt = new DataTable();
+                        dt.Columns.Add("UserId", typeof(string));
+                        dt.Columns.Add("name", typeof(string));
+                        dt.Columns.Add("birthdate", typeof(DateTime));
+                        dt.Columns.Add("datecreated", typeof(DateTime));
+                        dt.Columns.Add("address", typeof(string));
+                        dt.Columns.Add("phonenumber", typeof(string));
+                        dt.Columns.Add("gender", typeof(string));
+                        dt.Columns.Add("role", typeof(string));
+                        dt.Columns.Add("status", typeof(string));
+                        dt.Columns.Add("image", typeof(Image)); // Cột để lưu hình ảnh
+                        dt.Columns.Add("username", typeof(string));
+                        dt.Columns.Add("password", typeof(string));
+                        dt.Columns.Add("salary", typeof(string));
+                        dt.Columns.Add("email", typeof(string));
+
+                        foreach (var user in search)
+                        {
+                            DataRow row = dt.NewRow();
+                            row["UserId"] = user.UserID;
+                            row["name"] = user.Name;
+                            row["birthdate"] = user.BirthDate ?? DateTime.Now;
+                            row["datecreated"] = user.DateCreated ?? DateTime.Now;
+                            row["address"] = user.Address;
+                            row["phonenumber"] = user.PhoneNumber;
+                            row["gender"] = user.Gender;
+                            row["role"] = user.Role;
+                            row["status"] = user.Status;
+                            row["username"] = user.Username;
+                            row["password"] = user.Password;
+                            row["salary"] = user.Salary;
+                            row["email"] = user.Email;
+
+                            // Chuyển đổi byte[] thành Image
+                            if (user.Image != null && user.Image.Length > 0)
+                            {
+                                row["image"] = ByteArrayToImage(user.Image.ToArray());
+                            }
+                            else
+                            {
+                                row["image"] = null; // Hoặc một hình ảnh mặc định
+                            }
+
+                            dt.Rows.Add(row);
+
+                            // Gán DataTable vào DataGridView
+                            dgv_user.DataSource = dt;
+                        }
+
+                        dgv_user.DataSource = dt;
                         dgv_user.Refresh();
                     }
                     else

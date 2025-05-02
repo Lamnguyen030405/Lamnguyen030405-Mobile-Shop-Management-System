@@ -61,17 +61,24 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cb_userRole = new ReaLTaiizor.Controls.MetroComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_userEmail = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txt_userSalary = new ReaLTaiizor.Controls.CyberTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datecreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.image = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image = new System.Windows.Forms.DataGridViewImageColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datecreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artanPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).BeginInit();
             this.artanPanel2.SuspendLayout();
@@ -126,7 +133,7 @@
             this.cb_search.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.cb_search.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cb_search.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cb_search.FormattingEnabled = true;
             this.cb_search.IsDerivedStyle = true;
             this.cb_search.ItemHeight = 20;
@@ -183,14 +190,17 @@
             this.id,
             this.name,
             this.birthdate,
-            this.datecreated,
+            this.gender,
             this.address,
             this.phonenumber,
+            this.salary,
+            this.email,
             this.role,
             this.status,
             this.image,
             this.username,
-            this.password});
+            this.password,
+            this.datecreated});
             this.dgv_user.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_user.EnableHeadersVisualStyles = false;
             this.dgv_user.Location = new System.Drawing.Point(0, 0);
@@ -256,7 +266,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(223, 96);
+            this.label5.Location = new System.Drawing.Point(224, 61);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 28);
             this.label5.TabIndex = 43;
@@ -268,7 +278,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(223, 32);
+            this.label10.Location = new System.Drawing.Point(224, 17);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 28);
             this.label10.TabIndex = 42;
@@ -287,7 +297,7 @@
             this.btn_userClear.Image = null;
             this.btn_userClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_userClear.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_userClear.Location = new System.Drawing.Point(747, 261);
+            this.btn_userClear.Location = new System.Drawing.Point(742, 271);
             this.btn_userClear.Name = "btn_userClear";
             this.btn_userClear.PressedBorderColor = System.Drawing.Color.White;
             this.btn_userClear.PressedColor = System.Drawing.Color.White;
@@ -310,7 +320,7 @@
             this.btn_userUpdate.Image = null;
             this.btn_userUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_userUpdate.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_userUpdate.Location = new System.Drawing.Point(619, 260);
+            this.btn_userUpdate.Location = new System.Drawing.Point(614, 271);
             this.btn_userUpdate.Name = "btn_userUpdate";
             this.btn_userUpdate.PressedBorderColor = System.Drawing.Color.White;
             this.btn_userUpdate.PressedColor = System.Drawing.Color.White;
@@ -333,7 +343,7 @@
             this.btn_userDelete.Image = null;
             this.btn_userDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_userDelete.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_userDelete.Location = new System.Drawing.Point(491, 261);
+            this.btn_userDelete.Location = new System.Drawing.Point(486, 271);
             this.btn_userDelete.Name = "btn_userDelete";
             this.btn_userDelete.PressedBorderColor = System.Drawing.Color.White;
             this.btn_userDelete.PressedColor = System.Drawing.Color.White;
@@ -405,7 +415,7 @@
             this.txt_name.ForeColor = System.Drawing.Color.Black;
             this.txt_name.Lighting = false;
             this.txt_name.LinearGradientPen = true;
-            this.txt_name.Location = new System.Drawing.Point(390, 92);
+            this.txt_name.Location = new System.Drawing.Point(391, 58);
             this.txt_name.Name = "txt_name";
             this.txt_name.PenWidth = 15;
             this.txt_name.RGB = false;
@@ -436,7 +446,7 @@
             this.txt_userID.ForeColor = System.Drawing.Color.Black;
             this.txt_userID.Lighting = false;
             this.txt_userID.LinearGradientPen = true;
-            this.txt_userID.Location = new System.Drawing.Point(390, 28);
+            this.txt_userID.Location = new System.Drawing.Point(391, 13);
             this.txt_userID.Name = "txt_userID";
             this.txt_userID.PenWidth = 15;
             this.txt_userID.RGB = false;
@@ -469,7 +479,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.artanPanel1.BackColor = System.Drawing.Color.White;
             this.artanPanel1.BorderRadius = 30;
+            this.artanPanel1.Controls.Add(this.label7);
+            this.artanPanel1.Controls.Add(this.txt_userEmail);
+            this.artanPanel1.Controls.Add(this.label8);
             this.artanPanel1.Controls.Add(this.cb_userStatus);
+            this.artanPanel1.Controls.Add(this.txt_userSalary);
             this.artanPanel1.Controls.Add(this.label6);
             this.artanPanel1.Controls.Add(this.label2);
             this.artanPanel1.Controls.Add(this.dt_userBirthDate);
@@ -503,7 +517,6 @@
             // cb_userStatus
             // 
             this.cb_userStatus.AllowDrop = true;
-            this.cb_userStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cb_userStatus.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.cb_userStatus.BackColor = System.Drawing.Color.Transparent;
             this.cb_userStatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -521,7 +534,7 @@
             this.cb_userStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cb_userStatus.Location = new System.Drawing.Point(852, 204);
+            this.cb_userStatus.Location = new System.Drawing.Point(853, 210);
             this.cb_userStatus.Name = "cb_userStatus";
             this.cb_userStatus.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cb_userStatus.SelectedItemForeColor = System.Drawing.Color.White;
@@ -538,7 +551,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(693, 205);
+            this.label6.Location = new System.Drawing.Point(694, 211);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 28);
             this.label6.TabIndex = 54;
@@ -550,7 +563,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(223, 158);
+            this.label2.Location = new System.Drawing.Point(224, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 28);
             this.label2.TabIndex = 51;
@@ -561,7 +574,7 @@
             this.dt_userBirthDate.CustomFormat = "yyyy-MM-dd";
             this.dt_userBirthDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dt_userBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt_userBirthDate.Location = new System.Drawing.Point(390, 159);
+            this.dt_userBirthDate.Location = new System.Drawing.Point(391, 164);
             this.dt_userBirthDate.Name = "dt_userBirthDate";
             this.dt_userBirthDate.Size = new System.Drawing.Size(136, 30);
             this.dt_userBirthDate.TabIndex = 50;
@@ -569,7 +582,6 @@
             // cb_userGender
             // 
             this.cb_userGender.AllowDrop = true;
-            this.cb_userGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cb_userGender.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.cb_userGender.BackColor = System.Drawing.Color.Transparent;
             this.cb_userGender.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -589,7 +601,7 @@
             "Female",
             "Prefer not to say",
             "Other"});
-            this.cb_userGender.Location = new System.Drawing.Point(390, 206);
+            this.cb_userGender.Location = new System.Drawing.Point(391, 211);
             this.cb_userGender.Name = "cb_userGender";
             this.cb_userGender.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cb_userGender.SelectedItemForeColor = System.Drawing.Color.White;
@@ -606,7 +618,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(223, 207);
+            this.label1.Location = new System.Drawing.Point(224, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 28);
             this.label1.TabIndex = 49;
@@ -637,7 +649,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(693, 32);
+            this.label4.Location = new System.Drawing.Point(694, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 28);
             this.label4.TabIndex = 45;
@@ -661,7 +673,7 @@
             this.txt_userPN.ForeColor = System.Drawing.Color.Black;
             this.txt_userPN.Lighting = false;
             this.txt_userPN.LinearGradientPen = true;
-            this.txt_userPN.Location = new System.Drawing.Point(852, 92);
+            this.txt_userPN.Location = new System.Drawing.Point(853, 13);
             this.txt_userPN.Name = "txt_userPN";
             this.txt_userPN.PenWidth = 15;
             this.txt_userPN.RGB = false;
@@ -693,7 +705,7 @@
             this.txt_userAddress.ForeColor = System.Drawing.Color.Black;
             this.txt_userAddress.Lighting = false;
             this.txt_userAddress.LinearGradientPen = true;
-            this.txt_userAddress.Location = new System.Drawing.Point(852, 28);
+            this.txt_userAddress.Location = new System.Drawing.Point(853, 61);
             this.txt_userAddress.Name = "txt_userAddress";
             this.txt_userAddress.PenWidth = 15;
             this.txt_userAddress.RGB = false;
@@ -713,7 +725,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(693, 96);
+            this.label11.Location = new System.Drawing.Point(694, 17);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(153, 28);
             this.label11.TabIndex = 8;
@@ -722,7 +734,6 @@
             // cb_userRole
             // 
             this.cb_userRole.AllowDrop = true;
-            this.cb_userRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cb_userRole.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.cb_userRole.BackColor = System.Drawing.Color.Transparent;
             this.cb_userRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -740,7 +751,7 @@
             this.cb_userRole.Items.AddRange(new object[] {
             "Admin",
             "Staff"});
-            this.cb_userRole.Location = new System.Drawing.Point(852, 157);
+            this.cb_userRole.Location = new System.Drawing.Point(853, 163);
             this.cb_userRole.Name = "cb_userRole";
             this.cb_userRole.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cb_userRole.SelectedItemForeColor = System.Drawing.Color.White;
@@ -757,11 +768,97 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(693, 158);
+            this.label3.Location = new System.Drawing.Point(694, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 28);
             this.label3.TabIndex = 52;
             this.label3.Text = "Role :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(694, 113);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 28);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "Salary :";
+            // 
+            // txt_userEmail
+            // 
+            this.txt_userEmail.Alpha = 20;
+            this.txt_userEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txt_userEmail.Background_WidthPen = 5F;
+            this.txt_userEmail.BackgroundPen = true;
+            this.txt_userEmail.ColorBackground = System.Drawing.Color.White;
+            this.txt_userEmail.ColorBackground_Pen = System.Drawing.Color.Cyan;
+            this.txt_userEmail.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txt_userEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_userEmail.ForeColor = System.Drawing.Color.Black;
+            this.txt_userEmail.Lighting = false;
+            this.txt_userEmail.LinearGradientPen = true;
+            this.txt_userEmail.Location = new System.Drawing.Point(391, 109);
+            this.txt_userEmail.Name = "txt_userEmail";
+            this.txt_userEmail.PenWidth = 15;
+            this.txt_userEmail.RGB = false;
+            this.txt_userEmail.Rounding = true;
+            this.txt_userEmail.RoundingInt = 30;
+            this.txt_userEmail.Size = new System.Drawing.Size(260, 42);
+            this.txt_userEmail.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txt_userEmail.TabIndex = 58;
+            this.txt_userEmail.Tag = "Cyber";
+            this.txt_userEmail.TextButton = "";
+            this.txt_userEmail.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_userEmail.Timer_RGB = 300;
+            // 
+            // txt_userSalary
+            // 
+            this.txt_userSalary.Alpha = 20;
+            this.txt_userSalary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_userSalary.BackColor = System.Drawing.Color.Transparent;
+            this.txt_userSalary.Background_WidthPen = 5F;
+            this.txt_userSalary.BackgroundPen = true;
+            this.txt_userSalary.ColorBackground = System.Drawing.Color.White;
+            this.txt_userSalary.ColorBackground_Pen = System.Drawing.Color.Cyan;
+            this.txt_userSalary.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txt_userSalary.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_userSalary.ForeColor = System.Drawing.Color.Black;
+            this.txt_userSalary.Lighting = false;
+            this.txt_userSalary.LinearGradientPen = true;
+            this.txt_userSalary.Location = new System.Drawing.Point(853, 109);
+            this.txt_userSalary.Name = "txt_userSalary";
+            this.txt_userSalary.PenWidth = 15;
+            this.txt_userSalary.RGB = false;
+            this.txt_userSalary.Rounding = true;
+            this.txt_userSalary.RoundingInt = 30;
+            this.txt_userSalary.Size = new System.Drawing.Size(266, 42);
+            this.txt_userSalary.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txt_userSalary.TabIndex = 57;
+            this.txt_userSalary.Tag = "Cyber";
+            this.txt_userSalary.TextButton = "";
+            this.txt_userSalary.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_userSalary.Timer_RGB = 300;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(226, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 28);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "Email :";
             // 
             // id
             // 
@@ -787,13 +884,13 @@
             this.birthdate.Name = "birthdate";
             this.birthdate.ReadOnly = true;
             // 
-            // datecreated
+            // gender
             // 
-            this.datecreated.DataPropertyName = "DateCreated";
-            this.datecreated.HeaderText = "Date Created";
-            this.datecreated.MinimumWidth = 6;
-            this.datecreated.Name = "datecreated";
-            this.datecreated.ReadOnly = true;
+            this.gender.DataPropertyName = "Gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.MinimumWidth = 6;
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
             // 
             // address
             // 
@@ -810,6 +907,22 @@
             this.phonenumber.MinimumWidth = 6;
             this.phonenumber.Name = "phonenumber";
             this.phonenumber.ReadOnly = true;
+            // 
+            // salary
+            // 
+            this.salary.DataPropertyName = "Salary";
+            this.salary.HeaderText = "Salary";
+            this.salary.MinimumWidth = 6;
+            this.salary.Name = "salary";
+            this.salary.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
             // role
             // 
@@ -831,9 +944,12 @@
             // 
             this.image.DataPropertyName = "Image";
             this.image.HeaderText = "Image";
+            this.image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.image.MinimumWidth = 6;
             this.image.Name = "image";
             this.image.ReadOnly = true;
+            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // username
             // 
@@ -852,6 +968,14 @@
             this.password.Name = "password";
             this.password.ReadOnly = true;
             this.password.Visible = false;
+            // 
+            // datecreated
+            // 
+            this.datecreated.DataPropertyName = "DateCreated";
+            this.datecreated.HeaderText = "Date Created";
+            this.datecreated.MinimumWidth = 6;
+            this.datecreated.Name = "datecreated";
+            this.datecreated.ReadOnly = true;
             // 
             // UserForm
             // 
@@ -912,16 +1036,23 @@
         private System.Windows.Forms.Label label11;
         private ReaLTaiizor.Controls.MetroComboBox cb_userRole;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private ReaLTaiizor.Controls.CyberTextBox txt_userEmail;
+        private System.Windows.Forms.Label label8;
+        private ReaLTaiizor.Controls.CyberTextBox txt_userSalary;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datecreated;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn phonenumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salary;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn image;
+        private System.Windows.Forms.DataGridViewImageColumn image;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datecreated;
     }
 }

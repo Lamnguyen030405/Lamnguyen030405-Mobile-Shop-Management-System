@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MobileShopManagementSystem.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,21 +25,142 @@ namespace MobileShopManagementSystem
         UserForm userForm;
         SettingForm settingForm;
 
+        private bool isProfileComplete = false;
+
         public MainForm()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
+            // Ẩn tất cả các nút chức năng ban đầu
+            DisableAllButtons();
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
+        public void refreshData()
         {
-            using(var db = new MobileShopManagementDataContext())
+            using (var db = new MobileShopManagementDataContext())
+            {
+                var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
+                lbl_userName.Text = user.Name;
+                lbl_role.Text = user.Role;
+                if (user.Image != null && user.Image.Length > 0)
+                {
+                    pictureBox1.Image = ImageHelper.ByteArrayToImage(user.Image.ToArray());
+                }
+            }
+        }
+        public void MainForm_Load(object sender, EventArgs e)
+        {
+            using (var db = new MobileShopManagementDataContext())
             {
                 var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
                 if (user != null)
                 {
-                    lbl_userName.Text = user.Name;
-                    lbl_role.Text = user.Role;
+                    //if (user.Status == "Inactive")
+                    //{
+                    //    MessageBox.Show("Your account is inactive. Please contact the administrator.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    Application.Exit();
+                    //}
+                    if (string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Name) ||
+                        string.IsNullOrEmpty(user.Address) || string.IsNullOrEmpty(user.PhoneNumber))
+                    {
+                        if (MessageBox.Show("Please complete your profile information", "Information",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            OpenSettingForm();
+                        }
+                        else
+                        {
+                            Application.Exit();
+                        }
+                    }
+                    else
+                    {
+                        isProfileComplete = true;
+                        EnableAllButtons();
+                        lbl_userName.Text = user.Name;
+                        lbl_role.Text = user.Role;
+                        if (user.Image != null && user.Image.Length > 0)
+                        {
+                            pictureBox1.Image = ImageHelper.ByteArrayToImage(user.Image.ToArray());
+                        }
+                        if (user.Role != "Admin")
+                        {
+                            btn_user.Enabled = false;
+                            btn_dashboard.Enabled = false;
+                            btn_categories.Enabled = false;
+                            btn_customers.Enabled = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void OpenSettingForm()
+        {
+            if (settingForm == null || settingForm.IsDisposed)
+            {
+                settingForm = new SettingForm();
+                settingForm.FormClosed += SettingForm_FormClosed;
+                settingForm.MdiParent = this;
+                settingForm.Dock = DockStyle.Fill;
+
+                settingForm.SuspendLayout();
+                EventHandler loadHandler = null;
+                loadHandler = (s, ev) =>
+                {
+                    settingForm.ResumeLayout();
+                    settingForm.refreshData();
+                    settingForm.Load -= loadHandler;
+                };
+                settingForm.Load += loadHandler;
+
+                settingForm.Show();
+            }
+            else
+            {
+                settingForm.SuspendLayout();
+                settingForm.Show();
+                settingForm.BringToFront();
+                settingForm.refreshData();
+                settingForm.ResumeLayout();
+            }
+            this.SuspendLayout();
+            CloseAllMdiChildren();
+            this.ResumeLayout();
+        }
+
+        private void DisableAllButtons()
+        {
+            btn_shop.Enabled = false;
+            btn_dashboard.Enabled = false;
+            btn_bill.Enabled = false;
+            btn_categories.Enabled = false;
+            btn_inventory.Enabled = false;
+            btn_customers.Enabled = false;
+            btn_user.Enabled = false;
+        }
+
+        private void EnableAllButtons()
+        {
+            btn_shop.Enabled = true;
+            btn_dashboard.Enabled = true;
+            btn_bill.Enabled = true;
+            btn_categories.Enabled = true;
+            btn_inventory.Enabled = true;
+            btn_customers.Enabled = true;
+            btn_user.Enabled = true;
+            btn_setting.Enabled = true;
+            btn_logout.Enabled = true;
+
+            // Ẩn các nút nếu không phải Admin
+            using (var db = new MobileShopManagementDataContext())
+            {
+                var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
+                if (user != null && user.Role != "Admin")
+                {
+                    btn_user.Enabled = false;
+                    btn_dashboard.Enabled = false;
+                    btn_categories.Enabled = false;
+                    btn_customers.Enabled = false;
                 }
             }
         }
@@ -69,37 +192,10 @@ namespace MobileShopManagementSystem
             }
         }
 
-        //bool slidebarExpand = true;
-        //private void slidebarTransition_Tick(object sender, EventArgs e)
-        //{
-        //    if (slidebarExpand)
-        //    {
-        //        slidebar.Width -= 5;
-        //        if (slidebar.Width <= 62)
-        //        {
-        //            slidebar.Width = 62;
-        //            slidebarTransition.Stop();
-        //            slidebarExpand = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        slidebar.Width += 5;
-        //        if (slidebar.Width >= 249)
-        //        {
-        //            slidebar.Width = 249;
-        //            slidebarTransition.Stop();
-        //            slidebarExpand = true;
-        //        }
-        //    }
-        //}
-        //private void btnHam_Click(object sender, EventArgs e)
-        //{
-        //    slidebarTransition.Start();
-        //}
-
         private void btn_shop_Click(object sender, EventArgs e)
         {
+            if (!isProfileComplete) return; // Không cho phép mở nếu chưa hoàn thành profile
+
             this.SuspendLayout();
             CloseAllMdiChildren();
 
@@ -114,12 +210,11 @@ namespace MobileShopManagementSystem
                 shopForm.Dock = DockStyle.Fill;
 
                 shopForm.SuspendLayout();
-
                 EventHandler loadHandler = null;
                 loadHandler = (s, ev) =>
                 {
                     shopForm.ResumeLayout();
-                    shopForm.refreshData(); 
+                    shopForm.refreshData();
                     shopForm.Load -= loadHandler;
                 };
                 shopForm.Load += loadHandler;
@@ -131,7 +226,7 @@ namespace MobileShopManagementSystem
                 shopForm.SuspendLayout();
                 shopForm.Show();
                 shopForm.BringToFront();
-                shopForm.refreshData(); 
+                shopForm.refreshData();
                 shopForm.ResumeLayout();
             }
 
@@ -159,6 +254,8 @@ namespace MobileShopManagementSystem
 
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
+            if (!isProfileComplete) return; // Không cho phép mở nếu chưa hoàn thành profile
+
             this.SuspendLayout();
             CloseAllMdiChildren();
 
@@ -200,6 +297,8 @@ namespace MobileShopManagementSystem
 
         private void btn_bill_Click(object sender, EventArgs e)
         {
+            if (!isProfileComplete) return; // Không cho phép mở nếu chưa hoàn thành profile
+
             this.SuspendLayout();
             CloseAllMdiChildren();
 
@@ -241,6 +340,8 @@ namespace MobileShopManagementSystem
 
         private void btn_categories_Click(object sender, EventArgs e)
         {
+            if (!isProfileComplete) return; // Không cho phép mở nếu chưa hoàn thành profile
+
             this.SuspendLayout();
             CloseAllMdiChildren();
 
@@ -282,6 +383,8 @@ namespace MobileShopManagementSystem
 
         private void btn_inventory_Click(object sender, EventArgs e)
         {
+            if (!isProfileComplete) return; // Không cho phép mở nếu chưa hoàn thành profile
+
             this.SuspendLayout();
             CloseAllMdiChildren();
 
@@ -323,6 +426,8 @@ namespace MobileShopManagementSystem
 
         private void btn_customers_Click(object sender, EventArgs e)
         {
+            if (!isProfileComplete) return; // Không cho phép mở nếu chưa hoàn thành profile
+
             this.SuspendLayout();
             CloseAllMdiChildren();
 
@@ -361,8 +466,11 @@ namespace MobileShopManagementSystem
         {
             customersForm?.Hide();
         }
+
         private void btn_user_Click(object sender, EventArgs e)
         {
+            if (!isProfileComplete) return; // Không cho phép mở nếu chưa hoàn thành profile
+
             this.SuspendLayout();
             CloseAllMdiChildren();
 
@@ -396,12 +504,15 @@ namespace MobileShopManagementSystem
 
             this.ResumeLayout();
         }
+
         private void UserForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             userForm?.Hide();
         }
+
         private void btn_setting_Click(object sender, EventArgs e)
         {
+
             this.SuspendLayout();
             CloseAllMdiChildren();
 
@@ -435,13 +546,39 @@ namespace MobileShopManagementSystem
 
             this.ResumeLayout();
         }
+
         private void SettingForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             settingForm?.Hide();
+            // Kiểm tra lại thông tin cá nhân sau khi đóng SettingForm
+            using (var db = new MobileShopManagementDataContext())
+            {
+                var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
+                if (user != null && !string.IsNullOrEmpty(user.Email) && !string.IsNullOrEmpty(user.Name) &&
+                    !string.IsNullOrEmpty(user.Address) && !string.IsNullOrEmpty(user.PhoneNumber))
+                {
+                    isProfileComplete = true;
+                    EnableAllButtons();
+                    lbl_userName.Text = user.Name;
+                    lbl_role.Text = user.Role;
+                    if (user.Image != null && user.Image.Length > 0)
+                    {
+                        pictureBox1.Image = ImageHelper.ByteArrayToImage(user.Image.ToArray());
+                    }
+                    if (user.Role != "Admin")
+                    {
+                        btn_user.Visible = false;
+                        btn_dashboard.Visible = false;
+                        btn_categories.Visible = false;
+                    }
+                }
+            }
         }
+
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to logout?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to logout?", "Confirmation Message",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
                 Form1 loginForm = new Form1();
@@ -486,6 +623,7 @@ namespace MobileShopManagementSystem
                 if (child.Visible)
                     child.SuspendLayout();
             }
+            refreshData();
         }
 
         private void nightControlBox1_Click(object sender, EventArgs e)
@@ -507,6 +645,5 @@ namespace MobileShopManagementSystem
             }
             slidebar.ResumeLayout();
         }
-
     }
 }

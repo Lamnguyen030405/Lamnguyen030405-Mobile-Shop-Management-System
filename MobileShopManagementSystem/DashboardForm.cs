@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using MobileShopManagementSystem.Utilities; // Thêm namespace để sử dụng ImageHelper
 
 namespace MobileShopManagementSystem
 {
@@ -16,7 +16,6 @@ namespace MobileShopManagementSystem
             this.DoubleBuffered = true;
         }
 
-        //MobileShopManagementDataContext db = new MobileShopManagementDataContext();
         private void LoadData()
         {
             try
@@ -41,8 +40,8 @@ namespace MobileShopManagementSystem
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
+
         private void LoadDataToChart()
         {
             try
@@ -68,9 +67,7 @@ namespace MobileShopManagementSystem
 
                     chartRevenue.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM/yyyy";
                     chartRevenue.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
-
                     chartRevenue.ChartAreas[0].AxisX.Interval = 1;
-
                     chartRevenue.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
 
                     var series = new System.Windows.Forms.DataVisualization.Charting.Series("Revenue")
@@ -91,6 +88,7 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void LoadTop3Products()
         {
             using (var db = new MobileShopManagementDataContext())
@@ -126,24 +124,24 @@ namespace MobileShopManagementSystem
 
                 try
                 {
-                    pic_product1.Image = !string.IsNullOrEmpty(product1?.Image)
-                        ? Image.FromFile(PathHelper.GetImagePath(product1.Image))
+                    pic_product1.Image = product1?.Image != null && product1.Image.Length > 0
+                        ? ImageHelper.ByteArrayToImage(product1.Image.ToArray())
                         : null;
                 }
                 catch { pic_product1.Image = null; }
 
                 try
                 {
-                    pic_product2.Image = !string.IsNullOrEmpty(product2?.Image)
-                        ? Image.FromFile(PathHelper.GetImagePath(product2.Image))
+                    pic_product2.Image = product2?.Image != null && product2.Image.Length > 0
+                        ? ImageHelper.ByteArrayToImage(product2.Image.ToArray())
                         : null;
                 }
                 catch { pic_product2.Image = null; }
 
                 try
                 {
-                    pic_product3.Image = !string.IsNullOrEmpty(product3?.Image)
-                        ? Image.FromFile(PathHelper.GetImagePath(product3.Image))
+                    pic_product3.Image = product3?.Image != null && product3.Image.Length > 0
+                        ? ImageHelper.ByteArrayToImage(product3.Image.ToArray())
                         : null;
                 }
                 catch { pic_product3.Image = null; }
@@ -153,10 +151,12 @@ namespace MobileShopManagementSystem
                 lbl_totalSold3.Text = Top3Products.ElementAtOrDefault(2)?.TotalSold.ToString() ?? "N/A";
             }
         }
+
         public void refreshData()
         {
             LoadData();
         }
+
         private void DashboardForm_Load(object sender, EventArgs e)
         {
             LoadData();

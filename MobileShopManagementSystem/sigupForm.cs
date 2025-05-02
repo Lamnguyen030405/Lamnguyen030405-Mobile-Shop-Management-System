@@ -74,7 +74,7 @@ namespace MobileShopManagementSystem
                         UserID = getUserID(),
                         Username = txt_signupUsername.Text.Trim(),
                         Password = txt_signupPassword.Text.Trim(),
-                        Status = "Active",
+                        Status = "Inactive",
                         DateCreated = DateTime.Now
                     };
                     dataContext.Users.InsertOnSubmit(newUser);

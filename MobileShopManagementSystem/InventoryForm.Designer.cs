@@ -46,7 +46,7 @@
             this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_dateinsert = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_dateupdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_image = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_image = new System.Windows.Forms.DataGridViewImageColumn();
             this.col_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_fkcategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
@@ -74,7 +74,6 @@
             this.txt_inventoryProductID = new ReaLTaiizor.Controls.CyberTextBox();
             this.cb_inventoryCategory = new ReaLTaiizor.Controls.MetroComboBox();
             this.cb_inventoryStatus = new ReaLTaiizor.Controls.MetroComboBox();
-            this.txt_inventoryDescription = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             this.artanPanel2 = new ArtanComponent.ArtanPanel();
@@ -82,6 +81,7 @@
             this.cb_search = new ReaLTaiizor.Controls.MetroComboBox();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
             this.label7 = new System.Windows.Forms.Label();
+            this.txt_inventoryDescription = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -152,7 +152,7 @@
             // 
             this.dgv_products.AllowUserToAddRows = false;
             this.dgv_products.AllowUserToDeleteRows = false;
-            this.dgv_products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_products.BackgroundColor = System.Drawing.Color.White;
             this.dgv_products.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_products.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -208,6 +208,7 @@
             this.col_productid.MinimumWidth = 6;
             this.col_productid.Name = "col_productid";
             this.col_productid.ReadOnly = true;
+            this.col_productid.Width = 61;
             // 
             // col_name
             // 
@@ -216,6 +217,7 @@
             this.col_name.MinimumWidth = 6;
             this.col_name.Name = "col_name";
             this.col_name.ReadOnly = true;
+            this.col_name.Width = 96;
             // 
             // col_categoryid
             // 
@@ -224,6 +226,7 @@
             this.col_categoryid.MinimumWidth = 6;
             this.col_categoryid.Name = "col_categoryid";
             this.col_categoryid.ReadOnly = true;
+            this.col_categoryid.Width = 153;
             // 
             // col_category
             // 
@@ -232,6 +235,7 @@
             this.col_category.MinimumWidth = 6;
             this.col_category.Name = "col_category";
             this.col_category.ReadOnly = true;
+            this.col_category.Width = 126;
             // 
             // col_stock
             // 
@@ -240,6 +244,7 @@
             this.col_stock.MinimumWidth = 6;
             this.col_stock.Name = "col_stock";
             this.col_stock.ReadOnly = true;
+            this.col_stock.Width = 92;
             // 
             // col_importprice
             // 
@@ -248,6 +253,7 @@
             this.col_importprice.MinimumWidth = 6;
             this.col_importprice.Name = "col_importprice";
             this.col_importprice.ReadOnly = true;
+            this.col_importprice.Width = 158;
             // 
             // col_sellingprice
             // 
@@ -256,6 +262,7 @@
             this.col_sellingprice.MinimumWidth = 6;
             this.col_sellingprice.Name = "col_sellingprice";
             this.col_sellingprice.ReadOnly = true;
+            this.col_sellingprice.Width = 157;
             // 
             // col_discount
             // 
@@ -264,6 +271,7 @@
             this.col_discount.MinimumWidth = 6;
             this.col_discount.Name = "col_discount";
             this.col_discount.ReadOnly = true;
+            this.col_discount.Width = 124;
             // 
             // col_realprice
             // 
@@ -272,6 +280,7 @@
             this.col_realprice.MinimumWidth = 6;
             this.col_realprice.Name = "col_realprice";
             this.col_realprice.ReadOnly = true;
+            this.col_realprice.Width = 134;
             // 
             // col_status
             // 
@@ -280,6 +289,7 @@
             this.col_status.MinimumWidth = 6;
             this.col_status.Name = "col_status";
             this.col_status.ReadOnly = true;
+            this.col_status.Width = 99;
             // 
             // col_dateinsert
             // 
@@ -288,6 +298,7 @@
             this.col_dateinsert.MinimumWidth = 6;
             this.col_dateinsert.Name = "col_dateinsert";
             this.col_dateinsert.ReadOnly = true;
+            this.col_dateinsert.Width = 146;
             // 
             // col_dateupdate
             // 
@@ -296,14 +307,19 @@
             this.col_dateupdate.MinimumWidth = 6;
             this.col_dateupdate.Name = "col_dateupdate";
             this.col_dateupdate.ReadOnly = true;
+            this.col_dateupdate.Width = 159;
             // 
             // col_image
             // 
             this.col_image.DataPropertyName = "Image";
             this.col_image.HeaderText = "Image";
+            this.col_image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.col_image.MinimumWidth = 6;
             this.col_image.Name = "col_image";
             this.col_image.ReadOnly = true;
+            this.col_image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_image.Width = 98;
             // 
             // col_description
             // 
@@ -312,6 +328,7 @@
             this.col_description.MinimumWidth = 6;
             this.col_description.Name = "col_description";
             this.col_description.ReadOnly = true;
+            this.col_description.Width = 149;
             // 
             // col_fkcategory
             // 
@@ -321,6 +338,7 @@
             this.col_fkcategory.Name = "col_fkcategory";
             this.col_fkcategory.ReadOnly = true;
             this.col_fkcategory.Visible = false;
+            this.col_fkcategory.Width = 146;
             // 
             // label6
             // 
@@ -850,25 +868,6 @@
             this.cb_inventoryStatus.ThemeAuthor = "Taiizor";
             this.cb_inventoryStatus.ThemeName = "MetroLight";
             // 
-            // txt_inventoryDescription
-            // 
-            this.txt_inventoryDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_inventoryDescription.BackColor = System.Drawing.Color.Transparent;
-            this.txt_inventoryDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_inventoryDescription.EdgeColor = System.Drawing.Color.White;
-            this.txt_inventoryDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txt_inventoryDescription.ForeColor = System.Drawing.Color.Black;
-            this.txt_inventoryDescription.Location = new System.Drawing.Point(957, 56);
-            this.txt_inventoryDescription.MaxLength = 32767;
-            this.txt_inventoryDescription.Multiline = true;
-            this.txt_inventoryDescription.Name = "txt_inventoryDescription";
-            this.txt_inventoryDescription.ReadOnly = false;
-            this.txt_inventoryDescription.Size = new System.Drawing.Size(295, 257);
-            this.txt_inventoryDescription.TabIndex = 29;
-            this.txt_inventoryDescription.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_inventoryDescription.UseSystemPasswordChar = false;
-            // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1012,6 +1011,25 @@
             this.label7.TabIndex = 46;
             this.label7.Text = "All products :";
             // 
+            // txt_inventoryDescription
+            // 
+            this.txt_inventoryDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_inventoryDescription.BackColor = System.Drawing.Color.Transparent;
+            this.txt_inventoryDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_inventoryDescription.EdgeColor = System.Drawing.Color.White;
+            this.txt_inventoryDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_inventoryDescription.ForeColor = System.Drawing.Color.Black;
+            this.txt_inventoryDescription.Location = new System.Drawing.Point(957, 56);
+            this.txt_inventoryDescription.MaxLength = 32767;
+            this.txt_inventoryDescription.Multiline = true;
+            this.txt_inventoryDescription.Name = "txt_inventoryDescription";
+            this.txt_inventoryDescription.ReadOnly = false;
+            this.txt_inventoryDescription.Size = new System.Drawing.Size(295, 257);
+            this.txt_inventoryDescription.TabIndex = 29;
+            this.txt_inventoryDescription.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_inventoryDescription.UseSystemPasswordChar = false;
+            // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1086,7 +1104,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_status;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_dateinsert;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_dateupdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_image;
+        private System.Windows.Forms.DataGridViewImageColumn col_image;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_description;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_fkcategory;
     }

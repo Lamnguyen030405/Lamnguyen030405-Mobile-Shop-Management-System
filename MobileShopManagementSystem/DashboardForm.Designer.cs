@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_totalSold1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -75,7 +75,42 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dt_to = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.artanPanel9 = new ArtanComponent.ArtanPanel();
+            this.dungeonButtonLeft1 = new ReaLTaiizor.Controls.DungeonButtonLeft();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.artanPanel10 = new ArtanComponent.ArtanPanel();
+            this.dgv_categories = new System.Windows.Forms.DataGridView();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_date_insert = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.artanPanel12 = new ArtanComponent.ArtanPanel();
+            this.dungeonButtonLeft3 = new ReaLTaiizor.Controls.DungeonButtonLeft();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.label22 = new System.Windows.Forms.Label();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.artanPanel13 = new ArtanComponent.ArtanPanel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dungeonButtonLeft2 = new ReaLTaiizor.Controls.DungeonButtonLeft();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.artanPanel11 = new ArtanComponent.ArtanPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artanPanel4 = new ArtanComponent.ArtanPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_totalCustomer = new System.Windows.Forms.Label();
@@ -94,41 +129,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.artanPanel7 = new ArtanComponent.ArtanPanel();
-            this.artanPanel9 = new ArtanComponent.ArtanPanel();
-            this.dgv_categories = new System.Windows.Forms.DataGridView();
-            this.col_date_insert = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artanPanel10 = new ArtanComponent.ArtanPanel();
-            this.dungeonButtonLeft1 = new ReaLTaiizor.Controls.DungeonButtonLeft();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dungeonButtonLeft2 = new ReaLTaiizor.Controls.DungeonButtonLeft();
-            this.label19 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.artanPanel11 = new ArtanComponent.ArtanPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artanPanel12 = new ArtanComponent.ArtanPanel();
-            this.dungeonButtonLeft3 = new ReaLTaiizor.Controls.DungeonButtonLeft();
-            this.label21 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.label22 = new System.Windows.Forms.Label();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.artanPanel13 = new ArtanComponent.ArtanPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_product1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -142,7 +142,15 @@
             this.artanPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.artanPanel9.SuspendLayout();
+            this.artanPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.artanPanel12.SuspendLayout();
+            this.artanPanel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.artanPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.artanPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.artanPanel3.SuspendLayout();
@@ -153,14 +161,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.artanPanel7.SuspendLayout();
-            this.artanPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).BeginInit();
-            this.artanPanel10.SuspendLayout();
-            this.artanPanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.artanPanel12.SuspendLayout();
-            this.artanPanel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -567,23 +567,23 @@
             // 
             // chartRevenue
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartRevenue.ChartAreas.Add(chartArea4);
+            chartArea10.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea10);
             this.chartRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.chartRevenue.Legends.Add(legend4);
+            legend10.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend10);
             this.chartRevenue.Location = new System.Drawing.Point(0, 0);
             this.chartRevenue.Margin = new System.Windows.Forms.Padding(4);
             this.chartRevenue.Name = "chartRevenue";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartRevenue.Series.Add(series4);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chartRevenue.Series.Add(series10);
             this.chartRevenue.Size = new System.Drawing.Size(774, 390);
             this.chartRevenue.TabIndex = 6;
             this.chartRevenue.Text = "dsadsad";
-            title4.Name = "Title1";
-            this.chartRevenue.Titles.Add(title4);
+            title10.Name = "Title1";
+            this.chartRevenue.Titles.Add(title10);
             // 
             // label16
             // 
@@ -640,6 +640,183 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
+            // artanPanel9
+            // 
+            this.artanPanel9.BackColor = System.Drawing.Color.White;
+            this.artanPanel9.BorderRadius = 30;
+            this.artanPanel9.Controls.Add(this.dungeonButtonLeft1);
+            this.artanPanel9.Controls.Add(this.label17);
+            this.artanPanel9.Controls.Add(this.dateTimePicker1);
+            this.artanPanel9.Controls.Add(this.label18);
+            this.artanPanel9.Controls.Add(this.dateTimePicker2);
+            this.artanPanel9.Controls.Add(this.artanPanel10);
+            this.artanPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artanPanel9.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel9.GradientAngle = 45F;
+            this.artanPanel9.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel9.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel9.Location = new System.Drawing.Point(3, 3);
+            this.artanPanel9.Name = "artanPanel9";
+            this.artanPanel9.Padding = new System.Windows.Forms.Padding(10);
+            this.artanPanel9.Size = new System.Drawing.Size(801, 475);
+            this.artanPanel9.TabIndex = 0;
+            // 
+            // dungeonButtonLeft1
+            // 
+            this.dungeonButtonLeft1.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonButtonLeft1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.dungeonButtonLeft1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dungeonButtonLeft1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dungeonButtonLeft1.Image = null;
+            this.dungeonButtonLeft1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dungeonButtonLeft1.InactiveColorA = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.dungeonButtonLeft1.InactiveColorB = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
+            this.dungeonButtonLeft1.Location = new System.Drawing.Point(447, 26);
+            this.dungeonButtonLeft1.Name = "dungeonButtonLeft1";
+            this.dungeonButtonLeft1.PressedColorA = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.dungeonButtonLeft1.PressedColorB = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.dungeonButtonLeft1.PressedContourColorA = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
+            this.dungeonButtonLeft1.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
+            this.dungeonButtonLeft1.Size = new System.Drawing.Size(139, 30);
+            this.dungeonButtonLeft1.TabIndex = 38;
+            this.dungeonButtonLeft1.Text = "Search";
+            this.dungeonButtonLeft1.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(237, 23);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 28);
+            this.label17.TabIndex = 37;
+            this.label17.Text = "To :";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(97, 25);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(135, 27);
+            this.dateTimePicker1.TabIndex = 35;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(25, 22);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 28);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "From :";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(284, 26);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(134, 27);
+            this.dateTimePicker2.TabIndex = 36;
+            // 
+            // artanPanel10
+            // 
+            this.artanPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.artanPanel10.BackColor = System.Drawing.Color.White;
+            this.artanPanel10.BorderRadius = 60;
+            this.artanPanel10.Controls.Add(this.dgv_categories);
+            this.artanPanel10.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel10.GradientAngle = 90F;
+            this.artanPanel10.GradientBottomColor = System.Drawing.Color.White;
+            this.artanPanel10.GradientTopColor = System.Drawing.Color.White;
+            this.artanPanel10.Location = new System.Drawing.Point(13, 72);
+            this.artanPanel10.Name = "artanPanel10";
+            this.artanPanel10.Size = new System.Drawing.Size(775, 390);
+            this.artanPanel10.TabIndex = 33;
+            // 
+            // dgv_categories
+            // 
+            this.dgv_categories.AllowUserToAddRows = false;
+            this.dgv_categories.AllowUserToDeleteRows = false;
+            this.dgv_categories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_categories.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_categories.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_categories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle55.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_categories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            this.dgv_categories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_categories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_id,
+            this.col_category,
+            this.col_status,
+            this.col_date_insert});
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_categories.DefaultCellStyle = dataGridViewCellStyle56;
+            this.dgv_categories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_categories.EnableHeadersVisualStyles = false;
+            this.dgv_categories.GridColor = System.Drawing.Color.Silver;
+            this.dgv_categories.Location = new System.Drawing.Point(0, 0);
+            this.dgv_categories.Name = "dgv_categories";
+            this.dgv_categories.ReadOnly = true;
+            this.dgv_categories.RowHeadersVisible = false;
+            this.dgv_categories.RowHeadersWidth = 51;
+            this.dgv_categories.RowTemplate.Height = 24;
+            this.dgv_categories.Size = new System.Drawing.Size(775, 390);
+            this.dgv_categories.TabIndex = 8;
+            // 
+            // col_id
+            // 
+            this.col_id.DataPropertyName = "CategoryID";
+            this.col_id.HeaderText = "ID";
+            this.col_id.MinimumWidth = 6;
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            // 
+            // col_category
+            // 
+            this.col_category.DataPropertyName = "CategoryName";
+            this.col_category.HeaderText = "Name";
+            this.col_category.MinimumWidth = 6;
+            this.col_category.Name = "col_category";
+            this.col_category.ReadOnly = true;
+            // 
+            // col_status
+            // 
+            this.col_status.DataPropertyName = "Status";
+            this.col_status.HeaderText = "Status";
+            this.col_status.MinimumWidth = 6;
+            this.col_status.Name = "col_status";
+            this.col_status.ReadOnly = true;
+            // 
+            // col_date_insert
+            // 
+            this.col_date_insert.DataPropertyName = "DateInsert";
+            this.col_date_insert.HeaderText = "Date Insert";
+            this.col_date_insert.MinimumWidth = 6;
+            this.col_date_insert.Name = "col_date_insert";
+            this.col_date_insert.ReadOnly = true;
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
@@ -655,6 +832,339 @@
             this.tabPage3.Size = new System.Drawing.Size(807, 481);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
+            // 
+            // artanPanel12
+            // 
+            this.artanPanel12.BackColor = System.Drawing.Color.White;
+            this.artanPanel12.BorderRadius = 30;
+            this.artanPanel12.Controls.Add(this.dungeonButtonLeft3);
+            this.artanPanel12.Controls.Add(this.label21);
+            this.artanPanel12.Controls.Add(this.dateTimePicker5);
+            this.artanPanel12.Controls.Add(this.label22);
+            this.artanPanel12.Controls.Add(this.dateTimePicker6);
+            this.artanPanel12.Controls.Add(this.artanPanel13);
+            this.artanPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artanPanel12.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel12.GradientAngle = 45F;
+            this.artanPanel12.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel12.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel12.Location = new System.Drawing.Point(0, 0);
+            this.artanPanel12.Name = "artanPanel12";
+            this.artanPanel12.Padding = new System.Windows.Forms.Padding(10);
+            this.artanPanel12.Size = new System.Drawing.Size(807, 481);
+            this.artanPanel12.TabIndex = 45;
+            // 
+            // dungeonButtonLeft3
+            // 
+            this.dungeonButtonLeft3.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonButtonLeft3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.dungeonButtonLeft3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dungeonButtonLeft3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dungeonButtonLeft3.Image = null;
+            this.dungeonButtonLeft3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dungeonButtonLeft3.InactiveColorA = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.dungeonButtonLeft3.InactiveColorB = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
+            this.dungeonButtonLeft3.Location = new System.Drawing.Point(447, 26);
+            this.dungeonButtonLeft3.Name = "dungeonButtonLeft3";
+            this.dungeonButtonLeft3.PressedColorA = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.dungeonButtonLeft3.PressedColorB = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.dungeonButtonLeft3.PressedContourColorA = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
+            this.dungeonButtonLeft3.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
+            this.dungeonButtonLeft3.Size = new System.Drawing.Size(139, 30);
+            this.dungeonButtonLeft3.TabIndex = 38;
+            this.dungeonButtonLeft3.Text = "Search";
+            this.dungeonButtonLeft3.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(237, 23);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 28);
+            this.label21.TabIndex = 37;
+            this.label21.Text = "To :";
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker5.Location = new System.Drawing.Point(97, 25);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(135, 27);
+            this.dateTimePicker5.TabIndex = 35;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(25, 22);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(67, 28);
+            this.label22.TabIndex = 34;
+            this.label22.Text = "From :";
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker6.Location = new System.Drawing.Point(284, 26);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(134, 27);
+            this.dateTimePicker6.TabIndex = 36;
+            // 
+            // artanPanel13
+            // 
+            this.artanPanel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.artanPanel13.BackColor = System.Drawing.Color.White;
+            this.artanPanel13.BorderRadius = 60;
+            this.artanPanel13.Controls.Add(this.dataGridView2);
+            this.artanPanel13.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel13.GradientAngle = 90F;
+            this.artanPanel13.GradientBottomColor = System.Drawing.Color.White;
+            this.artanPanel13.GradientTopColor = System.Drawing.Color.White;
+            this.artanPanel13.Location = new System.Drawing.Point(13, 72);
+            this.artanPanel13.Name = "artanPanel13";
+            this.artanPanel13.Size = new System.Drawing.Size(781, 396);
+            this.artanPanel13.TabIndex = 33;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle58;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(781, 396);
+            this.dataGridView2.TabIndex = 8;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "CategoryID";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "CategoryName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "DateInsert";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Date Insert";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dungeonButtonLeft2
+            // 
+            this.dungeonButtonLeft2.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonButtonLeft2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.dungeonButtonLeft2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dungeonButtonLeft2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dungeonButtonLeft2.Image = null;
+            this.dungeonButtonLeft2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dungeonButtonLeft2.InactiveColorA = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.dungeonButtonLeft2.InactiveColorB = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
+            this.dungeonButtonLeft2.Location = new System.Drawing.Point(450, 24);
+            this.dungeonButtonLeft2.Name = "dungeonButtonLeft2";
+            this.dungeonButtonLeft2.PressedColorA = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.dungeonButtonLeft2.PressedColorB = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.dungeonButtonLeft2.PressedContourColorA = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
+            this.dungeonButtonLeft2.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
+            this.dungeonButtonLeft2.Size = new System.Drawing.Size(139, 30);
+            this.dungeonButtonLeft2.TabIndex = 44;
+            this.dungeonButtonLeft2.Text = "Search";
+            this.dungeonButtonLeft2.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(240, 21);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 28);
+            this.label19.TabIndex = 43;
+            this.label19.Text = "To :";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(100, 23);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(135, 27);
+            this.dateTimePicker3.TabIndex = 41;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(28, 20);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(67, 28);
+            this.label20.TabIndex = 40;
+            this.label20.Text = "From :";
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker4.Location = new System.Drawing.Point(287, 24);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(134, 27);
+            this.dateTimePicker4.TabIndex = 42;
+            // 
+            // artanPanel11
+            // 
+            this.artanPanel11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.artanPanel11.BackColor = System.Drawing.Color.White;
+            this.artanPanel11.BorderRadius = 60;
+            this.artanPanel11.Controls.Add(this.dataGridView1);
+            this.artanPanel11.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel11.GradientAngle = 90F;
+            this.artanPanel11.GradientBottomColor = System.Drawing.Color.White;
+            this.artanPanel11.GradientTopColor = System.Drawing.Color.White;
+            this.artanPanel11.Location = new System.Drawing.Point(16, 70);
+            this.artanPanel11.Name = "artanPanel11";
+            this.artanPanel11.Size = new System.Drawing.Size(775, 390);
+            this.artanPanel11.TabIndex = 39;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle59.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle60.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle60.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle60;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(775, 390);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CategoryID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CategoryName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DateInsert";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Date Insert";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // artanPanel4
             // 
@@ -915,516 +1425,6 @@
             this.artanPanel7.Size = new System.Drawing.Size(427, 513);
             this.artanPanel7.TabIndex = 35;
             // 
-            // artanPanel9
-            // 
-            this.artanPanel9.BackColor = System.Drawing.Color.White;
-            this.artanPanel9.BorderRadius = 30;
-            this.artanPanel9.Controls.Add(this.dungeonButtonLeft1);
-            this.artanPanel9.Controls.Add(this.label17);
-            this.artanPanel9.Controls.Add(this.dateTimePicker1);
-            this.artanPanel9.Controls.Add(this.label18);
-            this.artanPanel9.Controls.Add(this.dateTimePicker2);
-            this.artanPanel9.Controls.Add(this.artanPanel10);
-            this.artanPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.artanPanel9.ForeColor = System.Drawing.Color.Black;
-            this.artanPanel9.GradientAngle = 45F;
-            this.artanPanel9.GradientBottomColor = System.Drawing.Color.Fuchsia;
-            this.artanPanel9.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.artanPanel9.Location = new System.Drawing.Point(3, 3);
-            this.artanPanel9.Name = "artanPanel9";
-            this.artanPanel9.Padding = new System.Windows.Forms.Padding(10);
-            this.artanPanel9.Size = new System.Drawing.Size(801, 475);
-            this.artanPanel9.TabIndex = 0;
-            // 
-            // dgv_categories
-            // 
-            this.dgv_categories.AllowUserToAddRows = false;
-            this.dgv_categories.AllowUserToDeleteRows = false;
-            this.dgv_categories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_categories.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_categories.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_categories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_categories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgv_categories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_categories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_id,
-            this.col_category,
-            this.col_status,
-            this.col_date_insert});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_categories.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dgv_categories.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_categories.EnableHeadersVisualStyles = false;
-            this.dgv_categories.GridColor = System.Drawing.Color.Silver;
-            this.dgv_categories.Location = new System.Drawing.Point(0, 0);
-            this.dgv_categories.Name = "dgv_categories";
-            this.dgv_categories.ReadOnly = true;
-            this.dgv_categories.RowHeadersVisible = false;
-            this.dgv_categories.RowHeadersWidth = 51;
-            this.dgv_categories.RowTemplate.Height = 24;
-            this.dgv_categories.Size = new System.Drawing.Size(775, 390);
-            this.dgv_categories.TabIndex = 8;
-            // 
-            // col_date_insert
-            // 
-            this.col_date_insert.DataPropertyName = "DateInsert";
-            this.col_date_insert.HeaderText = "Date Insert";
-            this.col_date_insert.MinimumWidth = 6;
-            this.col_date_insert.Name = "col_date_insert";
-            this.col_date_insert.ReadOnly = true;
-            // 
-            // col_status
-            // 
-            this.col_status.DataPropertyName = "Status";
-            this.col_status.HeaderText = "Status";
-            this.col_status.MinimumWidth = 6;
-            this.col_status.Name = "col_status";
-            this.col_status.ReadOnly = true;
-            // 
-            // col_category
-            // 
-            this.col_category.DataPropertyName = "CategoryName";
-            this.col_category.HeaderText = "Name";
-            this.col_category.MinimumWidth = 6;
-            this.col_category.Name = "col_category";
-            this.col_category.ReadOnly = true;
-            // 
-            // col_id
-            // 
-            this.col_id.DataPropertyName = "CategoryID";
-            this.col_id.HeaderText = "ID";
-            this.col_id.MinimumWidth = 6;
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            // 
-            // artanPanel10
-            // 
-            this.artanPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.artanPanel10.BackColor = System.Drawing.Color.White;
-            this.artanPanel10.BorderRadius = 60;
-            this.artanPanel10.Controls.Add(this.dgv_categories);
-            this.artanPanel10.ForeColor = System.Drawing.Color.Black;
-            this.artanPanel10.GradientAngle = 90F;
-            this.artanPanel10.GradientBottomColor = System.Drawing.Color.White;
-            this.artanPanel10.GradientTopColor = System.Drawing.Color.White;
-            this.artanPanel10.Location = new System.Drawing.Point(13, 72);
-            this.artanPanel10.Name = "artanPanel10";
-            this.artanPanel10.Size = new System.Drawing.Size(775, 390);
-            this.artanPanel10.TabIndex = 33;
-            // 
-            // dungeonButtonLeft1
-            // 
-            this.dungeonButtonLeft1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonButtonLeft1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.dungeonButtonLeft1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dungeonButtonLeft1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dungeonButtonLeft1.Image = null;
-            this.dungeonButtonLeft1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dungeonButtonLeft1.InactiveColorA = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dungeonButtonLeft1.InactiveColorB = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.dungeonButtonLeft1.Location = new System.Drawing.Point(447, 26);
-            this.dungeonButtonLeft1.Name = "dungeonButtonLeft1";
-            this.dungeonButtonLeft1.PressedColorA = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.dungeonButtonLeft1.PressedColorB = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.dungeonButtonLeft1.PressedContourColorA = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft1.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft1.Size = new System.Drawing.Size(139, 30);
-            this.dungeonButtonLeft1.TabIndex = 38;
-            this.dungeonButtonLeft1.Text = "Search";
-            this.dungeonButtonLeft1.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(237, 23);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 28);
-            this.label17.TabIndex = 37;
-            this.label17.Text = "To :";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(97, 25);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(135, 27);
-            this.dateTimePicker1.TabIndex = 35;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(25, 22);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(67, 28);
-            this.label18.TabIndex = 34;
-            this.label18.Text = "From :";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(284, 26);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(134, 27);
-            this.dateTimePicker2.TabIndex = 36;
-            // 
-            // dungeonButtonLeft2
-            // 
-            this.dungeonButtonLeft2.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonButtonLeft2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.dungeonButtonLeft2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dungeonButtonLeft2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dungeonButtonLeft2.Image = null;
-            this.dungeonButtonLeft2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dungeonButtonLeft2.InactiveColorA = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dungeonButtonLeft2.InactiveColorB = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.dungeonButtonLeft2.Location = new System.Drawing.Point(450, 24);
-            this.dungeonButtonLeft2.Name = "dungeonButtonLeft2";
-            this.dungeonButtonLeft2.PressedColorA = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.dungeonButtonLeft2.PressedColorB = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.dungeonButtonLeft2.PressedContourColorA = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft2.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft2.Size = new System.Drawing.Size(139, 30);
-            this.dungeonButtonLeft2.TabIndex = 44;
-            this.dungeonButtonLeft2.Text = "Search";
-            this.dungeonButtonLeft2.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(240, 21);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 28);
-            this.label19.TabIndex = 43;
-            this.label19.Text = "To :";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(100, 23);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(135, 27);
-            this.dateTimePicker3.TabIndex = 41;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(28, 20);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 28);
-            this.label20.TabIndex = 40;
-            this.label20.Text = "From :";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(287, 24);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(134, 27);
-            this.dateTimePicker4.TabIndex = 42;
-            // 
-            // artanPanel11
-            // 
-            this.artanPanel11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.artanPanel11.BackColor = System.Drawing.Color.White;
-            this.artanPanel11.BorderRadius = 60;
-            this.artanPanel11.Controls.Add(this.dataGridView1);
-            this.artanPanel11.ForeColor = System.Drawing.Color.Black;
-            this.artanPanel11.GradientAngle = 90F;
-            this.artanPanel11.GradientBottomColor = System.Drawing.Color.White;
-            this.artanPanel11.GradientTopColor = System.Drawing.Color.White;
-            this.artanPanel11.Location = new System.Drawing.Point(16, 70);
-            this.artanPanel11.Name = "artanPanel11";
-            this.artanPanel11.Size = new System.Drawing.Size(775, 390);
-            this.artanPanel11.TabIndex = 39;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.Silver;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(775, 390);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CategoryID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CategoryName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DateInsert";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Date Insert";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // artanPanel12
-            // 
-            this.artanPanel12.BackColor = System.Drawing.Color.White;
-            this.artanPanel12.BorderRadius = 30;
-            this.artanPanel12.Controls.Add(this.dungeonButtonLeft3);
-            this.artanPanel12.Controls.Add(this.label21);
-            this.artanPanel12.Controls.Add(this.dateTimePicker5);
-            this.artanPanel12.Controls.Add(this.label22);
-            this.artanPanel12.Controls.Add(this.dateTimePicker6);
-            this.artanPanel12.Controls.Add(this.artanPanel13);
-            this.artanPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.artanPanel12.ForeColor = System.Drawing.Color.Black;
-            this.artanPanel12.GradientAngle = 45F;
-            this.artanPanel12.GradientBottomColor = System.Drawing.Color.Fuchsia;
-            this.artanPanel12.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.artanPanel12.Location = new System.Drawing.Point(0, 0);
-            this.artanPanel12.Name = "artanPanel12";
-            this.artanPanel12.Padding = new System.Windows.Forms.Padding(10);
-            this.artanPanel12.Size = new System.Drawing.Size(807, 481);
-            this.artanPanel12.TabIndex = 45;
-            // 
-            // dungeonButtonLeft3
-            // 
-            this.dungeonButtonLeft3.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonButtonLeft3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.dungeonButtonLeft3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dungeonButtonLeft3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dungeonButtonLeft3.Image = null;
-            this.dungeonButtonLeft3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dungeonButtonLeft3.InactiveColorA = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dungeonButtonLeft3.InactiveColorB = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.dungeonButtonLeft3.Location = new System.Drawing.Point(447, 26);
-            this.dungeonButtonLeft3.Name = "dungeonButtonLeft3";
-            this.dungeonButtonLeft3.PressedColorA = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.dungeonButtonLeft3.PressedColorB = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.dungeonButtonLeft3.PressedContourColorA = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft3.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft3.Size = new System.Drawing.Size(139, 30);
-            this.dungeonButtonLeft3.TabIndex = 38;
-            this.dungeonButtonLeft3.Text = "Search";
-            this.dungeonButtonLeft3.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(237, 23);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 28);
-            this.label21.TabIndex = 37;
-            this.label21.Text = "To :";
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker5.Location = new System.Drawing.Point(97, 25);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(135, 27);
-            this.dateTimePicker5.TabIndex = 35;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(25, 22);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(67, 28);
-            this.label22.TabIndex = 34;
-            this.label22.Text = "From :";
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker6.Location = new System.Drawing.Point(284, 26);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(134, 27);
-            this.dateTimePicker6.TabIndex = 36;
-            // 
-            // artanPanel13
-            // 
-            this.artanPanel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.artanPanel13.BackColor = System.Drawing.Color.White;
-            this.artanPanel13.BorderRadius = 60;
-            this.artanPanel13.Controls.Add(this.dataGridView2);
-            this.artanPanel13.ForeColor = System.Drawing.Color.Black;
-            this.artanPanel13.GradientAngle = 90F;
-            this.artanPanel13.GradientBottomColor = System.Drawing.Color.White;
-            this.artanPanel13.GradientTopColor = System.Drawing.Color.White;
-            this.artanPanel13.Location = new System.Drawing.Point(13, 72);
-            this.artanPanel13.Name = "artanPanel13";
-            this.artanPanel13.Size = new System.Drawing.Size(781, 396);
-            this.artanPanel13.TabIndex = 33;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.EnableHeadersVisualStyles = false;
-            this.dataGridView2.GridColor = System.Drawing.Color.Silver;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(781, 396);
-            this.dataGridView2.TabIndex = 8;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CategoryID";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "CategoryName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "DateInsert";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Date Insert";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1457,8 +1457,18 @@
             this.artanPanel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.artanPanel9.ResumeLayout(false);
+            this.artanPanel9.PerformLayout();
+            this.artanPanel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.artanPanel12.ResumeLayout(false);
+            this.artanPanel12.PerformLayout();
+            this.artanPanel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.artanPanel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.artanPanel4.ResumeLayout(false);
             this.artanPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1474,16 +1484,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.artanPanel7.ResumeLayout(false);
             this.artanPanel7.PerformLayout();
-            this.artanPanel9.ResumeLayout(false);
-            this.artanPanel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).EndInit();
-            this.artanPanel10.ResumeLayout(false);
-            this.artanPanel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.artanPanel12.ResumeLayout(false);
-            this.artanPanel12.PerformLayout();
-            this.artanPanel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -33,24 +33,24 @@
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.cyberGroupBox3 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txt_signupConfirmPassword = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.cyberGroupBox4 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.btn_register = new System.Windows.Forms.Button();
             this.c_signupShowPassword = new ReaLTaiizor.Controls.DungeonCheckBox();
             this.dungeonLabel3 = new ReaLTaiizor.Controls.DungeonLabel();
             this.txt_signupPassword = new ReaLTaiizor.Controls.DungeonTextBox();
             this.txt_signupUsername = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.titlepanel.SuspendLayout();
             this.cyberGroupBox3.SuspendLayout();
             this.parrotGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.cyberGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -148,7 +148,6 @@
             this.cyberGroupBox3.Tag = "Cyber";
             this.cyberGroupBox3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberGroupBox3.Timer_RGB = 300;
-            // 
             // parrotGradientPanel1
             // 
             this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.Black;
@@ -179,6 +178,20 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Blue;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(72, 618);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(260, 20);
+            this.linkLabel1.TabIndex = 20;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Already have an account? Sign in here";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // txt_signupConfirmPassword
             // 
             this.txt_signupConfirmPassword.BackColor = System.Drawing.Color.Transparent;
@@ -199,16 +212,6 @@
             this.txt_signupConfirmPassword.UseSystemPasswordChar = true;
             this.txt_signupConfirmPassword.Enter += new System.EventHandler(this.txt_confirmpassword_Enter);
             this.txt_signupConfirmPassword.Leave += new System.EventHandler(this.txt_confirmpassword_Leave);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.Lock;
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox8.Location = new System.Drawing.Point(22, 442);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox8.TabIndex = 23;
-            this.pictureBox8.TabStop = false;
             // 
             // cyberGroupBox4
             // 
@@ -330,6 +333,16 @@
             this.txt_signupUsername.Enter += new System.EventHandler(this.txt_username_Enter);
             this.txt_signupUsername.Leave += new System.EventHandler(this.txt_username_Leave);
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.Lock;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox8.Location = new System.Drawing.Point(22, 442);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(41, 38);
+            this.pictureBox8.TabIndex = 23;
+            this.pictureBox8.TabStop = false;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.Lock;
@@ -360,20 +373,6 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox7.TabIndex = 20;
             this.pictureBox7.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Blue;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(72, 618);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(260, 20);
-            this.linkLabel1.TabIndex = 20;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Already have an account? Sign in here";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // pictureBox4
             // 
@@ -406,8 +405,8 @@
             this.cyberGroupBox3.ResumeLayout(false);
             this.parrotGradientPanel1.ResumeLayout(false);
             this.parrotGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.cyberGroupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

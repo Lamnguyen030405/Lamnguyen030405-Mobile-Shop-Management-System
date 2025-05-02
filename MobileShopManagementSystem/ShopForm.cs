@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MobileShopManagementSystem.Utilities; // Thêm namespace để sử dụng ImageHelper
 
 namespace MobileShopManagementSystem
 {
@@ -65,7 +65,7 @@ namespace MobileShopManagementSystem
                     var selectedCard = (CardProduct)s;
                     bool flag = false;
 
-                    if (selectedCard.productQuantity == "")
+                    if (string.IsNullOrWhiteSpace(selectedCard.productQuantity))
                     {
                         MessageBox.Show("Please enter quantity", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -131,7 +131,10 @@ namespace MobileShopManagementSystem
                     flowLayoutPanel1.Controls.Clear();
                     foreach (var product in products)
                     {
-                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
+                        Image productImage = product.Image != null && product.Image.Length > 0
+                            ? ImageHelper.ByteArrayToImage(product.Image.ToArray())
+                            : null;
+                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), productImage, product.ProductID, product.Category, "");
                     }
                 }
             }
@@ -177,7 +180,7 @@ namespace MobileShopManagementSystem
                     MessageBox.Show("Please select product", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                if (c_partialPayment.Checked == true)
+                if (c_partialPayment.Checked)
                 {
                     if (check == false)
                     {
@@ -259,7 +262,6 @@ namespace MobileShopManagementSystem
                 PlaceOrderForm placeOrderForm = new PlaceOrderForm(currentOrderID, c_partialPayment.Checked, downPayment, outstandingAmount);
                 placeOrderForm.ShowDialog();
 
-                // Làm mới dữ liệu sau khi tạo bill mới
                 btn_refresh_Click(sender, e);
             }
             catch (Exception ex)
@@ -288,7 +290,8 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void clearData() 
+
+        private void clearData()
         {
             dgv_product.Rows.Clear();
             txt_downPaymentAmount.Text = "";
@@ -298,11 +301,12 @@ namespace MobileShopManagementSystem
             cb_shopTerm.SelectedIndex = -1;
         }
 
-        public void refreshData() 
+        public void refreshData()
         {
             LoadProducts();
             clearData();
         }
+
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             refreshData();
@@ -318,7 +322,10 @@ namespace MobileShopManagementSystem
                     flowLayoutPanel1.Controls.Clear();
                     foreach (var product in products)
                     {
-                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
+                        Image productImage = product.Image != null && product.Image.Length > 0
+                            ? ImageHelper.ByteArrayToImage(product.Image.ToArray())
+                            : null;
+                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), productImage, product.ProductID, product.Category, "");
                     }
                 }
             }
@@ -350,8 +357,11 @@ namespace MobileShopManagementSystem
                     flowLayoutPanel1.Controls.Clear();
                     foreach (var product in products)
                     {
+                        Image productImage = product.Image != null && product.Image.Length > 0
+                            ? ImageHelper.ByteArrayToImage(product.Image.ToArray())
+                            : null;
                         cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(),
-                                  Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
+                                  productImage, product.ProductID, product.Category, "");
                     }
                 }
             }
@@ -363,7 +373,7 @@ namespace MobileShopManagementSystem
 
         private void c_partialPayment_CheckedChanged()
         {
-            if (c_partialPayment.Checked)
+            if(c_partialPayment.Checked)
             {
                 txt_downPaymentAmount.Enabled = true;
                 txt_downPaymentAmount.Text = "0.0";
@@ -391,7 +401,7 @@ namespace MobileShopManagementSystem
                         MessageBox.Show("Please select product", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    if (txt_downPaymentAmount.Text == "")
+                    if (string.IsNullOrWhiteSpace(txt_downPaymentAmount.Text))
                     {
                         MessageBox.Show("Please enter down payment amount", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -422,5 +432,6 @@ namespace MobileShopManagementSystem
                 }
             }
         }
+
     }
 }

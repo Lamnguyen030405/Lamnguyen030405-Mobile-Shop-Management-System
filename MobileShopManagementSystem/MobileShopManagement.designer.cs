@@ -36,12 +36,12 @@ namespace MobileShopManagementSystem
     partial void InsertCart(Cart instance);
     partial void UpdateCart(Cart instance);
     partial void DeleteCart(Cart instance);
-    partial void InsertCustomer(Customer instance);
-    partial void UpdateCustomer(Customer instance);
-    partial void DeleteCustomer(Customer instance);
     partial void InsertCategory(Category instance);
     partial void UpdateCategory(Category instance);
     partial void DeleteCategory(Category instance);
+    partial void InsertCustomer(Customer instance);
+    partial void UpdateCustomer(Customer instance);
+    partial void DeleteCustomer(Customer instance);
     partial void InsertOrder(Order instance);
     partial void UpdateOrder(Order instance);
     partial void DeleteOrder(Order instance);
@@ -99,19 +99,19 @@ namespace MobileShopManagementSystem
 			}
 		}
 		
-		public System.Data.Linq.Table<Customer> Customers
-		{
-			get
-			{
-				return this.GetTable<Customer>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Category> Categories
 		{
 			get
 			{
 				return this.GetTable<Category>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Customer> Customers
+		{
+			get
+			{
+				return this.GetTable<Customer>();
 			}
 		}
 		
@@ -765,168 +765,6 @@ namespace MobileShopManagementSystem
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customers")]
-	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CustomerID;
-		
-		private string _CustomerName;
-		
-		private string _Address;
-		
-		private string _PhoneNumber;
-		
-		private EntitySet<Bill> _Bills;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCustomerIDChanging(string value);
-    partial void OnCustomerIDChanged();
-    partial void OnCustomerNameChanging(string value);
-    partial void OnCustomerNameChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnPhoneNumberChanging(string value);
-    partial void OnPhoneNumberChanged();
-    #endregion
-		
-		public Customer()
-		{
-			this._Bills = new EntitySet<Bill>(new Action<Bill>(this.attach_Bills), new Action<Bill>(this.detach_Bills));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CustomerID
-		{
-			get
-			{
-				return this._CustomerID;
-			}
-			set
-			{
-				if ((this._CustomerID != value))
-				{
-					this.OnCustomerIDChanging(value);
-					this.SendPropertyChanging();
-					this._CustomerID = value;
-					this.SendPropertyChanged("CustomerID");
-					this.OnCustomerIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerName", DbType="NVarChar(MAX)")]
-		public string CustomerName
-		{
-			get
-			{
-				return this._CustomerName;
-			}
-			set
-			{
-				if ((this._CustomerName != value))
-				{
-					this.OnCustomerNameChanging(value);
-					this.SendPropertyChanging();
-					this._CustomerName = value;
-					this.SendPropertyChanged("CustomerName");
-					this.OnCustomerNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(MAX)")]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(20)")]
-		public string PhoneNumber
-		{
-			get
-			{
-				return this._PhoneNumber;
-			}
-			set
-			{
-				if ((this._PhoneNumber != value))
-				{
-					this.OnPhoneNumberChanging(value);
-					this.SendPropertyChanging();
-					this._PhoneNumber = value;
-					this.SendPropertyChanged("PhoneNumber");
-					this.OnPhoneNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Bill", Storage="_Bills", ThisKey="CustomerID", OtherKey="CustomerID")]
-		public EntitySet<Bill> Bills
-		{
-			get
-			{
-				return this._Bills;
-			}
-			set
-			{
-				this._Bills.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Bills(Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = this;
-		}
-		
-		private void detach_Bills(Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categories")]
 	public partial class Category : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1086,6 +924,168 @@ namespace MobileShopManagementSystem
 		{
 			this.SendPropertyChanging();
 			entity.Category1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customers")]
+	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _CustomerID;
+		
+		private string _CustomerName;
+		
+		private string _Address;
+		
+		private string _PhoneNumber;
+		
+		private EntitySet<Bill> _Bills;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCustomerIDChanging(string value);
+    partial void OnCustomerIDChanged();
+    partial void OnCustomerNameChanging(string value);
+    partial void OnCustomerNameChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnPhoneNumberChanging(string value);
+    partial void OnPhoneNumberChanged();
+    #endregion
+		
+		public Customer()
+		{
+			this._Bills = new EntitySet<Bill>(new Action<Bill>(this.attach_Bills), new Action<Bill>(this.detach_Bills));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CustomerID
+		{
+			get
+			{
+				return this._CustomerID;
+			}
+			set
+			{
+				if ((this._CustomerID != value))
+				{
+					this.OnCustomerIDChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerID = value;
+					this.SendPropertyChanged("CustomerID");
+					this.OnCustomerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerName", DbType="NVarChar(MAX)")]
+		public string CustomerName
+		{
+			get
+			{
+				return this._CustomerName;
+			}
+			set
+			{
+				if ((this._CustomerName != value))
+				{
+					this.OnCustomerNameChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerName = value;
+					this.SendPropertyChanged("CustomerName");
+					this.OnCustomerNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(MAX)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(20)")]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this.OnPhoneNumberChanging(value);
+					this.SendPropertyChanging();
+					this._PhoneNumber = value;
+					this.SendPropertyChanged("PhoneNumber");
+					this.OnPhoneNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Bill", Storage="_Bills", ThisKey="CustomerID", OtherKey="CustomerID")]
+		public EntitySet<Bill> Bills
+		{
+			get
+			{
+				return this._Bills;
+			}
+			set
+			{
+				this._Bills.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Bills(Bill entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = this;
+		}
+		
+		private void detach_Bills(Bill entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = null;
 		}
 	}
 	
@@ -1451,7 +1451,7 @@ namespace MobileShopManagementSystem
 		
 		private string _Status;
 		
-		private string _Image;
+		private System.Data.Linq.Binary _Image;
 		
 		private System.Nullable<System.DateTime> _DateInsert;
 		
@@ -1487,7 +1487,7 @@ namespace MobileShopManagementSystem
     partial void OnDescriptionChanged();
     partial void OnStatusChanging(string value);
     partial void OnStatusChanged();
-    partial void OnImageChanging(string value);
+    partial void OnImageChanging(System.Data.Linq.Binary value);
     partial void OnImageChanged();
     partial void OnDateInsertChanging(System.Nullable<System.DateTime> value);
     partial void OnDateInsertChanged();
@@ -1726,8 +1726,8 @@ namespace MobileShopManagementSystem
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarChar(MAX)")]
-		public string Image
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Image
 		{
 			get
 			{
@@ -1890,6 +1890,10 @@ namespace MobileShopManagementSystem
 		
 		private string _PhoneNumber;
 		
+		private System.Nullable<double> _Salary;
+		
+		private string _Email;
+		
 		private System.Data.Linq.Binary _Image;
 		
 		private string _Status;
@@ -1920,6 +1924,10 @@ namespace MobileShopManagementSystem
     partial void OnAddressChanged();
     partial void OnPhoneNumberChanging(string value);
     partial void OnPhoneNumberChanged();
+    partial void OnSalaryChanging(System.Nullable<double> value);
+    partial void OnSalaryChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
     partial void OnImageChanging(System.Data.Linq.Binary value);
     partial void OnImageChanged();
     partial void OnStatusChanging(string value);
@@ -2110,6 +2118,46 @@ namespace MobileShopManagementSystem
 					this._PhoneNumber = value;
 					this.SendPropertyChanged("PhoneNumber");
 					this.OnPhoneNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salary", DbType="Float")]
+		public System.Nullable<double> Salary
+		{
+			get
+			{
+				return this._Salary;
+			}
+			set
+			{
+				if ((this._Salary != value))
+				{
+					this.OnSalaryChanging(value);
+					this.SendPropertyChanging();
+					this._Salary = value;
+					this.SendPropertyChanged("Salary");
+					this.OnSalaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(MAX)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
 				}
 			}
 		}

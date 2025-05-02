@@ -31,10 +31,10 @@
             this.artanPanel1 = new ArtanComponent.ArtanPanel();
             this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             this.artanPanel2 = new ArtanComponent.ArtanPanel();
-            this.button2 = new ReaLTaiizor.Controls.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_settingClear = new ReaLTaiizor.Controls.Button();
+            this.btn_settingImport = new ReaLTaiizor.Controls.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_userUpdate = new ReaLTaiizor.Controls.Button();
+            this.btn_setiingUpdate = new ReaLTaiizor.Controls.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dt_userBirthDate = new System.Windows.Forms.DateTimePicker();
             this.cb_userGender = new ReaLTaiizor.Controls.MetroComboBox();
@@ -48,7 +48,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txt_userAddress = new ReaLTaiizor.Controls.CyberTextBox();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
-            this.btn_userChange = new ReaLTaiizor.Controls.Button();
+            this.btn_settingChange = new ReaLTaiizor.Controls.Button();
             this.c_showPassword = new ReaLTaiizor.Controls.CyberCheckBox();
             this.txt_confirmPassword = new ReaLTaiizor.Controls.CyberTextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,16 +56,20 @@
             this.txt_newPassword = new ReaLTaiizor.Controls.CyberTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_oldPassword = new ReaLTaiizor.Controls.CyberTextBox();
-            this.btn_userClear = new ReaLTaiizor.Controls.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_userEmail = new ReaLTaiizor.Controls.CyberTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_userSalary = new ReaLTaiizor.Controls.CyberTextBox();
             this.artanPanel1.SuspendLayout();
             this.artanPanel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.artanPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // artanPanel1
             // 
+            this.artanPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.artanPanel1.BackColor = System.Drawing.Color.White;
             this.artanPanel1.BorderRadius = 50;
             this.artanPanel1.Controls.Add(this.bigLabel1);
@@ -99,10 +103,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.artanPanel2.BackColor = System.Drawing.Color.White;
             this.artanPanel2.BorderRadius = 50;
-            this.artanPanel2.Controls.Add(this.btn_userClear);
-            this.artanPanel2.Controls.Add(this.button2);
-            this.artanPanel2.Controls.Add(this.panel3);
-            this.artanPanel2.Controls.Add(this.btn_userUpdate);
+            this.artanPanel2.Controls.Add(this.label8);
+            this.artanPanel2.Controls.Add(this.pictureBox1);
+            this.artanPanel2.Controls.Add(this.btn_settingClear);
+            this.artanPanel2.Controls.Add(this.txt_userEmail);
+            this.artanPanel2.Controls.Add(this.txt_userSalary);
+            this.artanPanel2.Controls.Add(this.label9);
+            this.artanPanel2.Controls.Add(this.btn_settingImport);
+            this.artanPanel2.Controls.Add(this.btn_setiingUpdate);
             this.artanPanel2.Controls.Add(this.label2);
             this.artanPanel2.Controls.Add(this.dt_userBirthDate);
             this.artanPanel2.Controls.Add(this.cb_userGender);
@@ -125,70 +133,84 @@
             this.artanPanel2.Size = new System.Drawing.Size(605, 725);
             this.artanPanel2.TabIndex = 3;
             // 
-            // button2
+            // btn_settingClear
             // 
-            this.button2.AllowDrop = true;
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BorderColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.EnteredBorderColor = System.Drawing.Color.Gainsboro;
-            this.button2.EnteredColor = System.Drawing.Color.Gainsboro;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = null;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.button2.Location = new System.Drawing.Point(272, 236);
-            this.button2.Name = "button2";
-            this.button2.PressedBorderColor = System.Drawing.Color.White;
-            this.button2.PressedColor = System.Drawing.Color.White;
-            this.button2.Size = new System.Drawing.Size(122, 39);
-            this.button2.TabIndex = 74;
-            this.button2.Text = "Import";
-            this.button2.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_settingClear.AllowDrop = true;
+            this.btn_settingClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_settingClear.BackColor = System.Drawing.Color.Transparent;
+            this.btn_settingClear.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_settingClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_settingClear.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_settingClear.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_settingClear.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_settingClear.Image = null;
+            this.btn_settingClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_settingClear.InactiveColor = System.Drawing.Color.RoyalBlue;
+            this.btn_settingClear.Location = new System.Drawing.Point(470, 653);
+            this.btn_settingClear.Name = "btn_settingClear";
+            this.btn_settingClear.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_settingClear.PressedColor = System.Drawing.Color.White;
+            this.btn_settingClear.Size = new System.Drawing.Size(122, 41);
+            this.btn_settingClear.TabIndex = 75;
+            this.btn_settingClear.Text = "Clear";
+            this.btn_settingClear.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_settingClear.Click += new System.EventHandler(this.btn_userClear_Click);
             // 
-            // panel3
+            // btn_settingImport
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(249, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(173, 217);
-            this.panel3.TabIndex = 73;
+            this.btn_settingImport.AllowDrop = true;
+            this.btn_settingImport.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_settingImport.BackColor = System.Drawing.Color.Transparent;
+            this.btn_settingImport.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_settingImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_settingImport.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_settingImport.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_settingImport.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_settingImport.Image = null;
+            this.btn_settingImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_settingImport.InactiveColor = System.Drawing.Color.RoyalBlue;
+            this.btn_settingImport.Location = new System.Drawing.Point(259, 236);
+            this.btn_settingImport.Name = "btn_settingImport";
+            this.btn_settingImport.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_settingImport.PressedColor = System.Drawing.Color.White;
+            this.btn_settingImport.Size = new System.Drawing.Size(122, 39);
+            this.btn_settingImport.TabIndex = 74;
+            this.btn_settingImport.Text = "Import";
+            this.btn_settingImport.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_settingImport.Click += new System.EventHandler(this.btn_settingImport_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(232, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(173, 217);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_userUpdate
+            // btn_setiingUpdate
             // 
-            this.btn_userUpdate.AllowDrop = true;
-            this.btn_userUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_userUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.btn_userUpdate.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_userUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_userUpdate.EnteredBorderColor = System.Drawing.Color.Gainsboro;
-            this.btn_userUpdate.EnteredColor = System.Drawing.Color.Gainsboro;
-            this.btn_userUpdate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_userUpdate.Image = null;
-            this.btn_userUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_userUpdate.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_userUpdate.Location = new System.Drawing.Point(342, 638);
-            this.btn_userUpdate.Name = "btn_userUpdate";
-            this.btn_userUpdate.PressedBorderColor = System.Drawing.Color.White;
-            this.btn_userUpdate.PressedColor = System.Drawing.Color.White;
-            this.btn_userUpdate.Size = new System.Drawing.Size(122, 41);
-            this.btn_userUpdate.TabIndex = 72;
-            this.btn_userUpdate.Text = "Update";
-            this.btn_userUpdate.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btn_userUpdate.Click += new System.EventHandler(this.btn_userUpdate_Click);
+            this.btn_setiingUpdate.AllowDrop = true;
+            this.btn_setiingUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_setiingUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btn_setiingUpdate.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_setiingUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_setiingUpdate.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_setiingUpdate.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_setiingUpdate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_setiingUpdate.Image = null;
+            this.btn_setiingUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_setiingUpdate.InactiveColor = System.Drawing.Color.RoyalBlue;
+            this.btn_setiingUpdate.Location = new System.Drawing.Point(342, 653);
+            this.btn_setiingUpdate.Name = "btn_setiingUpdate";
+            this.btn_setiingUpdate.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_setiingUpdate.PressedColor = System.Drawing.Color.White;
+            this.btn_setiingUpdate.Size = new System.Drawing.Size(122, 41);
+            this.btn_setiingUpdate.TabIndex = 72;
+            this.btn_setiingUpdate.Text = "Update";
+            this.btn_setiingUpdate.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_setiingUpdate.Click += new System.EventHandler(this.btn_userUpdate_Click);
             // 
             // label2
             // 
@@ -196,7 +218,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(330, 431);
+            this.label2.Location = new System.Drawing.Point(330, 388);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 28);
             this.label2.TabIndex = 71;
@@ -207,7 +229,7 @@
             this.dt_userBirthDate.CustomFormat = "yyyy-MM-dd";
             this.dt_userBirthDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dt_userBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt_userBirthDate.Location = new System.Drawing.Point(444, 433);
+            this.dt_userBirthDate.Location = new System.Drawing.Point(444, 390);
             this.dt_userBirthDate.Name = "dt_userBirthDate";
             this.dt_userBirthDate.Size = new System.Drawing.Size(148, 30);
             this.dt_userBirthDate.TabIndex = 70;
@@ -234,7 +256,7 @@
             "Female",
             "Prefer not to say",
             "Other"});
-            this.cb_userGender.Location = new System.Drawing.Point(188, 433);
+            this.cb_userGender.Location = new System.Drawing.Point(188, 390);
             this.cb_userGender.Name = "cb_userGender";
             this.cb_userGender.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cb_userGender.SelectedItemForeColor = System.Drawing.Color.White;
@@ -251,7 +273,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 434);
+            this.label1.Location = new System.Drawing.Point(14, 391);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 28);
             this.label1.TabIndex = 69;
@@ -263,7 +285,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(13, 364);
+            this.label5.Location = new System.Drawing.Point(14, 346);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 28);
             this.label5.TabIndex = 67;
@@ -275,7 +297,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(13, 300);
+            this.label10.Location = new System.Drawing.Point(28, 295);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 28);
             this.label10.TabIndex = 66;
@@ -299,13 +321,13 @@
             this.txt_name.ForeColor = System.Drawing.Color.Black;
             this.txt_name.Lighting = false;
             this.txt_name.LinearGradientPen = true;
-            this.txt_name.Location = new System.Drawing.Point(182, 364);
+            this.txt_name.Location = new System.Drawing.Point(188, 332);
             this.txt_name.Name = "txt_name";
             this.txt_name.PenWidth = 15;
             this.txt_name.RGB = false;
             this.txt_name.Rounding = true;
             this.txt_name.RoundingInt = 30;
-            this.txt_name.Size = new System.Drawing.Size(410, 42);
+            this.txt_name.Size = new System.Drawing.Size(404, 42);
             this.txt_name.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.txt_name.TabIndex = 65;
             this.txt_name.Tag = "Cyber";
@@ -332,13 +354,13 @@
             this.txt_userID.ForeColor = System.Drawing.Color.Black;
             this.txt_userID.Lighting = false;
             this.txt_userID.LinearGradientPen = true;
-            this.txt_userID.Location = new System.Drawing.Point(182, 300);
+            this.txt_userID.Location = new System.Drawing.Point(188, 281);
             this.txt_userID.Name = "txt_userID";
             this.txt_userID.PenWidth = 15;
             this.txt_userID.RGB = false;
             this.txt_userID.Rounding = true;
             this.txt_userID.RoundingInt = 30;
-            this.txt_userID.Size = new System.Drawing.Size(410, 42);
+            this.txt_userID.Size = new System.Drawing.Size(404, 42);
             this.txt_userID.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.txt_userID.TabIndex = 64;
             this.txt_userID.Tag = "Cyber";
@@ -352,7 +374,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(15, 491);
+            this.label4.Location = new System.Drawing.Point(14, 441);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 28);
             this.label4.TabIndex = 59;
@@ -376,13 +398,13 @@
             this.txt_userPN.ForeColor = System.Drawing.Color.Black;
             this.txt_userPN.Lighting = false;
             this.txt_userPN.LinearGradientPen = true;
-            this.txt_userPN.Location = new System.Drawing.Point(182, 551);
+            this.txt_userPN.Location = new System.Drawing.Point(188, 479);
             this.txt_userPN.Name = "txt_userPN";
             this.txt_userPN.PenWidth = 15;
             this.txt_userPN.RGB = false;
             this.txt_userPN.Rounding = true;
             this.txt_userPN.RoundingInt = 30;
-            this.txt_userPN.Size = new System.Drawing.Size(410, 42);
+            this.txt_userPN.Size = new System.Drawing.Size(404, 42);
             this.txt_userPN.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.txt_userPN.TabIndex = 58;
             this.txt_userPN.Tag = "Cyber";
@@ -396,7 +418,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(15, 555);
+            this.label11.Location = new System.Drawing.Point(14, 489);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(166, 28);
             this.label11.TabIndex = 56;
@@ -420,13 +442,13 @@
             this.txt_userAddress.ForeColor = System.Drawing.Color.Black;
             this.txt_userAddress.Lighting = false;
             this.txt_userAddress.LinearGradientPen = true;
-            this.txt_userAddress.Location = new System.Drawing.Point(182, 487);
+            this.txt_userAddress.Location = new System.Drawing.Point(188, 431);
             this.txt_userAddress.Name = "txt_userAddress";
             this.txt_userAddress.PenWidth = 15;
             this.txt_userAddress.RGB = false;
             this.txt_userAddress.Rounding = true;
             this.txt_userAddress.RoundingInt = 30;
-            this.txt_userAddress.Size = new System.Drawing.Size(410, 42);
+            this.txt_userAddress.Size = new System.Drawing.Size(404, 42);
             this.txt_userAddress.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.txt_userAddress.TabIndex = 57;
             this.txt_userAddress.Tag = "Cyber";
@@ -436,11 +458,10 @@
             // 
             // artanPanel3
             // 
-            this.artanPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.artanPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.artanPanel3.BackColor = System.Drawing.Color.White;
             this.artanPanel3.BorderRadius = 50;
-            this.artanPanel3.Controls.Add(this.btn_userChange);
+            this.artanPanel3.Controls.Add(this.btn_settingChange);
             this.artanPanel3.Controls.Add(this.c_showPassword);
             this.artanPanel3.Controls.Add(this.txt_confirmPassword);
             this.artanPanel3.Controls.Add(this.label7);
@@ -458,28 +479,28 @@
             this.artanPanel3.Size = new System.Drawing.Size(626, 370);
             this.artanPanel3.TabIndex = 27;
             // 
-            // btn_userChange
+            // btn_settingChange
             // 
-            this.btn_userChange.AllowDrop = true;
-            this.btn_userChange.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_userChange.BackColor = System.Drawing.Color.Transparent;
-            this.btn_userChange.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_userChange.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_userChange.EnteredBorderColor = System.Drawing.Color.Gainsboro;
-            this.btn_userChange.EnteredColor = System.Drawing.Color.Gainsboro;
-            this.btn_userChange.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_userChange.Image = null;
-            this.btn_userChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_userChange.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_userChange.Location = new System.Drawing.Point(246, 313);
-            this.btn_userChange.Name = "btn_userChange";
-            this.btn_userChange.PressedBorderColor = System.Drawing.Color.White;
-            this.btn_userChange.PressedColor = System.Drawing.Color.White;
-            this.btn_userChange.Size = new System.Drawing.Size(126, 44);
-            this.btn_userChange.TabIndex = 73;
-            this.btn_userChange.Text = "Change";
-            this.btn_userChange.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btn_userChange.Click += new System.EventHandler(this.btn_userChange_Click);
+            this.btn_settingChange.AllowDrop = true;
+            this.btn_settingChange.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_settingChange.BackColor = System.Drawing.Color.Transparent;
+            this.btn_settingChange.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_settingChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_settingChange.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_settingChange.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_settingChange.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_settingChange.Image = null;
+            this.btn_settingChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_settingChange.InactiveColor = System.Drawing.Color.RoyalBlue;
+            this.btn_settingChange.Location = new System.Drawing.Point(246, 313);
+            this.btn_settingChange.Name = "btn_settingChange";
+            this.btn_settingChange.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_settingChange.PressedColor = System.Drawing.Color.White;
+            this.btn_settingChange.Size = new System.Drawing.Size(126, 44);
+            this.btn_settingChange.TabIndex = 73;
+            this.btn_settingChange.Text = "Change";
+            this.btn_settingChange.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_settingChange.Click += new System.EventHandler(this.btn_userChange_Click);
             // 
             // c_showPassword
             // 
@@ -657,28 +678,94 @@
             this.txt_oldPassword.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             this.txt_oldPassword.Timer_RGB = 300;
             // 
-            // btn_userClear
+            // label8
             // 
-            this.btn_userClear.AllowDrop = true;
-            this.btn_userClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_userClear.BackColor = System.Drawing.Color.Transparent;
-            this.btn_userClear.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_userClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_userClear.EnteredBorderColor = System.Drawing.Color.Gainsboro;
-            this.btn_userClear.EnteredColor = System.Drawing.Color.Gainsboro;
-            this.btn_userClear.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_userClear.Image = null;
-            this.btn_userClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_userClear.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_userClear.Location = new System.Drawing.Point(470, 638);
-            this.btn_userClear.Name = "btn_userClear";
-            this.btn_userClear.PressedBorderColor = System.Drawing.Color.White;
-            this.btn_userClear.PressedColor = System.Drawing.Color.White;
-            this.btn_userClear.Size = new System.Drawing.Size(122, 41);
-            this.btn_userClear.TabIndex = 75;
-            this.btn_userClear.Text = "Clear";
-            this.btn_userClear.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btn_userClear.Click += new System.EventHandler(this.btn_userClear_Click);
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(28, 589);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 28);
+            this.label8.TabIndex = 79;
+            this.label8.Text = "Salary :";
+            // 
+            // txt_userEmail
+            // 
+            this.txt_userEmail.Alpha = 20;
+            this.txt_userEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_userEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txt_userEmail.Background_WidthPen = 5F;
+            this.txt_userEmail.BackgroundPen = true;
+            this.txt_userEmail.ColorBackground = System.Drawing.Color.White;
+            this.txt_userEmail.ColorBackground_Pen = System.Drawing.Color.Cyan;
+            this.txt_userEmail.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txt_userEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_userEmail.ForeColor = System.Drawing.Color.Black;
+            this.txt_userEmail.Lighting = false;
+            this.txt_userEmail.LinearGradientPen = true;
+            this.txt_userEmail.Location = new System.Drawing.Point(188, 527);
+            this.txt_userEmail.Name = "txt_userEmail";
+            this.txt_userEmail.PenWidth = 15;
+            this.txt_userEmail.RGB = false;
+            this.txt_userEmail.Rounding = true;
+            this.txt_userEmail.RoundingInt = 30;
+            this.txt_userEmail.Size = new System.Drawing.Size(404, 42);
+            this.txt_userEmail.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txt_userEmail.TabIndex = 78;
+            this.txt_userEmail.Tag = "Cyber";
+            this.txt_userEmail.TextButton = "";
+            this.txt_userEmail.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_userEmail.Timer_RGB = 300;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(14, 541);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 28);
+            this.label9.TabIndex = 76;
+            this.label9.Text = "* Email :";
+            // 
+            // txt_userSalary
+            // 
+            this.txt_userSalary.Alpha = 20;
+            this.txt_userSalary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_userSalary.BackColor = System.Drawing.Color.Transparent;
+            this.txt_userSalary.Background_WidthPen = 5F;
+            this.txt_userSalary.BackgroundPen = true;
+            this.txt_userSalary.ColorBackground = System.Drawing.Color.White;
+            this.txt_userSalary.ColorBackground_Pen = System.Drawing.Color.Cyan;
+            this.txt_userSalary.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txt_userSalary.Enabled = false;
+            this.txt_userSalary.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_userSalary.ForeColor = System.Drawing.Color.Black;
+            this.txt_userSalary.Lighting = false;
+            this.txt_userSalary.LinearGradientPen = true;
+            this.txt_userSalary.Location = new System.Drawing.Point(188, 575);
+            this.txt_userSalary.Name = "txt_userSalary";
+            this.txt_userSalary.PenWidth = 15;
+            this.txt_userSalary.RGB = false;
+            this.txt_userSalary.Rounding = true;
+            this.txt_userSalary.RoundingInt = 30;
+            this.txt_userSalary.Size = new System.Drawing.Size(404, 42);
+            this.txt_userSalary.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txt_userSalary.TabIndex = 77;
+            this.txt_userSalary.Tag = "Cyber";
+            this.txt_userSalary.TextButton = "";
+            this.txt_userSalary.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_userSalary.Timer_RGB = 300;
             // 
             // SettingForm
             // 
@@ -698,7 +785,6 @@
             this.artanPanel1.PerformLayout();
             this.artanPanel2.ResumeLayout(false);
             this.artanPanel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.artanPanel3.ResumeLayout(false);
             this.artanPanel3.PerformLayout();
@@ -723,7 +809,7 @@
         private System.Windows.Forms.Label label10;
         private ReaLTaiizor.Controls.CyberTextBox txt_name;
         private ReaLTaiizor.Controls.CyberTextBox txt_userID;
-        private ReaLTaiizor.Controls.Button btn_userUpdate;
+        private ReaLTaiizor.Controls.Button btn_setiingUpdate;
         private ReaLTaiizor.Controls.CyberTextBox txt_confirmPassword;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
@@ -731,10 +817,13 @@
         private System.Windows.Forms.Label label6;
         private ReaLTaiizor.Controls.CyberTextBox txt_oldPassword;
         private ReaLTaiizor.Controls.CyberCheckBox c_showPassword;
-        private ReaLTaiizor.Controls.Button btn_userChange;
-        private System.Windows.Forms.Panel panel3;
+        private ReaLTaiizor.Controls.Button btn_settingChange;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ReaLTaiizor.Controls.Button button2;
-        private ReaLTaiizor.Controls.Button btn_userClear;
+        private ReaLTaiizor.Controls.Button btn_settingImport;
+        private ReaLTaiizor.Controls.Button btn_settingClear;
+        private System.Windows.Forms.Label label8;
+        private ReaLTaiizor.Controls.CyberTextBox txt_userEmail;
+        private ReaLTaiizor.Controls.CyberTextBox txt_userSalary;
+        private System.Windows.Forms.Label label9;
     }
 }

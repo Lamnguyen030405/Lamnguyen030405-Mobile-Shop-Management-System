@@ -35,7 +35,8 @@ namespace MobileShopManagementSystem
         public static string userID;
         private void btn_login_Click(object sender, EventArgs e)
         {
-            var user = dataContext.Users.Where(u => u.Username == txt_loginUsername.Text.Trim() && u.Password == txt_loginPassword.Text.Trim()).FirstOrDefault();
+            var user = dataContext.Users.Where(u => (u.Username == txt_loginUsername.Text.Trim() || u.Email == txt_loginUsername.Text.Trim()) 
+                                        && u.Password == txt_loginPassword.Text.Trim()).FirstOrDefault();
             if(user != null) {
                 userID = user.UserID;
                 MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -106,12 +107,12 @@ namespace MobileShopManagementSystem
 
         private void txt_username_Enter(object sender, EventArgs e)
         {
-            RemovePlaceholder(txt_loginUsername, "Username");
+            RemovePlaceholder(txt_loginUsername, "Username or Email");
         }
 
         private void txt_username_Leave(object sender, EventArgs e)
         {
-            SetPlaceholder(txt_loginUsername, "Username");
+            SetPlaceholder(txt_loginUsername, "Username or Email");
         }
 
         private void txt_password_Enter(object sender, EventArgs e)
@@ -122,6 +123,13 @@ namespace MobileShopManagementSystem
         private void txt_password_Leave(object sender, EventArgs e)
         {
             SetPlaceholder(txt_loginPassword, "Password", true);
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            forgotPassword forgotPasswordForm = new forgotPassword();
+            forgotPasswordForm.Show();
+            this.Hide();
         }
     }
 }

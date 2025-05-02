@@ -4,12 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Linq.SqlClient;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MobileShopManagementSystem.Utilities; // Thêm namespace để sử dụng ImageHelper
 
 namespace MobileShopManagementSystem
 {
@@ -19,8 +18,6 @@ namespace MobileShopManagementSystem
         {
             InitializeComponent();
         }
-
-        //MobileShopManagementDataContext db = new MobileShopManagementDataContext();
 
         private void displayCategories()
         {
@@ -36,6 +33,7 @@ namespace MobileShopManagementSystem
                 }
             }
         }
+
         public static string getProductID()
         {
             using (var db = new MobileShopManagementDataContext())
@@ -53,11 +51,68 @@ namespace MobileShopManagementSystem
                 return $"PID{numberPart}";
             }
         }
+
         private void LoadData()
         {
-            using (var db = new MobileShopManagementDataContext())
+            try
             {
-                dgv_products.DataSource = db.Products.ToList();
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    var products = db.Products.ToList();
+
+                    // Tạo DataTable để tùy chỉnh dữ liệu
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("ProductID", typeof(string));
+                    dt.Columns.Add("ProductName", typeof(string));
+                    dt.Columns.Add("ImportPrice", typeof(double));
+                    dt.Columns.Add("SellingPrice", typeof(double));
+                    dt.Columns.Add("Discount", typeof(double));
+                    dt.Columns.Add("RealPrice", typeof(double));
+                    dt.Columns.Add("Description", typeof(string));
+                    dt.Columns.Add("CategoryID", typeof(string));
+                    dt.Columns.Add("Category", typeof(string));
+                    dt.Columns.Add("Stock", typeof(int));
+                    dt.Columns.Add("Status", typeof(string));
+                    dt.Columns.Add("DateInsert", typeof(DateTime));
+                    dt.Columns.Add("DateUpdate", typeof(DateTime));
+                    dt.Columns.Add("Image", typeof(Image)); // Cột để lưu hình ảnh
+
+                    foreach (var product in products)
+                    {
+                        DataRow row = dt.NewRow();
+                        row["ProductID"] = product.ProductID;
+                        row["ProductName"] = product.ProductName;
+                        row["ImportPrice"] = product.ImportPrice;
+                        row["SellingPrice"] = product.SellingPrice;
+                        row["Discount"] = product.Discount;
+                        row["RealPrice"] = product.RealPrice;
+                        row["Description"] = product.Description;
+                        row["CategoryID"] = product.CategoryID;
+                        row["Category"] = product.Category;
+                        row["Stock"] = product.Stock;
+                        row["Status"] = product.Status;
+                        row["DateInsert"] = product.DateInsert ?? DateTime.Now;
+                        row["DateUpdate"] = product.DateUpdate ?? DateTime.Now;
+
+                        // Chuyển đổi byte[] thành Image
+                        if (product.Image != null && product.Image.Length > 0)
+                        {
+                            row["Image"] = ImageHelper.ByteArrayToImage(product.Image.ToArray());
+                        }
+                        else
+                        {
+                            row["Image"] = null;
+                        }
+
+                        dt.Rows.Add(row);
+                    }
+
+                    dgv_products.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             txt_inventoryProductID.TextButton = getProductID();
             dgv_products.Refresh();
@@ -74,25 +129,24 @@ namespace MobileShopManagementSystem
 
         private void btn_inventoryImport_Click(object sender, EventArgs e)
         {
-            try
+            OpenFileDialog openFileDialog = new OpenFileDialog
             {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp",
+                Title = "Select an Image File"
+            };
 
-                OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-
-                string imagePath = "";
-
-                ReleaseImage();
-
-                if (ofd.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
                 {
-                    imagePath = ofd.FileName;
-                    pictureBox1.ImageLocation = imagePath;
+                    pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                    this.Text = openFileDialog.FileName;
+                    MessageBox.Show("Import successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -106,21 +160,27 @@ namespace MobileShopManagementSystem
             txt_inventoryStock.TextButton = "";
             cb_inventoryCategory.SelectedIndex = -1;
             cb_inventoryStatus.SelectedIndex = 0;
-            pictureBox1.ImageLocation = null;
             pictureBox1.Image = null;
             txt_inventoryProductID.TextButton = getProductID();
         }
 
-        private void btn_inventoryAdd_Click(object sender, EventArgs e)
+        private async void btn_inventoryAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txt_inventoryProductName.TextButton == "" || txt_inventoryImportPrice.TextButton == "" || txt_inventoryProductID.TextButton == "" || cb_inventoryCategory.Text == ""
-                    || txt_inventoryStock.TextButton == "" || cb_inventoryStatus.Text == "" || pictureBox1.Image == null || txt_inventorySellingPrice.TextButton == "")
+                if (string.IsNullOrWhiteSpace(txt_inventoryProductName.TextButton) ||
+                    string.IsNullOrWhiteSpace(txt_inventoryImportPrice.TextButton) ||
+                    string.IsNullOrWhiteSpace(txt_inventoryProductID.TextButton) ||
+                    string.IsNullOrWhiteSpace(cb_inventoryCategory.Text) ||
+                    string.IsNullOrWhiteSpace(txt_inventoryStock.TextButton) ||
+                    string.IsNullOrWhiteSpace(cb_inventoryStatus.Text) ||
+                    pictureBox1.Image == null ||
+                    string.IsNullOrWhiteSpace(txt_inventorySellingPrice.TextButton))
                 {
                     MessageBox.Show("Please fill in all the fields marked with stars", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
                 using (var db = new MobileShopManagementDataContext())
                 {
                     if (db.Products.Any(x => x.ProductID == txt_inventoryProductID.TextButton))
@@ -130,9 +190,9 @@ namespace MobileShopManagementSystem
                     }
 
                     double discount = 0.00;
-                    if (c_Discount.Checked == true)
+                    if (c_Discount.Checked)
                     {
-                        if (txt_inventoryDiscount.TextButton == "")
+                        if (string.IsNullOrWhiteSpace(txt_inventoryDiscount.TextButton))
                         {
                             MessageBox.Show("Please fill in discount", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
@@ -144,6 +204,7 @@ namespace MobileShopManagementSystem
                             return;
                         }
                     }
+
                     double sellingPrice = Convert.ToDouble(txt_inventorySellingPrice.TextButton.Trim());
                     double importPrice = Convert.ToDouble(txt_inventoryImportPrice.TextButton.Trim());
                     int stock = Convert.ToInt32(txt_inventoryStock.TextButton.Trim());
@@ -169,22 +230,16 @@ namespace MobileShopManagementSystem
                         return;
                     }
 
-                    string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-
-                    string relativePath = Path.Combine("product_directory", txt_inventoryProductID.TextButton.Trim() + ".jpg");
-                    string path = Path.Combine(baseDirectory, relativePath);
-
-                    string directory = Path.GetDirectoryName(relativePath);
-                    if (!Directory.Exists(directory))
+                    byte[] imageBytes = null;
+                    if (pictureBox1.Image != null)
                     {
-                        Directory.CreateDirectory(directory);
+                        Image resizedImage = ImageHelper.ResizeImage(pictureBox1.Image, 200, 200);
+                        imageBytes = ImageHelper.ImageToByteArray(resizedImage);
                     }
-                    File.Copy(pictureBox1.ImageLocation, path, true);
-
 
                     Product p = new Product()
                     {
-                        ProductID = getProductID(),
+                        ProductID = txt_inventoryProductID.TextButton,
                         ProductName = txt_inventoryProductName.TextButton.Trim(),
                         ImportPrice = importPrice,
                         SellingPrice = sellingPrice,
@@ -197,10 +252,10 @@ namespace MobileShopManagementSystem
                         Status = cb_inventoryStatus.Text.Trim(),
                         DateInsert = DateTime.Now,
                         DateUpdate = DateTime.Now,
-                        Image = relativePath.Trim()
+                        Image = imageBytes // Lưu dưới dạng byte[]
                     };
                     db.Products.InsertOnSubmit(p);
-                    db.SubmitChanges();
+                    await Task.Run(() => db.SubmitChanges());
                     LoadData();
                     MessageBox.Show("Product added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clearData();
@@ -211,6 +266,7 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void dgv_products_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -222,32 +278,19 @@ namespace MobileShopManagementSystem
                 txt_inventoryStock.TextButton = row.Cells["col_stock"]?.Value?.ToString() ?? "";
                 txt_inventoryImportPrice.TextButton = row.Cells["col_importprice"]?.Value?.ToString() ?? "";
                 txt_inventorySellingPrice.TextButton = row.Cells["col_sellingprice"]?.Value?.ToString() ?? "";
-                c_Discount.Checked = row.Cells["col_discount"]?.Value?.ToString() != "0" ? true : false;
+                c_Discount.Checked = Convert.ToDouble(row.Cells["col_discount"]?.Value?.ToString() ?? "0") != 0;
                 txt_inventoryDiscount.TextButton = row.Cells["col_discount"]?.Value?.ToString() ?? "";
                 cb_inventoryStatus.Text = row.Cells["col_status"]?.Value?.ToString() ?? "";
                 txt_inventoryDescription.Text = row.Cells["col_description"]?.Value?.ToString() ?? "";
-                string relative_path = row.Cells["col_image"].Value.ToString();
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relative_path);
-                try
+
+                pictureBox1.Image = row.Cells["col_image"]?.Value as Image;
+                if (pictureBox1.Image == null)
                 {
-                    if (path != "")
-                    {
-                        var temp = Image.FromFile(path);
-                        pictureBox1.Image = new Bitmap(temp); // copy image
-                        temp.Dispose();
-                        pictureBox1.ImageLocation = path;
-                    }
-                    else
-                    {
-                        pictureBox1.Image = null;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    pictureBox1.Image = null;
                 }
             }
         }
+
         private void ReleaseImage()
         {
             if (pictureBox1.Image != null)
@@ -257,11 +300,11 @@ namespace MobileShopManagementSystem
             }
         }
 
-        private void btn_inventoryDelete_Click(object sender, EventArgs e)
+        private async void btn_inventoryDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txt_inventoryProductID.TextButton == "")
+                if (string.IsNullOrWhiteSpace(txt_inventoryProductID.TextButton))
                 {
                     MessageBox.Show("Please select a product to delete", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -281,20 +324,8 @@ namespace MobileShopManagementSystem
 
                     ReleaseImage();
 
-                    if (!string.IsNullOrEmpty(p.Image) && File.Exists(p.Image))
-                    {
-                        try
-                        {
-                            File.Delete(p.Image);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Failed to delete image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-
                     db.Products.DeleteOnSubmit(p);
-                    db.SubmitChanges();
+                    await Task.Run(() => db.SubmitChanges());
 
                     LoadData();
                     MessageBox.Show("Product deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -306,21 +337,28 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void btn_inventoryUpdate_Click(object sender, EventArgs e)
+
+        private async void btn_inventoryUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txt_inventoryProductName.TextButton == "" || txt_inventoryImportPrice.TextButton == "" || txt_inventoryProductID.TextButton == "" || cb_inventoryCategory.Text == ""
-                    || txt_inventoryStock.TextButton == "" || cb_inventoryStatus.Text == "" || pictureBox1.Image == null || txt_inventorySellingPrice.TextButton == "")
+                if (string.IsNullOrWhiteSpace(txt_inventoryProductName.TextButton) ||
+                    string.IsNullOrWhiteSpace(txt_inventoryImportPrice.TextButton) ||
+                    string.IsNullOrWhiteSpace(txt_inventoryProductID.TextButton) ||
+                    string.IsNullOrWhiteSpace(cb_inventoryCategory.Text) ||
+                    string.IsNullOrWhiteSpace(txt_inventoryStock.TextButton) ||
+                    string.IsNullOrWhiteSpace(cb_inventoryStatus.Text) ||
+                    pictureBox1.Image == null ||
+                    string.IsNullOrWhiteSpace(txt_inventorySellingPrice.TextButton))
                 {
                     MessageBox.Show("Please fill in all the fields marked with stars", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 double discount = 0.00;
-                if (c_Discount.Checked == true)
+                if (c_Discount.Checked)
                 {
-                    if (txt_inventoryDiscount.TextButton == "")
+                    if (string.IsNullOrWhiteSpace(txt_inventoryDiscount.TextButton))
                     {
                         MessageBox.Show("Please fill in discount", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -332,6 +370,7 @@ namespace MobileShopManagementSystem
                         return;
                     }
                 }
+
                 double sellingPrice = Convert.ToDouble(txt_inventorySellingPrice.TextButton.Trim());
                 double importPrice = Convert.ToDouble(txt_inventoryImportPrice.TextButton.Trim());
                 int stock = Convert.ToInt32(txt_inventoryStock.TextButton.Trim());
@@ -371,16 +410,12 @@ namespace MobileShopManagementSystem
                         return;
                     }
 
-                    string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-
-                    string relativePath = Path.Combine("product_directory", txt_inventoryProductID.TextButton.Trim() + ".jpg");
-                    string path = Path.Combine(baseDirectory, relativePath);
-
-                    if (!string.Equals(Path.GetFullPath(pictureBox1.ImageLocation), Path.GetFullPath(path), StringComparison.OrdinalIgnoreCase))
-                        File.Copy(pictureBox1.ImageLocation, path, true);
-
-                    p.Image = relativePath.Trim();
-
+                    byte[] imageBytes = null;
+                    if (pictureBox1.Image != null)
+                    {
+                        Image resizedImage = ImageHelper.ResizeImage(pictureBox1.Image, 200, 200);
+                        imageBytes = ImageHelper.ImageToByteArray(resizedImage);
+                    }
 
                     p.ProductName = txt_inventoryProductName.TextButton.Trim();
                     p.ImportPrice = importPrice;
@@ -393,8 +428,9 @@ namespace MobileShopManagementSystem
                     p.Stock = stock;
                     p.Status = cb_inventoryStatus.Text.Trim();
                     p.DateUpdate = DateTime.Now;
+                    p.Image = imageBytes; // Lưu dưới dạng byte[]
 
-                    db.SubmitChanges();
+                    await Task.Run(() => db.SubmitChanges());
                     LoadData();
                     MessageBox.Show("Product updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clearData();
@@ -410,11 +446,13 @@ namespace MobileShopManagementSystem
         {
             clearData();
         }
+
         public void refreshData()
         {
             clearData();
             LoadData();
         }
+
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             refreshData();
@@ -457,7 +495,53 @@ namespace MobileShopManagementSystem
 
                     if (search.Count > 0)
                     {
-                        dgv_products.DataSource = search;
+                        // Tạo DataTable để hiển thị kết quả tìm kiếm
+                        DataTable dt = new DataTable();
+                        dt.Columns.Add("ProductID", typeof(string));
+                        dt.Columns.Add("ProductName", typeof(string));
+                        dt.Columns.Add("ImportPrice", typeof(double));
+                        dt.Columns.Add("SellingPrice", typeof(double));
+                        dt.Columns.Add("Discount", typeof(double));
+                        dt.Columns.Add("RealPrice", typeof(double));
+                        dt.Columns.Add("Description", typeof(string));
+                        dt.Columns.Add("CategoryID", typeof(string));
+                        dt.Columns.Add("Category", typeof(string));
+                        dt.Columns.Add("Stock", typeof(int));
+                        dt.Columns.Add("Status", typeof(string));
+                        dt.Columns.Add("DateInsert", typeof(DateTime));
+                        dt.Columns.Add("DateUpdate", typeof(DateTime));
+                        dt.Columns.Add("Image", typeof(Image));
+
+                        foreach (var product in search)
+                        {
+                            DataRow row = dt.NewRow();
+                            row["ProductID"] = product.ProductID;
+                            row["ProductName"] = product.ProductName;
+                            row["ImportPrice"] = product.ImportPrice;
+                            row["SellingPrice"] = product.SellingPrice;
+                            row["Discount"] = product.Discount;
+                            row["RealPrice"] = product.RealPrice;
+                            row["Description"] = product.Description;
+                            row["CategoryID"] = product.CategoryID;
+                            row["Category"] = product.Category;
+                            row["Stock"] = product.Stock;
+                            row["Status"] = product.Status;
+                            row["DateInsert"] = product.DateInsert ?? DateTime.Now;
+                            row["DateUpdate"] = product.DateUpdate ?? DateTime.Now;
+
+                            if (product.Image != null && product.Image.Length > 0)
+                            {
+                                row["Image"] = ImageHelper.ByteArrayToImage(product.Image.ToArray());
+                            }
+                            else
+                            {
+                                row["Image"] = null;
+                            }
+
+                            dt.Rows.Add(row);
+                        }
+
+                        dgv_products.DataSource = dt;
                         dgv_products.Refresh();
                     }
                     else
