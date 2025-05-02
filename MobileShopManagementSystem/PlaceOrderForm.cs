@@ -13,19 +13,28 @@ namespace MobileShopManagementSystem
     public partial class PlaceOrderForm : Form
     {
         private string orderID;
-        public PlaceOrderForm(string orderID)
+        private bool partialPayment;
+        private double outstandingAmount;
+        private double downPayment;
+        public PlaceOrderForm(string orderID, bool partialPayment, double downPayment, double outstandingAmount)
         {
             InitializeComponent();
             this.orderID = orderID;
+            this.partialPayment = partialPayment;
+            this.downPayment = downPayment;
+            this.outstandingAmount = outstandingAmount;
         }
-        MobileShopManagementDataContext db = new MobileShopManagementDataContext();
+        //MobileShopManagementDataContext db = new MobileShopManagementDataContext();
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            var carts = db.Carts.Where(c => c.OrderID == this.orderID).ToList();
-            var order = db.Orders.FirstOrDefault(o => o.OrderID == this.orderID);
-            db.Orders.DeleteOnSubmit(order);
-            db.Carts.DeleteAllOnSubmit(carts);
-            db.SubmitChanges();
+            using(var db = new MobileShopManagementDataContext())
+            {
+                var carts = db.Carts.Where(c => c.OrderID == this.orderID).ToList();
+                var order = db.Orders.FirstOrDefault(o => o.OrderID == this.orderID);
+                db.Orders.DeleteOnSubmit(order);
+                db.Carts.DeleteAllOnSubmit(carts);
+                db.SubmitChanges();
+            }
             this.Close();
         }
         public static string getCustomerID()
@@ -68,54 +77,67 @@ namespace MobileShopManagementSystem
         }
         private void btn_accept_Click(object sender, EventArgs e)
         {
-            try 
-            {   
-                var order = db.Orders.FirstOrDefault(o => o.OrderID == this.orderID);
-                var carts = db.Carts.Where(c => c.OrderID == this.orderID).ToList();
-                foreach (var cart in carts)
+            try
+            {
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    var product = db.Products.FirstOrDefault(p => p.ProductID == cart.ProductID);
-                    if (product != null)
+                    var carts = db.Carts.Where(c => c.OrderID == this.orderID).ToList();
+                    foreach (var cart in carts)
                     {
-                        product.Stock -= cart.Quantity;
+                        var product = db.Products.FirstOrDefault(p => p.ProductID == cart.ProductID);
+                        if (product != null)
+                        {
+                            product.Stock -= cart.Quantity;
+                        }
                     }
-                    order.TotalPrice += cart.Quantity * cart.Price;
-                    order.TotalQuantity += cart.Quantity;
+                    if (string.IsNullOrEmpty(txt_customerName.TextButton.Trim()))
+                    {
+                        MessageBox.Show("Please enter customer name.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(txt_phoneNumber.TextButton.Trim()))
+                    {
+                        MessageBox.Show("Please enter phone number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(txt_address.TextButton.Trim()))
+                    {
+                        MessageBox.Show("Please enter address.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    Customer customer = new Customer()
+                    {
+                        CustomerID = getCustomerID(),
+                        CustomerName = txt_customerName.TextButton.Trim(),
+                        PhoneNumber = txt_phoneNumber.TextButton.Trim(),
+                        Address = txt_address.TextButton.Trim(),
+                    };
+                    string status;
+                    if (this.partialPayment)
+                    {
+                        status = "Not Complete";
+                    }
+                    else
+                    {
+                        status = "Complete";
+                    }
+                    Bill bill = new Bill()
+                    {
+                        BillID = getBillID(),
+                        OrderID = this.orderID,
+                        CustomerID = customer.CustomerID,
+                        UserID = Form1.userID,
+                        OutstandingAmount = this.outstandingAmount,
+                        PaymentHistory = $"Paid : ${downPayment} Date : {DateTime.Now}",
+                        LateFee = 0,
+                        Status = status,
+                    };
+                    db.Bills.InsertOnSubmit(bill);
+                    db.Customers.InsertOnSubmit(customer);
+                    db.SubmitChanges();
+                    MessageBox.Show("Order placed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
-                if (string.IsNullOrEmpty(txt_customerName.Text.Trim()))
-                {
-                    MessageBox.Show("Please enter customer name.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (string.IsNullOrEmpty(txt_phoneNumber.Text.Trim()))
-                {
-                    MessageBox.Show("Please enter phone number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (string.IsNullOrEmpty(txt_address.Text.Trim()))
-                {
-                    MessageBox.Show("Please enter address.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                Customer customer = new Customer()
-                {
-                    CustomerID = getCustomerID(),
-                    CustomerName = txt_customerName.Text.Trim(),
-                    PhoneNumber = txt_phoneNumber.Text.Trim(),
-                    Address = txt_address.Text.Trim(),
-                };
-                Bill bill = new Bill()
-                {
-                    BillID = getBillID(),
-                    OrderID = this.orderID,
-                    CustomerID = customer.CustomerID,
-                    UserID = Form1.userID,
-                    Status = "Not Paid",
-                };
-                db.Bills.InsertOnSubmit(bill);
-                db.Customers.InsertOnSubmit(customer);
-                db.SubmitChanges();
-                MessageBox.Show("Order placed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
@@ -127,15 +149,18 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                List<Cart> carts = db.Carts.Where(c => c.OrderID == this.orderID).ToList();
-                if (carts.Count == 0)
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    MessageBox.Show("No items in the cart.", "Cart", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                foreach (var cart in carts)
-                {
-                    dgv_cart.Rows.Add(cart.ProductName, cart.Quantity, cart.Price);
+                    List<Cart> carts = db.Carts.Where(c => c.OrderID == this.orderID).ToList();
+                    if (carts.Count == 0)
+                    {
+                        MessageBox.Show("No items in the cart.", "Cart", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    foreach (var cart in carts)
+                    {
+                        dgv_cart.Rows.Add(cart.ProductName, cart.Quantity, cart.Price);
+                    }
                 }
             }
             catch (Exception ex)
@@ -146,7 +171,34 @@ namespace MobileShopManagementSystem
         private void PlaceOrderForm_Load(object sender, EventArgs e)
         {
             LoadCart();
-            txt_customerID.Text = getCustomerID();
+            txt_customerID.TextButton = getCustomerID();
+        }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void titlepanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            const int WM_NCLBUTTONDOWN = 0xA1;
+            const int HTCAPTION = 0x2;
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+        private void titlepanel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
         }
     }
 }

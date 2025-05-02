@@ -17,11 +17,14 @@ namespace MobileShopManagementSystem
         {
             InitializeComponent();
         }
-        MobileShopManagementDataContext db = new MobileShopManagementDataContext();
+        //MobileShopManagementDataContext db = new MobileShopManagementDataContext();
         private void LoadData()
         {
-            var customers = db.Customers.ToList();
-            dgv_customer.DataSource = customers;
+            using (var db = new MobileShopManagementDataContext())
+            {
+                var customers = db.Customers.ToList();
+                dgv_customer.DataSource = customers;
+            }
         }
         private void CustomersForm_Load(object sender, EventArgs e)
         {
@@ -34,26 +37,26 @@ namespace MobileShopManagementSystem
             if(e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow row = dgv_customer.Rows[e.RowIndex];
-                txt_customerID.Text = row.Cells["id"].Value.ToString();
-                txt_customerName.Text = row.Cells["name"].Value.ToString();
-                txt_customerPN.Text = row.Cells["phonenumber"].Value.ToString();
-                txt_customerAddress.Text = row.Cells["address"].Value.ToString();
+                txt_customerID.TextButton = row.Cells["id"].Value.ToString();
+                txt_customerName.TextButton = row.Cells["name"].Value.ToString();
+                txt_customerPN.TextButton = row.Cells["phonenumber"].Value.ToString();
+                txt_customerAddress.TextButton = row.Cells["address"].Value.ToString();
             }
         }
         private void clearData()
         {
-            txt_customerID.Clear();
-            txt_customerName.Clear();
-            txt_customerPN.Clear();
-            txt_customerAddress.Clear();
-            txt_search.Clear();
+            txt_customerID.TextButton = "";
+            txt_customerName.TextButton = "";
+            txt_customerPN.TextButton = "";
+            txt_customerAddress.TextButton = "";
+            txt_search.TextButton = "";
             txt_search.Focus();
         }
         private void btn_customerDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrEmpty(txt_customerID.Text))
+                if (string.IsNullOrEmpty(txt_customerID.TextButton))
                 {
                     MessageBox.Show("Please select a customer to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -62,18 +65,21 @@ namespace MobileShopManagementSystem
                 {
                     return;
                 }
-                var customer = db.Customers.FirstOrDefault(c => c.CustomerID == txt_customerID.Text);
-                if (customer != null)
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    db.Customers.DeleteOnSubmit(customer);
-                    db.SubmitChanges();
-                    MessageBox.Show("Customer deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
-                    clearData();
-                }
-                else
-                {
-                    MessageBox.Show("Customer not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var customer = db.Customers.FirstOrDefault(c => c.CustomerID == txt_customerID.TextButton);
+                    if (customer != null)
+                    {
+                        db.Customers.DeleteOnSubmit(customer);
+                        db.SubmitChanges();
+                        MessageBox.Show("Customer deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                        clearData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Customer not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch
@@ -86,39 +92,42 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (string.IsNullOrEmpty(txt_customerID.Text))
+                if (string.IsNullOrEmpty(txt_customerID.TextButton))
                 {
                     MessageBox.Show("Please select a customer to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (string.IsNullOrEmpty(txt_customerName.Text.Trim()))
+                if (string.IsNullOrEmpty(txt_customerName.TextButton.Trim()))
                 {
                     MessageBox.Show("Please enter customer name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (string.IsNullOrEmpty(txt_customerPN.Text.Trim()))
+                if (string.IsNullOrEmpty(txt_customerPN.TextButton.Trim()))
                 {
                     MessageBox.Show("Please enter customer phone number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if(MessageBox.Show("Are you sure you want to update this customer?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                if (MessageBox.Show("Are you sure you want to update this customer?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     return;
                 }
-                var customer = db.Customers.FirstOrDefault(c => c.CustomerID == txt_customerID.Text);
-                if (customer != null)
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    customer.CustomerName = txt_customerName.Text;
-                    customer.PhoneNumber = txt_customerPN.Text;
-                    customer.Address = txt_customerAddress.Text;
-                    db.SubmitChanges();
-                    MessageBox.Show("Customer updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
-                    clearData();
-                }
-                else
-                {
-                    MessageBox.Show("Customer not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var customer = db.Customers.FirstOrDefault(c => c.CustomerID == txt_customerID.TextButton);
+                    if (customer != null)
+                    {
+                        customer.CustomerName = txt_customerName.TextButton;
+                        customer.PhoneNumber = txt_customerPN.TextButton;
+                        customer.Address = txt_customerAddress.TextButton;
+                        db.SubmitChanges();
+                        MessageBox.Show("Customer updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                        clearData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Customer not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch
@@ -130,53 +139,60 @@ namespace MobileShopManagementSystem
         {
             clearData();
         }
+        public void refreshData()
+        {
+            LoadData();
+            clearData();
+        }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-            LoadData();
+            refreshData();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrEmpty(txt_search.Text.Trim()))
+                if (string.IsNullOrEmpty(txt_search.TextButton.Trim()))
                 {
                     MessageBox.Show("Please enter a search term.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                string searchText = txt_search.Text.Trim().ToLower();
+                string searchText = txt_search.TextButton.Trim().ToLower();
                 List<Customer> search = new List<Customer>();
-
-                switch (cb_search.SelectedItem?.ToString())
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    case "Customer ID":
-                        search = db.Customers
-                            .Where(x => x.CustomerID.ToLower().Contains(searchText))
-                            .ToList();
-                        break;
+                    switch (cb_search.SelectedItem?.ToString())
+                    {
+                        case "Customer ID":
+                            search = db.Customers
+                                .Where(x => x.CustomerID.ToLower().Contains(searchText))
+                                .ToList();
+                            break;
 
-                    case "Customer Name":
-                        search = db.Customers
-                            .Where(x => x.CustomerName.ToLower().Contains(searchText))
-                            .ToList();
-                        break;
+                        case "Customer Name":
+                            search = db.Customers
+                                .Where(x => x.CustomerName.ToLower().Contains(searchText))
+                                .ToList();
+                            break;
 
-                    case "Phone Number":
-                        search = db.Customers
-                            .Where(x => x.PhoneNumber.ToLower().Contains(searchText))
-                            .ToList();
-                        break;
-                }
+                        case "Phone Number":
+                            search = db.Customers
+                                .Where(x => x.PhoneNumber.ToLower().Contains(searchText))
+                                .ToList();
+                            break;
+                    }
 
-                if (search.Count > 0)
-                {
-                    dgv_customer.DataSource = search;
-                    dgv_customer.Refresh();
-                }
-                else
-                {
-                    MessageBox.Show("No product found", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (search.Count > 0)
+                    {
+                        dgv_customer.DataSource = search;
+                        dgv_customer.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No customer found", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch

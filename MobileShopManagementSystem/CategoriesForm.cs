@@ -18,7 +18,7 @@ namespace MobileShopManagementSystem
             InitializeComponent();
         }
 
-        MobileShopManagementDataContext db = new MobileShopManagementDataContext();
+        //MobileShopManagementDataContext db = new MobileShopManagementDataContext();
 
         public static string getCategoryID()
         {
@@ -39,8 +39,11 @@ namespace MobileShopManagementSystem
         }
         private void LoadData()
         {
-            dgv_categories.DataSource = db.Categories.ToList();
-            txt_categoriesID.Text = getCategoryID();
+            using (var db = new MobileShopManagementDataContext())
+            {
+                dgv_categories.DataSource = db.Categories.ToList();
+            }
+            txt_categoriesID.TextButton = getCategoryID();
             dgv_categories.Refresh();
         }
 
@@ -55,7 +58,7 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (txt_categoriesInput.Text.Trim() == "")
+                if (txt_categoriesInput.TextButton.Trim() == "")
                 {
                     MessageBox.Show("Please enter category name!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -65,25 +68,28 @@ namespace MobileShopManagementSystem
                     MessageBox.Show("Please chose status!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if(db.Categories.Any(c => c.CategoryID == txt_categoriesID.Text.Trim().ToUpper()))
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    MessageBox.Show("Category ID already exists!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    if (db.Categories.Any(c => c.CategoryID == txt_categoriesID.TextButton.Trim().ToUpper()))
+                    {
+                        MessageBox.Show("Category ID already exists!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (db.Categories.Any(c => c.CategoryName == txt_categoriesInput.TextButton.Trim().ToLower()))
+                    {
+                        MessageBox.Show("Category name already exists!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    Category cat = new Category()
+                    {
+                        CategoryID = getCategoryID(),
+                        CategoryName = txt_categoriesInput.TextButton.Trim().ToLower(),
+                        Status = cb_categoriesStatus.SelectedItem.ToString().Trim(),
+                        DateInsert = DateTime.Now
+                    };
+                    db.Categories.InsertOnSubmit(cat);
+                    db.SubmitChanges();
                 }
-                if (db.Categories.Any(c => c.CategoryName == txt_categoriesInput.Text.Trim().ToLower()))
-                {
-                    MessageBox.Show("Category name already exists!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                Category cat = new Category()
-                {
-                    CategoryID = getCategoryID(),
-                    CategoryName = txt_categoriesInput.Text.Trim().ToLower(),
-                    Status = cb_categoriesStatus.SelectedItem.ToString().Trim(),
-                    DateInsert = DateTime.Now
-                };
-                db.Categories.InsertOnSubmit(cat);
-                db.SubmitChanges();
                 LoadData();
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearData();
@@ -98,23 +104,26 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (txt_categoriesInput.Text.Trim() == "")
+                if (txt_categoriesInput.TextButton.Trim() == "")
                 {
                     MessageBox.Show("Please enter category name!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if(MessageBox.Show("Are you sure you want to delete this category?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (MessageBox.Show("Are you sure you want to delete this category?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     return;
                 }
-                Category cat = db.Categories.FirstOrDefault(c => c.CategoryID == txt_categoriesID.Text.Trim().ToUpper());
-                if (cat == null)
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    MessageBox.Show("Category name does not exist!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    Category cat = db.Categories.FirstOrDefault(c => c.CategoryID == txt_categoriesID.TextButton.Trim().ToUpper());
+                    if (cat == null)
+                    {
+                        MessageBox.Show("Category name does not exist!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    db.Categories.DeleteOnSubmit(cat);
+                    db.SubmitChanges();
                 }
-                db.Categories.DeleteOnSubmit(cat);
-                db.SubmitChanges();
                 LoadData();
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearData();
@@ -127,11 +136,11 @@ namespace MobileShopManagementSystem
 
         private void dgv_categories_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow row = dgv_categories.Rows[e.RowIndex];
-                txt_categoriesID.Text = row.Cells[0].Value.ToString();
-                txt_categoriesInput.Text = row.Cells[1].Value.ToString();
+                txt_categoriesID.TextButton = row.Cells[0].Value.ToString();
+                txt_categoriesInput.TextButton = row.Cells[1].Value.ToString();
                 cb_categoriesStatus.SelectedItem = row.Cells[2].Value.ToString();
             }
         }
@@ -140,7 +149,7 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (txt_categoriesInput.Text.Trim() == "")
+                if (txt_categoriesInput.TextButton.Trim() == "")
                 {
                     MessageBox.Show("Please enter category name!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -149,15 +158,18 @@ namespace MobileShopManagementSystem
                 {
                     return;
                 }
-                Category cat = db.Categories.FirstOrDefault(c => c.CategoryID == txt_categoriesID.Text.Trim().ToUpper());
-                if (cat == null)
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    MessageBox.Show("Category name does not exist!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    Category cat = db.Categories.FirstOrDefault(c => c.CategoryID == txt_categoriesID.TextButton.Trim().ToUpper());
+                    if (cat == null)
+                    {
+                        MessageBox.Show("Category name does not exist!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    cat.CategoryName = txt_categoriesInput.TextButton.Trim().ToLower();
+                    cat.Status = cb_categoriesStatus.SelectedItem.ToString().Trim();
+                    db.SubmitChanges();
                 }
-                cat.CategoryName = txt_categoriesInput.Text.Trim().ToLower();
-                cat.Status = cb_categoriesStatus.SelectedItem.ToString().Trim();
-                db.SubmitChanges();
                 LoadData();
                 MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearData();
@@ -170,45 +182,52 @@ namespace MobileShopManagementSystem
 
         private void clearData()
         {
-            txt_categoriesInput.ResetText();
+            txt_categoriesInput.TextButton = "";
             cb_categoriesStatus.SelectedIndex = 0;
-            txt_categoriesID.Text = getCategoryID();
+            txt_categoriesID.TextButton = getCategoryID();
         }
         private void btn_categoriesClear_Click(object sender, EventArgs e)
         {
             clearData();
         }
+        public void refreshData()
+        {
+            LoadData();
+            clearData();
+        }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-            LoadData();
+            refreshData();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
             try
             {
-                if(string.IsNullOrEmpty(txt_search.Text))
+                if (string.IsNullOrEmpty(txt_search.TextButton))
                 {
                     MessageBox.Show("Please enter search keyword!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                string searchText = txt_search.Text.Trim().ToLower();
+                string searchText = txt_search.TextButton.Trim().ToLower();
                 List<Category> search = new List<Category>();
-
-                switch (cb_search.SelectedItem?.ToString())
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    case "Category ID":
-                        search = db.Categories
-                            .Where(x => x.CategoryID.ToLower().Contains(searchText))
-                            .ToList();
-                        break;
+                    switch (cb_search.SelectedItem?.ToString())
+                    {
+                        case "Category ID":
+                            search = db.Categories
+                                .Where(x => x.CategoryID.ToLower().Contains(searchText))
+                                .ToList();
+                            break;
 
-                    case "Category Name":
-                        search = db.Categories
-                            .Where(x => x.CategoryName.ToLower().Contains(searchText))
-                            .ToList();
-                        break;
+                        case "Category Name":
+                            search = db.Categories
+                                .Where(x => x.CategoryName.ToLower().Contains(searchText))
+                                .ToList();
+                            break;
+                    }
                 }
 
                 if (search.Count > 0)

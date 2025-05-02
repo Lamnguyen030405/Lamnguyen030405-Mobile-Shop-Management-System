@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CrystalDecisions.Windows.Forms;
+using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,35 +20,36 @@ namespace MobileShopManagementSystem
             InitializeComponent();
         }
 
-        MobileShopManagementDataContext db = new MobileShopManagementDataContext();
-
         public static string getOrderID()
         {
             using (var db = new MobileShopManagementDataContext())
             {
-                var lastCartID = db.Orders
+                var lastOrderID = db.Orders
                     .OrderByDescending(c => c.OrderID)
                     .Select(c => c.OrderID)
                     .FirstOrDefault();
 
-                if (lastCartID == null)
+                if (lastOrderID == null)
                 {
-                    return "OR0";
+                    return "OID0";
                 }
 
-                int numberPart = int.Parse(lastCartID.Substring(2));
+                int numberPart = int.Parse(lastOrderID.Substring(3));
                 numberPart++;
-                return $"OR{numberPart}";
+                return $"OID{numberPart}";
             }
         }
+
         int count = 1;
-        public void cardItems(string productname, string stock, string price, Image image, string productid, string category, string quantity)
+        public void cardItems(string productname, string stock, string sellingprice, string realprice, string discount, Image image, string productid, string category, string quantity)
         {
             var card = new CardProduct()
             {
                 productName = productname,
                 productStock = stock,
-                productPrice = price,
+                productSellingPrice = sellingprice,
+                productRealPrice = realprice,
+                productDiscount = discount,
                 productImage = image,
                 productID = productid,
                 productCategory = category,
@@ -90,7 +93,7 @@ namespace MobileShopManagementSystem
 
                     if (!flag)
                     {
-                        dgv_product.Rows.Add($"{count++}", selectedCard.productID, selectedCard.productName, 1, selectedCard.productPrice);
+                        dgv_product.Rows.Add($"{count++}", selectedCard.productID, selectedCard.productName, 1, selectedCard.productRealPrice);
                     }
                 }
                 catch (Exception ex)
@@ -100,28 +103,36 @@ namespace MobileShopManagementSystem
                 updateTotalPrice();
             };
         }
+
         private void updateTotalPrice()
         {
             decimal totalprice = 0;
-            foreach(DataGridViewRow row in dgv_product.Rows)
+            int totalquantity = 0;
+            foreach (DataGridViewRow row in dgv_product.Rows)
             {
                 if (row.Cells["quantity"].Value != null)
                 {
+                    totalquantity += Convert.ToInt16(row.Cells["quantity"].Value);
                     totalprice += Convert.ToDecimal(row.Cells["price"].Value) * Convert.ToInt16(row.Cells["quantity"].Value);
                 }
             }
             total_price.Text = $"${totalprice:F2}";
+            total_quantity.Text = $"{totalquantity} items";
+            txt_downPaymentAmount.Text = total_price.Text.Replace("$", "");
         }
 
         public void LoadProducts()
         {
             try
             {
-                List<Product> products = db.Products.Where(p => p.Stock > 0 && p.Status == "Available").ToList();
-                flowLayoutPanel1.Controls.Clear();
-                foreach (var product in products)
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    cardItems(product.ProductName, product.Stock.ToString(), product.Price.ToString(), Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
+                    List<Product> products = db.Products.Where(p => p.Stock > 0 && p.Status == "Available").ToList();
+                    flowLayoutPanel1.Controls.Clear();
+                    foreach (var product in products)
+                    {
+                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
+                    }
                 }
             }
             catch (Exception ex)
@@ -129,66 +140,32 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void displayCategories()
         {
             cb_shopCategory.Items.Clear();
-            List<Category> cat = db.Categories.Where(c => c.Status == "Active").ToList();
-            if (cat.Count > 0)
+            using (var db = new MobileShopManagementDataContext())
             {
-                foreach (Category c in cat)
+                List<Category> cat = db.Categories.Where(c => c.Status == "Active").ToList();
+                if (cat.Count > 0)
                 {
-                    cb_shopCategory.Items.Add(c.CategoryName);
+                    foreach (Category c in cat)
+                    {
+                        cb_shopCategory.Items.Add(c.CategoryName);
+                    }
                 }
             }
             cb_shopCategory.SelectedIndex = -1;
         }
+
         private void ShopForm_Load(object sender, EventArgs e)
         {
             LoadProducts();
+            displayCategories();
         }
-        bool check = false;
-        private void txt_amount_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                try
-                {
-                    if(dgv_product.Rows.Count == 0)
-                    {
-                        MessageBox.Show("Please select product", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    if (txt_amount.Text == "")
-                    {
-                        MessageBox.Show("Please enter amount", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    if (int.Parse(txt_amount.Text) == 0)
-                    {
-                        MessageBox.Show("Amount must be greater than 0", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    decimal getamount = Convert.ToDecimal(txt_amount.Text);
-                    decimal total = Convert.ToDecimal(total_price.Text.Substring(1));
 
-                    if (getamount < total)
-                    {
-                        MessageBox.Show("Amount is less than total price", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    else
-                    {
-                        check = true;
-                        change.Text = $"${getamount - total:F2}";
-                    }
-                    e.SuppressKeyPress = true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+        bool check = false;
+
         private void btn_placeOrder_Click(object sender, EventArgs e)
         {
             try
@@ -200,38 +177,90 @@ namespace MobileShopManagementSystem
                     MessageBox.Show("Please select product", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                if (check == false)
+                if (c_partialPayment.Checked == true)
                 {
-                    MessageBox.Show("Please enter amount", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                var order = new Order()
-                {
-                    OrderID = currentOrderID,
-                    //Amount = Convert.ToDecimal(ShopForm.amount.Text),
-                    //Change = Convert.ToDecimal(change.Text.Substring(1)),
-                    //PaymentMethod = cb_paymentMethod.Text,
-                    DateOrder = DateTime.Now,
-                    TotalPrice = 0,
-                    TotalQuantity = 0,
-                };
-                db.Orders.InsertOnSubmit(order);
-                db.SubmitChanges();
-                foreach (DataGridViewRow row in dgv_product.Rows)
-                {
-                    Cart cart = new Cart()
+                    if (check == false)
                     {
-                        ProductID = row.Cells["productid"].Value.ToString(),
-                        Quantity = Convert.ToInt32(row.Cells["quantity"].Value),
-                        ProductName = row.Cells["productname"].Value.ToString(),
-                        Price = Convert.ToDouble(row.Cells["price"].Value),
-                        OrderID = currentOrderID
-                    };
-                    db.Carts.InsertOnSubmit(cart);
-                    db.SubmitChanges();
+                        MessageBox.Show("Please enter down payment", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    if (cb_shopTerm.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Please select term", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                 }
-                PlaceOrderForm placeOrderForm = new PlaceOrderForm(currentOrderID);
-                placeOrderForm.Show();
+
+                double downPayment = Convert.ToDouble(txt_downPaymentAmount.Text.Trim());
+                double remainingAmount = Convert.ToDouble(lbl_remainingAmount.Text.Trim().Replace("$", ""));
+                double totalAmount = Convert.ToDouble(total_price.Text.Trim().Replace("$", ""));
+                string selectedTerm = cb_shopTerm.SelectedItem?.ToString().Trim() ?? "";
+                int days = 0;
+                int.TryParse(selectedTerm.Replace("days", "").Trim(), out days);
+                DateTime duedate = DateTime.Now.AddDays(days);
+                double interestRate = 0;
+                double penaltyRate = 0;
+                if (selectedTerm == "30 days")
+                {
+                    interestRate = 5;
+                    penaltyRate = 1;
+                }
+                else if (selectedTerm == "60 days")
+                {
+                    interestRate = 10;
+                    penaltyRate = 0.75;
+                }
+                else if (selectedTerm == "90 days")
+                {
+                    interestRate = 15;
+                    penaltyRate = 0.5;
+                }
+                else if (selectedTerm == "120 days")
+                {
+                    interestRate = 20;
+                    penaltyRate = 0.25;
+                }
+                int totalQuantity = Convert.ToInt32(total_quantity.Text.Trim().Replace("items", ""));
+                double outstandingAmount = Math.Round(remainingAmount * (1 + interestRate / 100), 2);
+
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    var order = new Order()
+                    {
+                        OrderID = currentOrderID,
+                        DownPaymentAmount = downPayment,
+                        RemainingAmount = remainingAmount,
+                        SelectedTerm = selectedTerm,
+                        InterestRate = interestRate,
+                        PenaltyRate = penaltyRate,
+                        DueDate = duedate,
+                        DateOrder = DateTime.Now,
+                        TotalPrice = totalAmount,
+                        TotalQuantity = totalQuantity,
+                    };
+                    db.Orders.InsertOnSubmit(order);
+                    db.SubmitChanges();
+
+                    foreach (DataGridViewRow row in dgv_product.Rows)
+                    {
+                        Cart cart = new Cart()
+                        {
+                            ProductID = row.Cells["productid"].Value.ToString(),
+                            Quantity = Convert.ToInt32(row.Cells["quantity"].Value),
+                            ProductName = row.Cells["productname"].Value.ToString(),
+                            Price = Convert.ToDouble(row.Cells["price"].Value),
+                            OrderID = currentOrderID
+                        };
+                        db.Carts.InsertOnSubmit(cart);
+                        db.SubmitChanges();
+                    }
+                }
+
+                PlaceOrderForm placeOrderForm = new PlaceOrderForm(currentOrderID, c_partialPayment.Checked, downPayment, outstandingAmount);
+                placeOrderForm.ShowDialog();
+
+                // Làm mới dữ liệu sau khi tạo bill mới
+                btn_refresh_Click(sender, e);
             }
             catch (Exception ex)
             {
@@ -259,23 +288,38 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void clearData() 
+        {
+            dgv_product.Rows.Clear();
+            txt_downPaymentAmount.Text = "";
+            lbl_remainingAmount.Text = "$0.00";
+            total_price.Text = "$0.00";
+            total_quantity.Text = "0 items";
+            cb_shopTerm.SelectedIndex = -1;
+        }
 
+        public void refreshData() 
+        {
+            LoadProducts();
+            clearData();
+        }
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-            db = new MobileShopManagementDataContext();
-            LoadProducts();
-            dgv_product.Rows.Clear();
+            refreshData();
         }
 
         private void btn_categoryRefresh_Click(object sender, EventArgs e)
         {
             try
             {
-                List<Product> products = db.Products.Where(p => p.Stock > 0 && p.Status == "Available" && p.Category == cb_shopCategory.SelectedItem.ToString()).ToList();
-                flowLayoutPanel1.Controls.Clear();
-                foreach (var product in products)
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    cardItems(product.ProductName, product.Stock.ToString(), product.Price.ToString(), Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
+                    List<Product> products = db.Products.Where(p => p.Stock > 0 && p.Status == "Available" && p.Category == cb_shopCategory.SelectedItem.ToString()).ToList();
+                    flowLayoutPanel1.Controls.Clear();
+                    foreach (var product in products)
+                    {
+                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
+                    }
                 }
             }
             catch (Exception ex)
@@ -288,7 +332,7 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                string keyword = txt_search.Text.Trim().ToLower();
+                string keyword = txt_search.TextButton.Trim().ToLower();
 
                 if (string.IsNullOrEmpty(keyword))
                 {
@@ -296,16 +340,19 @@ namespace MobileShopManagementSystem
                     return;
                 }
 
-                var products = db.Products
-                    .Where(p => p.Stock > 0 && p.Status == "Available" &&
-                                p.ProductName.ToLower().Contains(keyword))
-                    .ToList();
-
-                flowLayoutPanel1.Controls.Clear();
-                foreach (var product in products)
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    cardItems(product.ProductName, product.Stock.ToString(), product.Price.ToString(),
-                              Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
+                    var products = db.Products
+                        .Where(p => p.Stock > 0 && p.Status == "Available" &&
+                                    p.ProductName.ToLower().Contains(keyword))
+                        .ToList();
+
+                    flowLayoutPanel1.Controls.Clear();
+                    foreach (var product in products)
+                    {
+                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(),
+                                  Image.FromFile(PathHelper.GetImagePath(product.Image)), product.ProductID, product.Category, "");
+                    }
                 }
             }
             catch (Exception ex)
@@ -314,5 +361,66 @@ namespace MobileShopManagementSystem
             }
         }
 
+        private void c_partialPayment_CheckedChanged()
+        {
+            if (c_partialPayment.Checked)
+            {
+                txt_downPaymentAmount.Enabled = true;
+                txt_downPaymentAmount.Text = "0.0";
+                cb_shopTerm.Enabled = true;
+                txt_downPaymentAmount.Focus();
+            }
+            else
+            {
+                txt_downPaymentAmount.Enabled = false;
+                txt_downPaymentAmount.Text = total_price.Text.Replace("$", "");
+                cb_shopTerm.SelectedIndex = -1;
+                cb_shopTerm.Enabled = false;
+                lbl_remainingAmount.Text = "$0.00";
+            }
+        }
+
+        private void txt_downPaymentAmount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    if (dgv_product.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Please select product", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    if (txt_downPaymentAmount.Text == "")
+                    {
+                        MessageBox.Show("Please enter down payment amount", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    decimal getdownpaymentamount = Convert.ToDecimal(txt_downPaymentAmount.Text);
+                    decimal total = Convert.ToDecimal(total_price.Text.Substring(1));
+                    if (getdownpaymentamount < 0)
+                    {
+                        MessageBox.Show("Down payment amount must be greater than or equal to 0", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    if (getdownpaymentamount > total)
+                    {
+                        MessageBox.Show("Down payment amount must be less than total price", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    else
+                    {
+                        check = true;
+                        lbl_remainingAmount.Text = $"${total - getdownpaymentamount:F2}";
+                    }
+                    e.SuppressKeyPress = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

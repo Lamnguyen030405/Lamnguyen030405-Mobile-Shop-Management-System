@@ -1,4 +1,6 @@
-﻿namespace MobileShopManagementSystem
+﻿using System;
+
+namespace MobileShopManagementSystem
 {
     partial class ShopForm
     {
@@ -20,6 +22,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,107 +31,550 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.total_price = new System.Windows.Forms.Label();
+            this.btn_categoryRefresh = new ReaLTaiizor.Controls.Button();
+            this.btn_search = new ReaLTaiizor.Controls.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.artanPanel1 = new ArtanComponent.ArtanPanel();
+            this.txt_search = new ReaLTaiizor.Controls.CyberTextBox();
+            this.artanPanel4 = new ArtanComponent.ArtanPanel();
+            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
+            this.artanPanel5 = new ArtanComponent.ArtanPanel();
+            this.artanPanel2 = new ArtanComponent.ArtanPanel();
+            this.total_quantity = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cb_shopTerm = new ReaLTaiizor.Controls.MetroComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.c_partialPayment = new ReaLTaiizor.Controls.CyberCheckBox();
+            this.btn_refresh = new ReaLTaiizor.Controls.Button();
+            this.txt_downPaymentAmount = new MobileShopManagementSystem.ExtendedDungeonTextBox();
+            this.btn_delete = new ReaLTaiizor.Controls.Button();
+            this.btn_pay = new ReaLTaiizor.Controls.Button();
+            this.btn_placeOrder = new ReaLTaiizor.Controls.Button();
+            this.artanPanel3 = new ArtanComponent.ArtanPanel();
             this.dgv_product = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_refresh = new ReaLTaiizor.Controls.Button();
-            this.btn_delete = new ReaLTaiizor.Controls.Button();
-            this.btn_pay = new ReaLTaiizor.Controls.Button();
-            this.btn_placeOrder = new ReaLTaiizor.Controls.Button();
-            this.change = new System.Windows.Forms.Label();
-            this.total_price = new System.Windows.Forms.Label();
-            this.txt_amount = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_search = new ReaLTaiizor.Controls.Button();
-            this.txt_search = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cb_shopCategory = new System.Windows.Forms.ComboBox();
-            this.btn_categoryRefresh = new ReaLTaiizor.Controls.Button();
+            this.lbl_remainingAmount = new System.Windows.Forms.Label();
+            this.artanPanel6 = new ArtanComponent.ArtanPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cb_shopCategory = new ReaLTaiizor.Controls.AloneComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.artanPanel1.SuspendLayout();
+            this.artanPanel4.SuspendLayout();
+            this.artanPanel5.SuspendLayout();
+            this.artanPanel2.SuspendLayout();
+            this.artanPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.artanPanel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(102)))), ((int)(((byte)(155)))));
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(12, 117);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(768, 620);
-            this.panel1.TabIndex = 0;
-            // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 13);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(745, 594);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(742, 550);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // panel2
+            // label2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(13, 430);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 28);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Total ($): ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(13, 555);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 28);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Down Payment :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(13, 509);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(193, 28);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Remaining Payment :";
+            // 
+            // total_price
+            // 
+            this.total_price.AutoSize = true;
+            this.total_price.BackColor = System.Drawing.Color.Transparent;
+            this.total_price.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.total_price.ForeColor = System.Drawing.Color.White;
+            this.total_price.Location = new System.Drawing.Point(110, 430);
+            this.total_price.Name = "total_price";
+            this.total_price.Size = new System.Drawing.Size(49, 28);
+            this.total_price.TabIndex = 5;
+            this.total_price.Text = "$0.0";
+            // 
+            // btn_categoryRefresh
+            // 
+            this.btn_categoryRefresh.AllowDrop = true;
+            this.btn_categoryRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btn_categoryRefresh.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_categoryRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_categoryRefresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_categoryRefresh.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_categoryRefresh.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_categoryRefresh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_categoryRefresh.Image = null;
+            this.btn_categoryRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_categoryRefresh.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_categoryRefresh.Location = new System.Drawing.Point(142, 0);
+            this.btn_categoryRefresh.Name = "btn_categoryRefresh";
+            this.btn_categoryRefresh.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_categoryRefresh.PressedColor = System.Drawing.Color.White;
+            this.btn_categoryRefresh.Size = new System.Drawing.Size(91, 72);
+            this.btn_categoryRefresh.TabIndex = 3;
+            this.btn_categoryRefresh.Text = "Refresh";
+            this.btn_categoryRefresh.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_categoryRefresh.Click += new System.EventHandler(this.btn_categoryRefresh_Click);
+            // 
+            // btn_search
+            // 
+            this.btn_search.AllowDrop = true;
+            this.btn_search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_search.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_search.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_search.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_search.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_search.Image = null;
+            this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_search.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_search.Location = new System.Drawing.Point(430, 0);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_search.PressedColor = System.Drawing.Color.White;
+            this.btn_search.Size = new System.Drawing.Size(93, 72);
+            this.btn_search.TabIndex = 3;
+            this.btn_search.Text = "Search";
+            this.btn_search.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 28);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Product\'s name :";
+            // 
+            // artanPanel1
+            // 
+            this.artanPanel1.BackColor = System.Drawing.Color.White;
+            this.artanPanel1.BorderRadius = 30;
+            this.artanPanel1.Controls.Add(this.txt_search);
+            this.artanPanel1.Controls.Add(this.btn_search);
+            this.artanPanel1.Controls.Add(this.label1);
+            this.artanPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artanPanel1.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel1.GradientAngle = 45F;
+            this.artanPanel1.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel1.Location = new System.Drawing.Point(3, 3);
+            this.artanPanel1.Name = "artanPanel1";
+            this.artanPanel1.Size = new System.Drawing.Size(523, 72);
+            this.artanPanel1.TabIndex = 6;
+            // 
+            // txt_search
+            // 
+            this.txt_search.Alpha = 20;
+            this.txt_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(102)))), ((int)(((byte)(155)))));
-            this.panel2.Controls.Add(this.dgv_product);
-            this.panel2.Controls.Add(this.btn_refresh);
-            this.panel2.Controls.Add(this.btn_delete);
-            this.panel2.Controls.Add(this.btn_pay);
-            this.panel2.Controls.Add(this.btn_placeOrder);
-            this.panel2.Controls.Add(this.change);
-            this.panel2.Controls.Add(this.total_price);
-            this.panel2.Controls.Add(this.txt_amount);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(805, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(478, 725);
-            this.panel2.TabIndex = 1;
+            this.txt_search.BackColor = System.Drawing.Color.Transparent;
+            this.txt_search.Background_WidthPen = 5F;
+            this.txt_search.BackgroundPen = true;
+            this.txt_search.ColorBackground = System.Drawing.Color.White;
+            this.txt_search.ColorBackground_Pen = System.Drawing.Color.Cyan;
+            this.txt_search.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_search.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_search.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_search.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txt_search.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txt_search.ForeColor = System.Drawing.Color.Black;
+            this.txt_search.Lighting = false;
+            this.txt_search.LinearGradientPen = true;
+            this.txt_search.Location = new System.Drawing.Point(154, 6);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.PenWidth = 15;
+            this.txt_search.RGB = false;
+            this.txt_search.Rounding = true;
+            this.txt_search.RoundingInt = 30;
+            this.txt_search.Size = new System.Drawing.Size(270, 48);
+            this.txt_search.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txt_search.TabIndex = 4;
+            this.txt_search.Tag = "Cyber";
+            this.txt_search.TextButton = "";
+            this.txt_search.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_search.Timer_RGB = 300;
+            // 
+            // artanPanel4
+            // 
+            this.artanPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.artanPanel4.BackColor = System.Drawing.Color.White;
+            this.artanPanel4.BorderRadius = 30;
+            this.artanPanel4.Controls.Add(this.bigLabel1);
+            this.artanPanel4.Controls.Add(this.artanPanel5);
+            this.artanPanel4.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel4.GradientAngle = 90F;
+            this.artanPanel4.GradientBottomColor = System.Drawing.Color.CadetBlue;
+            this.artanPanel4.GradientTopColor = System.Drawing.Color.DodgerBlue;
+            this.artanPanel4.Location = new System.Drawing.Point(12, 119);
+            this.artanPanel4.Name = "artanPanel4";
+            this.artanPanel4.Padding = new System.Windows.Forms.Padding(10);
+            this.artanPanel4.Size = new System.Drawing.Size(768, 618);
+            this.artanPanel4.TabIndex = 7;
+            // 
+            // bigLabel1
+            // 
+            this.bigLabel1.AutoSize = true;
+            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel1.Font = new System.Drawing.Font("Showcard Gothic", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.bigLabel1.Location = new System.Drawing.Point(2, 0);
+            this.bigLabel1.Name = "bigLabel1";
+            this.bigLabel1.Size = new System.Drawing.Size(134, 52);
+            this.bigLabel1.TabIndex = 25;
+            this.bigLabel1.Text = "Shop";
+            this.bigLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // artanPanel5
+            // 
+            this.artanPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.artanPanel5.BackColor = System.Drawing.Color.White;
+            this.artanPanel5.BorderRadius = 30;
+            this.artanPanel5.Controls.Add(this.flowLayoutPanel1);
+            this.artanPanel5.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel5.GradientAngle = 90F;
+            this.artanPanel5.GradientBottomColor = System.Drawing.Color.White;
+            this.artanPanel5.GradientTopColor = System.Drawing.Color.White;
+            this.artanPanel5.Location = new System.Drawing.Point(13, 55);
+            this.artanPanel5.Name = "artanPanel5";
+            this.artanPanel5.Size = new System.Drawing.Size(742, 550);
+            this.artanPanel5.TabIndex = 1;
+            // 
+            // artanPanel2
+            // 
+            this.artanPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.artanPanel2.BackColor = System.Drawing.Color.White;
+            this.artanPanel2.BorderRadius = 30;
+            this.artanPanel2.Controls.Add(this.total_quantity);
+            this.artanPanel2.Controls.Add(this.label7);
+            this.artanPanel2.Controls.Add(this.cb_shopTerm);
+            this.artanPanel2.Controls.Add(this.label5);
+            this.artanPanel2.Controls.Add(this.c_partialPayment);
+            this.artanPanel2.Controls.Add(this.btn_refresh);
+            this.artanPanel2.Controls.Add(this.txt_downPaymentAmount);
+            this.artanPanel2.Controls.Add(this.btn_delete);
+            this.artanPanel2.Controls.Add(this.btn_pay);
+            this.artanPanel2.Controls.Add(this.btn_placeOrder);
+            this.artanPanel2.Controls.Add(this.label4);
+            this.artanPanel2.Controls.Add(this.artanPanel3);
+            this.artanPanel2.Controls.Add(this.label3);
+            this.artanPanel2.Controls.Add(this.label2);
+            this.artanPanel2.Controls.Add(this.lbl_remainingAmount);
+            this.artanPanel2.Controls.Add(this.total_price);
+            this.artanPanel2.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel2.GradientAngle = 90F;
+            this.artanPanel2.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel2.Location = new System.Drawing.Point(818, 12);
+            this.artanPanel2.Name = "artanPanel2";
+            this.artanPanel2.Padding = new System.Windows.Forms.Padding(10);
+            this.artanPanel2.Size = new System.Drawing.Size(452, 725);
+            this.artanPanel2.TabIndex = 0;
+            // 
+            // total_quantity
+            // 
+            this.total_quantity.AutoSize = true;
+            this.total_quantity.BackColor = System.Drawing.Color.Transparent;
+            this.total_quantity.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.total_quantity.ForeColor = System.Drawing.Color.White;
+            this.total_quantity.Location = new System.Drawing.Point(349, 430);
+            this.total_quantity.Name = "total_quantity";
+            this.total_quantity.Size = new System.Drawing.Size(75, 28);
+            this.total_quantity.TabIndex = 34;
+            this.total_quantity.Text = "0 items";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(246, 430);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 28);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Quantity: ";
+            // 
+            // cb_shopTerm
+            // 
+            this.cb_shopTerm.AllowDrop = true;
+            this.cb_shopTerm.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_shopTerm.BackColor = System.Drawing.Color.Transparent;
+            this.cb_shopTerm.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.cb_shopTerm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_shopTerm.CausesValidation = false;
+            this.cb_shopTerm.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.cb_shopTerm.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.cb_shopTerm.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.cb_shopTerm.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_shopTerm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_shopTerm.Enabled = false;
+            this.cb_shopTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cb_shopTerm.FormattingEnabled = true;
+            this.cb_shopTerm.IsDerivedStyle = true;
+            this.cb_shopTerm.ItemHeight = 20;
+            this.cb_shopTerm.Items.AddRange(new object[] {
+            "30 days",
+            "60 days",
+            "90 days",
+            "120 days"});
+            this.cb_shopTerm.Location = new System.Drawing.Point(174, 610);
+            this.cb_shopTerm.Name = "cb_shopTerm";
+            this.cb_shopTerm.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cb_shopTerm.SelectedItemForeColor = System.Drawing.Color.White;
+            this.cb_shopTerm.Size = new System.Drawing.Size(94, 26);
+            this.cb_shopTerm.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.cb_shopTerm.StyleManager = null;
+            this.cb_shopTerm.TabIndex = 32;
+            this.cb_shopTerm.ThemeAuthor = "Taiizor";
+            this.cb_shopTerm.ThemeName = "MetroLight";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(13, 608);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 28);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Term :";
+            // 
+            // c_partialPayment
+            // 
+            this.c_partialPayment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.c_partialPayment.BackColor = System.Drawing.Color.Transparent;
+            this.c_partialPayment.Background = true;
+            this.c_partialPayment.Background_WidthPen = 2F;
+            this.c_partialPayment.BackgroundPen = true;
+            this.c_partialPayment.Checked = false;
+            this.c_partialPayment.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.c_partialPayment.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.c_partialPayment.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.c_partialPayment.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.c_partialPayment.ColorChecked = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.c_partialPayment.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.c_partialPayment.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.c_partialPayment.CyberCheckBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.c_partialPayment.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.c_partialPayment.Effect_1_Transparency = 25;
+            this.c_partialPayment.Effect_2 = true;
+            this.c_partialPayment.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.c_partialPayment.Effect_2_Transparency = 15;
+            this.c_partialPayment.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.c_partialPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.c_partialPayment.LinearGradient_Background = false;
+            this.c_partialPayment.LinearGradientPen = false;
+            this.c_partialPayment.Location = new System.Drawing.Point(10, 461);
+            this.c_partialPayment.Name = "c_partialPayment";
+            this.c_partialPayment.RGB = false;
+            this.c_partialPayment.Rounding = true;
+            this.c_partialPayment.RoundingInt = 100;
+            this.c_partialPayment.Size = new System.Drawing.Size(275, 45);
+            this.c_partialPayment.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.c_partialPayment.TabIndex = 14;
+            this.c_partialPayment.Tag = "Cyber";
+            this.c_partialPayment.TextButton = "Partial Payment";
+            this.c_partialPayment.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.c_partialPayment.Timer_Effect_1 = 1;
+            this.c_partialPayment.Timer_RGB = 300;
+            this.c_partialPayment.CheckedChanged += new ReaLTaiizor.Controls.CyberCheckBox.EventHandler(this.c_partialPayment_CheckedChanged);
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.AllowDrop = true;
+            this.btn_refresh.BackColor = System.Drawing.Color.Transparent;
+            this.btn_refresh.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_refresh.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_refresh.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_refresh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_refresh.Image = null;
+            this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_refresh.InactiveColor = System.Drawing.Color.RoyalBlue;
+            this.btn_refresh.Location = new System.Drawing.Point(349, 663);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_refresh.PressedColor = System.Drawing.Color.White;
+            this.btn_refresh.Size = new System.Drawing.Size(96, 34);
+            this.btn_refresh.TabIndex = 13;
+            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
+            // txt_downPaymentAmount
+            // 
+            this.txt_downPaymentAmount.BackColor = System.Drawing.Color.Transparent;
+            this.txt_downPaymentAmount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_downPaymentAmount.EdgeColor = System.Drawing.Color.White;
+            this.txt_downPaymentAmount.Enabled = false;
+            this.txt_downPaymentAmount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_downPaymentAmount.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_downPaymentAmount.Location = new System.Drawing.Point(174, 555);
+            this.txt_downPaymentAmount.MaxLength = 32767;
+            this.txt_downPaymentAmount.Multiline = false;
+            this.txt_downPaymentAmount.Name = "txt_downPaymentAmount";
+            this.txt_downPaymentAmount.ReadOnly = false;
+            this.txt_downPaymentAmount.Size = new System.Drawing.Size(271, 35);
+            this.txt_downPaymentAmount.TabIndex = 9;
+            this.txt_downPaymentAmount.Text = "0.0";
+            this.txt_downPaymentAmount.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_downPaymentAmount.UseSystemPasswordChar = false;
+            this.txt_downPaymentAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_downPaymentAmount_KeyDown);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.AllowDrop = true;
+            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
+            this.btn_delete.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_delete.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_delete.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_delete.Image = null;
+            this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_delete.InactiveColor = System.Drawing.Color.RoyalBlue;
+            this.btn_delete.Location = new System.Drawing.Point(241, 663);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_delete.PressedColor = System.Drawing.Color.White;
+            this.btn_delete.Size = new System.Drawing.Size(102, 34);
+            this.btn_delete.TabIndex = 12;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_pay
+            // 
+            this.btn_pay.AllowDrop = true;
+            this.btn_pay.BackColor = System.Drawing.Color.Transparent;
+            this.btn_pay.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_pay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pay.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_pay.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_pay.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_pay.Image = null;
+            this.btn_pay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_pay.InactiveColor = System.Drawing.Color.RoyalBlue;
+            this.btn_pay.Location = new System.Drawing.Point(138, 663);
+            this.btn_pay.Name = "btn_pay";
+            this.btn_pay.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_pay.PressedColor = System.Drawing.Color.White;
+            this.btn_pay.Size = new System.Drawing.Size(97, 34);
+            this.btn_pay.TabIndex = 11;
+            this.btn_pay.Text = "Pay";
+            this.btn_pay.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // btn_placeOrder
+            // 
+            this.btn_placeOrder.AllowDrop = true;
+            this.btn_placeOrder.BackColor = System.Drawing.Color.Transparent;
+            this.btn_placeOrder.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_placeOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_placeOrder.EnteredBorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_placeOrder.EnteredColor = System.Drawing.Color.Gainsboro;
+            this.btn_placeOrder.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_placeOrder.Image = null;
+            this.btn_placeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_placeOrder.InactiveColor = System.Drawing.Color.RoyalBlue;
+            this.btn_placeOrder.Location = new System.Drawing.Point(10, 663);
+            this.btn_placeOrder.Name = "btn_placeOrder";
+            this.btn_placeOrder.PressedBorderColor = System.Drawing.Color.White;
+            this.btn_placeOrder.PressedColor = System.Drawing.Color.White;
+            this.btn_placeOrder.Size = new System.Drawing.Size(122, 34);
+            this.btn_placeOrder.TabIndex = 9;
+            this.btn_placeOrder.Text = "Place order";
+            this.btn_placeOrder.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_placeOrder.Click += new System.EventHandler(this.btn_placeOrder_Click);
+            // 
+            // artanPanel3
+            // 
+            this.artanPanel3.BackColor = System.Drawing.Color.White;
+            this.artanPanel3.BorderRadius = 60;
+            this.artanPanel3.Controls.Add(this.dgv_product);
+            this.artanPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.artanPanel3.ForeColor = System.Drawing.Color.Transparent;
+            this.artanPanel3.GradientAngle = 90F;
+            this.artanPanel3.GradientBottomColor = System.Drawing.Color.White;
+            this.artanPanel3.GradientTopColor = System.Drawing.Color.White;
+            this.artanPanel3.Location = new System.Drawing.Point(10, 10);
+            this.artanPanel3.Name = "artanPanel3";
+            this.artanPanel3.Size = new System.Drawing.Size(432, 397);
+            this.artanPanel3.TabIndex = 10;
             // 
             // dgv_product
             // 
             this.dgv_product.AllowUserToAddRows = false;
             this.dgv_product.AllowUserToDeleteRows = false;
-            this.dgv_product.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_product.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_product.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_product.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_product.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_product.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -136,15 +582,25 @@
             this.productname,
             this.quantity,
             this.price});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_product.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_product.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_product.EnableHeadersVisualStyles = false;
-            this.dgv_product.Location = new System.Drawing.Point(13, 13);
+            this.dgv_product.GridColor = System.Drawing.Color.Silver;
+            this.dgv_product.Location = new System.Drawing.Point(0, 0);
             this.dgv_product.Name = "dgv_product";
             this.dgv_product.ReadOnly = true;
             this.dgv_product.RowHeadersVisible = false;
             this.dgv_product.RowHeadersWidth = 51;
             this.dgv_product.RowTemplate.Height = 24;
             this.dgv_product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_product.Size = new System.Drawing.Size(452, 438);
+            this.dgv_product.Size = new System.Drawing.Size(432, 397);
             this.dgv_product.TabIndex = 10;
             // 
             // id
@@ -183,336 +639,149 @@
             this.price.Name = "price";
             this.price.ReadOnly = true;
             // 
-            // btn_refresh
+            // lbl_remainingAmount
             // 
-            this.btn_refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_refresh.BackColor = System.Drawing.Color.Transparent;
-            this.btn_refresh.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_refresh.EnteredBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_refresh.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.btn_refresh.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_refresh.Image = null;
-            this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_refresh.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.btn_refresh.Location = new System.Drawing.Point(365, 592);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.PressedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_refresh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_refresh.Size = new System.Drawing.Size(93, 30);
-            this.btn_refresh.TabIndex = 9;
-            this.btn_refresh.Text = "Refresh";
-            this.btn_refresh.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            this.lbl_remainingAmount.AutoSize = true;
+            this.lbl_remainingAmount.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_remainingAmount.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lbl_remainingAmount.ForeColor = System.Drawing.Color.White;
+            this.lbl_remainingAmount.Location = new System.Drawing.Point(236, 509);
+            this.lbl_remainingAmount.Name = "lbl_remainingAmount";
+            this.lbl_remainingAmount.Size = new System.Drawing.Size(49, 28);
+            this.lbl_remainingAmount.TabIndex = 6;
+            this.lbl_remainingAmount.Text = "$0.0";
             // 
-            // btn_delete
+            // artanPanel6
             // 
-            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
-            this.btn_delete.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_delete.EnteredBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_delete.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.btn_delete.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.Image = null;
-            this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_delete.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.btn_delete.Location = new System.Drawing.Point(269, 592);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.PressedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_delete.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_delete.Size = new System.Drawing.Size(93, 30);
-            this.btn_delete.TabIndex = 8;
-            this.btn_delete.Text = "Delete";
-            this.btn_delete.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            this.artanPanel6.BackColor = System.Drawing.Color.White;
+            this.artanPanel6.BorderRadius = 30;
+            this.artanPanel6.Controls.Add(this.label6);
+            this.artanPanel6.Controls.Add(this.btn_categoryRefresh);
+            this.artanPanel6.Controls.Add(this.cb_shopCategory);
+            this.artanPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artanPanel6.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel6.GradientAngle = 45F;
+            this.artanPanel6.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel6.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel6.Location = new System.Drawing.Point(532, 3);
+            this.artanPanel6.Name = "artanPanel6";
+            this.artanPanel6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.artanPanel6.Size = new System.Drawing.Size(233, 72);
+            this.artanPanel6.TabIndex = 7;
             // 
-            // btn_pay
+            // label6
             // 
-            this.btn_pay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_pay.BackColor = System.Drawing.Color.Transparent;
-            this.btn_pay.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_pay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pay.EnteredBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_pay.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.btn_pay.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pay.Image = null;
-            this.btn_pay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_pay.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.btn_pay.Location = new System.Drawing.Point(170, 592);
-            this.btn_pay.Name = "btn_pay";
-            this.btn_pay.PressedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_pay.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btn_pay.Size = new System.Drawing.Size(93, 30);
-            this.btn_pay.TabIndex = 7;
-            this.btn_pay.Text = "Pay";
-            this.btn_pay.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // btn_placeOrder
-            // 
-            this.btn_placeOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_placeOrder.BackColor = System.Drawing.Color.Transparent;
-            this.btn_placeOrder.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_placeOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_placeOrder.EnteredBorderColor = System.Drawing.Color.White;
-            this.btn_placeOrder.EnteredColor = System.Drawing.Color.Aqua;
-            this.btn_placeOrder.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_placeOrder.Image = null;
-            this.btn_placeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_placeOrder.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.btn_placeOrder.Location = new System.Drawing.Point(34, 592);
-            this.btn_placeOrder.Name = "btn_placeOrder";
-            this.btn_placeOrder.PressedBorderColor = System.Drawing.Color.White;
-            this.btn_placeOrder.PressedColor = System.Drawing.Color.White;
-            this.btn_placeOrder.Size = new System.Drawing.Size(130, 30);
-            this.btn_placeOrder.TabIndex = 4;
-            this.btn_placeOrder.Text = "Place order";
-            this.btn_placeOrder.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btn_placeOrder.Click += new System.EventHandler(this.btn_placeOrder_Click);
-            // 
-            // change
-            // 
-            this.change.AutoSize = true;
-            this.change.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.change.ForeColor = System.Drawing.Color.White;
-            this.change.Location = new System.Drawing.Point(339, 470);
-            this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(38, 28);
-            this.change.TabIndex = 6;
-            this.change.Text = "0.0";
-            // 
-            // total_price
-            // 
-            this.total_price.AutoSize = true;
-            this.total_price.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_price.ForeColor = System.Drawing.Color.White;
-            this.total_price.Location = new System.Drawing.Point(112, 470);
-            this.total_price.Name = "total_price";
-            this.total_price.Size = new System.Drawing.Size(38, 28);
-            this.total_price.TabIndex = 5;
-            this.total_price.Text = "0.0";
-            // 
-            // txt_amount
-            // 
-            this.txt_amount.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_amount.Location = new System.Drawing.Point(108, 520);
-            this.txt_amount.Name = "txt_amount";
-            this.txt_amount.Size = new System.Drawing.Size(349, 30);
-            this.txt_amount.TabIndex = 4;
-            this.txt_amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_amount_KeyDown);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(246, 470);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 28);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Change :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(15, 518);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 28);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Amount : ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(15, 470);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Total ($): ";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.btn_search);
-            this.groupBox1.Controls.Add(this.txt_search);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(477, 51);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search";
-            // 
-            // btn_search
-            // 
-            this.btn_search.AllowDrop = true;
-            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_search.BackColor = System.Drawing.Color.Transparent;
-            this.btn_search.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_search.EnteredBorderColor = System.Drawing.Color.White;
-            this.btn_search.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.btn_search.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.Image = null;
-            this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_search.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.btn_search.Location = new System.Drawing.Point(378, 15);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.PressedBorderColor = System.Drawing.Color.White;
-            this.btn_search.PressedColor = System.Drawing.Color.White;
-            this.btn_search.Size = new System.Drawing.Size(93, 30);
-            this.btn_search.TabIndex = 3;
-            this.btn_search.Text = "Search";
-            this.btn_search.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
-            // txt_search
-            // 
-            this.txt_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_search.Location = new System.Drawing.Point(141, 18);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(231, 22);
-            this.txt_search.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(6, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Product\'s name :";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.cb_shopCategory);
-            this.groupBox2.Controls.Add(this.btn_categoryRefresh);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(496, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(259, 51);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Category";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(13, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 28);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Categories :";
             // 
             // cb_shopCategory
             // 
             this.cb_shopCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_shopCategory.BackColor = System.Drawing.SystemColors.Window;
+            this.cb_shopCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cb_shopCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_shopCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_shopCategory.EnabledCalc = true;
+            this.cb_shopCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cb_shopCategory.FormattingEnabled = true;
-            this.cb_shopCategory.Location = new System.Drawing.Point(6, 18);
+            this.cb_shopCategory.ItemHeight = 20;
+            this.cb_shopCategory.Location = new System.Drawing.Point(13, 37);
             this.cb_shopCategory.Name = "cb_shopCategory";
-            this.cb_shopCategory.Size = new System.Drawing.Size(150, 24);
-            this.cb_shopCategory.TabIndex = 4;
-            // 
-            // btn_categoryRefresh
-            // 
-            this.btn_categoryRefresh.AllowDrop = true;
-            this.btn_categoryRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_categoryRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.btn_categoryRefresh.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_categoryRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_categoryRefresh.EnteredBorderColor = System.Drawing.Color.White;
-            this.btn_categoryRefresh.EnteredColor = System.Drawing.Color.Aqua;
-            this.btn_categoryRefresh.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_categoryRefresh.Image = null;
-            this.btn_categoryRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_categoryRefresh.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            this.btn_categoryRefresh.Location = new System.Drawing.Point(162, 15);
-            this.btn_categoryRefresh.Name = "btn_categoryRefresh";
-            this.btn_categoryRefresh.PressedBorderColor = System.Drawing.Color.White;
-            this.btn_categoryRefresh.PressedColor = System.Drawing.Color.White;
-            this.btn_categoryRefresh.Size = new System.Drawing.Size(91, 30);
-            this.btn_categoryRefresh.TabIndex = 3;
-            this.btn_categoryRefresh.Text = "Refresh";
-            this.btn_categoryRefresh.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btn_categoryRefresh.Click += new System.EventHandler(this.btn_categoryRefresh_Click);
+            this.cb_shopCategory.Size = new System.Drawing.Size(123, 26);
+            this.cb_shopCategory.Sorted = true;
+            this.cb_shopCategory.TabIndex = 6;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(102)))), ((int)(((byte)(155)))));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.58334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.41667F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.88021F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.11979F));
+            this.tableLayoutPanel1.Controls.Add(this.artanPanel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.artanPanel6, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(768, 77);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(768, 78);
+            this.tableLayoutPanel1.TabIndex = 8;
             // 
             // ShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1295, 749);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.artanPanel2);
+            this.Controls.Add(this.artanPanel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShopForm";
+            this.ShowIcon = false;
             this.Text = "ShopForm";
             this.Load += new System.EventHandler(this.ShopForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.artanPanel1.ResumeLayout(false);
+            this.artanPanel1.PerformLayout();
+            this.artanPanel4.ResumeLayout(false);
+            this.artanPanel4.PerformLayout();
+            this.artanPanel5.ResumeLayout(false);
+            this.artanPanel2.ResumeLayout(false);
+            this.artanPanel2.PerformLayout();
+            this.artanPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_product)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.artanPanel6.ResumeLayout(false);
+            this.artanPanel6.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private ReaLTaiizor.Controls.Button btn_search;
-        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cb_shopCategory;
         private ReaLTaiizor.Controls.Button btn_categoryRefresh;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox txt_amount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label change;
         private System.Windows.Forms.Label total_price;
-        private ReaLTaiizor.Controls.Button btn_pay;
-        private ReaLTaiizor.Controls.Button btn_placeOrder;
-        private ReaLTaiizor.Controls.Button btn_refresh;
-        private ReaLTaiizor.Controls.Button btn_delete;
+        private ArtanComponent.ArtanPanel artanPanel1;
+        private ArtanComponent.ArtanPanel artanPanel4;
+        private ArtanComponent.ArtanPanel artanPanel5;
+        private ArtanComponent.ArtanPanel artanPanel3;
         private System.Windows.Forms.DataGridView dgv_product;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn productid;
         private System.Windows.Forms.DataGridViewTextBoxColumn productname;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private ArtanComponent.ArtanPanel artanPanel2;
+        private System.Windows.Forms.Label lbl_remainingAmount;
+        private ArtanComponent.ArtanPanel artanPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private ReaLTaiizor.Controls.Button btn_refresh;
+        private ReaLTaiizor.Controls.Button btn_delete;
+        private ReaLTaiizor.Controls.Button btn_pay;
+        private ReaLTaiizor.Controls.Button btn_placeOrder;
+        private ExtendedDungeonTextBox txt_downPaymentAmount;
+        private ReaLTaiizor.Controls.AloneComboBox cb_shopCategory;
+        private System.Windows.Forms.Label label6;
+        private ReaLTaiizor.Controls.CyberTextBox txt_search;
+        private ReaLTaiizor.Controls.BigLabel bigLabel1;
+        private ReaLTaiizor.Controls.CyberCheckBox c_partialPayment;
+        private System.Windows.Forms.Label label5;
+        private ReaLTaiizor.Controls.MetroComboBox cb_shopTerm;
+        private System.Windows.Forms.Label total_quantity;
+        private System.Windows.Forms.Label label7;
     }
 }

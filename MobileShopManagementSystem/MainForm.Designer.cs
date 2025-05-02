@@ -29,32 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.titlepanel = new System.Windows.Forms.Panel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            this.btn_dashboard = new System.Windows.Forms.Button();
+            this.btnHam = new System.Windows.Forms.Button();
             this.shopContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_shop = new System.Windows.Forms.Button();
             this.btn_categories = new System.Windows.Forms.Button();
             this.btn_bill = new System.Windows.Forms.Button();
+            this.shopTransition = new System.Windows.Forms.Timer(this.components);
+            this.slidebar = new ReaLTaiizor.Controls.ParrotSlidingPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
+            this.lbl_role = new ReaLTaiizor.Controls.DungeonLabel();
+            this.lbl_userName = new ReaLTaiizor.Controls.DungeonLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_dashboard = new System.Windows.Forms.Button();
             this.btn_inventory = new System.Windows.Forms.Button();
             this.btn_customers = new System.Windows.Forms.Button();
+            this.btn_user = new System.Windows.Forms.Button();
+            this.btn_setting = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
-            this.shopTransition = new System.Windows.Forms.Timer(this.components);
-            this.parrotSlidingPanel1 = new ReaLTaiizor.Controls.ParrotSlidingPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
-            this.dungeonLabel1 = new ReaLTaiizor.Controls.DungeonLabel();
-            this.btnHam = new System.Windows.Forms.Button();
-            this.dungeonLabel2 = new ReaLTaiizor.Controls.DungeonLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.titlepanel.SuspendLayout();
             this.shopContainer.SuspendLayout();
-            this.parrotSlidingPanel1.SuspendLayout();
+            this.slidebar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cyberGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // titlepanel
@@ -93,24 +96,20 @@
             this.nightControlBox1.Name = "nightControlBox1";
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 2;
+            this.nightControlBox1.Click += new System.EventHandler(this.nightControlBox1_Click);
             // 
-            // btn_dashboard
+            // btnHam
             // 
-            this.btn_dashboard.BackColor = System.Drawing.Color.Transparent;
-            this.btn_dashboard.FlatAppearance.BorderSize = 0;
-            this.btn_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dashboard.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btn_dashboard.ForeColor = System.Drawing.Color.White;
-            this.btn_dashboard.Image = global::MobileShopManagementSystem.Properties.Resources.Statistics;
-            this.btn_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dashboard.Location = new System.Drawing.Point(3, 224);
-            this.btn_dashboard.Name = "btn_dashboard";
-            this.btn_dashboard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_dashboard.Size = new System.Drawing.Size(249, 49);
-            this.btn_dashboard.TabIndex = 2;
-            this.btn_dashboard.Text = "Dashboard";
-            this.btn_dashboard.UseVisualStyleBackColor = false;
-            this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
+            this.btnHam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHam.FlatAppearance.BorderSize = 0;
+            this.btnHam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHam.Image = global::MobileShopManagementSystem.Properties.Resources.Menu2;
+            this.btnHam.Location = new System.Drawing.Point(12, 0);
+            this.btnHam.Name = "btnHam";
+            this.btnHam.Size = new System.Drawing.Size(42, 41);
+            this.btnHam.TabIndex = 2;
+            this.btnHam.UseVisualStyleBackColor = false;
+            this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
             // 
             // shopContainer
             // 
@@ -150,7 +149,6 @@
             this.btn_categories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_categories.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btn_categories.ForeColor = System.Drawing.Color.White;
-            this.btn_categories.Image = global::MobileShopManagementSystem.Properties.Resources.iPhone_14;
             this.btn_categories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_categories.Location = new System.Drawing.Point(0, 49);
             this.btn_categories.Margin = new System.Windows.Forms.Padding(0);
@@ -169,7 +167,6 @@
             this.btn_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_bill.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btn_bill.ForeColor = System.Drawing.Color.White;
-            this.btn_bill.Image = global::MobileShopManagementSystem.Properties.Resources.Buy_For_Coins;
             this.btn_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_bill.Location = new System.Drawing.Point(0, 98);
             this.btn_bill.Margin = new System.Windows.Forms.Padding(0);
@@ -180,6 +177,145 @@
             this.btn_bill.Text = "Bill";
             this.btn_bill.UseVisualStyleBackColor = false;
             this.btn_bill.Click += new System.EventHandler(this.btn_bill_Click);
+            // 
+            // shopTransition
+            // 
+            this.shopTransition.Interval = 10;
+            this.shopTransition.Tick += new System.EventHandler(this.shopTransition_Tick);
+            // 
+            // slidebar
+            // 
+            this.slidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.slidebar.BottomLeft = System.Drawing.Color.Gray;
+            this.slidebar.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.slidebar.CollapseControl = this.btnHam;
+            this.slidebar.Collapsed = false;
+            this.slidebar.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+            this.slidebar.Controls.Add(this.flowLayoutPanel1);
+            this.slidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.slidebar.HideControls = false;
+            this.slidebar.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.High;
+            this.slidebar.Location = new System.Drawing.Point(0, 39);
+            this.slidebar.Name = "slidebar";
+            this.slidebar.PanelWidthCollapsed = 62;
+            this.slidebar.PanelWidthExpanded = 249;
+            this.slidebar.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.slidebar.PrimerColor = System.Drawing.Color.White;
+            this.slidebar.Size = new System.Drawing.Size(249, 749);
+            this.slidebar.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.Default;
+            this.slidebar.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.slidebar.TabIndex = 3;
+            this.slidebar.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.slidebar.TopLeft = System.Drawing.Color.Blue;
+            this.slidebar.TopRight = System.Drawing.Color.Black;
+            this.slidebar.OnCollapsedStateChanged += new System.EventHandler(this.slidebar_OnCollapsedStateChanged);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.cyberGroupBox1);
+            this.flowLayoutPanel1.Controls.Add(this.btn_dashboard);
+            this.flowLayoutPanel1.Controls.Add(this.shopContainer);
+            this.flowLayoutPanel1.Controls.Add(this.btn_inventory);
+            this.flowLayoutPanel1.Controls.Add(this.btn_customers);
+            this.flowLayoutPanel1.Controls.Add(this.btn_user);
+            this.flowLayoutPanel1.Controls.Add(this.btn_setting);
+            this.flowLayoutPanel1.Controls.Add(this.btn_logout);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 749);
+            this.flowLayoutPanel1.TabIndex = 10;
+            // 
+            // cyberGroupBox1
+            // 
+            this.cyberGroupBox1.Alpha = 20;
+            this.cyberGroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.cyberGroupBox1.Background = true;
+            this.cyberGroupBox1.Background_WidthPen = 3F;
+            this.cyberGroupBox1.BackgroundPen = true;
+            this.cyberGroupBox1.ColorBackground = System.Drawing.Color.Transparent;
+            this.cyberGroupBox1.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cyberGroupBox1.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.cyberGroupBox1.ColorBackground_Pen = System.Drawing.Color.White;
+            this.cyberGroupBox1.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cyberGroupBox1.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cyberGroupBox1.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.cyberGroupBox1.Controls.Add(this.lbl_role);
+            this.cyberGroupBox1.Controls.Add(this.lbl_userName);
+            this.cyberGroupBox1.Controls.Add(this.pictureBox1);
+            this.cyberGroupBox1.CyberGroupBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.cyberGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.cyberGroupBox1.Lighting = false;
+            this.cyberGroupBox1.LinearGradient_Background = false;
+            this.cyberGroupBox1.LinearGradientPen = false;
+            this.cyberGroupBox1.Location = new System.Drawing.Point(3, 3);
+            this.cyberGroupBox1.Name = "cyberGroupBox1";
+            this.cyberGroupBox1.PenWidth = 15;
+            this.cyberGroupBox1.RGB = false;
+            this.cyberGroupBox1.Rounding = true;
+            this.cyberGroupBox1.RoundingInt = 30;
+            this.cyberGroupBox1.Size = new System.Drawing.Size(243, 215);
+            this.cyberGroupBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.cyberGroupBox1.TabIndex = 10;
+            this.cyberGroupBox1.Tag = "Cyber";
+            this.cyberGroupBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.cyberGroupBox1.Timer_RGB = 300;
+            // 
+            // lbl_role
+            // 
+            this.lbl_role.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_role.AutoSize = true;
+            this.lbl_role.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_role.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lbl_role.ForeColor = System.Drawing.Color.White;
+            this.lbl_role.Location = new System.Drawing.Point(91, 171);
+            this.lbl_role.Name = "lbl_role";
+            this.lbl_role.Size = new System.Drawing.Size(48, 25);
+            this.lbl_role.TabIndex = 11;
+            this.lbl_role.Text = "Role";
+            // 
+            // lbl_userName
+            // 
+            this.lbl_userName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_userName.AutoSize = true;
+            this.lbl_userName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_userName.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lbl_userName.ForeColor = System.Drawing.Color.White;
+            this.lbl_userName.Location = new System.Drawing.Point(72, 146);
+            this.lbl_userName.Name = "lbl_userName";
+            this.lbl_userName.Size = new System.Drawing.Size(97, 25);
+            this.lbl_userName.TabIndex = 10;
+            this.lbl_userName.Text = "Username";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = global::MobileShopManagementSystem.Properties.Resources.Male_User;
+            this.pictureBox1.Location = new System.Drawing.Point(58, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(126, 129);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_dashboard
+            // 
+            this.btn_dashboard.BackColor = System.Drawing.Color.Transparent;
+            this.btn_dashboard.FlatAppearance.BorderSize = 0;
+            this.btn_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dashboard.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btn_dashboard.ForeColor = System.Drawing.Color.White;
+            this.btn_dashboard.Image = global::MobileShopManagementSystem.Properties.Resources.Statistics;
+            this.btn_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dashboard.Location = new System.Drawing.Point(3, 224);
+            this.btn_dashboard.Name = "btn_dashboard";
+            this.btn_dashboard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_dashboard.Size = new System.Drawing.Size(249, 49);
+            this.btn_dashboard.TabIndex = 2;
+            this.btn_dashboard.Text = "Dashboard";
+            this.btn_dashboard.UseVisualStyleBackColor = false;
+            this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
             // 
             // btn_inventory
             // 
@@ -217,6 +353,42 @@
             this.btn_customers.UseVisualStyleBackColor = false;
             this.btn_customers.Click += new System.EventHandler(this.btn_customers_Click);
             // 
+            // btn_user
+            // 
+            this.btn_user.BackColor = System.Drawing.Color.Transparent;
+            this.btn_user.FlatAppearance.BorderSize = 0;
+            this.btn_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_user.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btn_user.ForeColor = System.Drawing.Color.White;
+            this.btn_user.Image = global::MobileShopManagementSystem.Properties.Resources.Male_User_1;
+            this.btn_user.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_user.Location = new System.Drawing.Point(3, 438);
+            this.btn_user.Name = "btn_user";
+            this.btn_user.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_user.Size = new System.Drawing.Size(249, 49);
+            this.btn_user.TabIndex = 5;
+            this.btn_user.Text = "User";
+            this.btn_user.UseVisualStyleBackColor = false;
+            this.btn_user.Click += new System.EventHandler(this.btn_user_Click);
+            // 
+            // btn_setting
+            // 
+            this.btn_setting.BackColor = System.Drawing.Color.Transparent;
+            this.btn_setting.FlatAppearance.BorderSize = 0;
+            this.btn_setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_setting.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btn_setting.ForeColor = System.Drawing.Color.White;
+            this.btn_setting.Image = global::MobileShopManagementSystem.Properties.Resources.Settings;
+            this.btn_setting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_setting.Location = new System.Drawing.Point(3, 493);
+            this.btn_setting.Name = "btn_setting";
+            this.btn_setting.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_setting.Size = new System.Drawing.Size(249, 49);
+            this.btn_setting.TabIndex = 5;
+            this.btn_setting.Text = "Setting";
+            this.btn_setting.UseVisualStyleBackColor = false;
+            this.btn_setting.Click += new System.EventHandler(this.btn_setting_Click);
+            // 
             // btn_logout
             // 
             this.btn_logout.BackColor = System.Drawing.Color.Transparent;
@@ -235,169 +407,16 @@
             this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
-            // shopTransition
+            // pictureBox2
             // 
-            this.shopTransition.Interval = 10;
-            this.shopTransition.Tick += new System.EventHandler(this.shopTransition_Tick);
-            // 
-            // parrotSlidingPanel1
-            // 
-            this.parrotSlidingPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.parrotSlidingPanel1.BottomLeft = System.Drawing.Color.Gray;
-            this.parrotSlidingPanel1.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.parrotSlidingPanel1.CollapseControl = this.btnHam;
-            this.parrotSlidingPanel1.Collapsed = false;
-            this.parrotSlidingPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
-            this.parrotSlidingPanel1.Controls.Add(this.flowLayoutPanel1);
-            this.parrotSlidingPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.parrotSlidingPanel1.HideControls = false;
-            this.parrotSlidingPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.High;
-            this.parrotSlidingPanel1.Location = new System.Drawing.Point(0, 39);
-            this.parrotSlidingPanel1.Name = "parrotSlidingPanel1";
-            this.parrotSlidingPanel1.PanelWidthCollapsed = 62;
-            this.parrotSlidingPanel1.PanelWidthExpanded = 249;
-            this.parrotSlidingPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighSpeed;
-            this.parrotSlidingPanel1.PrimerColor = System.Drawing.Color.White;
-            this.parrotSlidingPanel1.Size = new System.Drawing.Size(249, 749);
-            this.parrotSlidingPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
-            this.parrotSlidingPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            this.parrotSlidingPanel1.TabIndex = 3;
-            this.parrotSlidingPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotSlidingPanel1.TopLeft = System.Drawing.Color.Blue;
-            this.parrotSlidingPanel1.TopRight = System.Drawing.Color.Black;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.cyberGroupBox1);
-            this.flowLayoutPanel1.Controls.Add(this.btn_dashboard);
-            this.flowLayoutPanel1.Controls.Add(this.shopContainer);
-            this.flowLayoutPanel1.Controls.Add(this.btn_inventory);
-            this.flowLayoutPanel1.Controls.Add(this.btn_customers);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.btn_logout);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 749);
-            this.flowLayoutPanel1.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MobileShopManagementSystem.Properties.Resources.Male_User;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // cyberGroupBox1
-            // 
-            this.cyberGroupBox1.Alpha = 20;
-            this.cyberGroupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.cyberGroupBox1.Background = true;
-            this.cyberGroupBox1.Background_WidthPen = 3F;
-            this.cyberGroupBox1.BackgroundPen = true;
-            this.cyberGroupBox1.ColorBackground = System.Drawing.Color.Transparent;
-            this.cyberGroupBox1.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberGroupBox1.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.cyberGroupBox1.ColorBackground_Pen = System.Drawing.Color.White;
-            this.cyberGroupBox1.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberGroupBox1.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberGroupBox1.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.cyberGroupBox1.Controls.Add(this.dungeonLabel2);
-            this.cyberGroupBox1.Controls.Add(this.dungeonLabel1);
-            this.cyberGroupBox1.Controls.Add(this.pictureBox1);
-            this.cyberGroupBox1.CyberGroupBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberGroupBox1.Lighting = false;
-            this.cyberGroupBox1.LinearGradient_Background = false;
-            this.cyberGroupBox1.LinearGradientPen = false;
-            this.cyberGroupBox1.Location = new System.Drawing.Point(3, 3);
-            this.cyberGroupBox1.Name = "cyberGroupBox1";
-            this.cyberGroupBox1.PenWidth = 15;
-            this.cyberGroupBox1.RGB = false;
-            this.cyberGroupBox1.Rounding = true;
-            this.cyberGroupBox1.RoundingInt = 60;
-            this.cyberGroupBox1.Size = new System.Drawing.Size(243, 215);
-            this.cyberGroupBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberGroupBox1.TabIndex = 10;
-            this.cyberGroupBox1.Tag = "Cyber";
-            this.cyberGroupBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberGroupBox1.Timer_RGB = 300;
-            // 
-            // dungeonLabel1
-            // 
-            this.dungeonLabel1.AutoSize = true;
-            this.dungeonLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonLabel1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.dungeonLabel1.ForeColor = System.Drawing.Color.White;
-            this.dungeonLabel1.Location = new System.Drawing.Point(80, 124);
-            this.dungeonLabel1.Name = "dungeonLabel1";
-            this.dungeonLabel1.Size = new System.Drawing.Size(97, 25);
-            this.dungeonLabel1.TabIndex = 10;
-            this.dungeonLabel1.Text = "Username";
-            // 
-            // btnHam
-            // 
-            this.btnHam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHam.FlatAppearance.BorderSize = 0;
-            this.btnHam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHam.Image = global::MobileShopManagementSystem.Properties.Resources.Menu2;
-            this.btnHam.Location = new System.Drawing.Point(12, 0);
-            this.btnHam.Name = "btnHam";
-            this.btnHam.Size = new System.Drawing.Size(42, 41);
-            this.btnHam.TabIndex = 2;
-            this.btnHam.UseVisualStyleBackColor = false;
-            this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
-            // 
-            // dungeonLabel2
-            // 
-            this.dungeonLabel2.AutoSize = true;
-            this.dungeonLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonLabel2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.dungeonLabel2.ForeColor = System.Drawing.Color.White;
-            this.dungeonLabel2.Location = new System.Drawing.Point(80, 158);
-            this.dungeonLabel2.Name = "dungeonLabel2";
-            this.dungeonLabel2.Size = new System.Drawing.Size(80, 25);
-            this.dungeonLabel2.TabIndex = 11;
-            this.dungeonLabel2.Text = "position";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::MobileShopManagementSystem.Properties.Resources.Staff;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 438);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(249, 49);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "User";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::MobileShopManagementSystem.Properties.Resources.Staff;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 493);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(249, 49);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Setting";
-            this.button2.UseVisualStyleBackColor = false;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(249, 39);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1108, 749);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
@@ -405,7 +424,8 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1357, 788);
             this.ControlBox = false;
-            this.Controls.Add(this.parrotSlidingPanel1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.slidebar);
             this.Controls.Add(this.titlepanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
@@ -415,11 +435,12 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.titlepanel.ResumeLayout(false);
             this.shopContainer.ResumeLayout(false);
-            this.parrotSlidingPanel1.ResumeLayout(false);
+            this.slidebar.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.cyberGroupBox1.ResumeLayout(false);
             this.cyberGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -437,13 +458,14 @@
         private System.Windows.Forms.Button btnHam;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Button btn_bill;
-        private ReaLTaiizor.Controls.ParrotSlidingPanel parrotSlidingPanel1;
+        private ReaLTaiizor.Controls.ParrotSlidingPanel slidebar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ReaLTaiizor.Controls.CyberGroupBox cyberGroupBox1;
-        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel1;
-        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private ReaLTaiizor.Controls.DungeonLabel lbl_userName;
+        private ReaLTaiizor.Controls.DungeonLabel lbl_role;
+        private System.Windows.Forms.Button btn_user;
+        private System.Windows.Forms.Button btn_setting;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

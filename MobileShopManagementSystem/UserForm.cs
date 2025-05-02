@@ -1,0 +1,208 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MobileShopManagementSystem
+{
+    public partial class UserForm : Form
+    {
+        public UserForm()
+        {
+            InitializeComponent();
+        }
+        private void LoadData()
+        {
+            using (var db = new MobileShopManagementDataContext())
+            {
+                var users = db.Users.ToList();
+                dgv_user.DataSource = users;
+            }
+        }
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        private void dgv_user_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    DataGridViewRow row = dgv_user.Rows[e.RowIndex];
+                    txt_userID.TextButton = row.Cells["id"]?.Value?.ToString() ?? "";
+                    txt_name.TextButton = row.Cells["name"]?.Value?.ToString() ?? "";
+                    txt_userAddress.TextButton = row.Cells["address"]?.Value?.ToString() ?? "";
+                    txt_userPN.TextButton = row.Cells["phonenumber"]?.Value?.ToString() ?? "";
+                    cb_userGender.Text = row.Cells["gender"]?.Value?.ToString() ?? "";
+                    cb_userRole.Text = row.Cells["role"]?.Value?.ToString() ?? "";
+                    cb_userStatus.Text = row.Cells["status"]?.Value?.ToString() ?? "";
+                    dt_userBirthDate.Text = row.Cells["birthdate"]?.Value?.ToString() ?? "";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void clearData()
+        {
+            txt_userID.TextButton = "";
+            txt_name.TextButton = "";
+            txt_userAddress.TextButton = "";
+            txt_userPN.TextButton = "";
+            cb_userGender.SelectedIndex = -1;
+            cb_userRole.SelectedIndex = -1;
+            cb_userStatus.SelectedIndex = -1;
+            dt_userBirthDate.Value = DateTime.Now;
+            txt_search.TextButton = "";
+            txt_search.Focus();
+        }
+        private void btn_userDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txt_userID.TextButton))
+                {
+                    MessageBox.Show("Please select a user to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (MessageBox.Show("Are you sure you want to delete this user?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    return;
+                }
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    var user = db.Users.FirstOrDefault(u => u.UserID == txt_userID.TextButton);
+                    if (user != null)
+                    {
+                        db.Users.DeleteOnSubmit(user);
+                        db.SubmitChanges();
+                        LoadData();
+                        clearData();
+                        MessageBox.Show("User deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btn_userUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txt_userID.TextButton))
+                {
+                    MessageBox.Show("Please select a user to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (MessageBox.Show("Are you sure you want to update this customer?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    return;
+                }
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    var user = db.Users.FirstOrDefault(u => u.UserID == txt_userID.TextButton);
+                    if (user != null)
+                    {
+                        user.Status = cb_userStatus.Text;
+                        user.Name = txt_name.TextButton;
+                        user.Address = txt_userAddress.TextButton;
+                        user.PhoneNumber = txt_userPN.TextButton;
+                        user.BirthDate = dt_userBirthDate.Value;
+                        user.Role = cb_userRole.Text;
+                        user.Gender = cb_userGender.Text;
+                        db.SubmitChanges();
+                        LoadData();
+                        clearData();
+                        MessageBox.Show("User updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_userClear_Click(object sender, EventArgs e)
+        {
+            clearData();
+        }
+        public void refreshData()
+        {
+            LoadData();
+            clearData();
+        }
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            refreshData();
+        }
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txt_search.TextButton.Trim()))
+                {
+                    MessageBox.Show("Please enter a search term.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string searchText = txt_search.TextButton.Trim().ToLower();
+                List<User> search = new List<User>();
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    switch (cb_search.SelectedItem?.ToString())
+                    {
+                        case "User ID":
+                            search = db.Users
+                                .Where(x => x.UserID.ToLower().Contains(searchText))
+                                .ToList();
+                            break;
+
+                        case "User Name":
+                            search = db.Users
+                                .Where(x => x.Name.ToLower().Contains(searchText))
+                                .ToList();
+                            break;
+
+                        case "Phone Number":
+                            search = db.Users
+                                .Where(x => x.PhoneNumber.ToLower().Contains(searchText))
+                                .ToList();
+                            break;
+                    }
+
+                    if (search.Count > 0)
+                    {
+                        dgv_user.DataSource = search;
+                        dgv_user.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No user found", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+    }
+}

@@ -37,21 +37,21 @@
             this.txt_loginPassword = new ReaLTaiizor.Controls.DungeonTextBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.txt_loginUsername = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.cyberGroupBox2 = new ReaLTaiizor.Controls.CyberGroupBox();
-            this.btn_login = new System.Windows.Forms.Button();
-            this.cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cyberGroupBox2 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_login = new System.Windows.Forms.Button();
+            this.cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.titlepanel.SuspendLayout();
             this.parrotGradientPanel3.SuspendLayout();
-            this.cyberGroupBox2.SuspendLayout();
-            this.cyberGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cyberGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.cyberGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlepanel
@@ -227,6 +227,37 @@
             this.txt_loginUsername.Enter += new System.EventHandler(this.txt_username_Enter);
             this.txt_loginUsername.Leave += new System.EventHandler(this.txt_username_Leave);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.Lock;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox4.Location = new System.Drawing.Point(22, 370);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(41, 38);
+            this.pictureBox4.TabIndex = 13;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.User;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Location = new System.Drawing.Point(22, 291);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(41, 38);
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::MobileShopManagementSystem.Properties.Resources.Male_User;
+            this.pictureBox1.Location = new System.Drawing.Point(135, 73);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(137, 134);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // cyberGroupBox2
             // 
             this.cyberGroupBox2.Alpha = 20;
@@ -259,6 +290,18 @@
             this.cyberGroupBox2.Tag = "Cyber";
             this.cyberGroupBox2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberGroupBox2.Timer_RGB = 300;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = global::MobileShopManagementSystem.Properties.Resources.Smaller_Network_Connection_Background;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1357, 788);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
             // 
             // btn_login
             // 
@@ -308,49 +351,6 @@
             this.cyberGroupBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberGroupBox1.Timer_RGB = 300;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.Lock;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Location = new System.Drawing.Point(22, 370);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.User;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Location = new System.Drawing.Point(22, 291);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::MobileShopManagementSystem.Properties.Resources.Male_User;
-            this.pictureBox1.Location = new System.Drawing.Point(135, 73);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 134);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = global::MobileShopManagementSystem.Properties.Resources.Smaller_Network_Connection_Background;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1357, 788);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -369,12 +369,12 @@
             this.titlepanel.PerformLayout();
             this.parrotGradientPanel3.ResumeLayout(false);
             this.parrotGradientPanel3.PerformLayout();
-            this.cyberGroupBox2.ResumeLayout(false);
-            this.cyberGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.cyberGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.cyberGroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

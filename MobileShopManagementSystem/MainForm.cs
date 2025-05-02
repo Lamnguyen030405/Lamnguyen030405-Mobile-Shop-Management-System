@@ -20,199 +20,441 @@ namespace MobileShopManagementSystem
         BillForm billForm;
         CategoriesForm categoriesForm;
         CustomersForm customersForm;
+        UserForm userForm;
+        SettingForm settingForm;
 
         public MainForm()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             this.DoubleBuffered = true;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            CloseAllMdiChildren();
+            using(var db = new MobileShopManagementDataContext())
+            {
+                var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
+                if (user != null)
+                {
+                    lbl_userName.Text = user.Name;
+                    lbl_role.Text = user.Role;
+                }
+            }
         }
 
         bool shopExpand = false;
         private void shopTransition_Tick(object sender, EventArgs e)
         {
-            if (!shopExpand) 
+            if (!shopExpand)
             {
                 shopContainer.Height += 10;
-                if (shopContainer.Height >= 160) 
+                if (shopContainer.Height >= 160)
                 {
                     shopContainer.Height = 160;
                     shopTransition.Stop();
                     shopExpand = true;
+                    flowLayoutPanel1.ResumeLayout();
                 }
             }
-            else 
+            else
             {
                 shopContainer.Height -= 10;
-                if (shopContainer.Height <= 49) 
+                if (shopContainer.Height <= 49)
                 {
                     shopContainer.Height = 49;
                     shopTransition.Stop();
                     shopExpand = false;
+                    flowLayoutPanel1.ResumeLayout();
                 }
             }
         }
+
+        //bool slidebarExpand = true;
+        //private void slidebarTransition_Tick(object sender, EventArgs e)
+        //{
+        //    if (slidebarExpand)
+        //    {
+        //        slidebar.Width -= 5;
+        //        if (slidebar.Width <= 62)
+        //        {
+        //            slidebar.Width = 62;
+        //            slidebarTransition.Stop();
+        //            slidebarExpand = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        slidebar.Width += 5;
+        //        if (slidebar.Width >= 249)
+        //        {
+        //            slidebar.Width = 249;
+        //            slidebarTransition.Stop();
+        //            slidebarExpand = true;
+        //        }
+        //    }
+        //}
+        //private void btnHam_Click(object sender, EventArgs e)
+        //{
+        //    slidebarTransition.Start();
+        //}
+
         private void btn_shop_Click(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             CloseAllMdiChildren();
 
             shopTransition.Start();
-            if (shopForm == null)
+            flowLayoutPanel1.SuspendLayout();
+
+            if (shopForm == null || shopForm.IsDisposed)
             {
                 shopForm = new ShopForm();
                 shopForm.FormClosed += ShopForm_FormClosed;
                 shopForm.MdiParent = this;
                 shopForm.Dock = DockStyle.Fill;
+
+                shopForm.SuspendLayout();
+
+                EventHandler loadHandler = null;
+                loadHandler = (s, ev) =>
+                {
+                    shopForm.ResumeLayout();
+                    shopForm.refreshData(); 
+                    shopForm.Load -= loadHandler;
+                };
+                shopForm.Load += loadHandler;
+
                 shopForm.Show();
             }
             else
             {
-                shopForm.Activate();
+                shopForm.SuspendLayout();
+                shopForm.Show();
+                shopForm.BringToFront();
+                shopForm.refreshData(); 
+                shopForm.ResumeLayout();
             }
+
+            this.ResumeLayout();
         }
+
         private void ShopForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            shopForm = null;
+            shopForm?.Hide();
         }
+
         private void CloseAllMdiChildren()
         {
+            pictureBox2.Visible = false;
             foreach (Form child in this.MdiChildren)
             {
-                child.Close();
+                if (child.Visible)
+                {
+                    child.SuspendLayout();
+                    child.Hide();
+                    child.ResumeLayout();
+                }
             }
         }
 
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             CloseAllMdiChildren();
 
-            if (dashboardForm == null)
+            if (dashboardForm == null || dashboardForm.IsDisposed)
             {
                 dashboardForm = new DashboardForm();
                 dashboardForm.FormClosed += DashboardForm_FormClosed;
                 dashboardForm.MdiParent = this;
                 dashboardForm.Dock = DockStyle.Fill;
+
+                dashboardForm.SuspendLayout();
+                EventHandler loadHandler = null;
+                loadHandler = (s, ev) =>
+                {
+                    dashboardForm.ResumeLayout();
+                    dashboardForm.refreshData();
+                    dashboardForm.Load -= loadHandler;
+                };
+                dashboardForm.Load += loadHandler;
+
                 dashboardForm.Show();
             }
             else
             {
-                dashboardForm.Activate();
+                dashboardForm.SuspendLayout();
+                dashboardForm.Show();
+                dashboardForm.BringToFront();
+                dashboardForm.refreshData();
+                dashboardForm.ResumeLayout();
             }
+
+            this.ResumeLayout();
         }
 
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            dashboardForm = null;
+            dashboardForm?.Hide();
         }
 
         private void btn_bill_Click(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             CloseAllMdiChildren();
 
-            if (billForm == null)
+            if (billForm == null || billForm.IsDisposed)
             {
                 billForm = new BillForm();
                 billForm.FormClosed += BillForm_FormClosed;
                 billForm.MdiParent = this;
                 billForm.Dock = DockStyle.Fill;
+
+                billForm.SuspendLayout();
+                EventHandler loadHandler = null;
+                loadHandler = (s, ev) =>
+                {
+                    billForm.ResumeLayout();
+                    billForm.refreshData();
+                    billForm.Load -= loadHandler;
+                };
+                billForm.Load += loadHandler;
+
                 billForm.Show();
             }
             else
             {
-                billForm.Activate();
+                billForm.SuspendLayout();
+                billForm.Show();
+                billForm.BringToFront();
+                billForm.refreshData();
+                billForm.ResumeLayout();
             }
+
+            this.ResumeLayout();
         }
 
         private void BillForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            billForm = null;
+            billForm?.Hide();
         }
+
         private void btn_categories_Click(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             CloseAllMdiChildren();
 
-            if (categoriesForm == null)
+            if (categoriesForm == null || categoriesForm.IsDisposed)
             {
                 categoriesForm = new CategoriesForm();
                 categoriesForm.FormClosed += CategoriesForm_FormClosed;
                 categoriesForm.MdiParent = this;
                 categoriesForm.Dock = DockStyle.Fill;
+
+                categoriesForm.SuspendLayout();
+                EventHandler loadHandler = null;
+                loadHandler = (s, ev) =>
+                {
+                    categoriesForm.ResumeLayout();
+                    categoriesForm.refreshData();
+                    categoriesForm.Load -= loadHandler;
+                };
+                categoriesForm.Load += loadHandler;
+
                 categoriesForm.Show();
             }
             else
             {
-                categoriesForm.Activate();
+                categoriesForm.SuspendLayout();
+                categoriesForm.Show();
+                categoriesForm.BringToFront();
+                categoriesForm.refreshData();
+                categoriesForm.ResumeLayout();
             }
+
+            this.ResumeLayout();
         }
+
         private void CategoriesForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            categoriesForm = null;
+            categoriesForm?.Hide();
         }
 
         private void btn_inventory_Click(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             CloseAllMdiChildren();
 
-            if (inventoryForm == null)
+            if (inventoryForm == null || inventoryForm.IsDisposed)
             {
                 inventoryForm = new InventoryForm();
                 inventoryForm.FormClosed += InventoryForm_FormClosed;
                 inventoryForm.MdiParent = this;
                 inventoryForm.Dock = DockStyle.Fill;
+
+                inventoryForm.SuspendLayout();
+                EventHandler loadHandler = null;
+                loadHandler = (s, ev) =>
+                {
+                    inventoryForm.ResumeLayout();
+                    inventoryForm.refreshData();
+                    inventoryForm.Load -= loadHandler;
+                };
+                inventoryForm.Load += loadHandler;
+
                 inventoryForm.Show();
             }
             else
             {
-                inventoryForm.Activate();
+                inventoryForm.SuspendLayout();
+                inventoryForm.Show();
+                inventoryForm.BringToFront();
+                inventoryForm.refreshData();
+                inventoryForm.ResumeLayout();
             }
+
+            this.ResumeLayout();
         }
 
         private void InventoryForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            inventoryForm = null;
+            inventoryForm?.Hide();
         }
 
         private void btn_customers_Click(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             CloseAllMdiChildren();
 
-            if (customersForm == null)
+            if (customersForm == null || customersForm.IsDisposed)
             {
                 customersForm = new CustomersForm();
                 customersForm.FormClosed += CustomersForm_FormClosed;
                 customersForm.MdiParent = this;
                 customersForm.Dock = DockStyle.Fill;
+
+                customersForm.SuspendLayout();
+                EventHandler loadHandler = null;
+                loadHandler = (s, ev) =>
+                {
+                    customersForm.ResumeLayout();
+                    customersForm.refreshData();
+                    customersForm.Load -= loadHandler;
+                };
+                customersForm.Load += loadHandler;
+
                 customersForm.Show();
             }
             else
             {
-                customersForm.Activate();
+                customersForm.SuspendLayout();
+                customersForm.Show();
+                customersForm.BringToFront();
+                customersForm.refreshData();
+                customersForm.ResumeLayout();
             }
-        }
-        private void CustomersForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            customersForm = null;
+
+            this.ResumeLayout();
         }
 
+        private void CustomersForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            customersForm?.Hide();
+        }
+        private void btn_user_Click(object sender, EventArgs e)
+        {
+            this.SuspendLayout();
+            CloseAllMdiChildren();
+
+            if (userForm == null || userForm.IsDisposed)
+            {
+                userForm = new UserForm();
+                userForm.FormClosed += UserForm_FormClosed;
+                userForm.MdiParent = this;
+                userForm.Dock = DockStyle.Fill;
+
+                userForm.SuspendLayout();
+                EventHandler loadHandler = null;
+                loadHandler = (s, ev) =>
+                {
+                    userForm.ResumeLayout();
+                    userForm.refreshData();
+                    userForm.Load -= loadHandler;
+                };
+                userForm.Load += loadHandler;
+
+                userForm.Show();
+            }
+            else
+            {
+                userForm.SuspendLayout();
+                userForm.Show();
+                userForm.BringToFront();
+                userForm.refreshData();
+                userForm.ResumeLayout();
+            }
+
+            this.ResumeLayout();
+        }
+        private void UserForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            userForm?.Hide();
+        }
+        private void btn_setting_Click(object sender, EventArgs e)
+        {
+            this.SuspendLayout();
+            CloseAllMdiChildren();
+
+            if (settingForm == null || settingForm.IsDisposed)
+            {
+                settingForm = new SettingForm();
+                settingForm.FormClosed += SettingForm_FormClosed;
+                settingForm.MdiParent = this;
+                settingForm.Dock = DockStyle.Fill;
+
+                settingForm.SuspendLayout();
+                EventHandler loadHandler = null;
+                loadHandler = (s, ev) =>
+                {
+                    settingForm.ResumeLayout();
+                    settingForm.refreshData();
+                    settingForm.Load -= loadHandler;
+                };
+                settingForm.Load += loadHandler;
+
+                settingForm.Show();
+            }
+            else
+            {
+                settingForm.SuspendLayout();
+                settingForm.Show();
+                settingForm.BringToFront();
+                settingForm.refreshData();
+                settingForm.ResumeLayout();
+            }
+
+            this.ResumeLayout();
+        }
+        private void SettingForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            settingForm?.Hide();
+        }
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are you sure you want to logout?", "Confirmation Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to logout?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                this.Close();
                 Form1 loginForm = new Form1();
                 loginForm.Show();
                 this.Hide();
             }
         }
 
-
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
         private void titlepanel_MouseDown(object sender, MouseEventArgs e)
         {
             const int WM_NCLBUTTONDOWN = 0xA1;
@@ -238,7 +480,33 @@ namespace MobileShopManagementSystem
 
         private void btnHam_Click(object sender, EventArgs e)
         {
-            cyberGroupBox1.Visible = !cyberGroupBox1.Visible;
+            slidebar.SuspendLayout();
+            foreach (Form child in this.MdiChildren)
+            {
+                if (child.Visible)
+                    child.SuspendLayout();
+            }
         }
+
+        private void nightControlBox1_Click(object sender, EventArgs e)
+        {
+            this.SuspendLayout();
+            CloseAllMdiChildren();
+            pictureBox2.Visible = !pictureBox2.Visible;
+            this.ResumeLayout();
+        }
+
+        private void slidebar_OnCollapsedStateChanged(object sender, EventArgs e)
+        {
+            System.Diagnostics.Trace.WriteLine("Collapsed state changed: " + slidebar.Collapsed);
+            cyberGroupBox1.Visible = !cyberGroupBox1.Visible;
+            foreach (Form child in this.MdiChildren)
+            {
+                if (child.Visible)
+                    child.ResumeLayout();
+            }
+            slidebar.ResumeLayout();
+        }
+
     }
 }

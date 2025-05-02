@@ -22,10 +22,20 @@ namespace MobileShopManagementSystem
             get { return productname.Text; }
             set { productname.Text = value; }
         }
-        public string productPrice
+        public string productSellingPrice
         {
-            get { return price.Text; }
-            set { price.Text = value; }
+            get { return sellingprice.Text; }
+            set { sellingprice.Text = value; }
+        }
+        public string productRealPrice
+        {
+            get { return realprice.Text.Replace("$", "");}
+            set { realprice.Text = value; }
+        }
+        public string productDiscount
+        {
+            get { return discount.Text; }
+            set { discount.Text = value; }
         }
         public string productStock
         {
@@ -53,7 +63,20 @@ namespace MobileShopManagementSystem
 
         private void CardProduct_Load(object sender, EventArgs e)
         {
-
+            sellingprice.Text = "$" + sellingprice.Text;
+            realprice.Text = "$" + realprice.Text;
+            if (discount.Text == "0")
+            {
+                parrotGroupBox4.Visible = false;
+                parrotGroupBox2.Visible = true;
+            }
+            else
+            {
+                sellingprice1.Text = sellingprice.Text;
+                discount.Text = discount.Text + "%";
+                parrotGroupBox2.Visible = false;
+                parrotGroupBox4.Visible = true;
+            }
         }
     }
 
