@@ -29,6 +29,8 @@ namespace MobileShopManagementSystem
             DataTable dt = new DataTable();
 
             dt.Columns.Add("BillID", typeof(string));
+            dt.Columns.Add("UserID", typeof(string));
+            dt.Columns.Add("UserName", typeof(string));
             dt.Columns.Add("CustomerID", typeof(string));
             dt.Columns.Add("CustomerName", typeof(string));
             dt.Columns.Add("Address", typeof(string));
@@ -40,6 +42,15 @@ namespace MobileShopManagementSystem
             dt.Columns.Add("Price", typeof(double));
             dt.Columns.Add("Amount", typeof(double));
             dt.Columns.Add("TotalPrice", typeof(double));
+            dt.Columns.Add("PaymentHistory", typeof(string));
+            dt.Columns.Add("TotalQuantity", typeof(int));
+            dt.Columns.Add("InterestRate", typeof(double));
+            dt.Columns.Add("PenaltyRate", typeof(double));
+            dt.Columns.Add("DownPaymentAmount", typeof(double));
+            dt.Columns.Add("RemainingAmount", typeof(double));
+            dt.Columns.Add("OutstandingAmount", typeof(double));
+            dt.Columns.Add("SelectedTerm", typeof(string));
+            dt.Columns.Add("LateFee", typeof(double));
 
 
             int id = 1;
@@ -52,6 +63,8 @@ namespace MobileShopManagementSystem
             {
                 dt.Rows.Add(
                     bill.BillID,
+                    bill.UserID,
+                    bill.UserName,
                     bill.CustomerID,
                     bill.CustomerName,
                     customer.Address,
@@ -62,7 +75,16 @@ namespace MobileShopManagementSystem
                     cart.Quantity,
                     cart.Price,
                     cart.Price * cart.Quantity,
-                    bill.TotalPrice
+                    bill.TotalPrice,
+                    bill.PaymentHistory,
+                    bill.TotalQuantity,
+                    bill.InterestRate,
+                    bill.PenaltyRate,
+                    bill.DownPaymentAmount,
+                    bill.RemainingAmount,
+                    bill.OutstandingAmount,
+                    bill.SelectedTerm,
+                    bill.LateFee
                 );
             }
 

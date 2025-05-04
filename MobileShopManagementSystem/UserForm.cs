@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MobileShopManagementSystem.Utilities;
 
 namespace MobileShopManagementSystem
 {
@@ -62,7 +63,7 @@ namespace MobileShopManagementSystem
                         // Chuyển đổi byte[] thành Image
                         if (user.Image != null && user.Image.Length > 0)
                         {
-                            row["image"] = ByteArrayToImage(user.Image.ToArray());
+                            row["image"] = ImageHelper.ByteArrayToImage(user.Image.ToArray());
                         }
                         else
                         {
@@ -81,20 +82,13 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        Image ByteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream m = new MemoryStream(byteArrayIn);
-            return Image.FromStream(m);
-        }
-        byte[] ImageToByteArray(Image imageIn)
-        {
-            MemoryStream m = new MemoryStream();
-            imageIn.Save(m, System.Drawing.Imaging.ImageFormat.Png);
-            return m.ToArray();
-        }
         private void UserForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            cb_search.SelectedIndex = 0;
+            cb_userGender.SelectedIndex = 0;
+            cb_userRole.SelectedIndex = 0;
+            cb_userStatus.SelectedIndex = 0;
         }
         private void dgv_user_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -301,7 +295,7 @@ namespace MobileShopManagementSystem
                             // Chuyển đổi byte[] thành Image
                             if (user.Image != null && user.Image.Length > 0)
                             {
-                                row["image"] = ByteArrayToImage(user.Image.ToArray());
+                                row["image"] = ImageHelper.ByteArrayToImage(user.Image.ToArray());
                             }
                             else
                             {

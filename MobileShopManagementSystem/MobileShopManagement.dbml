@@ -104,7 +104,7 @@
     <Type Name="vw_BillDetail">
       <Column Name="BillID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="UserID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="UserName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CustomerID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="CustomerName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="OrderID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />

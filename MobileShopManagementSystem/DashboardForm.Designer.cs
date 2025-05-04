@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_totalSold1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -71,35 +69,56 @@
             this.artanPanel8 = new ArtanComponent.ArtanPanel();
             this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label16 = new System.Windows.Forms.Label();
-            this.dt_from = new System.Windows.Forms.DateTimePicker();
+            this.dt_from1 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.dt_to = new System.Windows.Forms.DateTimePicker();
+            this.dt_to1 = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.artanPanel9 = new ArtanComponent.ArtanPanel();
-            this.dungeonButtonLeft1 = new ReaLTaiizor.Controls.DungeonButtonLeft();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.artanPanel17 = new ArtanComponent.ArtanPanel();
+            this.lbl_profit = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.artanPanel14 = new ArtanComponent.ArtanPanel();
+            this.lbl_totalRevenue2 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.artanPanel16 = new ArtanComponent.ArtanPanel();
+            this.lbl_totalLateFee = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.artanPanel10 = new ArtanComponent.ArtanPanel();
-            this.dgv_categories = new System.Windows.Forms.DataGridView();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_date_insert = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_costOfGoodsSold = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.artanPanel15 = new ArtanComponent.ArtanPanel();
+            this.lbl_totalInterestAmount = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.artanPanel9 = new ArtanComponent.ArtanPanel();
+            this.btn_search = new ReaLTaiizor.Controls.DungeonButtonLeft();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dt_from2 = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dt_to2 = new System.Windows.Forms.DateTimePicker();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.artanPanel12 = new ArtanComponent.ArtanPanel();
-            this.dungeonButtonLeft3 = new ReaLTaiizor.Controls.DungeonButtonLeft();
             this.label21 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.label22 = new System.Windows.Forms.Label();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.artanPanel13 = new ArtanComponent.ArtanPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_bill = new System.Windows.Forms.DataGridView();
+            this.billid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.downpaymentamount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remainingamount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectedterm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.interestrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.penaltyrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outstandingamount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.latefee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymenthistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duedate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateorder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dungeonButtonLeft2 = new ReaLTaiizor.Controls.DungeonButtonLeft();
             this.label19 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -120,10 +139,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.artanPanel2 = new ArtanComponent.ArtanPanel();
+            this.label30 = new System.Windows.Forms.Label();
             this.lbl_todayRevenue = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.artanPanel1 = new ArtanComponent.ArtanPanel();
+            this.label29 = new System.Windows.Forms.Label();
             this.lbl_totalRevenue = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -142,13 +163,17 @@
             this.artanPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.artanPanel9.SuspendLayout();
+            this.artanPanel17.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.artanPanel14.SuspendLayout();
+            this.artanPanel16.SuspendLayout();
             this.artanPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).BeginInit();
+            this.artanPanel15.SuspendLayout();
+            this.artanPanel9.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.artanPanel12.SuspendLayout();
             this.artanPanel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_bill)).BeginInit();
             this.artanPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.artanPanel4.SuspendLayout();
@@ -493,6 +518,7 @@
             this.dungeonTabPage1.SelectedIndex = 0;
             this.dungeonTabPage1.Size = new System.Drawing.Size(815, 513);
             this.dungeonTabPage1.TabIndex = 33;
+            this.dungeonTabPage1.SelectedIndexChanged += new System.EventHandler(this.dungeonTabPage1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -512,9 +538,9 @@
             this.artanPanel6.Controls.Add(this.btn_generateChart);
             this.artanPanel6.Controls.Add(this.artanPanel8);
             this.artanPanel6.Controls.Add(this.label16);
-            this.artanPanel6.Controls.Add(this.dt_from);
+            this.artanPanel6.Controls.Add(this.dt_from1);
             this.artanPanel6.Controls.Add(this.label12);
-            this.artanPanel6.Controls.Add(this.dt_to);
+            this.artanPanel6.Controls.Add(this.dt_to1);
             this.artanPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.artanPanel6.ForeColor = System.Drawing.Color.Black;
             this.artanPanel6.GradientAngle = 45F;
@@ -544,7 +570,7 @@
             this.btn_generateChart.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
             this.btn_generateChart.Size = new System.Drawing.Size(139, 30);
             this.btn_generateChart.TabIndex = 33;
-            this.btn_generateChart.Text = "Search";
+            this.btn_generateChart.Text = "Generate";
             this.btn_generateChart.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_generateChart.Click += new System.EventHandler(this.btn_generateChart_Click);
             // 
@@ -567,23 +593,23 @@
             // 
             // chartRevenue
             // 
-            chartArea10.Name = "ChartArea1";
-            this.chartRevenue.ChartAreas.Add(chartArea10);
+            chartArea5.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea5);
             this.chartRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend10.Name = "Legend1";
-            this.chartRevenue.Legends.Add(legend10);
+            legend5.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend5);
             this.chartRevenue.Location = new System.Drawing.Point(0, 0);
             this.chartRevenue.Margin = new System.Windows.Forms.Padding(4);
             this.chartRevenue.Name = "chartRevenue";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.chartRevenue.Series.Add(series10);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartRevenue.Series.Add(series5);
             this.chartRevenue.Size = new System.Drawing.Size(774, 390);
             this.chartRevenue.TabIndex = 6;
             this.chartRevenue.Text = "dsadsad";
-            title10.Name = "Title1";
-            this.chartRevenue.Titles.Add(title10);
+            title5.Name = "Title1";
+            this.chartRevenue.Titles.Add(title5);
             // 
             // label16
             // 
@@ -597,15 +623,15 @@
             this.label16.TabIndex = 31;
             this.label16.Text = "To :";
             // 
-            // dt_from
+            // dt_from1
             // 
-            this.dt_from.CustomFormat = "dd/MM/yyyy";
-            this.dt_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dt_from.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt_from.Location = new System.Drawing.Point(102, 29);
-            this.dt_from.Name = "dt_from";
-            this.dt_from.Size = new System.Drawing.Size(135, 27);
-            this.dt_from.TabIndex = 7;
+            this.dt_from1.CustomFormat = "dd/MM/yyyy";
+            this.dt_from1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_from1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_from1.Location = new System.Drawing.Point(102, 29);
+            this.dt_from1.Name = "dt_from1";
+            this.dt_from1.Size = new System.Drawing.Size(135, 27);
+            this.dt_from1.TabIndex = 7;
             // 
             // label12
             // 
@@ -619,68 +645,324 @@
             this.label12.TabIndex = 5;
             this.label12.Text = "From :";
             // 
-            // dt_to
+            // dt_to1
             // 
-            this.dt_to.CustomFormat = "dd/MM/yyyy";
-            this.dt_to.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dt_to.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt_to.Location = new System.Drawing.Point(289, 30);
-            this.dt_to.Name = "dt_to";
-            this.dt_to.Size = new System.Drawing.Size(134, 27);
-            this.dt_to.TabIndex = 8;
+            this.dt_to1.CustomFormat = "dd/MM/yyyy";
+            this.dt_to1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_to1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_to1.Location = new System.Drawing.Point(289, 30);
+            this.dt_to1.Name = "dt_to1";
+            this.dt_to1.Size = new System.Drawing.Size(134, 27);
+            this.dt_to1.TabIndex = 8;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.tabPage2.Controls.Add(this.artanPanel17);
+            this.tabPage2.Controls.Add(this.tableLayoutPanel2);
             this.tabPage2.Controls.Add(this.artanPanel9);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(10);
             this.tabPage2.Size = new System.Drawing.Size(807, 481);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
+            // artanPanel17
+            // 
+            this.artanPanel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.artanPanel17.BackColor = System.Drawing.Color.White;
+            this.artanPanel17.BorderRadius = 50;
+            this.artanPanel17.Controls.Add(this.lbl_profit);
+            this.artanPanel17.Controls.Add(this.label33);
+            this.artanPanel17.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel17.GradientAngle = 45F;
+            this.artanPanel17.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel17.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel17.Location = new System.Drawing.Point(24, 419);
+            this.artanPanel17.Name = "artanPanel17";
+            this.artanPanel17.Padding = new System.Windows.Forms.Padding(10);
+            this.artanPanel17.Size = new System.Drawing.Size(755, 49);
+            this.artanPanel17.TabIndex = 39;
+            // 
+            // lbl_profit
+            // 
+            this.lbl_profit.AutoSize = true;
+            this.lbl_profit.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_profit.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lbl_profit.ForeColor = System.Drawing.Color.White;
+            this.lbl_profit.Location = new System.Drawing.Point(139, 10);
+            this.lbl_profit.Name = "lbl_profit";
+            this.lbl_profit.Size = new System.Drawing.Size(25, 30);
+            this.lbl_profit.TabIndex = 9;
+            this.lbl_profit.Text = "0";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label33.ForeColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(30, 10);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(85, 30);
+            this.label33.TabIndex = 9;
+            this.label33.Text = "Profits :";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.artanPanel14, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.artanPanel16, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.artanPanel10, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.artanPanel15, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(54, 96);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(701, 296);
+            this.tableLayoutPanel2.TabIndex = 44;
+            // 
+            // artanPanel14
+            // 
+            this.artanPanel14.BackColor = System.Drawing.Color.White;
+            this.artanPanel14.BorderRadius = 50;
+            this.artanPanel14.Controls.Add(this.lbl_totalRevenue2);
+            this.artanPanel14.Controls.Add(this.label23);
+            this.artanPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artanPanel14.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel14.GradientAngle = 45F;
+            this.artanPanel14.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel14.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel14.Location = new System.Drawing.Point(5, 3);
+            this.artanPanel14.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.artanPanel14.Name = "artanPanel14";
+            this.artanPanel14.Size = new System.Drawing.Size(340, 142);
+            this.artanPanel14.TabIndex = 41;
+            // 
+            // lbl_totalRevenue2
+            // 
+            this.lbl_totalRevenue2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_totalRevenue2.AutoSize = true;
+            this.lbl_totalRevenue2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_totalRevenue2.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lbl_totalRevenue2.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalRevenue2.Location = new System.Drawing.Point(164, 33);
+            this.lbl_totalRevenue2.Name = "lbl_totalRevenue2";
+            this.lbl_totalRevenue2.Size = new System.Drawing.Size(25, 30);
+            this.lbl_totalRevenue2.TabIndex = 6;
+            this.lbl_totalRevenue2.Text = "0";
+            this.lbl_totalRevenue2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(104, 86);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(148, 30);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "Total Revenue";
+            // 
+            // artanPanel16
+            // 
+            this.artanPanel16.BackColor = System.Drawing.Color.White;
+            this.artanPanel16.BorderRadius = 50;
+            this.artanPanel16.Controls.Add(this.lbl_totalLateFee);
+            this.artanPanel16.Controls.Add(this.label28);
+            this.artanPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artanPanel16.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel16.GradientAngle = 45F;
+            this.artanPanel16.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel16.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel16.Location = new System.Drawing.Point(355, 151);
+            this.artanPanel16.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.artanPanel16.Name = "artanPanel16";
+            this.artanPanel16.Size = new System.Drawing.Size(341, 142);
+            this.artanPanel16.TabIndex = 43;
+            // 
+            // lbl_totalLateFee
+            // 
+            this.lbl_totalLateFee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_totalLateFee.AutoSize = true;
+            this.lbl_totalLateFee.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_totalLateFee.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lbl_totalLateFee.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalLateFee.Location = new System.Drawing.Point(165, 42);
+            this.lbl_totalLateFee.Name = "lbl_totalLateFee";
+            this.lbl_totalLateFee.Size = new System.Drawing.Size(25, 30);
+            this.lbl_totalLateFee.TabIndex = 7;
+            this.lbl_totalLateFee.Text = "0";
+            this.lbl_totalLateFee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(112, 88);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(140, 30);
+            this.label28.TabIndex = 8;
+            this.label28.Text = "Total LateFee";
+            // 
+            // artanPanel10
+            // 
+            this.artanPanel10.BackColor = System.Drawing.Color.White;
+            this.artanPanel10.BorderRadius = 50;
+            this.artanPanel10.Controls.Add(this.lbl_costOfGoodsSold);
+            this.artanPanel10.Controls.Add(this.label24);
+            this.artanPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artanPanel10.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel10.GradientAngle = 45F;
+            this.artanPanel10.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel10.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel10.Location = new System.Drawing.Point(355, 3);
+            this.artanPanel10.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.artanPanel10.Name = "artanPanel10";
+            this.artanPanel10.Size = new System.Drawing.Size(341, 142);
+            this.artanPanel10.TabIndex = 42;
+            // 
+            // lbl_costOfGoodsSold
+            // 
+            this.lbl_costOfGoodsSold.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_costOfGoodsSold.AutoSize = true;
+            this.lbl_costOfGoodsSold.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_costOfGoodsSold.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lbl_costOfGoodsSold.ForeColor = System.Drawing.Color.White;
+            this.lbl_costOfGoodsSold.Location = new System.Drawing.Point(165, 35);
+            this.lbl_costOfGoodsSold.Name = "lbl_costOfGoodsSold";
+            this.lbl_costOfGoodsSold.Size = new System.Drawing.Size(25, 30);
+            this.lbl_costOfGoodsSold.TabIndex = 5;
+            this.lbl_costOfGoodsSold.Text = "0";
+            this.lbl_costOfGoodsSold.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(74, 86);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(204, 30);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "Cost Of Goods Sold";
+            // 
+            // artanPanel15
+            // 
+            this.artanPanel15.BackColor = System.Drawing.Color.White;
+            this.artanPanel15.BorderRadius = 50;
+            this.artanPanel15.Controls.Add(this.lbl_totalInterestAmount);
+            this.artanPanel15.Controls.Add(this.label32);
+            this.artanPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artanPanel15.ForeColor = System.Drawing.Color.Black;
+            this.artanPanel15.GradientAngle = 45F;
+            this.artanPanel15.GradientBottomColor = System.Drawing.Color.Fuchsia;
+            this.artanPanel15.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
+            this.artanPanel15.Location = new System.Drawing.Point(5, 151);
+            this.artanPanel15.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.artanPanel15.Name = "artanPanel15";
+            this.artanPanel15.Size = new System.Drawing.Size(340, 142);
+            this.artanPanel15.TabIndex = 43;
+            // 
+            // lbl_totalInterestAmount
+            // 
+            this.lbl_totalInterestAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_totalInterestAmount.AutoSize = true;
+            this.lbl_totalInterestAmount.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_totalInterestAmount.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lbl_totalInterestAmount.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalInterestAmount.Location = new System.Drawing.Point(157, 42);
+            this.lbl_totalInterestAmount.Name = "lbl_totalInterestAmount";
+            this.lbl_totalInterestAmount.Size = new System.Drawing.Size(25, 30);
+            this.lbl_totalInterestAmount.TabIndex = 7;
+            this.lbl_totalInterestAmount.Text = "0";
+            this.lbl_totalInterestAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(74, 88);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(209, 30);
+            this.label32.TabIndex = 8;
+            this.label32.Text = "Total Interest Amout";
+            // 
             // artanPanel9
             // 
+            this.artanPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.artanPanel9.BackColor = System.Drawing.Color.White;
-            this.artanPanel9.BorderRadius = 30;
-            this.artanPanel9.Controls.Add(this.dungeonButtonLeft1);
+            this.artanPanel9.BorderRadius = 60;
+            this.artanPanel9.Controls.Add(this.btn_search);
             this.artanPanel9.Controls.Add(this.label17);
-            this.artanPanel9.Controls.Add(this.dateTimePicker1);
+            this.artanPanel9.Controls.Add(this.dt_from2);
             this.artanPanel9.Controls.Add(this.label18);
-            this.artanPanel9.Controls.Add(this.dateTimePicker2);
-            this.artanPanel9.Controls.Add(this.artanPanel10);
-            this.artanPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artanPanel9.Controls.Add(this.dt_to2);
             this.artanPanel9.ForeColor = System.Drawing.Color.Black;
             this.artanPanel9.GradientAngle = 45F;
             this.artanPanel9.GradientBottomColor = System.Drawing.Color.Fuchsia;
             this.artanPanel9.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.artanPanel9.Location = new System.Drawing.Point(3, 3);
+            this.artanPanel9.Location = new System.Drawing.Point(24, 13);
             this.artanPanel9.Name = "artanPanel9";
             this.artanPanel9.Padding = new System.Windows.Forms.Padding(10);
-            this.artanPanel9.Size = new System.Drawing.Size(801, 475);
+            this.artanPanel9.Size = new System.Drawing.Size(755, 62);
             this.artanPanel9.TabIndex = 0;
             // 
-            // dungeonButtonLeft1
+            // btn_search
             // 
-            this.dungeonButtonLeft1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonButtonLeft1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.dungeonButtonLeft1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dungeonButtonLeft1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dungeonButtonLeft1.Image = null;
-            this.dungeonButtonLeft1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dungeonButtonLeft1.InactiveColorA = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dungeonButtonLeft1.InactiveColorB = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.dungeonButtonLeft1.Location = new System.Drawing.Point(447, 26);
-            this.dungeonButtonLeft1.Name = "dungeonButtonLeft1";
-            this.dungeonButtonLeft1.PressedColorA = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.dungeonButtonLeft1.PressedColorB = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.dungeonButtonLeft1.PressedContourColorA = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft1.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft1.Size = new System.Drawing.Size(139, 30);
-            this.dungeonButtonLeft1.TabIndex = 38;
-            this.dungeonButtonLeft1.Text = "Search";
-            this.dungeonButtonLeft1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_search.Image = null;
+            this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_search.InactiveColorA = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.btn_search.InactiveColorB = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
+            this.btn_search.Location = new System.Drawing.Point(447, 20);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.PressedColorA = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.btn_search.PressedColorB = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.btn_search.PressedContourColorA = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
+            this.btn_search.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
+            this.btn_search.Size = new System.Drawing.Size(139, 30);
+            this.btn_search.TabIndex = 38;
+            this.btn_search.Text = "Search";
+            this.btn_search.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label17
             // 
@@ -688,21 +970,21 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(237, 23);
+            this.label17.Location = new System.Drawing.Point(237, 17);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 28);
             this.label17.TabIndex = 37;
             this.label17.Text = "To :";
             // 
-            // dateTimePicker1
+            // dt_from2
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(97, 25);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(135, 27);
-            this.dateTimePicker1.TabIndex = 35;
+            this.dt_from2.CustomFormat = "dd/MM/yyyy";
+            this.dt_from2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_from2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_from2.Location = new System.Drawing.Point(97, 19);
+            this.dt_from2.Name = "dt_from2";
+            this.dt_from2.Size = new System.Drawing.Size(135, 27);
+            this.dt_from2.TabIndex = 35;
             // 
             // label18
             // 
@@ -710,112 +992,21 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(25, 22);
+            this.label18.Location = new System.Drawing.Point(25, 16);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(67, 28);
             this.label18.TabIndex = 34;
             this.label18.Text = "From :";
             // 
-            // dateTimePicker2
+            // dt_to2
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(284, 26);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(134, 27);
-            this.dateTimePicker2.TabIndex = 36;
-            // 
-            // artanPanel10
-            // 
-            this.artanPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.artanPanel10.BackColor = System.Drawing.Color.White;
-            this.artanPanel10.BorderRadius = 60;
-            this.artanPanel10.Controls.Add(this.dgv_categories);
-            this.artanPanel10.ForeColor = System.Drawing.Color.Black;
-            this.artanPanel10.GradientAngle = 90F;
-            this.artanPanel10.GradientBottomColor = System.Drawing.Color.White;
-            this.artanPanel10.GradientTopColor = System.Drawing.Color.White;
-            this.artanPanel10.Location = new System.Drawing.Point(13, 72);
-            this.artanPanel10.Name = "artanPanel10";
-            this.artanPanel10.Size = new System.Drawing.Size(775, 390);
-            this.artanPanel10.TabIndex = 33;
-            // 
-            // dgv_categories
-            // 
-            this.dgv_categories.AllowUserToAddRows = false;
-            this.dgv_categories.AllowUserToDeleteRows = false;
-            this.dgv_categories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_categories.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_categories.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_categories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle55.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_categories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
-            this.dgv_categories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_categories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_id,
-            this.col_category,
-            this.col_status,
-            this.col_date_insert});
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_categories.DefaultCellStyle = dataGridViewCellStyle56;
-            this.dgv_categories.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_categories.EnableHeadersVisualStyles = false;
-            this.dgv_categories.GridColor = System.Drawing.Color.Silver;
-            this.dgv_categories.Location = new System.Drawing.Point(0, 0);
-            this.dgv_categories.Name = "dgv_categories";
-            this.dgv_categories.ReadOnly = true;
-            this.dgv_categories.RowHeadersVisible = false;
-            this.dgv_categories.RowHeadersWidth = 51;
-            this.dgv_categories.RowTemplate.Height = 24;
-            this.dgv_categories.Size = new System.Drawing.Size(775, 390);
-            this.dgv_categories.TabIndex = 8;
-            // 
-            // col_id
-            // 
-            this.col_id.DataPropertyName = "CategoryID";
-            this.col_id.HeaderText = "ID";
-            this.col_id.MinimumWidth = 6;
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            // 
-            // col_category
-            // 
-            this.col_category.DataPropertyName = "CategoryName";
-            this.col_category.HeaderText = "Name";
-            this.col_category.MinimumWidth = 6;
-            this.col_category.Name = "col_category";
-            this.col_category.ReadOnly = true;
-            // 
-            // col_status
-            // 
-            this.col_status.DataPropertyName = "Status";
-            this.col_status.HeaderText = "Status";
-            this.col_status.MinimumWidth = 6;
-            this.col_status.Name = "col_status";
-            this.col_status.ReadOnly = true;
-            // 
-            // col_date_insert
-            // 
-            this.col_date_insert.DataPropertyName = "DateInsert";
-            this.col_date_insert.HeaderText = "Date Insert";
-            this.col_date_insert.MinimumWidth = 6;
-            this.col_date_insert.Name = "col_date_insert";
-            this.col_date_insert.ReadOnly = true;
+            this.dt_to2.CustomFormat = "dd/MM/yyyy";
+            this.dt_to2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_to2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_to2.Location = new System.Drawing.Point(284, 20);
+            this.dt_to2.Name = "dt_to2";
+            this.dt_to2.Size = new System.Drawing.Size(134, 27);
+            this.dt_to2.TabIndex = 36;
             // 
             // tabPage3
             // 
@@ -837,11 +1028,7 @@
             // 
             this.artanPanel12.BackColor = System.Drawing.Color.White;
             this.artanPanel12.BorderRadius = 30;
-            this.artanPanel12.Controls.Add(this.dungeonButtonLeft3);
             this.artanPanel12.Controls.Add(this.label21);
-            this.artanPanel12.Controls.Add(this.dateTimePicker5);
-            this.artanPanel12.Controls.Add(this.label22);
-            this.artanPanel12.Controls.Add(this.dateTimePicker6);
             this.artanPanel12.Controls.Add(this.artanPanel13);
             this.artanPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.artanPanel12.ForeColor = System.Drawing.Color.Black;
@@ -854,70 +1041,17 @@
             this.artanPanel12.Size = new System.Drawing.Size(807, 481);
             this.artanPanel12.TabIndex = 45;
             // 
-            // dungeonButtonLeft3
-            // 
-            this.dungeonButtonLeft3.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonButtonLeft3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.dungeonButtonLeft3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dungeonButtonLeft3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dungeonButtonLeft3.Image = null;
-            this.dungeonButtonLeft3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dungeonButtonLeft3.InactiveColorA = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dungeonButtonLeft3.InactiveColorB = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.dungeonButtonLeft3.Location = new System.Drawing.Point(447, 26);
-            this.dungeonButtonLeft3.Name = "dungeonButtonLeft3";
-            this.dungeonButtonLeft3.PressedColorA = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.dungeonButtonLeft3.PressedColorB = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.dungeonButtonLeft3.PressedContourColorA = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft3.PressedContourColorB = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.dungeonButtonLeft3.Size = new System.Drawing.Size(139, 30);
-            this.dungeonButtonLeft3.TabIndex = 38;
-            this.dungeonButtonLeft3.Text = "Search";
-            this.dungeonButtonLeft3.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(237, 23);
+            this.label21.Location = new System.Drawing.Point(28, 21);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 28);
-            this.label21.TabIndex = 37;
-            this.label21.Text = "To :";
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker5.Location = new System.Drawing.Point(97, 25);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(135, 27);
-            this.dateTimePicker5.TabIndex = 35;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(25, 22);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(67, 28);
-            this.label22.TabIndex = 34;
-            this.label22.Text = "From :";
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker6.Location = new System.Drawing.Point(284, 26);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(134, 27);
-            this.dateTimePicker6.TabIndex = 36;
+            this.label21.Size = new System.Drawing.Size(140, 30);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "Today\'s Sales";
             // 
             // artanPanel13
             // 
@@ -926,7 +1060,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.artanPanel13.BackColor = System.Drawing.Color.White;
             this.artanPanel13.BorderRadius = 60;
-            this.artanPanel13.Controls.Add(this.dataGridView2);
+            this.artanPanel13.Controls.Add(this.dgv_bill);
             this.artanPanel13.ForeColor = System.Drawing.Color.Black;
             this.artanPanel13.GradientAngle = 90F;
             this.artanPanel13.GradientBottomColor = System.Drawing.Color.White;
@@ -936,79 +1070,236 @@
             this.artanPanel13.Size = new System.Drawing.Size(781, 396);
             this.artanPanel13.TabIndex = 33;
             // 
-            // dataGridView2
+            // dgv_bill
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle58;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.EnableHeadersVisualStyles = false;
-            this.dataGridView2.GridColor = System.Drawing.Color.Silver;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(781, 396);
-            this.dataGridView2.TabIndex = 8;
+            this.dgv_bill.AllowUserToAddRows = false;
+            this.dgv_bill.AllowUserToDeleteRows = false;
+            this.dgv_bill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_bill.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_bill.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_bill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_bill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgv_bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_bill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.billid,
+            this.userid,
+            this.username,
+            this.customerid,
+            this.customername,
+            this.orderid,
+            this.totalquantity,
+            this.totalprice,
+            this.downpaymentamount,
+            this.remainingamount,
+            this.selectedterm,
+            this.interestrate,
+            this.penaltyrate,
+            this.outstandingamount,
+            this.latefee,
+            this.paymenthistory,
+            this.duedate,
+            this.dateorder,
+            this.status});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_bill.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgv_bill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_bill.EnableHeadersVisualStyles = false;
+            this.dgv_bill.Location = new System.Drawing.Point(0, 0);
+            this.dgv_bill.Name = "dgv_bill";
+            this.dgv_bill.ReadOnly = true;
+            this.dgv_bill.RowHeadersVisible = false;
+            this.dgv_bill.RowHeadersWidth = 51;
+            this.dgv_bill.RowTemplate.Height = 24;
+            this.dgv_bill.Size = new System.Drawing.Size(781, 396);
+            this.dgv_bill.TabIndex = 22;
             // 
-            // dataGridViewTextBoxColumn5
+            // billid
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CategoryID";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.billid.DataPropertyName = "BillID";
+            this.billid.HeaderText = "Bill ID";
+            this.billid.MinimumWidth = 6;
+            this.billid.Name = "billid";
+            this.billid.ReadOnly = true;
+            this.billid.Width = 64;
             // 
-            // dataGridViewTextBoxColumn6
+            // userid
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "CategoryName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.userid.DataPropertyName = "UserID";
+            this.userid.HeaderText = "User ID";
+            this.userid.MinimumWidth = 6;
+            this.userid.Name = "userid";
+            this.userid.ReadOnly = true;
+            this.userid.Visible = false;
+            this.userid.Width = 96;
             // 
-            // dataGridViewTextBoxColumn7
+            // username
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.username.DataPropertyName = "UserName";
+            this.username.HeaderText = "Staff Name";
+            this.username.MinimumWidth = 6;
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            this.username.Width = 119;
             // 
-            // dataGridViewTextBoxColumn8
+            // customerid
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "DateInsert";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Date Insert";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.customerid.DataPropertyName = "CustomerID";
+            this.customerid.HeaderText = "Customer ID";
+            this.customerid.MinimumWidth = 6;
+            this.customerid.Name = "customerid";
+            this.customerid.ReadOnly = true;
+            this.customerid.Visible = false;
+            this.customerid.Width = 138;
+            // 
+            // customername
+            // 
+            this.customername.DataPropertyName = "CustomerName";
+            this.customername.HeaderText = "Customer Name";
+            this.customername.MinimumWidth = 6;
+            this.customername.Name = "customername";
+            this.customername.ReadOnly = true;
+            this.customername.Width = 153;
+            // 
+            // orderid
+            // 
+            this.orderid.DataPropertyName = "OrderID";
+            this.orderid.HeaderText = "Order ID";
+            this.orderid.MinimumWidth = 6;
+            this.orderid.Name = "orderid";
+            this.orderid.ReadOnly = true;
+            this.orderid.Visible = false;
+            this.orderid.Width = 125;
+            // 
+            // totalquantity
+            // 
+            this.totalquantity.DataPropertyName = "TotalQuantity";
+            this.totalquantity.HeaderText = "Total Quantity";
+            this.totalquantity.MinimumWidth = 6;
+            this.totalquantity.Name = "totalquantity";
+            this.totalquantity.ReadOnly = true;
+            this.totalquantity.Width = 139;
+            // 
+            // totalprice
+            // 
+            this.totalprice.DataPropertyName = "TotalPrice";
+            this.totalprice.HeaderText = "Total Price";
+            this.totalprice.MinimumWidth = 6;
+            this.totalprice.Name = "totalprice";
+            this.totalprice.ReadOnly = true;
+            this.totalprice.Width = 111;
+            // 
+            // downpaymentamount
+            // 
+            this.downpaymentamount.DataPropertyName = "DownPaymentAmount";
+            this.downpaymentamount.HeaderText = "Down Payment Amount";
+            this.downpaymentamount.MinimumWidth = 6;
+            this.downpaymentamount.Name = "downpaymentamount";
+            this.downpaymentamount.ReadOnly = true;
+            this.downpaymentamount.Width = 209;
+            // 
+            // remainingamount
+            // 
+            this.remainingamount.DataPropertyName = "RemainingAmount";
+            this.remainingamount.HeaderText = "Remaining Amount";
+            this.remainingamount.MinimumWidth = 6;
+            this.remainingamount.Name = "remainingamount";
+            this.remainingamount.ReadOnly = true;
+            this.remainingamount.Width = 177;
+            // 
+            // selectedterm
+            // 
+            this.selectedterm.DataPropertyName = "SelectedTerm";
+            this.selectedterm.HeaderText = "Term";
+            this.selectedterm.MinimumWidth = 6;
+            this.selectedterm.Name = "selectedterm";
+            this.selectedterm.ReadOnly = true;
+            this.selectedterm.Width = 78;
+            // 
+            // interestrate
+            // 
+            this.interestrate.DataPropertyName = "InterestRate";
+            this.interestrate.HeaderText = "Interest Rate";
+            this.interestrate.MinimumWidth = 6;
+            this.interestrate.Name = "interestrate";
+            this.interestrate.ReadOnly = true;
+            this.interestrate.Width = 128;
+            // 
+            // penaltyrate
+            // 
+            this.penaltyrate.DataPropertyName = "PenaltyRate";
+            this.penaltyrate.HeaderText = "Penalty Rate";
+            this.penaltyrate.MinimumWidth = 6;
+            this.penaltyrate.Name = "penaltyrate";
+            this.penaltyrate.ReadOnly = true;
+            this.penaltyrate.Width = 126;
+            // 
+            // outstandingamount
+            // 
+            this.outstandingamount.DataPropertyName = "OutstandingAmount";
+            this.outstandingamount.HeaderText = "Outstanding Amount";
+            this.outstandingamount.MinimumWidth = 6;
+            this.outstandingamount.Name = "outstandingamount";
+            this.outstandingamount.ReadOnly = true;
+            this.outstandingamount.Width = 190;
+            // 
+            // latefee
+            // 
+            this.latefee.DataPropertyName = "LateFee";
+            this.latefee.HeaderText = "Late Fee";
+            this.latefee.MinimumWidth = 6;
+            this.latefee.Name = "latefee";
+            this.latefee.ReadOnly = true;
+            this.latefee.Width = 72;
+            // 
+            // paymenthistory
+            // 
+            this.paymenthistory.DataPropertyName = "PaymentHistory";
+            this.paymenthistory.HeaderText = "Payment History";
+            this.paymenthistory.MinimumWidth = 6;
+            this.paymenthistory.Name = "paymenthistory";
+            this.paymenthistory.ReadOnly = true;
+            this.paymenthistory.Visible = false;
+            this.paymenthistory.Width = 157;
+            // 
+            // duedate
+            // 
+            this.duedate.DataPropertyName = "DueDate";
+            this.duedate.HeaderText = "Due Date";
+            this.duedate.MinimumWidth = 6;
+            this.duedate.Name = "duedate";
+            this.duedate.ReadOnly = true;
+            this.duedate.Width = 104;
+            // 
+            // dateorder
+            // 
+            this.dateorder.DataPropertyName = "DateOrder";
+            this.dateorder.HeaderText = "Date Order";
+            this.dateorder.MinimumWidth = 6;
+            this.dateorder.Name = "dateorder";
+            this.dateorder.ReadOnly = true;
+            this.dateorder.Width = 118;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Status";
+            this.status.MinimumWidth = 6;
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 88;
             // 
             // dungeonButtonLeft2
             // 
@@ -1100,28 +1391,28 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle60.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Silver;
@@ -1202,11 +1493,12 @@
             this.lbl_totalCustomer.BackColor = System.Drawing.Color.Transparent;
             this.lbl_totalCustomer.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.lbl_totalCustomer.ForeColor = System.Drawing.Color.White;
-            this.lbl_totalCustomer.Location = new System.Drawing.Point(175, 38);
+            this.lbl_totalCustomer.Location = new System.Drawing.Point(175, 41);
             this.lbl_totalCustomer.Name = "lbl_totalCustomer";
             this.lbl_totalCustomer.Size = new System.Drawing.Size(25, 30);
             this.lbl_totalCustomer.TabIndex = 1;
             this.lbl_totalCustomer.Text = "0";
+            this.lbl_totalCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -1249,6 +1541,7 @@
             this.lbl_totalProducts.Size = new System.Drawing.Size(25, 30);
             this.lbl_totalProducts.TabIndex = 4;
             this.lbl_totalProducts.Text = "0";
+            this.lbl_totalProducts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -1278,6 +1571,7 @@
             // 
             this.artanPanel2.BackColor = System.Drawing.Color.Transparent;
             this.artanPanel2.BorderRadius = 90;
+            this.artanPanel2.Controls.Add(this.label30);
             this.artanPanel2.Controls.Add(this.lbl_todayRevenue);
             this.artanPanel2.Controls.Add(this.pictureBox3);
             this.artanPanel2.Controls.Add(this.label6);
@@ -1292,17 +1586,30 @@
             this.artanPanel2.Size = new System.Drawing.Size(298, 164);
             this.artanPanel2.TabIndex = 34;
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(140, 114);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(112, 30);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "from sales";
+            // 
             // lbl_todayRevenue
             // 
             this.lbl_todayRevenue.AutoSize = true;
             this.lbl_todayRevenue.BackColor = System.Drawing.Color.Transparent;
             this.lbl_todayRevenue.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.lbl_todayRevenue.ForeColor = System.Drawing.Color.White;
-            this.lbl_todayRevenue.Location = new System.Drawing.Point(112, 40);
+            this.lbl_todayRevenue.Location = new System.Drawing.Point(186, 37);
             this.lbl_todayRevenue.Name = "lbl_todayRevenue";
             this.lbl_todayRevenue.Size = new System.Drawing.Size(25, 30);
             this.lbl_todayRevenue.TabIndex = 5;
             this.lbl_todayRevenue.Text = "0";
+            this.lbl_todayRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
             // 
@@ -1332,6 +1639,7 @@
             // 
             this.artanPanel1.BackColor = System.Drawing.Color.Transparent;
             this.artanPanel1.BorderRadius = 90;
+            this.artanPanel1.Controls.Add(this.label29);
             this.artanPanel1.Controls.Add(this.lbl_totalRevenue);
             this.artanPanel1.Controls.Add(this.pictureBox4);
             this.artanPanel1.Controls.Add(this.label8);
@@ -1346,17 +1654,30 @@
             this.artanPanel1.Size = new System.Drawing.Size(299, 164);
             this.artanPanel1.TabIndex = 34;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(135, 114);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(112, 30);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "from sales";
+            // 
             // lbl_totalRevenue
             // 
             this.lbl_totalRevenue.AutoSize = true;
             this.lbl_totalRevenue.BackColor = System.Drawing.Color.Transparent;
             this.lbl_totalRevenue.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.lbl_totalRevenue.ForeColor = System.Drawing.Color.White;
-            this.lbl_totalRevenue.Location = new System.Drawing.Point(109, 37);
+            this.lbl_totalRevenue.Location = new System.Drawing.Point(163, 41);
             this.lbl_totalRevenue.Name = "lbl_totalRevenue";
             this.lbl_totalRevenue.Size = new System.Drawing.Size(25, 30);
             this.lbl_totalRevenue.TabIndex = 5;
             this.lbl_totalRevenue.Text = "0";
+            this.lbl_totalRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox4
             // 
@@ -1457,16 +1778,25 @@
             this.artanPanel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.artanPanel17.ResumeLayout(false);
+            this.artanPanel17.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.artanPanel14.ResumeLayout(false);
+            this.artanPanel14.PerformLayout();
+            this.artanPanel16.ResumeLayout(false);
+            this.artanPanel16.PerformLayout();
+            this.artanPanel10.ResumeLayout(false);
+            this.artanPanel10.PerformLayout();
+            this.artanPanel15.ResumeLayout(false);
+            this.artanPanel15.PerformLayout();
             this.artanPanel9.ResumeLayout(false);
             this.artanPanel9.PerformLayout();
-            this.artanPanel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.artanPanel12.ResumeLayout(false);
             this.artanPanel12.PerformLayout();
             this.artanPanel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_bill)).EndInit();
             this.artanPanel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.artanPanel4.ResumeLayout(false);
@@ -1520,9 +1850,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dt_to;
-        private System.Windows.Forms.DateTimePicker dt_from;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DateTimePicker dt_to1;
+        private System.Windows.Forms.DateTimePicker dt_from1;
         private ArtanComponent.ArtanPanel artanPanel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_totalCustomer;
@@ -1545,30 +1874,8 @@
         private ArtanComponent.ArtanPanel artanPanel8;
         private ReaLTaiizor.Controls.DungeonButtonLeft btn_generateChart;
         private System.Windows.Forms.TabPage tabPage3;
-        private ArtanComponent.ArtanPanel artanPanel9;
-        private ArtanComponent.ArtanPanel artanPanel10;
-        private System.Windows.Forms.DataGridView dgv_categories;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_date_insert;
-        private ReaLTaiizor.Controls.DungeonButtonLeft dungeonButtonLeft1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private ArtanComponent.ArtanPanel artanPanel12;
-        private ReaLTaiizor.Controls.DungeonButtonLeft dungeonButtonLeft3;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private ArtanComponent.ArtanPanel artanPanel13;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private ReaLTaiizor.Controls.DungeonButtonLeft dungeonButtonLeft2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
@@ -1580,5 +1887,51 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private ArtanComponent.ArtanPanel artanPanel14;
+        private System.Windows.Forms.Label lbl_totalRevenue2;
+        private System.Windows.Forms.Label label23;
+        private ArtanComponent.ArtanPanel artanPanel16;
+        private System.Windows.Forms.Label lbl_totalLateFee;
+        private System.Windows.Forms.Label label28;
+        private ArtanComponent.ArtanPanel artanPanel10;
+        private System.Windows.Forms.Label lbl_costOfGoodsSold;
+        private System.Windows.Forms.Label label24;
+        private ArtanComponent.ArtanPanel artanPanel15;
+        private System.Windows.Forms.Label lbl_totalInterestAmount;
+        private System.Windows.Forms.Label label32;
+        private ArtanComponent.ArtanPanel artanPanel9;
+        private ReaLTaiizor.Controls.DungeonButtonLeft btn_search;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker dt_from2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DateTimePicker dt_to2;
+        private ArtanComponent.ArtanPanel artanPanel17;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lbl_profit;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DataGridView dgv_bill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn billid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalquantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalprice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn downpaymentamount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remainingamount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn selectedterm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn interestrate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn penaltyrate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn outstandingamount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn latefee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymenthistory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duedate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateorder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }

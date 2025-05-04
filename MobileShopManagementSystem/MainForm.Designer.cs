@@ -32,7 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.titlepanel = new System.Windows.Forms.Panel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            this.btnHam = new System.Windows.Forms.Button();
             this.shopContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_shop = new System.Windows.Forms.Button();
+            this.btn_categories = new System.Windows.Forms.Button();
+            this.btn_bill = new System.Windows.Forms.Button();
             this.shopTransition = new System.Windows.Forms.Timer(this.components);
             this.slidebar = new ReaLTaiizor.Controls.ParrotSlidingPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -40,26 +44,22 @@
             this.lbl_role = new ReaLTaiizor.Controls.DungeonLabel();
             this.lbl_userName = new ReaLTaiizor.Controls.DungeonLabel();
             this.cyberGroupBox2 = new ReaLTaiizor.Controls.CyberGroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnHam = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_dashboard = new System.Windows.Forms.Button();
-            this.btn_shop = new System.Windows.Forms.Button();
-            this.btn_categories = new System.Windows.Forms.Button();
-            this.btn_bill = new System.Windows.Forms.Button();
             this.btn_inventory = new System.Windows.Forms.Button();
             this.btn_customers = new System.Windows.Forms.Button();
             this.btn_user = new System.Windows.Forms.Button();
             this.btn_setting = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.titlepanel.SuspendLayout();
             this.shopContainer.SuspendLayout();
             this.slidebar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.cyberGroupBox1.SuspendLayout();
             this.cyberGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // titlepanel
@@ -100,6 +100,19 @@
             this.nightControlBox1.TabIndex = 2;
             this.nightControlBox1.Click += new System.EventHandler(this.nightControlBox1_Click);
             // 
+            // btnHam
+            // 
+            this.btnHam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHam.FlatAppearance.BorderSize = 0;
+            this.btnHam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHam.Image = global::MobileShopManagementSystem.Properties.Resources.Menu2;
+            this.btnHam.Location = new System.Drawing.Point(12, 0);
+            this.btnHam.Name = "btnHam";
+            this.btnHam.Size = new System.Drawing.Size(42, 41);
+            this.btnHam.TabIndex = 2;
+            this.btnHam.UseVisualStyleBackColor = false;
+            this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
+            // 
             // shopContainer
             // 
             this.shopContainer.BackColor = System.Drawing.Color.Transparent;
@@ -111,6 +124,63 @@
             this.shopContainer.Name = "shopContainer";
             this.shopContainer.Size = new System.Drawing.Size(249, 49);
             this.shopContainer.TabIndex = 9;
+            // 
+            // btn_shop
+            // 
+            this.btn_shop.BackColor = System.Drawing.Color.Transparent;
+            this.btn_shop.FlatAppearance.BorderSize = 0;
+            this.btn_shop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_shop.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btn_shop.ForeColor = System.Drawing.Color.White;
+            this.btn_shop.Image = global::MobileShopManagementSystem.Properties.Resources.Online_Shop;
+            this.btn_shop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_shop.Location = new System.Drawing.Point(0, 0);
+            this.btn_shop.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_shop.Name = "btn_shop";
+            this.btn_shop.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_shop.Size = new System.Drawing.Size(249, 49);
+            this.btn_shop.TabIndex = 2;
+            this.btn_shop.Text = "Shop";
+            this.btn_shop.UseVisualStyleBackColor = false;
+            this.btn_shop.Click += new System.EventHandler(this.btn_shop_Click);
+            // 
+            // btn_categories
+            // 
+            this.btn_categories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
+            this.btn_categories.FlatAppearance.BorderSize = 0;
+            this.btn_categories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_categories.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btn_categories.ForeColor = System.Drawing.Color.White;
+            this.btn_categories.Image = global::MobileShopManagementSystem.Properties.Resources.Warehouse;
+            this.btn_categories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_categories.Location = new System.Drawing.Point(0, 49);
+            this.btn_categories.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_categories.Name = "btn_categories";
+            this.btn_categories.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_categories.Size = new System.Drawing.Size(249, 49);
+            this.btn_categories.TabIndex = 2;
+            this.btn_categories.Text = "Categories";
+            this.btn_categories.UseVisualStyleBackColor = false;
+            this.btn_categories.Click += new System.EventHandler(this.btn_categories_Click);
+            // 
+            // btn_bill
+            // 
+            this.btn_bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
+            this.btn_bill.FlatAppearance.BorderSize = 0;
+            this.btn_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_bill.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btn_bill.ForeColor = System.Drawing.Color.White;
+            this.btn_bill.Image = global::MobileShopManagementSystem.Properties.Resources.Buy_For_Coins;
+            this.btn_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_bill.Location = new System.Drawing.Point(0, 98);
+            this.btn_bill.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_bill.Name = "btn_bill";
+            this.btn_bill.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_bill.Size = new System.Drawing.Size(249, 49);
+            this.btn_bill.TabIndex = 3;
+            this.btn_bill.Text = "Bill";
+            this.btn_bill.UseVisualStyleBackColor = false;
+            this.btn_bill.Click += new System.EventHandler(this.btn_bill_Click);
             // 
             // shopTransition
             // 
@@ -202,7 +272,7 @@
             this.lbl_role.BackColor = System.Drawing.Color.Transparent;
             this.lbl_role.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lbl_role.ForeColor = System.Drawing.Color.White;
-            this.lbl_role.Location = new System.Drawing.Point(94, 174);
+            this.lbl_role.Location = new System.Drawing.Point(96, 174);
             this.lbl_role.Name = "lbl_role";
             this.lbl_role.Size = new System.Drawing.Size(48, 25);
             this.lbl_role.TabIndex = 11;
@@ -255,30 +325,6 @@
             this.cyberGroupBox2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberGroupBox2.Timer_RGB = 300;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(249, 39);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1108, 749);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnHam
-            // 
-            this.btnHam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHam.FlatAppearance.BorderSize = 0;
-            this.btnHam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHam.Image = global::MobileShopManagementSystem.Properties.Resources.Menu2;
-            this.btnHam.Location = new System.Drawing.Point(12, 0);
-            this.btnHam.Name = "btnHam";
-            this.btnHam.Size = new System.Drawing.Size(42, 41);
-            this.btnHam.TabIndex = 2;
-            this.btnHam.UseVisualStyleBackColor = false;
-            this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -307,63 +353,6 @@
             this.btn_dashboard.Text = "Dashboard";
             this.btn_dashboard.UseVisualStyleBackColor = false;
             this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
-            // 
-            // btn_shop
-            // 
-            this.btn_shop.BackColor = System.Drawing.Color.Transparent;
-            this.btn_shop.FlatAppearance.BorderSize = 0;
-            this.btn_shop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_shop.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btn_shop.ForeColor = System.Drawing.Color.White;
-            this.btn_shop.Image = global::MobileShopManagementSystem.Properties.Resources.Online_Shop;
-            this.btn_shop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_shop.Location = new System.Drawing.Point(0, 0);
-            this.btn_shop.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_shop.Name = "btn_shop";
-            this.btn_shop.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_shop.Size = new System.Drawing.Size(249, 49);
-            this.btn_shop.TabIndex = 2;
-            this.btn_shop.Text = "Shop";
-            this.btn_shop.UseVisualStyleBackColor = false;
-            this.btn_shop.Click += new System.EventHandler(this.btn_shop_Click);
-            // 
-            // btn_categories
-            // 
-            this.btn_categories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
-            this.btn_categories.FlatAppearance.BorderSize = 0;
-            this.btn_categories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_categories.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btn_categories.ForeColor = System.Drawing.Color.White;
-            this.btn_categories.Image = global::MobileShopManagementSystem.Properties.Resources.Warehouse;
-            this.btn_categories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_categories.Location = new System.Drawing.Point(0, 49);
-            this.btn_categories.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_categories.Name = "btn_categories";
-            this.btn_categories.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_categories.Size = new System.Drawing.Size(249, 49);
-            this.btn_categories.TabIndex = 2;
-            this.btn_categories.Text = "Categories";
-            this.btn_categories.UseVisualStyleBackColor = false;
-            this.btn_categories.Click += new System.EventHandler(this.btn_categories_Click);
-            // 
-            // btn_bill
-            // 
-            this.btn_bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(101)))));
-            this.btn_bill.FlatAppearance.BorderSize = 0;
-            this.btn_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_bill.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btn_bill.ForeColor = System.Drawing.Color.White;
-            this.btn_bill.Image = global::MobileShopManagementSystem.Properties.Resources.Buy_For_Coins;
-            this.btn_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_bill.Location = new System.Drawing.Point(0, 98);
-            this.btn_bill.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_bill.Name = "btn_bill";
-            this.btn_bill.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_bill.Size = new System.Drawing.Size(249, 49);
-            this.btn_bill.TabIndex = 3;
-            this.btn_bill.Text = "Bill";
-            this.btn_bill.UseVisualStyleBackColor = false;
-            this.btn_bill.Click += new System.EventHandler(this.btn_bill_Click);
             // 
             // btn_inventory
             // 
@@ -455,6 +444,17 @@
             this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(249, 39);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1108, 749);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -477,8 +477,8 @@
             this.cyberGroupBox1.ResumeLayout(false);
             this.cyberGroupBox1.PerformLayout();
             this.cyberGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

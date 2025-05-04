@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_categories = new System.Windows.Forms.DataGridView();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_date_insert = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artanPanel1 = new ArtanComponent.ArtanPanel();
+            this.cb_categoriesStatus = new ReaLTaiizor.Controls.MetroComboBox();
             this.btn_categoriesDelete = new ReaLTaiizor.Controls.Button();
             this.btn_categoriesUpdate = new ReaLTaiizor.Controls.Button();
             this.btn_categoriesClear = new ReaLTaiizor.Controls.Button();
@@ -55,7 +56,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.cb_categoriesStatus = new ReaLTaiizor.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).BeginInit();
             this.artanPanel1.SuspendLayout();
             this.artanPanel2.SuspendLayout();
@@ -71,28 +71,28 @@
             this.dgv_categories.BackgroundColor = System.Drawing.Color.White;
             this.dgv_categories.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_categories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_categories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_categories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_categories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_categories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id,
             this.col_category,
             this.col_status,
             this.col_date_insert});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_categories.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_categories.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_categories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_categories.EnableHeadersVisualStyles = false;
             this.dgv_categories.GridColor = System.Drawing.Color.Silver;
@@ -163,6 +163,39 @@
             this.artanPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.artanPanel1.Size = new System.Drawing.Size(390, 719);
             this.artanPanel1.TabIndex = 2;
+            // 
+            // cb_categoriesStatus
+            // 
+            this.cb_categoriesStatus.AllowDrop = true;
+            this.cb_categoriesStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_categoriesStatus.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_categoriesStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cb_categoriesStatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.cb_categoriesStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_categoriesStatus.CausesValidation = false;
+            this.cb_categoriesStatus.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.cb_categoriesStatus.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.cb_categoriesStatus.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.cb_categoriesStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_categoriesStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_categoriesStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_categoriesStatus.FormattingEnabled = true;
+            this.cb_categoriesStatus.IsDerivedStyle = true;
+            this.cb_categoriesStatus.ItemHeight = 20;
+            this.cb_categoriesStatus.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
+            this.cb_categoriesStatus.Location = new System.Drawing.Point(13, 344);
+            this.cb_categoriesStatus.Name = "cb_categoriesStatus";
+            this.cb_categoriesStatus.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cb_categoriesStatus.SelectedItemForeColor = System.Drawing.Color.White;
+            this.cb_categoriesStatus.Size = new System.Drawing.Size(364, 26);
+            this.cb_categoriesStatus.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.cb_categoriesStatus.StyleManager = null;
+            this.cb_categoriesStatus.TabIndex = 47;
+            this.cb_categoriesStatus.ThemeAuthor = "Taiizor";
+            this.cb_categoriesStatus.ThemeName = "MetroLight";
             // 
             // btn_categoriesDelete
             // 
@@ -559,38 +592,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1271, 725);
             this.tableLayoutPanel1.TabIndex = 4;
-            // 
-            // cb_categoriesStatus
-            // 
-            this.cb_categoriesStatus.AllowDrop = true;
-            this.cb_categoriesStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cb_categoriesStatus.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.cb_categoriesStatus.BackColor = System.Drawing.Color.Transparent;
-            this.cb_categoriesStatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.cb_categoriesStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.cb_categoriesStatus.CausesValidation = false;
-            this.cb_categoriesStatus.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cb_categoriesStatus.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.cb_categoriesStatus.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.cb_categoriesStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_categoriesStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_categoriesStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cb_categoriesStatus.FormattingEnabled = true;
-            this.cb_categoriesStatus.IsDerivedStyle = true;
-            this.cb_categoriesStatus.ItemHeight = 20;
-            this.cb_categoriesStatus.Items.AddRange(new object[] {
-            "Active",
-            "Inactive"});
-            this.cb_categoriesStatus.Location = new System.Drawing.Point(13, 344);
-            this.cb_categoriesStatus.Name = "cb_categoriesStatus";
-            this.cb_categoriesStatus.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.cb_categoriesStatus.SelectedItemForeColor = System.Drawing.Color.White;
-            this.cb_categoriesStatus.Size = new System.Drawing.Size(364, 26);
-            this.cb_categoriesStatus.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.cb_categoriesStatus.StyleManager = null;
-            this.cb_categoriesStatus.TabIndex = 47;
-            this.cb_categoriesStatus.ThemeAuthor = "Taiizor";
-            this.cb_categoriesStatus.ThemeName = "MetroLight";
             // 
             // CategoriesForm
             // 

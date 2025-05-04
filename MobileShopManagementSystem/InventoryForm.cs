@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MobileShopManagementSystem.Utilities; // Thêm namespace để sử dụng ImageHelper
+using MobileShopManagementSystem.Utilities;
 
 namespace MobileShopManagementSystem
 {
