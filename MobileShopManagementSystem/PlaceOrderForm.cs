@@ -27,7 +27,7 @@ namespace MobileShopManagementSystem
         //MobileShopManagementDataContext db = new MobileShopManagementDataContext();
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            using(var db = new MobileShopManagementDataContext())
+            using (var db = new MobileShopManagementDataContext())
             {
                 var carts = db.Carts.Where(c => c.OrderID == this.orderID).ToList();
                 var order = db.Orders.FirstOrDefault(o => o.OrderID == this.orderID);
@@ -105,13 +105,26 @@ namespace MobileShopManagementSystem
                         MessageBox.Show("Please enter address.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    Customer customer = new Customer()
+                    string customerID = getCustomerID();
+                    using (var customerCheck = new MobileShopManagementDataContext())
                     {
-                        CustomerID = getCustomerID(),
-                        CustomerName = txt_customerName.TextButton.Trim(),
-                        PhoneNumber = txt_phoneNumber.TextButton.Trim(),
-                        Address = txt_address.TextButton.Trim(),
-                    };
+                        var cus = customerCheck.Customers.FirstOrDefault(c => c.PhoneNumber == txt_phoneNumber.TextButton.Trim());
+                        if (cus != null)
+                        {
+                            customerID = cus.CustomerID;
+                        }
+                        else
+                        {
+                            Customer customer = new Customer()
+                            {
+                                CustomerID = customerID,
+                                CustomerName = txt_customerName.TextButton.Trim(),
+                                PhoneNumber = txt_phoneNumber.TextButton.Trim(),
+                                Address = txt_address.TextButton.Trim(),
+                            };
+                            db.Customers.InsertOnSubmit(customer);
+                        }
+                    }
                     string status;
                     if (this.partialPayment)
                     {
@@ -125,7 +138,7 @@ namespace MobileShopManagementSystem
                     {
                         BillID = getBillID(),
                         OrderID = this.orderID,
-                        CustomerID = customer.CustomerID,
+                        CustomerID = customerID,
                         UserID = Form1.userID,
                         OutstandingAmount = this.outstandingAmount,
                         PaymentHistory = $"Paid : ${downPayment} Date : {DateTime.Now}",
@@ -133,7 +146,6 @@ namespace MobileShopManagementSystem
                         Status = status,
                     };
                     db.Bills.InsertOnSubmit(bill);
-                    db.Customers.InsertOnSubmit(customer);
                     db.SubmitChanges();
                     MessageBox.Show("Order placed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

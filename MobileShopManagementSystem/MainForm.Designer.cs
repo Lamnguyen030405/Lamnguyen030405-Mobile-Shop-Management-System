@@ -386,7 +386,7 @@
             this.btn_customers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_customers.Size = new System.Drawing.Size(249, 49);
             this.btn_customers.TabIndex = 2;
-            this.btn_customers.Text = "Customers";
+            this.btn_customers.Text = "Customer";
             this.btn_customers.UseVisualStyleBackColor = false;
             this.btn_customers.Click += new System.EventHandler(this.btn_customers_Click);
             // 

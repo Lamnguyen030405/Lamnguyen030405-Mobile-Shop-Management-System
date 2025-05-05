@@ -1,5 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="mobilesystem" Class="MobileShopManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=mobilesystem;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="MobileShopManagementSystem.Properties.Settings" SettingsPropertyName="mobilesystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vw_BillDetails" Member="vw_BillDetails">
+    <Type Name="vw_BillDetail">
+      <Column Name="BillID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TotalQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DownPaymentAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RemainingAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SelectedTerm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="InterestRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PenaltyRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OutstandingAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PaymentHistory" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LateFee" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateOrder" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Bills" Member="Bills">
     <Type Name="Bill">
       <Column Name="BillID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -10,9 +33,9 @@
       <Column Name="LateFee" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="PaymentHistory" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="OutstandingAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="Customer_Bill" Member="Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="Customer" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Customer_Bill" Member="Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="Customer" IsForeignKey="true" />
       <Association Name="Order_Bill" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" DeleteRule="CASCADE" />
-      <Association Name="User_Bill" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="User_Bill" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Carts" Member="Carts">
@@ -98,29 +121,6 @@
       <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="User_Bill" Member="Bills" ThisKey="UserID" OtherKey="UserID" Type="Bill" />
-    </Type>
-  </Table>
-  <Table Name="dbo.vw_BillDetails" Member="vw_BillDetails">
-    <Type Name="vw_BillDetail">
-      <Column Name="BillID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="UserID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CustomerID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="OrderID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="TotalQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DownPaymentAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="RemainingAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="SelectedTerm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="InterestRate" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="PenaltyRate" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="OutstandingAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="PaymentHistory" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="LateFee" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DueDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DateOrder" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

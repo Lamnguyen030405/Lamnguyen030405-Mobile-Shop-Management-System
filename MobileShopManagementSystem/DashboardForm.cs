@@ -47,6 +47,11 @@ namespace MobileShopManagementSystem
             {
                 DateTime fromDate = dt_from1.Value.Date.AddDays(-7);
                 DateTime toDate = dt_to1.Value.Date;
+                if (fromDate.AddDays(7) > toDate)
+                {
+                    MessageBox.Show("From date must be less than or equal to To date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 using (var db = new MobileShopManagementDataContext())
                 {
                     var data = db.vw_BillDetails
@@ -154,9 +159,13 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                DateTime fromDate = dt_from1.Value.Date.AddDays(-7);
-                DateTime toDate = dt_to1.Value.Date;
-
+                DateTime fromDate = dt_from2.Value.Date.AddDays(-7);
+                DateTime toDate = dt_to2.Value.Date;
+                if (fromDate.AddDays(7) > toDate)
+                {
+                    MessageBox.Show("From date must be less than or equal to To date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 using (var db = new MobileShopManagementDataContext())
                 {
                     // Tổng phí trễ hạn
@@ -270,6 +279,11 @@ namespace MobileShopManagementSystem
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            LoadProfit();
         }
     }
 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -46,26 +44,15 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(1371, 684);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MobileShopManagementSystem.Properties.Resources.Product;
-            this.pictureBox1.Location = new System.Drawing.Point(265, 73);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 60);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // r_Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 684);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "r_Bill";
             this.Text = "r_Bill";
             this.Load += new System.EventHandler(this.r_Bill_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -73,6 +60,5 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

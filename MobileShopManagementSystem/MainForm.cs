@@ -54,11 +54,11 @@ namespace MobileShopManagementSystem
                 var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
                 if (user != null)
                 {
-                    //if (user.Status == "Inactive")
-                    //{
-                    //    MessageBox.Show("Your account is inactive. Please contact the administrator.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //    Application.Exit();
-                    //}
+                    if (user.Status == "Inactive")
+                    {
+                        MessageBox.Show("Your account is inactive. Please contact the administrator.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Application.Exit();
+                    }
                     if (string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Name) ||
                         string.IsNullOrEmpty(user.Address) || string.IsNullOrEmpty(user.PhoneNumber))
                     {

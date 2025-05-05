@@ -74,6 +74,7 @@
             this.txt_inventoryProductID = new ReaLTaiizor.Controls.CyberTextBox();
             this.cb_inventoryCategory = new ReaLTaiizor.Controls.MetroComboBox();
             this.cb_inventoryStatus = new ReaLTaiizor.Controls.MetroComboBox();
+            this.txt_inventoryDescription = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             this.artanPanel2 = new ArtanComponent.ArtanPanel();
@@ -81,7 +82,6 @@
             this.cb_search = new ReaLTaiizor.Controls.MetroComboBox();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_inventoryDescription = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -481,7 +481,7 @@
             this.txt_inventoryDiscount.RoundingInt = 30;
             this.txt_inventoryDiscount.Size = new System.Drawing.Size(211, 42);
             this.txt_inventoryDiscount.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_inventoryDiscount.TabIndex = 48;
+            this.txt_inventoryDiscount.TabIndex = 39;
             this.txt_inventoryDiscount.Tag = "Cyber";
             this.txt_inventoryDiscount.TextButton = "";
             this.txt_inventoryDiscount.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
@@ -511,7 +511,7 @@
             this.txt_inventorySellingPrice.RoundingInt = 30;
             this.txt_inventorySellingPrice.Size = new System.Drawing.Size(211, 42);
             this.txt_inventorySellingPrice.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_inventorySellingPrice.TabIndex = 47;
+            this.txt_inventorySellingPrice.TabIndex = 38;
             this.txt_inventorySellingPrice.Tag = "Cyber";
             this.txt_inventorySellingPrice.TextButton = "";
             this.txt_inventorySellingPrice.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
@@ -712,7 +712,7 @@
             this.txt_inventoryImportPrice.RoundingInt = 30;
             this.txt_inventoryImportPrice.Size = new System.Drawing.Size(211, 42);
             this.txt_inventoryImportPrice.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_inventoryImportPrice.TabIndex = 36;
+            this.txt_inventoryImportPrice.TabIndex = 37;
             this.txt_inventoryImportPrice.Tag = "Cyber";
             this.txt_inventoryImportPrice.TextButton = "";
             this.txt_inventoryImportPrice.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
@@ -833,7 +833,7 @@
             this.cb_inventoryCategory.Size = new System.Drawing.Size(216, 26);
             this.cb_inventoryCategory.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             this.cb_inventoryCategory.StyleManager = null;
-            this.cb_inventoryCategory.TabIndex = 32;
+            this.cb_inventoryCategory.TabIndex = 36;
             this.cb_inventoryCategory.ThemeAuthor = "Taiizor";
             this.cb_inventoryCategory.ThemeName = "MetroLight";
             // 
@@ -864,9 +864,28 @@
             this.cb_inventoryStatus.Size = new System.Drawing.Size(211, 26);
             this.cb_inventoryStatus.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             this.cb_inventoryStatus.StyleManager = null;
-            this.cb_inventoryStatus.TabIndex = 31;
+            this.cb_inventoryStatus.TabIndex = 40;
             this.cb_inventoryStatus.ThemeAuthor = "Taiizor";
             this.cb_inventoryStatus.ThemeName = "MetroLight";
+            // 
+            // txt_inventoryDescription
+            // 
+            this.txt_inventoryDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_inventoryDescription.BackColor = System.Drawing.Color.Transparent;
+            this.txt_inventoryDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_inventoryDescription.EdgeColor = System.Drawing.Color.White;
+            this.txt_inventoryDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_inventoryDescription.ForeColor = System.Drawing.Color.Black;
+            this.txt_inventoryDescription.Location = new System.Drawing.Point(957, 56);
+            this.txt_inventoryDescription.MaxLength = 32767;
+            this.txt_inventoryDescription.Multiline = true;
+            this.txt_inventoryDescription.Name = "txt_inventoryDescription";
+            this.txt_inventoryDescription.ReadOnly = false;
+            this.txt_inventoryDescription.Size = new System.Drawing.Size(295, 257);
+            this.txt_inventoryDescription.TabIndex = 41;
+            this.txt_inventoryDescription.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_inventoryDescription.UseSystemPasswordChar = false;
             // 
             // label9
             // 
@@ -1010,25 +1029,6 @@
             this.label7.Size = new System.Drawing.Size(127, 28);
             this.label7.TabIndex = 46;
             this.label7.Text = "All products :";
-            // 
-            // txt_inventoryDescription
-            // 
-            this.txt_inventoryDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_inventoryDescription.BackColor = System.Drawing.Color.Transparent;
-            this.txt_inventoryDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_inventoryDescription.EdgeColor = System.Drawing.Color.White;
-            this.txt_inventoryDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txt_inventoryDescription.ForeColor = System.Drawing.Color.Black;
-            this.txt_inventoryDescription.Location = new System.Drawing.Point(957, 56);
-            this.txt_inventoryDescription.MaxLength = 32767;
-            this.txt_inventoryDescription.Multiline = true;
-            this.txt_inventoryDescription.Name = "txt_inventoryDescription";
-            this.txt_inventoryDescription.ReadOnly = false;
-            this.txt_inventoryDescription.Size = new System.Drawing.Size(295, 257);
-            this.txt_inventoryDescription.TabIndex = 29;
-            this.txt_inventoryDescription.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_inventoryDescription.UseSystemPasswordChar = false;
             // 
             // InventoryForm
             // 

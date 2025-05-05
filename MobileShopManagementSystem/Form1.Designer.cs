@@ -32,6 +32,7 @@
             this.dungeonLabel1 = new ReaLTaiizor.Controls.DungeonLabel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.parrotGradientPanel3 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.c_showPassword = new ReaLTaiizor.Controls.DungeonCheckBox();
@@ -39,19 +40,18 @@
             this.txt_loginPassword = new ReaLTaiizor.Controls.DungeonTextBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.txt_loginUsername = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.cyberGroupBox2 = new ReaLTaiizor.Controls.CyberGroupBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cyberGroupBox2 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.titlepanel.SuspendLayout();
             this.parrotGradientPanel3.SuspendLayout();
             this.cyberGroupBox1.SuspendLayout();
-            this.cyberGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cyberGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,6 +143,20 @@
             this.parrotGradientPanel3.TopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
             this.parrotGradientPanel3.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Blue;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(131, 596);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(160, 20);
+            this.linkLabel1.TabIndex = 24;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "\tForgot your password?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
+            // 
             // cyberGroupBox1
             // 
             this.cyberGroupBox1.Alpha = 20;
@@ -186,7 +200,7 @@
             this.btn_login.Location = new System.Drawing.Point(0, 0);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(270, 50);
-            this.btn_login.TabIndex = 23;
+            this.btn_login.TabIndex = 21;
             this.btn_login.Text = "LOGIN";
             this.btn_login.UseVisualStyleBackColor = false;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
@@ -251,7 +265,7 @@
             this.linkLabel2.Location = new System.Drawing.Point(103, 557);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(211, 20);
-            this.linkLabel2.TabIndex = 24;
+            this.linkLabel2.TabIndex = 23;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "No account yet? Register here ";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -276,6 +290,37 @@
             this.txt_loginUsername.UseSystemPasswordChar = false;
             this.txt_loginUsername.Enter += new System.EventHandler(this.txt_username_Enter);
             this.txt_loginUsername.Leave += new System.EventHandler(this.txt_username_Leave);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.Lock;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox4.Location = new System.Drawing.Point(22, 370);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(41, 38);
+            this.pictureBox4.TabIndex = 13;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.User;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Location = new System.Drawing.Point(22, 291);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(41, 38);
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::MobileShopManagementSystem.Properties.Resources.Male_User;
+            this.pictureBox1.Location = new System.Drawing.Point(135, 73);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(137, 134);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // cyberGroupBox2
             // 
@@ -310,51 +355,6 @@
             this.cyberGroupBox2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberGroupBox2.Timer_RGB = 300;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Blue;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(131, 596);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(160, 20);
-            this.linkLabel1.TabIndex = 21;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "\tForgot your password?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.Lock;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Location = new System.Drawing.Point(22, 370);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::MobileShopManagementSystem.Properties.Resources.User;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Location = new System.Drawing.Point(22, 291);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::MobileShopManagementSystem.Properties.Resources.Male_User;
-            this.pictureBox1.Location = new System.Drawing.Point(135, 73);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 134);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -386,10 +386,10 @@
             this.parrotGradientPanel3.ResumeLayout(false);
             this.parrotGradientPanel3.PerformLayout();
             this.cyberGroupBox1.ResumeLayout(false);
-            this.cyberGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.cyberGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 

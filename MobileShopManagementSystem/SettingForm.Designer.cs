@@ -31,9 +31,13 @@
             this.artanPanel1 = new ArtanComponent.ArtanPanel();
             this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             this.artanPanel2 = new ArtanComponent.ArtanPanel();
-            this.btn_settingClear = new ReaLTaiizor.Controls.Button();
-            this.btn_settingImport = new ReaLTaiizor.Controls.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_settingClear = new ReaLTaiizor.Controls.Button();
+            this.txt_userEmail = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txt_userSalary = new ReaLTaiizor.Controls.CyberTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btn_settingImport = new ReaLTaiizor.Controls.Button();
             this.btn_setiingUpdate = new ReaLTaiizor.Controls.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dt_userBirthDate = new System.Windows.Forms.DateTimePicker();
@@ -56,10 +60,6 @@
             this.txt_newPassword = new ReaLTaiizor.Controls.CyberTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_oldPassword = new ReaLTaiizor.Controls.CyberTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt_userEmail = new ReaLTaiizor.Controls.CyberTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_userSalary = new ReaLTaiizor.Controls.CyberTextBox();
             this.artanPanel1.SuspendLayout();
             this.artanPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,6 +133,28 @@
             this.artanPanel2.Size = new System.Drawing.Size(605, 725);
             this.artanPanel2.TabIndex = 3;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(28, 589);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 28);
+            this.label8.TabIndex = 79;
+            this.label8.Text = "Salary :";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Location = new System.Drawing.Point(232, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 217);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // btn_settingClear
             // 
             this.btn_settingClear.AllowDrop = true;
@@ -156,6 +178,83 @@
             this.btn_settingClear.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_settingClear.Click += new System.EventHandler(this.btn_userClear_Click);
             // 
+            // txt_userEmail
+            // 
+            this.txt_userEmail.Alpha = 20;
+            this.txt_userEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_userEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txt_userEmail.Background_WidthPen = 5F;
+            this.txt_userEmail.BackgroundPen = true;
+            this.txt_userEmail.ColorBackground = System.Drawing.Color.White;
+            this.txt_userEmail.ColorBackground_Pen = System.Drawing.Color.Cyan;
+            this.txt_userEmail.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txt_userEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_userEmail.ForeColor = System.Drawing.Color.Black;
+            this.txt_userEmail.Lighting = false;
+            this.txt_userEmail.LinearGradientPen = true;
+            this.txt_userEmail.Location = new System.Drawing.Point(188, 527);
+            this.txt_userEmail.Name = "txt_userEmail";
+            this.txt_userEmail.PenWidth = 15;
+            this.txt_userEmail.RGB = false;
+            this.txt_userEmail.Rounding = true;
+            this.txt_userEmail.RoundingInt = 30;
+            this.txt_userEmail.Size = new System.Drawing.Size(404, 42);
+            this.txt_userEmail.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txt_userEmail.TabIndex = 70;
+            this.txt_userEmail.Tag = "Cyber";
+            this.txt_userEmail.TextButton = "";
+            this.txt_userEmail.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_userEmail.Timer_RGB = 300;
+            // 
+            // txt_userSalary
+            // 
+            this.txt_userSalary.Alpha = 20;
+            this.txt_userSalary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_userSalary.BackColor = System.Drawing.Color.Transparent;
+            this.txt_userSalary.Background_WidthPen = 5F;
+            this.txt_userSalary.BackgroundPen = true;
+            this.txt_userSalary.ColorBackground = System.Drawing.Color.White;
+            this.txt_userSalary.ColorBackground_Pen = System.Drawing.Color.Cyan;
+            this.txt_userSalary.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txt_userSalary.Enabled = false;
+            this.txt_userSalary.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_userSalary.ForeColor = System.Drawing.Color.Black;
+            this.txt_userSalary.Lighting = false;
+            this.txt_userSalary.LinearGradientPen = true;
+            this.txt_userSalary.Location = new System.Drawing.Point(188, 575);
+            this.txt_userSalary.Name = "txt_userSalary";
+            this.txt_userSalary.PenWidth = 15;
+            this.txt_userSalary.RGB = false;
+            this.txt_userSalary.Rounding = true;
+            this.txt_userSalary.RoundingInt = 30;
+            this.txt_userSalary.Size = new System.Drawing.Size(404, 42);
+            this.txt_userSalary.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txt_userSalary.TabIndex = 71;
+            this.txt_userSalary.Tag = "Cyber";
+            this.txt_userSalary.TextButton = "";
+            this.txt_userSalary.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_userSalary.Timer_RGB = 300;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(14, 541);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 28);
+            this.label9.TabIndex = 76;
+            this.label9.Text = "* Email :";
+            // 
             // btn_settingImport
             // 
             this.btn_settingImport.AllowDrop = true;
@@ -178,16 +277,6 @@
             this.btn_settingImport.Text = "Import";
             this.btn_settingImport.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_settingImport.Click += new System.EventHandler(this.btn_settingImport_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(232, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 217);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btn_setiingUpdate
             // 
@@ -232,7 +321,7 @@
             this.dt_userBirthDate.Location = new System.Drawing.Point(444, 390);
             this.dt_userBirthDate.Name = "dt_userBirthDate";
             this.dt_userBirthDate.Size = new System.Drawing.Size(148, 30);
-            this.dt_userBirthDate.TabIndex = 70;
+            this.dt_userBirthDate.TabIndex = 67;
             // 
             // cb_userGender
             // 
@@ -263,7 +352,7 @@
             this.cb_userGender.Size = new System.Drawing.Size(136, 26);
             this.cb_userGender.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             this.cb_userGender.StyleManager = null;
-            this.cb_userGender.TabIndex = 68;
+            this.cb_userGender.TabIndex = 66;
             this.cb_userGender.ThemeAuthor = "Taiizor";
             this.cb_userGender.ThemeName = "MetroLight";
             // 
@@ -406,7 +495,7 @@
             this.txt_userPN.RoundingInt = 30;
             this.txt_userPN.Size = new System.Drawing.Size(404, 42);
             this.txt_userPN.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_userPN.TabIndex = 58;
+            this.txt_userPN.TabIndex = 69;
             this.txt_userPN.Tag = "Cyber";
             this.txt_userPN.TextButton = "";
             this.txt_userPN.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
@@ -450,7 +539,7 @@
             this.txt_userAddress.RoundingInt = 30;
             this.txt_userAddress.Size = new System.Drawing.Size(404, 42);
             this.txt_userAddress.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_userAddress.TabIndex = 57;
+            this.txt_userAddress.TabIndex = 68;
             this.txt_userAddress.Tag = "Cyber";
             this.txt_userAddress.TextButton = "";
             this.txt_userAddress.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
@@ -570,7 +659,7 @@
             this.txt_confirmPassword.RoundingInt = 30;
             this.txt_confirmPassword.Size = new System.Drawing.Size(410, 42);
             this.txt_confirmPassword.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_confirmPassword.TabIndex = 65;
+            this.txt_confirmPassword.TabIndex = 63;
             this.txt_confirmPassword.Tag = "Cyber";
             this.txt_confirmPassword.TextButton = "";
             this.txt_confirmPassword.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
@@ -677,95 +766,6 @@
             this.txt_oldPassword.TextButton = "";
             this.txt_oldPassword.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             this.txt_oldPassword.Timer_RGB = 300;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(28, 589);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 28);
-            this.label8.TabIndex = 79;
-            this.label8.Text = "Salary :";
-            // 
-            // txt_userEmail
-            // 
-            this.txt_userEmail.Alpha = 20;
-            this.txt_userEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_userEmail.BackColor = System.Drawing.Color.Transparent;
-            this.txt_userEmail.Background_WidthPen = 5F;
-            this.txt_userEmail.BackgroundPen = true;
-            this.txt_userEmail.ColorBackground = System.Drawing.Color.White;
-            this.txt_userEmail.ColorBackground_Pen = System.Drawing.Color.Cyan;
-            this.txt_userEmail.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userEmail.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userEmail.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userEmail.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.txt_userEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txt_userEmail.ForeColor = System.Drawing.Color.Black;
-            this.txt_userEmail.Lighting = false;
-            this.txt_userEmail.LinearGradientPen = true;
-            this.txt_userEmail.Location = new System.Drawing.Point(188, 527);
-            this.txt_userEmail.Name = "txt_userEmail";
-            this.txt_userEmail.PenWidth = 15;
-            this.txt_userEmail.RGB = false;
-            this.txt_userEmail.Rounding = true;
-            this.txt_userEmail.RoundingInt = 30;
-            this.txt_userEmail.Size = new System.Drawing.Size(404, 42);
-            this.txt_userEmail.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_userEmail.TabIndex = 78;
-            this.txt_userEmail.Tag = "Cyber";
-            this.txt_userEmail.TextButton = "";
-            this.txt_userEmail.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-            this.txt_userEmail.Timer_RGB = 300;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(14, 541);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 28);
-            this.label9.TabIndex = 76;
-            this.label9.Text = "* Email :";
-            // 
-            // txt_userSalary
-            // 
-            this.txt_userSalary.Alpha = 20;
-            this.txt_userSalary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_userSalary.BackColor = System.Drawing.Color.Transparent;
-            this.txt_userSalary.Background_WidthPen = 5F;
-            this.txt_userSalary.BackgroundPen = true;
-            this.txt_userSalary.ColorBackground = System.Drawing.Color.White;
-            this.txt_userSalary.ColorBackground_Pen = System.Drawing.Color.Cyan;
-            this.txt_userSalary.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userSalary.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userSalary.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userSalary.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.txt_userSalary.Enabled = false;
-            this.txt_userSalary.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txt_userSalary.ForeColor = System.Drawing.Color.Black;
-            this.txt_userSalary.Lighting = false;
-            this.txt_userSalary.LinearGradientPen = true;
-            this.txt_userSalary.Location = new System.Drawing.Point(188, 575);
-            this.txt_userSalary.Name = "txt_userSalary";
-            this.txt_userSalary.PenWidth = 15;
-            this.txt_userSalary.RGB = false;
-            this.txt_userSalary.Rounding = true;
-            this.txt_userSalary.RoundingInt = 30;
-            this.txt_userSalary.Size = new System.Drawing.Size(404, 42);
-            this.txt_userSalary.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_userSalary.TabIndex = 77;
-            this.txt_userSalary.Tag = "Cyber";
-            this.txt_userSalary.TextButton = "";
-            this.txt_userSalary.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-            this.txt_userSalary.Timer_RGB = 300;
             // 
             // SettingForm
             // 

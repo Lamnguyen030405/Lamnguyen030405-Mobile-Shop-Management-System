@@ -51,6 +51,7 @@ namespace MobileShopManagementSystem
             dt.Columns.Add("OutstandingAmount", typeof(double));
             dt.Columns.Add("SelectedTerm", typeof(string));
             dt.Columns.Add("LateFee", typeof(double));
+            dt.Columns.Add("Status", typeof(string));
 
 
             int id = 1;
@@ -84,7 +85,8 @@ namespace MobileShopManagementSystem
                     bill.RemainingAmount,
                     bill.OutstandingAmount,
                     bill.SelectedTerm,
-                    bill.LateFee
+                    bill.LateFee,
+                    bill.Status
                 );
             }
 

@@ -34,7 +34,7 @@ namespace MobileShopManagementSystem
 
         private void dgv_customer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow row = dgv_customer.Rows[e.RowIndex];
                 txt_customerID.TextButton = row.Cells["id"].Value.ToString();

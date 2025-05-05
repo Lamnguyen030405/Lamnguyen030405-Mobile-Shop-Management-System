@@ -179,6 +179,7 @@ namespace MobileShopManagementSystem
 
                         case "Customer ID":
                             search = db.vw_BillDetails
+                                .Where(x => x.CustomerID.ToLower().Contains(searchText))
                                 .ToList();
                             break;
 
@@ -232,23 +233,29 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (string.IsNullOrEmpty(txt_billID.TextButton))
-                {
-                    MessageBox.Show("Please select a bill to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                if (MessageBox.Show("Are you sure you want to delete this bill?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    return;
-                }
-
-                string billID = txt_billID.TextButton;
-                string orderID = txt_orderID.TextButton;
-                string customerID = txt_customerID.TextButton;
-
                 using (var db = new MobileShopManagementDataContext())
                 {
+                    var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
+                    if (user == null || user.Role != "Admin")
+                    {
+                        MessageBox.Show("You do not have permission to delete this bill.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(txt_billID.TextButton))
+                    {
+                        MessageBox.Show("Please select a bill to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    if (MessageBox.Show("Are you sure you want to delete this bill?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+
+                    string billID = txt_billID.TextButton;
+                    string orderID = txt_orderID.TextButton;
+                    string customerID = txt_customerID.TextButton;
+
                     var bill = db.Bills.FirstOrDefault(b => b.BillID == billID);
                     var order = db.Orders.FirstOrDefault(o => o.OrderID == orderID);
                     var customer = db.Customers.FirstOrDefault(c => c.CustomerID == customerID);
@@ -270,8 +277,8 @@ namespace MobileShopManagementSystem
                     if (order != null)
                         db.Orders.DeleteOnSubmit(order);
 
-                    if (customer != null)
-                        db.Customers.DeleteOnSubmit(customer);
+                    //if (customer != null)
+                    //    db.Customers.DeleteOnSubmit(customer);
 
                     db.SubmitChanges();
                 }
@@ -419,7 +426,7 @@ namespace MobileShopManagementSystem
                     if (bill != null)
                     {
                         bill.OutstandingAmount = outstandingAmount - paymentAmount;
-                        bill.PaymentHistory += $"\r\nPaid: ${paymentAmount} Date: {DateTime.Now}";
+                        bill.PaymentHistory += $"\r\nPaid: ${paymentAmount} Date: {DateTime.Now} User ID: {Form1.userID}";
                         if (bill.OutstandingAmount <= 0)
                         {
                             bill.Status = "Complete";

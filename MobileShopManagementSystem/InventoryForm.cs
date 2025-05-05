@@ -168,21 +168,27 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txt_inventoryProductName.TextButton) ||
-                    string.IsNullOrWhiteSpace(txt_inventoryImportPrice.TextButton) ||
-                    string.IsNullOrWhiteSpace(txt_inventoryProductID.TextButton) ||
-                    string.IsNullOrWhiteSpace(cb_inventoryCategory.Text) ||
-                    string.IsNullOrWhiteSpace(txt_inventoryStock.TextButton) ||
-                    string.IsNullOrWhiteSpace(cb_inventoryStatus.Text) ||
-                    pictureBox1.Image == null ||
-                    string.IsNullOrWhiteSpace(txt_inventorySellingPrice.TextButton))
-                {
-                    MessageBox.Show("Please fill in all the fields marked with stars", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 using (var db = new MobileShopManagementDataContext())
                 {
+                    var user = db.Users.FirstOrDefault(x => x.UserID == Form1.userID);
+                    if (user == null || user.Role != "Admin")
+                    {
+                        MessageBox.Show("You do not have permission to add products", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (string.IsNullOrWhiteSpace(txt_inventoryProductName.TextButton) ||
+                        string.IsNullOrWhiteSpace(txt_inventoryImportPrice.TextButton) ||
+                        string.IsNullOrWhiteSpace(txt_inventoryProductID.TextButton) ||
+                        string.IsNullOrWhiteSpace(cb_inventoryCategory.Text) ||
+                        string.IsNullOrWhiteSpace(txt_inventoryStock.TextButton) ||
+                        string.IsNullOrWhiteSpace(cb_inventoryStatus.Text) ||
+                        pictureBox1.Image == null ||
+                        string.IsNullOrWhiteSpace(txt_inventorySellingPrice.TextButton))
+                    {
+                        MessageBox.Show("Please fill in all the fields marked with stars", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     if (db.Products.Any(x => x.ProductID == txt_inventoryProductID.TextButton))
                     {
                         MessageBox.Show("Product ID already exists", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -304,17 +310,23 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txt_inventoryProductID.TextButton))
-                {
-                    MessageBox.Show("Please select a product to delete", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (MessageBox.Show("Are you sure you want to delete this product?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    return;
-                }
                 using (var db = new MobileShopManagementDataContext())
                 {
+                    var user = db.Users.FirstOrDefault(x => x.UserID == Form1.userID);
+                    if (user == null || user.Role != "Admin")
+                    {
+                        MessageBox.Show("You do not have permission to delete products", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (string.IsNullOrWhiteSpace(txt_inventoryProductID.TextButton))
+                    {
+                        MessageBox.Show("Please select a product to delete", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (MessageBox.Show("Are you sure you want to delete this product?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
                     Product p = db.Products.FirstOrDefault(x => x.ProductID == txt_inventoryProductID.TextButton);
                     if (p == null)
                     {
@@ -342,67 +354,73 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txt_inventoryProductName.TextButton) ||
-                    string.IsNullOrWhiteSpace(txt_inventoryImportPrice.TextButton) ||
-                    string.IsNullOrWhiteSpace(txt_inventoryProductID.TextButton) ||
-                    string.IsNullOrWhiteSpace(cb_inventoryCategory.Text) ||
-                    string.IsNullOrWhiteSpace(txt_inventoryStock.TextButton) ||
-                    string.IsNullOrWhiteSpace(cb_inventoryStatus.Text) ||
-                    pictureBox1.Image == null ||
-                    string.IsNullOrWhiteSpace(txt_inventorySellingPrice.TextButton))
-                {
-                    MessageBox.Show("Please fill in all the fields marked with stars", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                double discount = 0.00;
-                if (c_Discount.Checked)
-                {
-                    if (string.IsNullOrWhiteSpace(txt_inventoryDiscount.TextButton))
-                    {
-                        MessageBox.Show("Please fill in discount", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    discount = Convert.ToDouble(txt_inventoryDiscount.TextButton.Trim().Replace("%", ""));
-                    if (discount < 0 || discount > 100)
-                    {
-                        MessageBox.Show("Discount must be between 0% and 100%", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
-
-                double sellingPrice = Convert.ToDouble(txt_inventorySellingPrice.TextButton.Trim());
-                double importPrice = Convert.ToDouble(txt_inventoryImportPrice.TextButton.Trim());
-                int stock = Convert.ToInt32(txt_inventoryStock.TextButton.Trim());
-
-                if (sellingPrice <= 0)
-                {
-                    MessageBox.Show("Selling price must be greater than 0", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (importPrice <= 0)
-                {
-                    MessageBox.Show("Import price must be greater than 0", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (stock <= 0)
-                {
-                    MessageBox.Show("Stock must be greater than 0", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (sellingPrice < importPrice)
-                {
-                    MessageBox.Show("Selling price cannot be less than import price", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (MessageBox.Show("Are you sure you want to update this product?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    return;
-                }
-
                 using (var db = new MobileShopManagementDataContext())
                 {
+                    var user = db.Users.FirstOrDefault(x => x.UserID == Form1.userID);
+                    if (user == null || user.Role != "Admin")
+                    {
+                        MessageBox.Show("You do not have permission to update products", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (string.IsNullOrWhiteSpace(txt_inventoryProductName.TextButton) ||
+                        string.IsNullOrWhiteSpace(txt_inventoryImportPrice.TextButton) ||
+                        string.IsNullOrWhiteSpace(txt_inventoryProductID.TextButton) ||
+                        string.IsNullOrWhiteSpace(cb_inventoryCategory.Text) ||
+                        string.IsNullOrWhiteSpace(txt_inventoryStock.TextButton) ||
+                        string.IsNullOrWhiteSpace(cb_inventoryStatus.Text) ||
+                        pictureBox1.Image == null ||
+                        string.IsNullOrWhiteSpace(txt_inventorySellingPrice.TextButton))
+                    {
+                        MessageBox.Show("Please fill in all the fields marked with stars", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    double discount = 0.00;
+                    if (c_Discount.Checked)
+                    {
+                        if (string.IsNullOrWhiteSpace(txt_inventoryDiscount.TextButton))
+                        {
+                            MessageBox.Show("Please fill in discount", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        discount = Convert.ToDouble(txt_inventoryDiscount.TextButton.Trim().Replace("%", ""));
+                        if (discount < 0 || discount > 100)
+                        {
+                            MessageBox.Show("Discount must be between 0% and 100%", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    double sellingPrice = Convert.ToDouble(txt_inventorySellingPrice.TextButton.Trim());
+                    double importPrice = Convert.ToDouble(txt_inventoryImportPrice.TextButton.Trim());
+                    int stock = Convert.ToInt32(txt_inventoryStock.TextButton.Trim());
+
+                    if (sellingPrice <= 0)
+                    {
+                        MessageBox.Show("Selling price must be greater than 0", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (importPrice <= 0)
+                    {
+                        MessageBox.Show("Import price must be greater than 0", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (stock <= 0)
+                    {
+                        MessageBox.Show("Stock must be greater than 0", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (sellingPrice < importPrice)
+                    {
+                        MessageBox.Show("Selling price cannot be less than import price", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (MessageBox.Show("Are you sure you want to update this product?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+
                     Product p = db.Products.FirstOrDefault(x => x.ProductID == txt_inventoryProductID.TextButton);
                     if (p == null)
                     {

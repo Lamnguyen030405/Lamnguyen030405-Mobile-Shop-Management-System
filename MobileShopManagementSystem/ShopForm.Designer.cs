@@ -55,7 +55,6 @@ namespace MobileShopManagementSystem
             this.btn_refresh = new ReaLTaiizor.Controls.Button();
             this.txt_downPaymentAmount = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             this.btn_delete = new ReaLTaiizor.Controls.Button();
-            this.btn_pay = new ReaLTaiizor.Controls.Button();
             this.btn_placeOrder = new ReaLTaiizor.Controls.Button();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
             this.dgv_product = new System.Windows.Forms.DataGridView();
@@ -67,8 +66,8 @@ namespace MobileShopManagementSystem
             this.lbl_remainingAmount = new System.Windows.Forms.Label();
             this.artanPanel6 = new ArtanComponent.ArtanPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.cb_shopCategory = new ReaLTaiizor.Controls.AloneComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cb_shopCategory = new ReaLTaiizor.Controls.MetroComboBox();
             this.artanPanel1.SuspendLayout();
             this.artanPanel4.SuspendLayout();
             this.artanPanel5.SuspendLayout();
@@ -308,7 +307,6 @@ namespace MobileShopManagementSystem
             this.artanPanel2.Controls.Add(this.btn_refresh);
             this.artanPanel2.Controls.Add(this.txt_downPaymentAmount);
             this.artanPanel2.Controls.Add(this.btn_delete);
-            this.artanPanel2.Controls.Add(this.btn_pay);
             this.artanPanel2.Controls.Add(this.btn_placeOrder);
             this.artanPanel2.Controls.Add(this.label4);
             this.artanPanel2.Controls.Add(this.artanPanel3);
@@ -440,6 +438,7 @@ namespace MobileShopManagementSystem
             // btn_refresh
             // 
             this.btn_refresh.AllowDrop = true;
+            this.btn_refresh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_refresh.BackColor = System.Drawing.Color.Transparent;
             this.btn_refresh.BorderColor = System.Drawing.Color.Transparent;
             this.btn_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -449,7 +448,7 @@ namespace MobileShopManagementSystem
             this.btn_refresh.Image = null;
             this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_refresh.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_refresh.Location = new System.Drawing.Point(349, 663);
+            this.btn_refresh.Location = new System.Drawing.Point(320, 667);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.PressedBorderColor = System.Drawing.Color.White;
             this.btn_refresh.PressedColor = System.Drawing.Color.White;
@@ -482,6 +481,7 @@ namespace MobileShopManagementSystem
             // btn_delete
             // 
             this.btn_delete.AllowDrop = true;
+            this.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_delete.BackColor = System.Drawing.Color.Transparent;
             this.btn_delete.BorderColor = System.Drawing.Color.Transparent;
             this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -491,7 +491,7 @@ namespace MobileShopManagementSystem
             this.btn_delete.Image = null;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_delete.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_delete.Location = new System.Drawing.Point(241, 663);
+            this.btn_delete.Location = new System.Drawing.Point(212, 667);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.PressedBorderColor = System.Drawing.Color.White;
             this.btn_delete.PressedColor = System.Drawing.Color.White;
@@ -501,30 +501,10 @@ namespace MobileShopManagementSystem
             this.btn_delete.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // btn_pay
-            // 
-            this.btn_pay.AllowDrop = true;
-            this.btn_pay.BackColor = System.Drawing.Color.Transparent;
-            this.btn_pay.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_pay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pay.EnteredBorderColor = System.Drawing.Color.Gainsboro;
-            this.btn_pay.EnteredColor = System.Drawing.Color.Gainsboro;
-            this.btn_pay.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btn_pay.Image = null;
-            this.btn_pay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_pay.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_pay.Location = new System.Drawing.Point(138, 663);
-            this.btn_pay.Name = "btn_pay";
-            this.btn_pay.PressedBorderColor = System.Drawing.Color.White;
-            this.btn_pay.PressedColor = System.Drawing.Color.White;
-            this.btn_pay.Size = new System.Drawing.Size(97, 34);
-            this.btn_pay.TabIndex = 11;
-            this.btn_pay.Text = "Pay";
-            this.btn_pay.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
             // btn_placeOrder
             // 
             this.btn_placeOrder.AllowDrop = true;
+            this.btn_placeOrder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_placeOrder.BackColor = System.Drawing.Color.Transparent;
             this.btn_placeOrder.BorderColor = System.Drawing.Color.Transparent;
             this.btn_placeOrder.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -534,7 +514,7 @@ namespace MobileShopManagementSystem
             this.btn_placeOrder.Image = null;
             this.btn_placeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_placeOrder.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_placeOrder.Location = new System.Drawing.Point(10, 663);
+            this.btn_placeOrder.Location = new System.Drawing.Point(84, 667);
             this.btn_placeOrder.Name = "btn_placeOrder";
             this.btn_placeOrder.PressedBorderColor = System.Drawing.Color.White;
             this.btn_placeOrder.PressedColor = System.Drawing.Color.White;
@@ -655,9 +635,9 @@ namespace MobileShopManagementSystem
             // 
             this.artanPanel6.BackColor = System.Drawing.Color.White;
             this.artanPanel6.BorderRadius = 30;
+            this.artanPanel6.Controls.Add(this.cb_shopCategory);
             this.artanPanel6.Controls.Add(this.label6);
             this.artanPanel6.Controls.Add(this.btn_categoryRefresh);
-            this.artanPanel6.Controls.Add(this.cb_shopCategory);
             this.artanPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.artanPanel6.ForeColor = System.Drawing.Color.Black;
             this.artanPanel6.GradientAngle = 45F;
@@ -681,24 +661,6 @@ namespace MobileShopManagementSystem
             this.label6.TabIndex = 4;
             this.label6.Text = "Categories :";
             // 
-            // cb_shopCategory
-            // 
-            this.cb_shopCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cb_shopCategory.BackColor = System.Drawing.SystemColors.Window;
-            this.cb_shopCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cb_shopCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_shopCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_shopCategory.EnabledCalc = true;
-            this.cb_shopCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cb_shopCategory.FormattingEnabled = true;
-            this.cb_shopCategory.ItemHeight = 20;
-            this.cb_shopCategory.Location = new System.Drawing.Point(13, 37);
-            this.cb_shopCategory.Name = "cb_shopCategory";
-            this.cb_shopCategory.Size = new System.Drawing.Size(123, 26);
-            this.cb_shopCategory.Sorted = true;
-            this.cb_shopCategory.TabIndex = 6;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -714,6 +676,34 @@ namespace MobileShopManagementSystem
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(768, 78);
             this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // cb_shopCategory
+            // 
+            this.cb_shopCategory.AllowDrop = true;
+            this.cb_shopCategory.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_shopCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cb_shopCategory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.cb_shopCategory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_shopCategory.CausesValidation = false;
+            this.cb_shopCategory.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.cb_shopCategory.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.cb_shopCategory.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.cb_shopCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_shopCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_shopCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_shopCategory.FormattingEnabled = true;
+            this.cb_shopCategory.IsDerivedStyle = true;
+            this.cb_shopCategory.ItemHeight = 20;
+            this.cb_shopCategory.Location = new System.Drawing.Point(13, 37);
+            this.cb_shopCategory.Name = "cb_shopCategory";
+            this.cb_shopCategory.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cb_shopCategory.SelectedItemForeColor = System.Drawing.Color.White;
+            this.cb_shopCategory.Size = new System.Drawing.Size(123, 26);
+            this.cb_shopCategory.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.cb_shopCategory.StyleManager = null;
+            this.cb_shopCategory.TabIndex = 67;
+            this.cb_shopCategory.ThemeAuthor = "Taiizor";
+            this.cb_shopCategory.ThemeName = "MetroLight";
             // 
             // ShopForm
             // 
@@ -771,10 +761,8 @@ namespace MobileShopManagementSystem
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private ReaLTaiizor.Controls.Button btn_refresh;
         private ReaLTaiizor.Controls.Button btn_delete;
-        private ReaLTaiizor.Controls.Button btn_pay;
         private ReaLTaiizor.Controls.Button btn_placeOrder;
         private ExtendedDungeonTextBox txt_downPaymentAmount;
-        private ReaLTaiizor.Controls.AloneComboBox cb_shopCategory;
         private System.Windows.Forms.Label label6;
         private ReaLTaiizor.Controls.CyberTextBox txt_search;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
@@ -783,5 +771,6 @@ namespace MobileShopManagementSystem
         private ReaLTaiizor.Controls.MetroComboBox cb_shopTerm;
         private System.Windows.Forms.Label total_quantity;
         private System.Windows.Forms.Label label7;
+        private ReaLTaiizor.Controls.MetroComboBox cb_shopCategory;
     }
 }
