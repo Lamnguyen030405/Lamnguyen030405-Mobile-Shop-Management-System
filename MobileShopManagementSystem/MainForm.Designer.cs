@@ -268,26 +268,24 @@
             // 
             // lbl_role
             // 
-            this.lbl_role.AutoSize = true;
             this.lbl_role.BackColor = System.Drawing.Color.Transparent;
             this.lbl_role.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lbl_role.ForeColor = System.Drawing.Color.White;
-            this.lbl_role.Location = new System.Drawing.Point(96, 174);
+            this.lbl_role.Location = new System.Drawing.Point(19, 174);
             this.lbl_role.Name = "lbl_role";
-            this.lbl_role.Size = new System.Drawing.Size(48, 25);
+            this.lbl_role.Size = new System.Drawing.Size(205, 25);
             this.lbl_role.TabIndex = 11;
             this.lbl_role.Text = "Role";
             this.lbl_role.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_userName
             // 
-            this.lbl_userName.AutoSize = true;
             this.lbl_userName.BackColor = System.Drawing.Color.Transparent;
             this.lbl_userName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_userName.ForeColor = System.Drawing.Color.White;
-            this.lbl_userName.Location = new System.Drawing.Point(72, 146);
+            this.lbl_userName.Location = new System.Drawing.Point(9, 146);
             this.lbl_userName.Name = "lbl_userName";
-            this.lbl_userName.Size = new System.Drawing.Size(99, 28);
+            this.lbl_userName.Size = new System.Drawing.Size(231, 28);
             this.lbl_userName.TabIndex = 10;
             this.lbl_userName.Text = "Username";
             this.lbl_userName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -475,7 +473,6 @@
             this.slidebar.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.cyberGroupBox1.ResumeLayout(false);
-            this.cyberGroupBox1.PerformLayout();
             this.cyberGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

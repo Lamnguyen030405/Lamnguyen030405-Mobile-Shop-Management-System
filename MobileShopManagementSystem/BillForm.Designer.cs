@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_bill = new System.Windows.Forms.DataGridView();
             this.billid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +87,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.artanPanel4 = new ArtanComponent.ArtanPanel();
             this.btn_pay = new ReaLTaiizor.Controls.Button();
+            this.txt_paymentAmount = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.lbl_lateFee = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -97,6 +98,7 @@
             this.artanPanel1 = new ArtanComponent.ArtanPanel();
             this.artanPanel5 = new ArtanComponent.ArtanPanel();
             this.label18 = new System.Windows.Forms.Label();
+            this.txt_paymentHistory = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cb_filter = new ReaLTaiizor.Controls.MetroComboBox();
             this.txt_search = new ReaLTaiizor.Controls.CyberTextBox();
@@ -106,8 +108,6 @@
             this.btn_refresh = new ReaLTaiizor.Controls.Button();
             this.btn_search = new ReaLTaiizor.Controls.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.txt_paymentAmount = new MobileShopManagementSystem.ExtendedDungeonTextBox();
-            this.txt_paymentHistory = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bill)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,14 +131,14 @@
             this.dgv_bill.BackgroundColor = System.Drawing.Color.White;
             this.dgv_bill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_bill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_bill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_bill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_bill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.billid,
@@ -160,14 +160,14 @@
             this.duedate,
             this.dateorder,
             this.status});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_bill.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_bill.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_bill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_bill.EnableHeadersVisualStyles = false;
             this.dgv_bill.Location = new System.Drawing.Point(0, 0);
@@ -235,6 +235,7 @@
             this.orderid.Name = "orderid";
             this.orderid.ReadOnly = true;
             this.orderid.Visible = false;
+            this.orderid.Width = 125;
             // 
             // totalquantity
             // 
@@ -781,7 +782,7 @@
             this.lbl_quantity.AutoSize = true;
             this.lbl_quantity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_quantity.ForeColor = System.Drawing.Color.White;
-            this.lbl_quantity.Location = new System.Drawing.Point(124, 232);
+            this.lbl_quantity.Location = new System.Drawing.Point(139, 242);
             this.lbl_quantity.Name = "lbl_quantity";
             this.lbl_quantity.Size = new System.Drawing.Size(28, 20);
             this.lbl_quantity.TabIndex = 19;
@@ -792,7 +793,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(12, 232);
+            this.label12.Location = new System.Drawing.Point(27, 242);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(107, 20);
             this.label12.TabIndex = 18;
@@ -803,7 +804,7 @@
             this.lbl_price.AutoSize = true;
             this.lbl_price.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_price.ForeColor = System.Drawing.Color.White;
-            this.lbl_price.Location = new System.Drawing.Point(270, 233);
+            this.lbl_price.Location = new System.Drawing.Point(285, 243);
             this.lbl_price.Name = "lbl_price";
             this.lbl_price.Size = new System.Drawing.Size(28, 20);
             this.lbl_price.TabIndex = 17;
@@ -814,7 +815,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(193, 232);
+            this.label10.Location = new System.Drawing.Point(208, 242);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 20);
             this.label10.TabIndex = 16;
@@ -845,7 +846,7 @@
             this.artanPanel7.GradientTopColor = System.Drawing.Color.White;
             this.artanPanel7.Location = new System.Drawing.Point(6, 71);
             this.artanPanel7.Name = "artanPanel7";
-            this.artanPanel7.Size = new System.Drawing.Size(349, 148);
+            this.artanPanel7.Size = new System.Drawing.Size(349, 168);
             this.artanPanel7.TabIndex = 8;
             // 
             // dgv_cart
@@ -856,26 +857,26 @@
             this.dgv_cart.BackgroundColor = System.Drawing.Color.White;
             this.dgv_cart.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_cart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_cart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productname,
             this.quantity});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_cart.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_cart.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_cart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_cart.EnableHeadersVisualStyles = false;
             this.dgv_cart.Location = new System.Drawing.Point(0, 0);
@@ -885,7 +886,7 @@
             this.dgv_cart.RowHeadersWidth = 51;
             this.dgv_cart.RowTemplate.Height = 24;
             this.dgv_cart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_cart.Size = new System.Drawing.Size(349, 148);
+            this.dgv_cart.Size = new System.Drawing.Size(349, 168);
             this.dgv_cart.TabIndex = 22;
             // 
             // productname
@@ -987,6 +988,7 @@
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1269, 289);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -1033,6 +1035,24 @@
             this.btn_pay.Text = "Pay";
             this.btn_pay.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_pay.Click += new System.EventHandler(this.btn_pay_Click);
+            // 
+            // txt_paymentAmount
+            // 
+            this.txt_paymentAmount.BackColor = System.Drawing.Color.Transparent;
+            this.txt_paymentAmount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_paymentAmount.EdgeColor = System.Drawing.Color.White;
+            this.txt_paymentAmount.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txt_paymentAmount.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_paymentAmount.Location = new System.Drawing.Point(11, 173);
+            this.txt_paymentAmount.MaxLength = 32767;
+            this.txt_paymentAmount.Multiline = false;
+            this.txt_paymentAmount.Name = "txt_paymentAmount";
+            this.txt_paymentAmount.ReadOnly = false;
+            this.txt_paymentAmount.Size = new System.Drawing.Size(187, 31);
+            this.txt_paymentAmount.TabIndex = 47;
+            this.txt_paymentAmount.Text = "0.0";
+            this.txt_paymentAmount.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_paymentAmount.UseSystemPasswordChar = false;
             // 
             // label17
             // 
@@ -1185,6 +1205,27 @@
             this.label18.Size = new System.Drawing.Size(164, 28);
             this.label18.TabIndex = 49;
             this.label18.Text = "Payment History :";
+            // 
+            // txt_paymentHistory
+            // 
+            this.txt_paymentHistory.AllowDrop = true;
+            this.txt_paymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_paymentHistory.BackColor = System.Drawing.Color.Transparent;
+            this.txt_paymentHistory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_paymentHistory.EdgeColor = System.Drawing.Color.White;
+            this.txt_paymentHistory.Enabled = false;
+            this.txt_paymentHistory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_paymentHistory.ForeColor = System.Drawing.Color.Black;
+            this.txt_paymentHistory.Location = new System.Drawing.Point(961, 50);
+            this.txt_paymentHistory.MaxLength = 32767;
+            this.txt_paymentHistory.Multiline = true;
+            this.txt_paymentHistory.Name = "txt_paymentHistory";
+            this.txt_paymentHistory.ReadOnly = false;
+            this.txt_paymentHistory.Size = new System.Drawing.Size(295, 291);
+            this.txt_paymentHistory.TabIndex = 30;
+            this.txt_paymentHistory.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_paymentHistory.UseSystemPasswordChar = false;
             // 
             // label13
             // 
@@ -1387,45 +1428,6 @@
             this.label14.Size = new System.Drawing.Size(67, 28);
             this.label14.TabIndex = 27;
             this.label14.Text = "Input :";
-            // 
-            // txt_paymentAmount
-            // 
-            this.txt_paymentAmount.BackColor = System.Drawing.Color.Transparent;
-            this.txt_paymentAmount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_paymentAmount.EdgeColor = System.Drawing.Color.White;
-            this.txt_paymentAmount.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txt_paymentAmount.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_paymentAmount.Location = new System.Drawing.Point(11, 173);
-            this.txt_paymentAmount.MaxLength = 32767;
-            this.txt_paymentAmount.Multiline = false;
-            this.txt_paymentAmount.Name = "txt_paymentAmount";
-            this.txt_paymentAmount.ReadOnly = false;
-            this.txt_paymentAmount.Size = new System.Drawing.Size(187, 31);
-            this.txt_paymentAmount.TabIndex = 47;
-            this.txt_paymentAmount.Text = "0.0";
-            this.txt_paymentAmount.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_paymentAmount.UseSystemPasswordChar = false;
-            // 
-            // txt_paymentHistory
-            // 
-            this.txt_paymentHistory.AllowDrop = true;
-            this.txt_paymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_paymentHistory.BackColor = System.Drawing.Color.Transparent;
-            this.txt_paymentHistory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_paymentHistory.EdgeColor = System.Drawing.Color.White;
-            this.txt_paymentHistory.Enabled = false;
-            this.txt_paymentHistory.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txt_paymentHistory.ForeColor = System.Drawing.Color.Black;
-            this.txt_paymentHistory.Location = new System.Drawing.Point(961, 50);
-            this.txt_paymentHistory.MaxLength = 32767;
-            this.txt_paymentHistory.Multiline = true;
-            this.txt_paymentHistory.Name = "txt_paymentHistory";
-            this.txt_paymentHistory.ReadOnly = false;
-            this.txt_paymentHistory.Size = new System.Drawing.Size(295, 291);
-            this.txt_paymentHistory.TabIndex = 30;
-            this.txt_paymentHistory.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_paymentHistory.UseSystemPasswordChar = false;
             // 
             // BillForm
             // 

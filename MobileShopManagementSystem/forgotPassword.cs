@@ -18,7 +18,7 @@ namespace MobileShopManagementSystem
             InitializeComponent();
         }
         Random random = new Random();
-        int newPassword;
+        string newPassword;
         private void btn_request_Click(object sender, EventArgs e)
         {
             using (var db = new MobileShopManagementDataContext())
@@ -29,7 +29,10 @@ namespace MobileShopManagementSystem
                     MessageBox.Show("Email not found. Please create your account!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                newPassword = random.Next(100000, 999999);
+                string lst = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                string randomString = new string(Enumerable.Repeat(lst, 12)
+                    .Select(s => s[random.Next(s.Length)]).ToArray());
+                newPassword = randomString;
 
                 var fromAddress = new MailAddress("nguyentrilam0304@gmail.com");
                 var toAddress = new MailAddress(txt_email.Text.ToString().Trim());

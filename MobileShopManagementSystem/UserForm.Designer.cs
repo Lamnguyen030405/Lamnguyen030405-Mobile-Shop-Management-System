@@ -33,38 +33,6 @@
             this.cb_search = new ReaLTaiizor.Controls.MetroComboBox();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
             this.dgv_user = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btn_refresh = new ReaLTaiizor.Controls.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btn_userClear = new ReaLTaiizor.Controls.Button();
-            this.btn_userUpdate = new ReaLTaiizor.Controls.Button();
-            this.btn_userDelete = new ReaLTaiizor.Controls.Button();
-            this.artanPanel2 = new ArtanComponent.ArtanPanel();
-            this.btn_search = new ReaLTaiizor.Controls.Button();
-            this.txt_name = new ReaLTaiizor.Controls.CyberTextBox();
-            this.txt_userID = new ReaLTaiizor.Controls.CyberTextBox();
-            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
-            this.artanPanel1 = new ArtanComponent.ArtanPanel();
-            this.cb_userStatus = new ReaLTaiizor.Controls.MetroComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dt_userBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.cb_userGender = new ReaLTaiizor.Controls.MetroComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_userPN = new ReaLTaiizor.Controls.CyberTextBox();
-            this.txt_userAddress = new ReaLTaiizor.Controls.CyberTextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cb_userRole = new ReaLTaiizor.Controls.MetroComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_userEmail = new ReaLTaiizor.Controls.CyberTextBox();
-            this.txt_userSalary = new ReaLTaiizor.Controls.CyberTextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +47,38 @@
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datecreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btn_refresh = new ReaLTaiizor.Controls.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btn_userClear = new ReaLTaiizor.Controls.Button();
+            this.btn_userUpdate = new ReaLTaiizor.Controls.Button();
+            this.btn_userDelete = new ReaLTaiizor.Controls.Button();
+            this.artanPanel2 = new ArtanComponent.ArtanPanel();
+            this.btn_search = new ReaLTaiizor.Controls.Button();
+            this.txt_name = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txt_userID = new ReaLTaiizor.Controls.CyberTextBox();
+            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
+            this.artanPanel1 = new ArtanComponent.ArtanPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_userEmail = new ReaLTaiizor.Controls.CyberTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cb_userStatus = new ReaLTaiizor.Controls.MetroComboBox();
+            this.txt_userSalary = new ReaLTaiizor.Controls.CyberTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dt_userBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.cb_userGender = new ReaLTaiizor.Controls.MetroComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_userPN = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txt_userAddress = new ReaLTaiizor.Controls.CyberTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cb_userRole = new ReaLTaiizor.Controls.MetroComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.artanPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).BeginInit();
             this.artanPanel2.SuspendLayout();
@@ -212,6 +212,123 @@
             this.dgv_user.Size = new System.Drawing.Size(1243, 261);
             this.dgv_user.TabIndex = 22;
             this.dgv_user.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_user_CellClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "UserID";
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Name";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // birthdate
+            // 
+            this.birthdate.DataPropertyName = "BirthDate";
+            this.birthdate.HeaderText = "Birth Date";
+            this.birthdate.MinimumWidth = 6;
+            this.birthdate.Name = "birthdate";
+            this.birthdate.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "Gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.MinimumWidth = 6;
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "Address";
+            this.address.HeaderText = "Address";
+            this.address.MinimumWidth = 6;
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            // 
+            // phonenumber
+            // 
+            this.phonenumber.DataPropertyName = "PhoneNumber";
+            this.phonenumber.HeaderText = "Phone Number";
+            this.phonenumber.MinimumWidth = 6;
+            this.phonenumber.Name = "phonenumber";
+            this.phonenumber.ReadOnly = true;
+            // 
+            // salary
+            // 
+            this.salary.DataPropertyName = "Salary";
+            this.salary.HeaderText = "Salary";
+            this.salary.MinimumWidth = 6;
+            this.salary.Name = "salary";
+            this.salary.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // role
+            // 
+            this.role.DataPropertyName = "Role";
+            this.role.HeaderText = "Role";
+            this.role.MinimumWidth = 6;
+            this.role.Name = "role";
+            this.role.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Status";
+            this.status.MinimumWidth = 6;
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // image
+            // 
+            this.image.DataPropertyName = "Image";
+            this.image.HeaderText = "Image";
+            this.image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.image.MinimumWidth = 6;
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
+            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // username
+            // 
+            this.username.DataPropertyName = "Username";
+            this.username.HeaderText = "Username";
+            this.username.MinimumWidth = 6;
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            this.username.Visible = false;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "Password";
+            this.password.HeaderText = "Password";
+            this.password.MinimumWidth = 6;
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            this.password.Visible = false;
+            // 
+            // datecreated
+            // 
+            this.datecreated.DataPropertyName = "DateCreated";
+            this.datecreated.HeaderText = "Date Created";
+            this.datecreated.MinimumWidth = 6;
+            this.datecreated.Name = "datecreated";
+            this.datecreated.ReadOnly = true;
             // 
             // label13
             // 
@@ -514,6 +631,60 @@
             this.artanPanel1.Size = new System.Drawing.Size(1269, 318);
             this.artanPanel1.TabIndex = 7;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(694, 113);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 28);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "Salary :";
+            // 
+            // txt_userEmail
+            // 
+            this.txt_userEmail.Alpha = 20;
+            this.txt_userEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txt_userEmail.Background_WidthPen = 5F;
+            this.txt_userEmail.BackgroundPen = true;
+            this.txt_userEmail.ColorBackground = System.Drawing.Color.White;
+            this.txt_userEmail.ColorBackground_Pen = System.Drawing.Color.Cyan;
+            this.txt_userEmail.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userEmail.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txt_userEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_userEmail.ForeColor = System.Drawing.Color.Black;
+            this.txt_userEmail.Lighting = false;
+            this.txt_userEmail.LinearGradientPen = true;
+            this.txt_userEmail.Location = new System.Drawing.Point(391, 109);
+            this.txt_userEmail.Name = "txt_userEmail";
+            this.txt_userEmail.PenWidth = 15;
+            this.txt_userEmail.RGB = false;
+            this.txt_userEmail.Rounding = true;
+            this.txt_userEmail.RoundingInt = 30;
+            this.txt_userEmail.Size = new System.Drawing.Size(260, 42);
+            this.txt_userEmail.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txt_userEmail.TabIndex = 58;
+            this.txt_userEmail.Tag = "Cyber";
+            this.txt_userEmail.TextButton = "";
+            this.txt_userEmail.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_userEmail.Timer_RGB = 300;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(226, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 28);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "Email :";
+            // 
             // cb_userStatus
             // 
             this.cb_userStatus.AllowDrop = true;
@@ -544,6 +715,38 @@
             this.cb_userStatus.TabIndex = 55;
             this.cb_userStatus.ThemeAuthor = "Taiizor";
             this.cb_userStatus.ThemeName = "MetroLight";
+            // 
+            // txt_userSalary
+            // 
+            this.txt_userSalary.Alpha = 20;
+            this.txt_userSalary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_userSalary.BackColor = System.Drawing.Color.Transparent;
+            this.txt_userSalary.Background_WidthPen = 5F;
+            this.txt_userSalary.BackgroundPen = true;
+            this.txt_userSalary.ColorBackground = System.Drawing.Color.White;
+            this.txt_userSalary.ColorBackground_Pen = System.Drawing.Color.Cyan;
+            this.txt_userSalary.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txt_userSalary.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txt_userSalary.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_userSalary.ForeColor = System.Drawing.Color.Black;
+            this.txt_userSalary.Lighting = false;
+            this.txt_userSalary.LinearGradientPen = true;
+            this.txt_userSalary.Location = new System.Drawing.Point(853, 109);
+            this.txt_userSalary.Name = "txt_userSalary";
+            this.txt_userSalary.PenWidth = 15;
+            this.txt_userSalary.RGB = false;
+            this.txt_userSalary.Rounding = true;
+            this.txt_userSalary.RoundingInt = 30;
+            this.txt_userSalary.Size = new System.Drawing.Size(266, 42);
+            this.txt_userSalary.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txt_userSalary.TabIndex = 57;
+            this.txt_userSalary.Tag = "Cyber";
+            this.txt_userSalary.TextButton = "";
+            this.txt_userSalary.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_userSalary.Timer_RGB = 300;
             // 
             // label6
             // 
@@ -684,7 +887,7 @@
             this.txt_userPN.TabIndex = 36;
             this.txt_userPN.Tag = "Cyber";
             this.txt_userPN.TextButton = "";
-            this.txt_userPN.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.txt_userPN.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.txt_userPN.Timer_RGB = 300;
             // 
             // txt_userAddress
@@ -773,209 +976,6 @@
             this.label3.Size = new System.Drawing.Size(59, 28);
             this.label3.TabIndex = 52;
             this.label3.Text = "Role :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(694, 113);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 28);
-            this.label7.TabIndex = 59;
-            this.label7.Text = "Salary :";
-            // 
-            // txt_userEmail
-            // 
-            this.txt_userEmail.Alpha = 20;
-            this.txt_userEmail.BackColor = System.Drawing.Color.Transparent;
-            this.txt_userEmail.Background_WidthPen = 5F;
-            this.txt_userEmail.BackgroundPen = true;
-            this.txt_userEmail.ColorBackground = System.Drawing.Color.White;
-            this.txt_userEmail.ColorBackground_Pen = System.Drawing.Color.Cyan;
-            this.txt_userEmail.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userEmail.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userEmail.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userEmail.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.txt_userEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txt_userEmail.ForeColor = System.Drawing.Color.Black;
-            this.txt_userEmail.Lighting = false;
-            this.txt_userEmail.LinearGradientPen = true;
-            this.txt_userEmail.Location = new System.Drawing.Point(391, 109);
-            this.txt_userEmail.Name = "txt_userEmail";
-            this.txt_userEmail.PenWidth = 15;
-            this.txt_userEmail.RGB = false;
-            this.txt_userEmail.Rounding = true;
-            this.txt_userEmail.RoundingInt = 30;
-            this.txt_userEmail.Size = new System.Drawing.Size(260, 42);
-            this.txt_userEmail.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_userEmail.TabIndex = 58;
-            this.txt_userEmail.Tag = "Cyber";
-            this.txt_userEmail.TextButton = "";
-            this.txt_userEmail.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-            this.txt_userEmail.Timer_RGB = 300;
-            // 
-            // txt_userSalary
-            // 
-            this.txt_userSalary.Alpha = 20;
-            this.txt_userSalary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_userSalary.BackColor = System.Drawing.Color.Transparent;
-            this.txt_userSalary.Background_WidthPen = 5F;
-            this.txt_userSalary.BackgroundPen = true;
-            this.txt_userSalary.ColorBackground = System.Drawing.Color.White;
-            this.txt_userSalary.ColorBackground_Pen = System.Drawing.Color.Cyan;
-            this.txt_userSalary.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userSalary.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userSalary.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txt_userSalary.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.txt_userSalary.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txt_userSalary.ForeColor = System.Drawing.Color.Black;
-            this.txt_userSalary.Lighting = false;
-            this.txt_userSalary.LinearGradientPen = true;
-            this.txt_userSalary.Location = new System.Drawing.Point(853, 109);
-            this.txt_userSalary.Name = "txt_userSalary";
-            this.txt_userSalary.PenWidth = 15;
-            this.txt_userSalary.RGB = false;
-            this.txt_userSalary.Rounding = true;
-            this.txt_userSalary.RoundingInt = 30;
-            this.txt_userSalary.Size = new System.Drawing.Size(266, 42);
-            this.txt_userSalary.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txt_userSalary.TabIndex = 57;
-            this.txt_userSalary.Tag = "Cyber";
-            this.txt_userSalary.TextButton = "";
-            this.txt_userSalary.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-            this.txt_userSalary.Timer_RGB = 300;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(226, 109);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 28);
-            this.label8.TabIndex = 56;
-            this.label8.Text = "Email :";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "UserID";
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "Name";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // birthdate
-            // 
-            this.birthdate.DataPropertyName = "BirthDate";
-            this.birthdate.HeaderText = "Birth Date";
-            this.birthdate.MinimumWidth = 6;
-            this.birthdate.Name = "birthdate";
-            this.birthdate.ReadOnly = true;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "Gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.MinimumWidth = 6;
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "Address";
-            this.address.HeaderText = "Address";
-            this.address.MinimumWidth = 6;
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            // 
-            // phonenumber
-            // 
-            this.phonenumber.DataPropertyName = "PhoneNumber";
-            this.phonenumber.HeaderText = "Phone Number";
-            this.phonenumber.MinimumWidth = 6;
-            this.phonenumber.Name = "phonenumber";
-            this.phonenumber.ReadOnly = true;
-            // 
-            // salary
-            // 
-            this.salary.DataPropertyName = "Salary";
-            this.salary.HeaderText = "Salary";
-            this.salary.MinimumWidth = 6;
-            this.salary.Name = "salary";
-            this.salary.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // role
-            // 
-            this.role.DataPropertyName = "Role";
-            this.role.HeaderText = "Role";
-            this.role.MinimumWidth = 6;
-            this.role.Name = "role";
-            this.role.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "Status";
-            this.status.HeaderText = "Status";
-            this.status.MinimumWidth = 6;
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // image
-            // 
-            this.image.DataPropertyName = "Image";
-            this.image.HeaderText = "Image";
-            this.image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.image.MinimumWidth = 6;
-            this.image.Name = "image";
-            this.image.ReadOnly = true;
-            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // username
-            // 
-            this.username.DataPropertyName = "Username";
-            this.username.HeaderText = "Username";
-            this.username.MinimumWidth = 6;
-            this.username.Name = "username";
-            this.username.ReadOnly = true;
-            this.username.Visible = false;
-            // 
-            // password
-            // 
-            this.password.DataPropertyName = "Password";
-            this.password.HeaderText = "Password";
-            this.password.MinimumWidth = 6;
-            this.password.Name = "password";
-            this.password.ReadOnly = true;
-            this.password.Visible = false;
-            // 
-            // datecreated
-            // 
-            this.datecreated.DataPropertyName = "DateCreated";
-            this.datecreated.HeaderText = "Date Created";
-            this.datecreated.MinimumWidth = 6;
-            this.datecreated.Name = "datecreated";
-            this.datecreated.ReadOnly = true;
             // 
             // UserForm
             // 
