@@ -37,6 +37,7 @@ namespace MobileShopManagementSystem
             get { return discount.Text; }
             set { discount.Text = value; }
         }
+        public string productDescription { get; set; }
         public string productStock
         {
             get { return stock.Text; }

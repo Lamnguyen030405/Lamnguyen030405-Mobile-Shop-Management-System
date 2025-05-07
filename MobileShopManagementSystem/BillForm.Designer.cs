@@ -988,7 +988,7 @@
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1269, 289);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -1214,14 +1214,13 @@
             this.txt_paymentHistory.BackColor = System.Drawing.Color.Transparent;
             this.txt_paymentHistory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.txt_paymentHistory.EdgeColor = System.Drawing.Color.White;
-            this.txt_paymentHistory.Enabled = false;
             this.txt_paymentHistory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txt_paymentHistory.ForeColor = System.Drawing.Color.Black;
             this.txt_paymentHistory.Location = new System.Drawing.Point(961, 50);
             this.txt_paymentHistory.MaxLength = 32767;
             this.txt_paymentHistory.Multiline = true;
             this.txt_paymentHistory.Name = "txt_paymentHistory";
-            this.txt_paymentHistory.ReadOnly = false;
+            this.txt_paymentHistory.ReadOnly = true;
             this.txt_paymentHistory.Size = new System.Drawing.Size(295, 291);
             this.txt_paymentHistory.TabIndex = 30;
             this.txt_paymentHistory.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1239,6 +1238,7 @@
             this.label13.Size = new System.Drawing.Size(70, 28);
             this.label13.TabIndex = 48;
             this.label13.Text = "Filter : ";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // cb_filter
             // 
@@ -1511,8 +1511,6 @@
         private ReaLTaiizor.Controls.CyberTextBox txt_customerAddr;
         private ReaLTaiizor.Controls.CyberTextBox txt_orderID;
         private ArtanComponent.ArtanPanel artanPanel7;
-        private ReaLTaiizor.Controls.MetroComboBox cb_filter;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lbl_outstandingAmount;
@@ -1541,5 +1539,7 @@
         private ReaLTaiizor.Controls.Button btn_pay;
         private ExtendedDungeonTextBox txt_paymentHistory;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label13;
+        private ReaLTaiizor.Controls.MetroComboBox cb_filter;
     }
 }

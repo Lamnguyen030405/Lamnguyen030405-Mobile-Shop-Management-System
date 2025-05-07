@@ -323,5 +323,41 @@ namespace MobileShopManagementSystem
             }
         }
 
+        private void cb_filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                List<User> result = new List<User>();
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    if (cb_filter.SelectedItem.ToString() == "All")
+                    {
+                        result = db.Users.ToList();
+                    }
+                    else if (cb_filter.SelectedItem.ToString() == "Active")
+                    {
+                        result = db.Users.Where(x => x.Status == "Active").ToList();
+                    }
+                    else if (cb_filter.SelectedItem.ToString() == "Inactive")
+                    {
+                        result = db.Users.Where(x => x.Status == "Inactive").ToList();
+                    }
+
+                    if (result.Count > 0)
+                    {
+                        dgv_user.DataSource = result;
+                        dgv_user.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching records found.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

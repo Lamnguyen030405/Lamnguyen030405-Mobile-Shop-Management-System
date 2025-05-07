@@ -41,7 +41,7 @@ namespace MobileShopManagementSystem
         }
 
         int count = 1;
-        public void cardItems(string productname, string stock, string sellingprice, string realprice, string discount, Image image, string productid, string category, string quantity)
+        public void cardItems(string productname, string stock, string sellingprice, string realprice, string discount, Image image, string productid, string category, string quantity, string description)
         {
             var card = new CardProduct()
             {
@@ -53,55 +53,59 @@ namespace MobileShopManagementSystem
                 productImage = image,
                 productID = productid,
                 productCategory = category,
-                productQuantity = quantity
+                productQuantity = quantity,
+                productDescription = description
             };
 
             flowLayoutPanel1.Controls.Add(card);
 
-            card.selectCard += (s, e) =>
+            card.selectCard += on_CardSelect;
+        }
+
+        private void on_CardSelect(object s, EventArgs e)
+        {
+            try
             {
-                try
+                var selectedCard = (CardProduct)s;
+                bool flag = false;
+                txt_description.Text = selectedCard.productDescription;
+
+                if (string.IsNullOrWhiteSpace(selectedCard.productQuantity))
                 {
-                    var selectedCard = (CardProduct)s;
-                    bool flag = false;
+                    MessageBox.Show("Please enter quantity", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (int.Parse(selectedCard.productQuantity) > int.Parse(selectedCard.productStock))
+                {
+                    MessageBox.Show("Quantity is greater than stock", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (int.Parse(selectedCard.productQuantity) == 0)
+                {
+                    MessageBox.Show("Quantity must be greater than 0", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
-                    if (string.IsNullOrWhiteSpace(selectedCard.productQuantity))
+                foreach (DataGridViewRow row in dgv_product.Rows)
+                {
+                    if (row.Cells["productid"].Value != null && row.Cells["productid"].Value.ToString() == selectedCard.productID)
                     {
-                        MessageBox.Show("Please enter quantity", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    if (int.Parse(selectedCard.productQuantity) > int.Parse(selectedCard.productStock))
-                    {
-                        MessageBox.Show("Quantity is greater than stock", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    if (int.Parse(selectedCard.productQuantity) == 0)
-                    {
-                        MessageBox.Show("Quantity must be greater than 0", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-
-                    foreach (DataGridViewRow row in dgv_product.Rows)
-                    {
-                        if (row.Cells["productid"].Value != null && row.Cells["productid"].Value.ToString() == selectedCard.productID)
-                        {
-                            row.Cells["quantity"].Value = selectedCard.productQuantity;
-                            flag = true;
-                            break;
-                        }
-                    }
-
-                    if (!flag)
-                    {
-                        dgv_product.Rows.Add($"{count++}", selectedCard.productID, selectedCard.productName, 1, selectedCard.productRealPrice);
+                        row.Cells["quantity"].Value = selectedCard.productQuantity;
+                        flag = true;
+                        break;
                     }
                 }
-                catch (Exception ex)
+
+                if (!flag)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dgv_product.Rows.Add($"{count++}", selectedCard.productID, selectedCard.productName, 1, selectedCard.productRealPrice);
                 }
-                updateTotalPrice();
-            };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            updateTotalPrice();
         }
 
         private void updateTotalPrice()
@@ -134,7 +138,7 @@ namespace MobileShopManagementSystem
                         Image productImage = product.Image != null && product.Image.Length > 0
                             ? ImageHelper.ByteArrayToImage(product.Image.ToArray())
                             : null;
-                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), productImage, product.ProductID, product.Category, "");
+                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), productImage, product.ProductID, product.Category, "", product.Description);
                     }
                 }
             }
@@ -146,19 +150,30 @@ namespace MobileShopManagementSystem
 
         private void displayCategories()
         {
-            cb_shopCategory.Items.Clear();
-            using (var db = new MobileShopManagementDataContext())
+            try
             {
-                List<Category> cat = db.Categories.Where(c => c.Status == "Active").ToList();
-                if (cat.Count > 0)
+                cb_shopCategory.Items.Clear();
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    foreach (Category c in cat)
+                    List<Category> cat = db.Categories.Where(c => c.Status == "Active").ToList();
+                    if (cat.Count > 0)
                     {
-                        cb_shopCategory.Items.Add(c.CategoryName);
+                        foreach (Category c in cat)
+                        {
+                            cb_shopCategory.Items.Add(c.CategoryName);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No categories found", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+                cb_shopCategory.SelectedIndex = -1;
+            } 
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            cb_shopCategory.SelectedIndex = -1;
         }
 
         private void ShopForm_Load(object sender, EventArgs e)
@@ -299,12 +314,15 @@ namespace MobileShopManagementSystem
             total_price.Text = "$0.00";
             total_quantity.Text = "0 items";
             cb_shopTerm.SelectedIndex = -1;
+            txt_description.Text = "";
         }
 
         public void refreshData()
         {
             LoadProducts();
+            displayCategories();
             clearData();
+            count = 1;
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -325,7 +343,7 @@ namespace MobileShopManagementSystem
                         Image productImage = product.Image != null && product.Image.Length > 0
                             ? ImageHelper.ByteArrayToImage(product.Image.ToArray())
                             : null;
-                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), productImage, product.ProductID, product.Category, "");
+                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), productImage, product.ProductID, product.Category, "", product.Description);
                     }
                 }
             }
@@ -361,7 +379,7 @@ namespace MobileShopManagementSystem
                             ? ImageHelper.ByteArrayToImage(product.Image.ToArray())
                             : null;
                         cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(),
-                                  productImage, product.ProductID, product.Category, "");
+                                  productImage, product.ProductID, product.Category, "", product.Description);
                     }
                 }
             }

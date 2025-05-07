@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_search = new ReaLTaiizor.Controls.CyberTextBox();
             this.cb_search = new ReaLTaiizor.Controls.MetroComboBox();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
@@ -79,6 +79,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cb_userRole = new ReaLTaiizor.Controls.MetroComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cb_filter = new ReaLTaiizor.Controls.MetroComboBox();
             this.artanPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).BeginInit();
             this.artanPanel2.SuspendLayout();
@@ -177,14 +179,14 @@
             this.dgv_user.BackgroundColor = System.Drawing.Color.White;
             this.dgv_user.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_user.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_user.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_user.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_user.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -477,6 +479,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.artanPanel2.BackColor = System.Drawing.Color.White;
             this.artanPanel2.BorderRadius = 30;
+            this.artanPanel2.Controls.Add(this.label9);
+            this.artanPanel2.Controls.Add(this.cb_filter);
             this.artanPanel2.Controls.Add(this.txt_search);
             this.artanPanel2.Controls.Add(this.cb_search);
             this.artanPanel2.Controls.Add(this.artanPanel3);
@@ -977,6 +981,53 @@
             this.label3.TabIndex = 52;
             this.label3.Text = "Role :";
             // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(900, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 28);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "Filter : ";
+            // 
+            // cb_filter
+            // 
+            this.cb_filter.AllowDrop = true;
+            this.cb_filter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_filter.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_filter.BackColor = System.Drawing.Color.Transparent;
+            this.cb_filter.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.cb_filter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_filter.CausesValidation = false;
+            this.cb_filter.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.cb_filter.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.cb_filter.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.cb_filter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_filter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cb_filter.FormattingEnabled = true;
+            this.cb_filter.IsDerivedStyle = true;
+            this.cb_filter.ItemHeight = 20;
+            this.cb_filter.Items.AddRange(new object[] {
+            "All",
+            "Active",
+            "Inactive"});
+            this.cb_filter.Location = new System.Drawing.Point(976, 9);
+            this.cb_filter.Name = "cb_filter";
+            this.cb_filter.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cb_filter.SelectedItemForeColor = System.Drawing.Color.White;
+            this.cb_filter.Size = new System.Drawing.Size(162, 26);
+            this.cb_filter.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.cb_filter.StyleManager = null;
+            this.cb_filter.TabIndex = 49;
+            this.cb_filter.ThemeAuthor = "Taiizor";
+            this.cb_filter.ThemeName = "MetroLight";
+            this.cb_filter.SelectedIndexChanged += new System.EventHandler(this.cb_filter_SelectedIndexChanged);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1054,5 +1105,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn datecreated;
+        private System.Windows.Forms.Label label9;
+        private ReaLTaiizor.Controls.MetroComboBox cb_filter;
     }
 }

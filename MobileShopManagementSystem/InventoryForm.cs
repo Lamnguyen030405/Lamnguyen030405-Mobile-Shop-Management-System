@@ -21,19 +21,90 @@ namespace MobileShopManagementSystem
 
         private void displayCategories()
         {
-            using (var db = new MobileShopManagementDataContext())
+            try
             {
-                cb_inventoryCategory.Items.Clear();
-                List<Category> cat = db.Categories.Where(c => c.Status == "Active").ToList();
-                if (cat.Count > 0)
+                using (var db = new MobileShopManagementDataContext())
                 {
-                    cb_inventoryCategory.DataSource = cat;
-                    cb_inventoryCategory.DisplayMember = "CategoryName";
-                    cb_inventoryCategory.ValueMember = "CategoryID";
+                    List<Category> cat = db.Categories.Where(c => c.Status == "Active").ToList();
+                    if (cat.Count > 0)
+                    {
+                        cb_inventoryCategory.DataSource = null;
+                        cb_inventoryCategory.DataSource = cat;
+                        cb_inventoryCategory.DisplayMember = "CategoryName";
+                        cb_inventoryCategory.ValueMember = "CategoryID";
+                    }
+                    else
+                    {
+                        cb_inventoryCategory.DataSource = null;
+                        MessageBox.Show("No categories found", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("E: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
+        //private void updateStatus()
+        //{
+        //    try
+        //    {
+        //        using (var db = new MobileShopManagementDataContext())
+        //        {
+        //            var products = db.Products.ToList();
+        //            foreach (var product in products)
+        //            {
+        //                if (product.Stock <= 0)
+        //                {
+        //                    product.Status = "Unavailable";
+        //                }
+        //                else
+        //                {
+        //                    product.Status = "Available";
+        //                }
+        //            }
+        //            db.SubmitChanges();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+        private void updateStatus()
+        {
+            try
+            {
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    var allProducts = db.Products.ToList();
+                    var allCategories = db.Categories.ToList();
+
+                    foreach (var product in allProducts)
+                    {
+                        var category = allCategories.FirstOrDefault(c => c.CategoryID == product.CategoryID);
+
+                        if (category != null && category.Status == "Inactive")
+                        {
+                            product.Status = "Unavailable";
+                        }
+                        else
+                        {
+                            // Nếu danh mục Active, kiểm tra tồn kho
+                            product.Status = (product.Stock <= 0) ? "Unavailable" : "Available";
+                        }
+                    }
+
+                    db.SubmitChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         public static string getProductID()
         {
             using (var db = new MobileShopManagementDataContext())
@@ -56,6 +127,7 @@ namespace MobileShopManagementSystem
         {
             try
             {
+                updateStatus();
                 using (var db = new MobileShopManagementDataContext())
                 {
                     var products = db.Products.ToList();
@@ -109,6 +181,7 @@ namespace MobileShopManagementSystem
 
                     dgv_products.DataSource = dt;
                 }
+                displayCategories();
             }
             catch (Exception ex)
             {
@@ -339,10 +412,10 @@ namespace MobileShopManagementSystem
                     db.Products.DeleteOnSubmit(p);
                     await Task.Run(() => db.SubmitChanges());
 
-                    LoadData();
-                    MessageBox.Show("Product deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearData();
                 }
+                LoadData();
+                MessageBox.Show("Product deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearData();
             }
             catch (Exception ex)
             {
@@ -586,6 +659,39 @@ namespace MobileShopManagementSystem
             {
                 txt_inventoryDiscount.Enabled = false;
                 txt_inventoryDiscount.TextButton = "0";
+            }
+        }
+
+        private void cb_filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Product> result = new List<Product>();
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    if (cb_filter.SelectedItem.ToString() == "All")
+                    {
+                        result = db.Products.ToList();
+                    }
+                    else
+                    {
+                        result = db.Products.Where(x => x.Status == cb_filter.SelectedItem.ToString()).ToList();
+                    }
+
+                    if (result.Count > 0)
+                    {
+                        dgv_products.DataSource = result;
+                        dgv_products.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching records found.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

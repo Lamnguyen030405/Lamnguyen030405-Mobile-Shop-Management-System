@@ -88,6 +88,7 @@ namespace MobileShopManagementSystem
                             btn_dashboard.Enabled = false;
                             btn_categories.Enabled = false;
                             btn_customers.Enabled = false;
+                            btn_inventory.Enabled = false;
                         }
                     }
                 }
@@ -161,6 +162,7 @@ namespace MobileShopManagementSystem
                     btn_dashboard.Enabled = false;
                     btn_categories.Enabled = false;
                     btn_customers.Enabled = false;
+                    btn_inventory.Enabled = false;
                 }
             }
         }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_categories = new System.Windows.Forms.DataGridView();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +56,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cb_filter = new ReaLTaiizor.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).BeginInit();
             this.artanPanel1.SuspendLayout();
             this.artanPanel2.SuspendLayout();
@@ -71,28 +73,28 @@
             this.dgv_categories.BackgroundColor = System.Drawing.Color.White;
             this.dgv_categories.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_categories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_categories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_categories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_categories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_categories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id,
             this.col_category,
             this.col_status,
             this.col_date_insert});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_categories.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_categories.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_categories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_categories.EnableHeadersVisualStyles = false;
             this.dgv_categories.GridColor = System.Drawing.Color.Silver;
@@ -407,7 +409,9 @@
             // 
             this.artanPanel2.BackColor = System.Drawing.Color.White;
             this.artanPanel2.BorderRadius = 50;
+            this.artanPanel2.Controls.Add(this.label9);
             this.artanPanel2.Controls.Add(this.cb_search);
+            this.artanPanel2.Controls.Add(this.cb_filter);
             this.artanPanel2.Controls.Add(this.btn_refresh);
             this.artanPanel2.Controls.Add(this.btn_search);
             this.artanPanel2.Controls.Add(this.txt_search);
@@ -593,6 +597,53 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1271, 725);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(566, 58);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 28);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Filter : ";
+            // 
+            // cb_filter
+            // 
+            this.cb_filter.AllowDrop = true;
+            this.cb_filter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_filter.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_filter.BackColor = System.Drawing.Color.Transparent;
+            this.cb_filter.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.cb_filter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_filter.CausesValidation = false;
+            this.cb_filter.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.cb_filter.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.cb_filter.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.cb_filter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_filter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cb_filter.FormattingEnabled = true;
+            this.cb_filter.IsDerivedStyle = true;
+            this.cb_filter.ItemHeight = 20;
+            this.cb_filter.Items.AddRange(new object[] {
+            "All",
+            "Active",
+            "Inactive"});
+            this.cb_filter.Location = new System.Drawing.Point(642, 60);
+            this.cb_filter.Name = "cb_filter";
+            this.cb_filter.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cb_filter.SelectedItemForeColor = System.Drawing.Color.White;
+            this.cb_filter.Size = new System.Drawing.Size(162, 26);
+            this.cb_filter.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.cb_filter.StyleManager = null;
+            this.cb_filter.TabIndex = 51;
+            this.cb_filter.ThemeAuthor = "Taiizor";
+            this.cb_filter.ThemeName = "MetroLight";
+            this.cb_filter.SelectedIndexChanged += new System.EventHandler(this.cb_filter_SelectedIndexChanged);
+            // 
             // CategoriesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -642,5 +693,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private ReaLTaiizor.Controls.MetroComboBox cb_search;
         private ReaLTaiizor.Controls.MetroComboBox cb_categoriesStatus;
+        private System.Windows.Forms.Label label9;
+        private ReaLTaiizor.Controls.MetroComboBox cb_filter;
     }
 }

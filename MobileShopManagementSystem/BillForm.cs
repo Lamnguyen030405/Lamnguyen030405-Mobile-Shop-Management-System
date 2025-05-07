@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,6 +54,12 @@ namespace MobileShopManagementSystem
                 {
                     var result = db.vw_BillDetails.ToList();
                     dgv_bill.DataSource = result;
+
+                    var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
+                    if (user.Role == "Admin")
+                    {
+                        txt_userID.Enabled = true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -297,23 +304,35 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (txt_customerName.TextButton == null)
-                {
-                    MessageBox.Show("Please enter customer name!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (txt_customerPN.TextButton == null)
-                {
-                    MessageBox.Show("Please enter customer phone number!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (MessageBox.Show("Are you sure you want to update this bill?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    return;
-                }
-
                 using (var db = new MobileShopManagementDataContext())
                 {
+                    var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
+                    if (txt_userID.TextButton != user.UserID && user.Role != "Admin")
+                    {
+                        MessageBox.Show("You do not have permission to update this bill.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    if (txt_customerName.TextButton == null)
+                    {
+                        MessageBox.Show("Please enter customer name!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (txt_customerPN.TextButton == null)
+                    {
+                        MessageBox.Show("Please enter customer phone number!", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (MessageBox.Show("Are you sure you want to update this bill?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+
+                    var bill = db.Bills.FirstOrDefault(b => b.BillID == txt_billID.TextButton);
+                    if (bill != null)
+                    {
+                        bill.UserID = txt_userID.TextButton.Trim();
+                    }
                     var customer = db.Customers.FirstOrDefault(c => c.CustomerID == txt_customerID.TextButton);
                     if (customer != null)
                     {
@@ -321,7 +340,6 @@ namespace MobileShopManagementSystem
                         customer.PhoneNumber = txt_customerPN.TextButton.Trim();
                         customer.Address = txt_customerAddr.TextButton.Trim();
                     }
-
                     db.SubmitChanges();
                 }
 
@@ -387,41 +405,47 @@ namespace MobileShopManagementSystem
         {
             try
             {
-                if (txt_billID.TextButton == "")
-                {
-                    MessageBox.Show("Please select a bill to update.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (lbl_outstandingAmount.Text == "$0")
-                {
-                    MessageBox.Show("This bill has been paid in full.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (string.IsNullOrEmpty(txt_paymentAmount.Text))
-                {
-                    MessageBox.Show("Please enter a payment amount.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                double paymentAmount = Convert.ToDouble(txt_paymentAmount.Text);
-                if (paymentAmount <= 0)
-                {
-                    MessageBox.Show("Payment amount must be greater than 0.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (MessageBox.Show("Are you sure you want to update this payment?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    return;
-                }
-                double outstandingAmount = Convert.ToDouble(lbl_outstandingAmount.Text.Trim('$'));
-                double lateFee = Convert.ToDouble(lbl_lateFee.Text.Trim('$'));
-                if (lateFee > 0 && paymentAmount < outstandingAmount + lateFee)
-                {
-                    MessageBox.Show("Payment amount must be greater than or equal to the total outstanding amount and late fee.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
                 using (var db = new MobileShopManagementDataContext())
                 {
+                    var user = db.Users.FirstOrDefault(u => u.UserID == Form1.userID);
+                    if (txt_userID.TextButton != user.UserID && user.Role != "Admin")
+                    {
+                        MessageBox.Show("You do not have permission to update this bill.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (txt_billID.TextButton == "")
+                    {
+                        MessageBox.Show("Please select a bill to update.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (lbl_outstandingAmount.Text == "$0")
+                    {
+                        MessageBox.Show("This bill has been paid in full.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(txt_paymentAmount.Text))
+                    {
+                        MessageBox.Show("Please enter a payment amount.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    double paymentAmount = Convert.ToDouble(txt_paymentAmount.Text);
+                    if (paymentAmount <= 0)
+                    {
+                        MessageBox.Show("Payment amount must be greater than 0.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (MessageBox.Show("Are you sure you want to update this payment?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+                    double outstandingAmount = Convert.ToDouble(lbl_outstandingAmount.Text.Trim('$'));
+                    double lateFee = Convert.ToDouble(lbl_lateFee.Text.Trim('$'));
+                    if (lateFee > 0 && paymentAmount < outstandingAmount + lateFee)
+                    {
+                        MessageBox.Show("Payment amount must be greater than or equal to the total outstanding amount and late fee.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     var bill = db.Bills.FirstOrDefault(b => b.BillID == txt_billID.TextButton);
                     if (bill != null)
                     {
@@ -450,6 +474,11 @@ namespace MobileShopManagementSystem
             {
                 MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

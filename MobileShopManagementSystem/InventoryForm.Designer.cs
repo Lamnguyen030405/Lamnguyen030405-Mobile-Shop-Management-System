@@ -74,14 +74,16 @@
             this.txt_inventoryProductID = new ReaLTaiizor.Controls.CyberTextBox();
             this.cb_inventoryCategory = new ReaLTaiizor.Controls.MetroComboBox();
             this.cb_inventoryStatus = new ReaLTaiizor.Controls.MetroComboBox();
-            this.txt_inventoryDescription = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             this.artanPanel2 = new ArtanComponent.ArtanPanel();
+            this.label13 = new System.Windows.Forms.Label();
             this.txt_search = new ReaLTaiizor.Controls.CyberTextBox();
+            this.cb_filter = new ReaLTaiizor.Controls.MetroComboBox();
             this.cb_search = new ReaLTaiizor.Controls.MetroComboBox();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
             this.label7 = new System.Windows.Forms.Label();
+            this.txt_inventoryDescription = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -868,25 +870,6 @@
             this.cb_inventoryStatus.ThemeAuthor = "Taiizor";
             this.cb_inventoryStatus.ThemeName = "MetroLight";
             // 
-            // txt_inventoryDescription
-            // 
-            this.txt_inventoryDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_inventoryDescription.BackColor = System.Drawing.Color.Transparent;
-            this.txt_inventoryDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_inventoryDescription.EdgeColor = System.Drawing.Color.White;
-            this.txt_inventoryDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txt_inventoryDescription.ForeColor = System.Drawing.Color.Black;
-            this.txt_inventoryDescription.Location = new System.Drawing.Point(957, 56);
-            this.txt_inventoryDescription.MaxLength = 32767;
-            this.txt_inventoryDescription.Multiline = true;
-            this.txt_inventoryDescription.Name = "txt_inventoryDescription";
-            this.txt_inventoryDescription.ReadOnly = false;
-            this.txt_inventoryDescription.Size = new System.Drawing.Size(295, 257);
-            this.txt_inventoryDescription.TabIndex = 41;
-            this.txt_inventoryDescription.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_inventoryDescription.UseSystemPasswordChar = false;
-            // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -918,7 +901,9 @@
             // 
             this.artanPanel2.BackColor = System.Drawing.Color.White;
             this.artanPanel2.BorderRadius = 30;
+            this.artanPanel2.Controls.Add(this.label13);
             this.artanPanel2.Controls.Add(this.txt_search);
+            this.artanPanel2.Controls.Add(this.cb_filter);
             this.artanPanel2.Controls.Add(this.cb_search);
             this.artanPanel2.Controls.Add(this.artanPanel3);
             this.artanPanel2.Controls.Add(this.label7);
@@ -935,6 +920,19 @@
             this.artanPanel2.Padding = new System.Windows.Forms.Padding(10);
             this.artanPanel2.Size = new System.Drawing.Size(1265, 345);
             this.artanPanel2.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(845, 7);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 28);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "Filter : ";
             // 
             // txt_search
             // 
@@ -967,6 +965,40 @@
             this.txt_search.TextButton = "";
             this.txt_search.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             this.txt_search.Timer_RGB = 300;
+            // 
+            // cb_filter
+            // 
+            this.cb_filter.AllowDrop = true;
+            this.cb_filter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_filter.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_filter.BackColor = System.Drawing.Color.Transparent;
+            this.cb_filter.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.cb_filter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cb_filter.CausesValidation = false;
+            this.cb_filter.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.cb_filter.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.cb_filter.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.cb_filter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_filter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cb_filter.FormattingEnabled = true;
+            this.cb_filter.IsDerivedStyle = true;
+            this.cb_filter.ItemHeight = 20;
+            this.cb_filter.Items.AddRange(new object[] {
+            "All",
+            "Available",
+            "Unavailable"});
+            this.cb_filter.Location = new System.Drawing.Point(921, 7);
+            this.cb_filter.Name = "cb_filter";
+            this.cb_filter.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cb_filter.SelectedItemForeColor = System.Drawing.Color.White;
+            this.cb_filter.Size = new System.Drawing.Size(162, 26);
+            this.cb_filter.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.cb_filter.StyleManager = null;
+            this.cb_filter.TabIndex = 53;
+            this.cb_filter.ThemeAuthor = "Taiizor";
+            this.cb_filter.ThemeName = "MetroLight";
+            this.cb_filter.SelectedIndexChanged += new System.EventHandler(this.cb_filter_SelectedIndexChanged);
             // 
             // cb_search
             // 
@@ -1029,6 +1061,25 @@
             this.label7.Size = new System.Drawing.Size(127, 28);
             this.label7.TabIndex = 46;
             this.label7.Text = "All products :";
+            // 
+            // txt_inventoryDescription
+            // 
+            this.txt_inventoryDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_inventoryDescription.BackColor = System.Drawing.Color.Transparent;
+            this.txt_inventoryDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_inventoryDescription.EdgeColor = System.Drawing.Color.White;
+            this.txt_inventoryDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txt_inventoryDescription.ForeColor = System.Drawing.Color.Black;
+            this.txt_inventoryDescription.Location = new System.Drawing.Point(957, 56);
+            this.txt_inventoryDescription.MaxLength = 32767;
+            this.txt_inventoryDescription.Multiline = true;
+            this.txt_inventoryDescription.Name = "txt_inventoryDescription";
+            this.txt_inventoryDescription.ReadOnly = false;
+            this.txt_inventoryDescription.Size = new System.Drawing.Size(295, 257);
+            this.txt_inventoryDescription.TabIndex = 41;
+            this.txt_inventoryDescription.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_inventoryDescription.UseSystemPasswordChar = false;
             // 
             // InventoryForm
             // 
@@ -1107,5 +1158,7 @@
         private System.Windows.Forms.DataGridViewImageColumn col_image;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_description;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_fkcategory;
+        private System.Windows.Forms.Label label13;
+        private ReaLTaiizor.Controls.MetroComboBox cb_filter;
     }
 }

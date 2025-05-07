@@ -144,6 +144,38 @@ namespace MobileShopManagementSystem
                 cb_categoriesStatus.SelectedItem = row.Cells[2].Value.ToString();
             }
         }
+        //private void updateStatus()
+        //{
+        //    try
+        //    {
+        //        using (var db = new MobileShopManagementDataContext())
+        //        {
+        //            var allProducts = db.Products.ToList();
+        //            var allCategories = db.Categories.ToList();
+
+        //            foreach (var product in allProducts)
+        //            {
+        //                var category = allCategories.FirstOrDefault(c => c.CategoryID == product.CategoryID);
+
+        //                if (category != null && category.Status == "Inactive")
+        //                {
+        //                    product.Status = "Unavailable";
+        //                }
+        //                else
+        //                {
+        //                    // Nếu danh mục Active, kiểm tra tồn kho
+        //                    product.Status = (product.Stock <= 0) ? "Unavailable" : "Available";
+        //                }
+        //            }
+
+        //            db.SubmitChanges();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void btn_categoriesUpdate_Click(object sender, EventArgs e)
         {
@@ -169,6 +201,7 @@ namespace MobileShopManagementSystem
                     cat.CategoryName = txt_categoriesInput.TextButton.Trim().ToLower();
                     cat.Status = cb_categoriesStatus.SelectedItem.ToString().Trim();
                     db.SubmitChanges();
+                    //updateStatus();
                 }
                 LoadData();
                 MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -238,6 +271,39 @@ namespace MobileShopManagementSystem
                 else
                 {
                     MessageBox.Show("No product found", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cb_filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Category> result = new List<Category>();
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    if (cb_filter.SelectedItem.ToString() == "All")
+                    {
+                        result = db.Categories.ToList();
+                    }
+                    else
+                    {
+                        result = db.Categories.Where(x => x.Status == cb_filter.Text).ToList();
+                    }
+
+                    if (result.Count > 0)
+                    {
+                        dgv_categories.DataSource = result;
+                        dgv_categories.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching records found.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
