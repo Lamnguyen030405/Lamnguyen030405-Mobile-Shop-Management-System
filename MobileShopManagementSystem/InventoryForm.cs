@@ -90,10 +90,21 @@ namespace MobileShopManagementSystem
                         {
                             product.Status = "Unavailable";
                         }
-                        else
+                        else 
                         {
                             // Nếu danh mục Active, kiểm tra tồn kho
-                            product.Status = (product.Stock <= 0) ? "Unavailable" : "Available";
+                            if (product.Stock <= 0)
+                            {
+                                product.Status = "Unavailable";
+                            }
+                            else if (product.Stock > 0 && product.Status == "Unavailable")
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                product.Status = "Available";
+                            }
                         }
                     }
 
@@ -237,6 +248,7 @@ namespace MobileShopManagementSystem
             cb_inventoryStatus.SelectedIndex = 0;
             pictureBox1.Image = null;
             txt_inventoryProductID.TextButton = getProductID();
+            cb_filter.SelectedItem = "All";
         }
 
         private async void btn_inventoryAdd_Click(object sender, EventArgs e)
@@ -519,7 +531,7 @@ namespace MobileShopManagementSystem
                     p.Category = cb_inventoryCategory.Text.Trim();
                     p.CategoryID = cb_inventoryCategory.SelectedValue.ToString();
                     p.Stock = stock;
-                    p.Status = cb_inventoryStatus.Text.Trim();
+                    p.Status = cb_inventoryStatus.SelectedItem.ToString();
                     p.DateUpdate = DateTime.Now;
                     p.Image = imageBytes; // Lưu dưới dạng byte[]
 
@@ -680,7 +692,52 @@ namespace MobileShopManagementSystem
                         result = db.Products.Where(x => x.Status == cb_filter.SelectedItem.ToString()).ToList();
                         if (result.Count > 0)
                         {
-                            dgv_products.DataSource = result;
+                            // Tạo DataTable để hiển thị kết quả tìm kiếm
+                            DataTable dt = new DataTable();
+                            dt.Columns.Add("ProductID", typeof(string));
+                            dt.Columns.Add("ProductName", typeof(string));
+                            dt.Columns.Add("ImportPrice", typeof(double));
+                            dt.Columns.Add("SellingPrice", typeof(double));
+                            dt.Columns.Add("Discount", typeof(double));
+                            dt.Columns.Add("RealPrice", typeof(double));
+                            dt.Columns.Add("Description", typeof(string));
+                            dt.Columns.Add("CategoryID", typeof(string));
+                            dt.Columns.Add("Category", typeof(string));
+                            dt.Columns.Add("Stock", typeof(int));
+                            dt.Columns.Add("Status", typeof(string));
+                            dt.Columns.Add("DateInsert", typeof(DateTime));
+                            dt.Columns.Add("DateUpdate", typeof(DateTime));
+                            dt.Columns.Add("Image", typeof(Image));
+
+                            foreach (var product in result)
+                            {
+                                DataRow row = dt.NewRow();
+                                row["ProductID"] = product.ProductID;
+                                row["ProductName"] = product.ProductName;
+                                row["ImportPrice"] = product.ImportPrice;
+                                row["SellingPrice"] = product.SellingPrice;
+                                row["Discount"] = product.Discount;
+                                row["RealPrice"] = product.RealPrice;
+                                row["Description"] = product.Description;
+                                row["CategoryID"] = product.CategoryID;
+                                row["Category"] = product.Category;
+                                row["Stock"] = product.Stock;
+                                row["Status"] = product.Status;
+                                row["DateInsert"] = product.DateInsert ?? DateTime.Now;
+                                row["DateUpdate"] = product.DateUpdate ?? DateTime.Now;
+
+                                if (product.Image != null && product.Image.Length > 0)
+                                {
+                                    row["Image"] = ImageHelper.ByteArrayToImage(product.Image.ToArray());
+                                }
+                                else
+                                {
+                                    row["Image"] = null;
+                                }
+
+                                dt.Rows.Add(row);
+                            }
+                            dgv_products.DataSource = dt;
                             dgv_products.Refresh();
                         }
                         else

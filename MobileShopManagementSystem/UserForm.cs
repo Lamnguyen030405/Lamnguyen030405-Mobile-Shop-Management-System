@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 using MobileShopManagementSystem.Utilities;
 
 namespace MobileShopManagementSystem
@@ -102,6 +103,8 @@ namespace MobileShopManagementSystem
                     txt_name.TextButton = row.Cells["name"]?.Value?.ToString() ?? "";
                     txt_userAddress.TextButton = row.Cells["address"]?.Value?.ToString() ?? "";
                     txt_userPN.TextButton = row.Cells["phonenumber"]?.Value?.ToString() ?? "";
+                    txt_userEmail.TextButton = row.Cells["email"]?.Value?.ToString() ?? "";
+                    txt_userSalary.TextButton = row.Cells["salary"]?.Value?.ToString() ?? "";
                     cb_userGender.Text = row.Cells["gender"]?.Value?.ToString() ?? "";
                     cb_userRole.Text = row.Cells["role"]?.Value?.ToString() ?? "";
                     cb_userStatus.Text = row.Cells["status"]?.Value?.ToString() ?? "";
@@ -129,6 +132,9 @@ namespace MobileShopManagementSystem
             cb_userStatus.SelectedIndex = -1;
             dt_userBirthDate.Value = DateTime.Now;
             txt_search.TextButton = "";
+            txt_userEmail.TextButton = "";
+            txt_userSalary.TextButton = "";
+            cb_filter.SelectedItem = "All";
             txt_search.Focus();
         }
         private void btn_userDelete_Click(object sender, EventArgs e)
@@ -353,7 +359,54 @@ namespace MobileShopManagementSystem
                     }
                     if (result.Count > 0)
                     {
-                        dgv_user.DataSource = result;
+                        DataTable dt = new DataTable();
+                        dt.Columns.Add("UserId", typeof(string));
+                        dt.Columns.Add("name", typeof(string));
+                        dt.Columns.Add("birthdate", typeof(DateTime));
+                        dt.Columns.Add("datecreated", typeof(DateTime));
+                        dt.Columns.Add("address", typeof(string));
+                        dt.Columns.Add("phonenumber", typeof(string));
+                        dt.Columns.Add("gender", typeof(string));
+                        dt.Columns.Add("role", typeof(string));
+                        dt.Columns.Add("status", typeof(string));
+                        dt.Columns.Add("image", typeof(Image)); // Cột để lưu hình ảnh
+                        dt.Columns.Add("username", typeof(string));
+                        dt.Columns.Add("password", typeof(string));
+                        dt.Columns.Add("salary", typeof(string));
+                        dt.Columns.Add("email", typeof(string));
+
+                        foreach (var user in result)
+                        {
+                            DataRow row = dt.NewRow();
+                            row["UserId"] = user.UserID;
+                            row["name"] = user.Name;
+                            row["birthdate"] = user.BirthDate ?? DateTime.Now;
+                            row["datecreated"] = user.DateCreated ?? DateTime.Now;
+                            row["address"] = user.Address;
+                            row["phonenumber"] = user.PhoneNumber;
+                            row["gender"] = user.Gender;
+                            row["role"] = user.Role;
+                            row["status"] = user.Status;
+                            row["username"] = user.Username;
+                            row["password"] = user.Password;
+                            row["salary"] = user.Salary;
+                            row["email"] = user.Email;
+
+                            // Chuyển đổi byte[] thành Image
+                            if (user.Image != null && user.Image.Length > 0)
+                            {
+                                row["image"] = ImageHelper.ByteArrayToImage(user.Image.ToArray());
+                            }
+                            else
+                            {
+                                row["image"] = null; // Hoặc một hình ảnh mặc định
+                            }
+
+                            dt.Rows.Add(row);
+                        }
+
+                        // Gán DataTable vào DataGridView
+                        dgv_user.DataSource = dt;
                         dgv_user.Refresh();
                     }
                     else

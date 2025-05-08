@@ -149,12 +149,16 @@ namespace MobileShopManagementSystem
             cb_search.SelectedIndex = 0;
             txt_search.TextButton = "";
             txt_paymentHistory.Text = "";
+            lbl_lateFee.Text = "$0";
+            lbl_outstandingAmount.Text = "$0";
+            cb_filter.SelectedItem = "All";
         }
 
         public void refreshData()
         {
             LoadData();
             ClearData();
+
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -378,7 +382,7 @@ namespace MobileShopManagementSystem
                     }
                     else if (cb_filter.SelectedItem.ToString() == "Over Due")
                     {
-                        result = db.vw_BillDetails.Where(x => x.DueDate != null && x.DueDate < DateTime.Now).ToList();
+                        result = db.vw_BillDetails.Where(x => x.DueDate != null && x.DueDate < DateTime.Now && x.Status != "Complete").ToList();
                     }
                     else
                     {
