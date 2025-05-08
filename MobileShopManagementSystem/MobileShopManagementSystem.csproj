@@ -392,5 +392,10 @@
   <ItemGroup>
     <None Include="Resources\Settings.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="script.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

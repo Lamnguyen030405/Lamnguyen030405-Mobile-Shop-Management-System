@@ -1,0 +1,187 @@
+﻿IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'mobilesystem')
+BEGIN
+    CREATE DATABASE mobilesystem;
+END;
+GO
+
+USE mobilesystem;
+GO
+
+-- Users
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Users' AND xtype='U')
+BEGIN
+    CREATE TABLE Users
+    (
+        UserID VARCHAR(20) PRIMARY KEY,
+        Username VARCHAR(MAX) NULL,
+        Password VARCHAR(MAX) NULL,
+        Role VARCHAR(MAX) NULL,
+        Name NVARCHAR(MAX) NULL,
+        Gender VARCHAR(20) NULL,
+        BirthDate DATE NULL,
+        Address NVARCHAR(MAX) NULL,
+        PhoneNumber VARCHAR(20) NULL,
+        Salary FLOAT NULL,
+        Email VARCHAR(MAX) NULL,
+        Image IMAGE NULL,
+        Status VARCHAR(MAX) NULL,
+        DateCreated DATE NULL
+    );
+END;
+GO
+
+-- Categories
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Categories' AND xtype='U')
+BEGIN
+    CREATE TABLE Categories
+    (
+        CategoryID VARCHAR(20) PRIMARY KEY,
+        CategoryName VARCHAR(MAX) NULL,
+        Status VARCHAR(MAX) NULL,
+        DateInsert DATE NULL
+    );
+END;
+GO
+
+-- Products
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Products' AND xtype='U')
+BEGIN
+    CREATE TABLE Products
+    (
+        ProductID VARCHAR(20) PRIMARY KEY, 
+        ProductName VARCHAR(MAX) NULL,
+        CategoryID VARCHAR(20) NULL,
+        Category VARCHAR(MAX) NULL,
+        Stock INT NULL,
+        ImportPrice FLOAT,
+        SellingPrice FLOAT,
+        Discount FLOAT,
+        RealPrice FLOAT,
+        Description VARCHAR(MAX),
+        Status VARCHAR(MAX) NULL,
+        Image IMAGE NULL,
+        DateInsert DATE NULL,
+        DateUpdate DATE NULL,
+        CONSTRAINT FK_Products_Categories FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+    );
+END;
+GO
+
+-- Orders
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Orders' AND xtype='U')
+BEGIN
+    CREATE TABLE Orders
+    (
+        OrderID VARCHAR(20) PRIMARY KEY,
+        DownPaymentAmount FLOAT NULL,
+        RemainingAmount FLOAT NULL,
+        SelectedTerm VARCHAR(MAX) NULL,
+        InterestRate FLOAT NULL,
+        PenaltyRate FLOAT NULL,
+        DueDate DATE NULL,
+        DateOrder DATE NULL,
+        TotalQuantity INT NULL,
+        TotalPrice FLOAT NULL
+    );
+END;
+GO
+
+-- Customers
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Customers' AND xtype='U')
+BEGIN
+    CREATE TABLE Customers
+    (
+        CustomerID VARCHAR(20) PRIMARY KEY,
+        CustomerName NVARCHAR(MAX) NULL,
+        Address NVARCHAR(MAX) NULL,
+        PhoneNumber VARCHAR(20) NULL
+    );
+END;
+GO
+
+-- Carts
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Carts' AND xtype='U')
+BEGIN
+    CREATE TABLE Carts
+    (
+        ID INT IDENTITY(1,1) PRIMARY KEY,
+        Quantity INT NULL,
+        ProductName VARCHAR(MAX) NULL,
+        Price FLOAT NULL,
+        OrderID VARCHAR(20) NULL,
+        ProductID VARCHAR(20),
+        CONSTRAINT FK_Carts_Orders FOREIGN KEY (OrderID) REFERENCES Orders(OrderID) ON DELETE CASCADE,
+        CONSTRAINT FK_Carts_Products FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+    );
+END;
+GO
+
+-- Bills
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Bills' AND xtype='U')
+BEGIN
+    CREATE TABLE Bills
+    (
+        BillID VARCHAR(20) PRIMARY KEY,
+        OrderID VARCHAR(20) NULL,
+        UserID VARCHAR(20) NULL,
+        CustomerID VARCHAR(20) NULL,
+        Status VARCHAR(MAX) NULL,
+        LateFee FLOAT NULL,
+        PaymentHistory VARCHAR(MAX) NULL,
+        OutstandingAmount FLOAT NULL,
+        CONSTRAINT FK_Bills_Users FOREIGN KEY (UserID) REFERENCES Users(UserID),
+        CONSTRAINT FK_Bills_Customers FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
+        CONSTRAINT FK_Bills_Orders FOREIGN KEY (OrderID) REFERENCES Orders(OrderID) ON DELETE CASCADE
+    );
+END;
+GO
+
+-- View
+IF NOT EXISTS (SELECT * FROM sys.views WHERE name = 'vw_BillDetails')
+BEGIN
+    EXEC('
+        CREATE VIEW vw_BillDetails AS
+        SELECT
+            b.BillID,
+            b.UserID,
+            u.Name AS UserName,
+            b.CustomerID AS CustomerID,
+            c.CustomerName,
+            b.OrderID,
+            o.TotalQuantity,
+            o.TotalPrice,
+            o.DownPaymentAmount,
+            o.RemainingAmount,
+            o.SelectedTerm,
+            o.InterestRate,
+            o.PenaltyRate,
+            b.OutstandingAmount,
+            b.PaymentHistory,
+            b.LateFee,
+            o.DueDate,
+            o.DateOrder,
+            b.Status
+        FROM Bills b
+        LEFT JOIN Users u ON b.UserID = u.UserID
+        LEFT JOIN Customers c ON b.CustomerID = c.CustomerID
+        LEFT JOIN Orders o ON b.OrderID = o.OrderID;
+    ')
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT 1 FROM Users WHERE UserID = 'UID1'
+)
+BEGIN
+    INSERT INTO Users (
+        UserID, Username, Password, Role, Name, Gender,
+        BirthDate, Address, PhoneNumber, Salary, Email,
+        Image, Status, DateCreated
+    )
+    VALUES (
+        'UID1', 'admin', 'admin123', 'Admin', N'Nguyễn Văn A', 'Male',
+        '1990-01-01', N'Hà Nội', '0912345678', 600, 'admin@example.com',
+        NULL, 'Active', '2025-05-02'
+    );
+END;
+GO
