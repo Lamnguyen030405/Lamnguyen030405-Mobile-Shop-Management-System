@@ -109,17 +109,18 @@ namespace MobileShopManagementSystem
         {
             using (var db = new MobileShopManagementDataContext())
             {
-                var lastProductID = db.Products
-                    .OrderByDescending(p => p.ProductID)
+                var allIDs = db.Products
                     .Select(p => p.ProductID)
-                    .FirstOrDefault();
-                if (lastProductID == null)
-                {
-                    return "PID0";
-                }
-                int numberPart = int.Parse(lastProductID.Substring(3));
-                numberPart++;
-                return $"PID{numberPart}";
+                    .ToList();
+
+                var maxNumber = allIDs
+                    .Select(id => id.Substring(3)) // bỏ tiền tố "PID"
+                    .Where(s => int.TryParse(s, out var num))
+                    .Select(s => int.Parse(s))
+                    .DefaultIfEmpty(0)
+                    .Max();
+
+                return $"PID{maxNumber + 1}";
             }
         }
 
@@ -197,6 +198,7 @@ namespace MobileShopManagementSystem
             cb_search.SelectedIndex = 0;
             cb_inventoryStatus.SelectedIndex = 0;
             cb_inventoryCategory.SelectedIndex = -1;
+            cb_filter.SelectedItem = "All";
             displayCategories();
         }
 
@@ -671,22 +673,22 @@ namespace MobileShopManagementSystem
                 {
                     if (cb_filter.SelectedItem.ToString() == "All")
                     {
-                        result = db.Products.ToList();
+                        refreshData();
                     }
                     else
                     {
                         result = db.Products.Where(x => x.Status == cb_filter.SelectedItem.ToString()).ToList();
+                        if (result.Count > 0)
+                        {
+                            dgv_products.DataSource = result;
+                            dgv_products.Refresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No matching records found.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
 
-                    if (result.Count > 0)
-                    {
-                        dgv_products.DataSource = result;
-                        dgv_products.Refresh();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No matching records found.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
             }
             catch (Exception ex)

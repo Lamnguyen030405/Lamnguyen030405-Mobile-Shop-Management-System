@@ -72,6 +72,7 @@ namespace MobileShopManagementSystem
         {
             LoadData();
             cb_search.SelectedIndex = 0;
+            cb_filter.SelectedItem = "All";
         }
 
         private void dgv_bill_CellClick(object sender, DataGridViewCellEventArgs e)

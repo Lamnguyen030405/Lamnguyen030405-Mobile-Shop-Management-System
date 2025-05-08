@@ -41,40 +41,40 @@ namespace MobileShopManagementSystem
         {
             using (var db = new MobileShopManagementDataContext())
             {
-                var lastCartID = db.Customers
-                    .OrderByDescending(c => c.CustomerID)
+                var allIDs = db.Customers
                     .Select(c => c.CustomerID)
-                    .FirstOrDefault();
+                    .ToList();
 
-                if (lastCartID == null)
-                {
-                    return "CID0";
-                }
+                var maxNumber = allIDs
+                    .Select(id => id.Substring(4)) // bỏ tiền tố "CUID"
+                    .Where(s => int.TryParse(s, out var num))
+                    .Select(s => int.Parse(s))
+                    .DefaultIfEmpty(0)
+                    .Max();
 
-                int numberPart = int.Parse(lastCartID.Substring(3));
-
-                numberPart++;
-
-                return $"CID{numberPart}";
+                return $"CUID{maxNumber + 1}";
             }
         }
+
         public static string getBillID()
         {
             using (var db = new MobileShopManagementDataContext())
             {
-                var lastBillID = db.Bills
-                    .OrderByDescending(b => b.BillID)
+                var allIDs = db.Bills
                     .Select(b => b.BillID)
-                    .FirstOrDefault();
-                if (lastBillID == null)
-                {
-                    return "BID0";
-                }
-                int numberPart = int.Parse(lastBillID.Substring(3));
-                numberPart++;
-                return $"BID{numberPart}";
+                    .ToList();
+
+                var maxNumber = allIDs
+                    .Select(id => id.Substring(3)) // bỏ tiền tố "BID"
+                    .Where(s => int.TryParse(s, out var num))
+                    .Select(s => int.Parse(s))
+                    .DefaultIfEmpty(0)
+                    .Max();
+
+                return $"BID{maxNumber + 1}";
             }
         }
+
         private void btn_accept_Click(object sender, EventArgs e)
         {
             try

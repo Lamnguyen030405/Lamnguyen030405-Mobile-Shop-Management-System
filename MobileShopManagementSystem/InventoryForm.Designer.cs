@@ -34,21 +34,6 @@
             this.btn_search = new ReaLTaiizor.Controls.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dgv_products = new System.Windows.Forms.DataGridView();
-            this.col_productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_categoryid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_importprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_sellingprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_realprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_dateinsert = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_dateupdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.col_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_fkcategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -84,6 +69,21 @@
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_inventoryDescription = new MobileShopManagementSystem.ExtendedDungeonTextBox();
+            this.col_productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_categoryid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_importprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_sellingprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_realprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_dateinsert = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_dateupdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_fkcategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_image = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -180,9 +180,9 @@
             this.col_status,
             this.col_dateinsert,
             this.col_dateupdate,
-            this.col_image,
             this.col_description,
-            this.col_fkcategory});
+            this.col_fkcategory,
+            this.col_image});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -199,148 +199,9 @@
             this.dgv_products.RowHeadersVisible = false;
             this.dgv_products.RowHeadersWidth = 51;
             this.dgv_products.RowTemplate.Height = 24;
-            this.dgv_products.Size = new System.Drawing.Size(1239, 233);
+            this.dgv_products.Size = new System.Drawing.Size(1239, 220);
             this.dgv_products.TabIndex = 3;
             this.dgv_products.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_products_CellClick);
-            // 
-            // col_productid
-            // 
-            this.col_productid.DataPropertyName = "ProductID";
-            this.col_productid.HeaderText = "ID";
-            this.col_productid.MinimumWidth = 6;
-            this.col_productid.Name = "col_productid";
-            this.col_productid.ReadOnly = true;
-            this.col_productid.Width = 61;
-            // 
-            // col_name
-            // 
-            this.col_name.DataPropertyName = "ProductName";
-            this.col_name.HeaderText = "Name";
-            this.col_name.MinimumWidth = 6;
-            this.col_name.Name = "col_name";
-            this.col_name.ReadOnly = true;
-            this.col_name.Width = 96;
-            // 
-            // col_categoryid
-            // 
-            this.col_categoryid.DataPropertyName = "CategoryID";
-            this.col_categoryid.HeaderText = "Category ID";
-            this.col_categoryid.MinimumWidth = 6;
-            this.col_categoryid.Name = "col_categoryid";
-            this.col_categoryid.ReadOnly = true;
-            this.col_categoryid.Width = 153;
-            // 
-            // col_category
-            // 
-            this.col_category.DataPropertyName = "Category";
-            this.col_category.HeaderText = "Category";
-            this.col_category.MinimumWidth = 6;
-            this.col_category.Name = "col_category";
-            this.col_category.ReadOnly = true;
-            this.col_category.Width = 126;
-            // 
-            // col_stock
-            // 
-            this.col_stock.DataPropertyName = "Stock";
-            this.col_stock.HeaderText = "Stock";
-            this.col_stock.MinimumWidth = 6;
-            this.col_stock.Name = "col_stock";
-            this.col_stock.ReadOnly = true;
-            this.col_stock.Width = 92;
-            // 
-            // col_importprice
-            // 
-            this.col_importprice.DataPropertyName = "ImportPrice";
-            this.col_importprice.HeaderText = "Import Price";
-            this.col_importprice.MinimumWidth = 6;
-            this.col_importprice.Name = "col_importprice";
-            this.col_importprice.ReadOnly = true;
-            this.col_importprice.Width = 158;
-            // 
-            // col_sellingprice
-            // 
-            this.col_sellingprice.DataPropertyName = "SellingPrice";
-            this.col_sellingprice.HeaderText = "Selling Price";
-            this.col_sellingprice.MinimumWidth = 6;
-            this.col_sellingprice.Name = "col_sellingprice";
-            this.col_sellingprice.ReadOnly = true;
-            this.col_sellingprice.Width = 157;
-            // 
-            // col_discount
-            // 
-            this.col_discount.DataPropertyName = "Discount";
-            this.col_discount.HeaderText = "Discount";
-            this.col_discount.MinimumWidth = 6;
-            this.col_discount.Name = "col_discount";
-            this.col_discount.ReadOnly = true;
-            this.col_discount.Width = 124;
-            // 
-            // col_realprice
-            // 
-            this.col_realprice.DataPropertyName = "RealPrice";
-            this.col_realprice.HeaderText = "Real Price";
-            this.col_realprice.MinimumWidth = 6;
-            this.col_realprice.Name = "col_realprice";
-            this.col_realprice.ReadOnly = true;
-            this.col_realprice.Width = 134;
-            // 
-            // col_status
-            // 
-            this.col_status.DataPropertyName = "Status";
-            this.col_status.HeaderText = "Status";
-            this.col_status.MinimumWidth = 6;
-            this.col_status.Name = "col_status";
-            this.col_status.ReadOnly = true;
-            this.col_status.Width = 99;
-            // 
-            // col_dateinsert
-            // 
-            this.col_dateinsert.DataPropertyName = "DateInsert";
-            this.col_dateinsert.HeaderText = "Date Insert";
-            this.col_dateinsert.MinimumWidth = 6;
-            this.col_dateinsert.Name = "col_dateinsert";
-            this.col_dateinsert.ReadOnly = true;
-            this.col_dateinsert.Width = 146;
-            // 
-            // col_dateupdate
-            // 
-            this.col_dateupdate.DataPropertyName = "DateUpdate";
-            this.col_dateupdate.HeaderText = "Date Update";
-            this.col_dateupdate.MinimumWidth = 6;
-            this.col_dateupdate.Name = "col_dateupdate";
-            this.col_dateupdate.ReadOnly = true;
-            this.col_dateupdate.Width = 159;
-            // 
-            // col_image
-            // 
-            this.col_image.DataPropertyName = "Image";
-            this.col_image.HeaderText = "Image";
-            this.col_image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.col_image.MinimumWidth = 6;
-            this.col_image.Name = "col_image";
-            this.col_image.ReadOnly = true;
-            this.col_image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col_image.Width = 98;
-            // 
-            // col_description
-            // 
-            this.col_description.DataPropertyName = "Description";
-            this.col_description.HeaderText = "Description";
-            this.col_description.MinimumWidth = 6;
-            this.col_description.Name = "col_description";
-            this.col_description.ReadOnly = true;
-            this.col_description.Width = 149;
-            // 
-            // col_fkcategory
-            // 
-            this.col_fkcategory.DataPropertyName = "Category1";
-            this.col_fkcategory.HeaderText = "ForeignKey";
-            this.col_fkcategory.MinimumWidth = 6;
-            this.col_fkcategory.Name = "col_fkcategory";
-            this.col_fkcategory.ReadOnly = true;
-            this.col_fkcategory.Visible = false;
-            this.col_fkcategory.Width = 146;
             // 
             // label6
             // 
@@ -1045,9 +906,9 @@
             this.artanPanel3.GradientAngle = 90F;
             this.artanPanel3.GradientBottomColor = System.Drawing.Color.White;
             this.artanPanel3.GradientTopColor = System.Drawing.Color.White;
-            this.artanPanel3.Location = new System.Drawing.Point(13, 41);
+            this.artanPanel3.Location = new System.Drawing.Point(13, 54);
             this.artanPanel3.Name = "artanPanel3";
-            this.artanPanel3.Size = new System.Drawing.Size(1239, 233);
+            this.artanPanel3.Size = new System.Drawing.Size(1239, 220);
             this.artanPanel3.TabIndex = 7;
             // 
             // label7
@@ -1080,6 +941,145 @@
             this.txt_inventoryDescription.TabIndex = 41;
             this.txt_inventoryDescription.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_inventoryDescription.UseSystemPasswordChar = false;
+            // 
+            // col_productid
+            // 
+            this.col_productid.DataPropertyName = "ProductID";
+            this.col_productid.HeaderText = "ID";
+            this.col_productid.MinimumWidth = 6;
+            this.col_productid.Name = "col_productid";
+            this.col_productid.ReadOnly = true;
+            this.col_productid.Width = 61;
+            // 
+            // col_name
+            // 
+            this.col_name.DataPropertyName = "ProductName";
+            this.col_name.HeaderText = "Name";
+            this.col_name.MinimumWidth = 6;
+            this.col_name.Name = "col_name";
+            this.col_name.ReadOnly = true;
+            this.col_name.Width = 96;
+            // 
+            // col_categoryid
+            // 
+            this.col_categoryid.DataPropertyName = "CategoryID";
+            this.col_categoryid.HeaderText = "Category ID";
+            this.col_categoryid.MinimumWidth = 6;
+            this.col_categoryid.Name = "col_categoryid";
+            this.col_categoryid.ReadOnly = true;
+            this.col_categoryid.Width = 153;
+            // 
+            // col_category
+            // 
+            this.col_category.DataPropertyName = "Category";
+            this.col_category.HeaderText = "Category";
+            this.col_category.MinimumWidth = 6;
+            this.col_category.Name = "col_category";
+            this.col_category.ReadOnly = true;
+            this.col_category.Width = 126;
+            // 
+            // col_stock
+            // 
+            this.col_stock.DataPropertyName = "Stock";
+            this.col_stock.HeaderText = "Stock";
+            this.col_stock.MinimumWidth = 6;
+            this.col_stock.Name = "col_stock";
+            this.col_stock.ReadOnly = true;
+            this.col_stock.Width = 92;
+            // 
+            // col_importprice
+            // 
+            this.col_importprice.DataPropertyName = "ImportPrice";
+            this.col_importprice.HeaderText = "Import Price";
+            this.col_importprice.MinimumWidth = 6;
+            this.col_importprice.Name = "col_importprice";
+            this.col_importprice.ReadOnly = true;
+            this.col_importprice.Width = 158;
+            // 
+            // col_sellingprice
+            // 
+            this.col_sellingprice.DataPropertyName = "SellingPrice";
+            this.col_sellingprice.HeaderText = "Selling Price";
+            this.col_sellingprice.MinimumWidth = 6;
+            this.col_sellingprice.Name = "col_sellingprice";
+            this.col_sellingprice.ReadOnly = true;
+            this.col_sellingprice.Width = 157;
+            // 
+            // col_discount
+            // 
+            this.col_discount.DataPropertyName = "Discount";
+            this.col_discount.HeaderText = "Discount";
+            this.col_discount.MinimumWidth = 6;
+            this.col_discount.Name = "col_discount";
+            this.col_discount.ReadOnly = true;
+            this.col_discount.Width = 124;
+            // 
+            // col_realprice
+            // 
+            this.col_realprice.DataPropertyName = "RealPrice";
+            this.col_realprice.HeaderText = "Real Price";
+            this.col_realprice.MinimumWidth = 6;
+            this.col_realprice.Name = "col_realprice";
+            this.col_realprice.ReadOnly = true;
+            this.col_realprice.Width = 134;
+            // 
+            // col_status
+            // 
+            this.col_status.DataPropertyName = "Status";
+            this.col_status.HeaderText = "Status";
+            this.col_status.MinimumWidth = 6;
+            this.col_status.Name = "col_status";
+            this.col_status.ReadOnly = true;
+            this.col_status.Width = 99;
+            // 
+            // col_dateinsert
+            // 
+            this.col_dateinsert.DataPropertyName = "DateInsert";
+            this.col_dateinsert.HeaderText = "Date Insert";
+            this.col_dateinsert.MinimumWidth = 6;
+            this.col_dateinsert.Name = "col_dateinsert";
+            this.col_dateinsert.ReadOnly = true;
+            this.col_dateinsert.Width = 146;
+            // 
+            // col_dateupdate
+            // 
+            this.col_dateupdate.DataPropertyName = "DateUpdate";
+            this.col_dateupdate.HeaderText = "Date Update";
+            this.col_dateupdate.MinimumWidth = 6;
+            this.col_dateupdate.Name = "col_dateupdate";
+            this.col_dateupdate.ReadOnly = true;
+            this.col_dateupdate.Width = 159;
+            // 
+            // col_description
+            // 
+            this.col_description.DataPropertyName = "Description";
+            this.col_description.HeaderText = "Description";
+            this.col_description.MinimumWidth = 6;
+            this.col_description.Name = "col_description";
+            this.col_description.ReadOnly = true;
+            this.col_description.Width = 149;
+            // 
+            // col_fkcategory
+            // 
+            this.col_fkcategory.DataPropertyName = "Category1";
+            this.col_fkcategory.HeaderText = "ForeignKey";
+            this.col_fkcategory.MinimumWidth = 6;
+            this.col_fkcategory.Name = "col_fkcategory";
+            this.col_fkcategory.ReadOnly = true;
+            this.col_fkcategory.Visible = false;
+            this.col_fkcategory.Width = 146;
+            // 
+            // col_image
+            // 
+            this.col_image.DataPropertyName = "Image";
+            this.col_image.HeaderText = "Image";
+            this.col_image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.col_image.MinimumWidth = 6;
+            this.col_image.Name = "col_image";
+            this.col_image.ReadOnly = true;
+            this.col_image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_image.Width = 98;
             // 
             // InventoryForm
             // 
@@ -1143,6 +1143,8 @@
         private System.Windows.Forms.Label label2;
         private ReaLTaiizor.Controls.CyberTextBox txt_inventoryDiscount;
         private System.Windows.Forms.CheckBox c_Discount;
+        private System.Windows.Forms.Label label13;
+        private ReaLTaiizor.Controls.MetroComboBox cb_filter;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_productid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_categoryid;
@@ -1155,10 +1157,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_status;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_dateinsert;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_dateupdate;
-        private System.Windows.Forms.DataGridViewImageColumn col_image;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_description;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_fkcategory;
-        private System.Windows.Forms.Label label13;
-        private ReaLTaiizor.Controls.MetroComboBox cb_filter;
+        private System.Windows.Forms.DataGridViewImageColumn col_image;
     }
 }

@@ -29,19 +29,22 @@ namespace MobileShopManagementSystem
         {
             using (var db = new MobileShopManagementDataContext())
             {
-                var lastUserID = db.Users
-                    .OrderByDescending(u => u.UserID)
+                var allIDs = db.Users
                     .Select(u => u.UserID)
-                    .FirstOrDefault();
-                if (lastUserID == null)
-                {
-                    return "UID0";
-                }
-                int numberPart = int.Parse(lastUserID.Substring(3));
-                numberPart++;
-                return $"UID{numberPart}";
+                    .ToList();
+
+                var maxNumber = allIDs
+                    .Select(id => id.Substring(3)) // bỏ tiền tố "UID"
+                    .Where(s => int.TryParse(s, out var num))
+                    .Select(s => int.Parse(s))
+                    .DefaultIfEmpty(0)
+                    .Max();
+
+                return $"UID{maxNumber + 1}";
             }
         }
+
+
 
         private void btn_register_Click(object sender, EventArgs e)
         {

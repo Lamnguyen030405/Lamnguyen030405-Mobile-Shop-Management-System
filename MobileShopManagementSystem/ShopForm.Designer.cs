@@ -31,8 +31,8 @@ namespace MobileShopManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -97,7 +97,7 @@ namespace MobileShopManagementSystem
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 441);
+            this.label2.Location = new System.Drawing.Point(13, 449);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 28);
             this.label2.TabIndex = 1;
@@ -109,7 +109,7 @@ namespace MobileShopManagementSystem
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(13, 566);
+            this.label3.Location = new System.Drawing.Point(13, 574);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 28);
             this.label3.TabIndex = 2;
@@ -121,7 +121,7 @@ namespace MobileShopManagementSystem
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(13, 520);
+            this.label4.Location = new System.Drawing.Point(13, 528);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(193, 28);
             this.label4.TabIndex = 3;
@@ -133,7 +133,7 @@ namespace MobileShopManagementSystem
             this.total_price.BackColor = System.Drawing.Color.Transparent;
             this.total_price.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.total_price.ForeColor = System.Drawing.Color.White;
-            this.total_price.Location = new System.Drawing.Point(110, 441);
+            this.total_price.Location = new System.Drawing.Point(110, 449);
             this.total_price.Name = "total_price";
             this.total_price.Size = new System.Drawing.Size(49, 28);
             this.total_price.TabIndex = 5;
@@ -363,7 +363,7 @@ namespace MobileShopManagementSystem
             this.total_quantity.BackColor = System.Drawing.Color.Transparent;
             this.total_quantity.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.total_quantity.ForeColor = System.Drawing.Color.White;
-            this.total_quantity.Location = new System.Drawing.Point(349, 441);
+            this.total_quantity.Location = new System.Drawing.Point(349, 449);
             this.total_quantity.Name = "total_quantity";
             this.total_quantity.Size = new System.Drawing.Size(75, 28);
             this.total_quantity.TabIndex = 34;
@@ -375,7 +375,7 @@ namespace MobileShopManagementSystem
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(246, 441);
+            this.label7.Location = new System.Drawing.Point(246, 449);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 28);
             this.label7.TabIndex = 33;
@@ -404,7 +404,7 @@ namespace MobileShopManagementSystem
             "60 days",
             "90 days",
             "120 days"});
-            this.cb_shopTerm.Location = new System.Drawing.Point(174, 621);
+            this.cb_shopTerm.Location = new System.Drawing.Point(174, 629);
             this.cb_shopTerm.Name = "cb_shopTerm";
             this.cb_shopTerm.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cb_shopTerm.SelectedItemForeColor = System.Drawing.Color.White;
@@ -421,7 +421,7 @@ namespace MobileShopManagementSystem
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(13, 619);
+            this.label5.Location = new System.Drawing.Point(13, 627);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 28);
             this.label5.TabIndex = 15;
@@ -453,12 +453,12 @@ namespace MobileShopManagementSystem
             this.c_partialPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.c_partialPayment.LinearGradient_Background = false;
             this.c_partialPayment.LinearGradientPen = false;
-            this.c_partialPayment.Location = new System.Drawing.Point(10, 472);
+            this.c_partialPayment.Location = new System.Drawing.Point(10, 480);
             this.c_partialPayment.Name = "c_partialPayment";
             this.c_partialPayment.RGB = false;
             this.c_partialPayment.Rounding = true;
             this.c_partialPayment.RoundingInt = 100;
-            this.c_partialPayment.Size = new System.Drawing.Size(275, 45);
+            this.c_partialPayment.Size = new System.Drawing.Size(199, 45);
             this.c_partialPayment.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.c_partialPayment.TabIndex = 14;
             this.c_partialPayment.Tag = "Cyber";
@@ -481,7 +481,7 @@ namespace MobileShopManagementSystem
             this.btn_refresh.Image = null;
             this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_refresh.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_refresh.Location = new System.Drawing.Point(320, 678);
+            this.btn_refresh.Location = new System.Drawing.Point(320, 686);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.PressedBorderColor = System.Drawing.Color.White;
             this.btn_refresh.PressedColor = System.Drawing.Color.White;
@@ -499,7 +499,7 @@ namespace MobileShopManagementSystem
             this.txt_downPaymentAmount.Enabled = false;
             this.txt_downPaymentAmount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_downPaymentAmount.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_downPaymentAmount.Location = new System.Drawing.Point(174, 566);
+            this.txt_downPaymentAmount.Location = new System.Drawing.Point(174, 574);
             this.txt_downPaymentAmount.MaxLength = 32767;
             this.txt_downPaymentAmount.Multiline = false;
             this.txt_downPaymentAmount.Name = "txt_downPaymentAmount";
@@ -524,7 +524,7 @@ namespace MobileShopManagementSystem
             this.btn_delete.Image = null;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_delete.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_delete.Location = new System.Drawing.Point(212, 678);
+            this.btn_delete.Location = new System.Drawing.Point(212, 686);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.PressedBorderColor = System.Drawing.Color.White;
             this.btn_delete.PressedColor = System.Drawing.Color.White;
@@ -547,7 +547,7 @@ namespace MobileShopManagementSystem
             this.btn_placeOrder.Image = null;
             this.btn_placeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_placeOrder.InactiveColor = System.Drawing.Color.RoyalBlue;
-            this.btn_placeOrder.Location = new System.Drawing.Point(84, 678);
+            this.btn_placeOrder.Location = new System.Drawing.Point(84, 686);
             this.btn_placeOrder.Name = "btn_placeOrder";
             this.btn_placeOrder.PressedBorderColor = System.Drawing.Color.White;
             this.btn_placeOrder.PressedColor = System.Drawing.Color.White;
@@ -580,14 +580,14 @@ namespace MobileShopManagementSystem
             this.dgv_product.BackgroundColor = System.Drawing.Color.White;
             this.dgv_product.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_product.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_product.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -595,14 +595,14 @@ namespace MobileShopManagementSystem
             this.productname,
             this.quantity,
             this.price});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_product.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_product.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_product.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_product.EnableHeadersVisualStyles = false;
             this.dgv_product.GridColor = System.Drawing.Color.Silver;
@@ -658,7 +658,7 @@ namespace MobileShopManagementSystem
             this.lbl_remainingAmount.BackColor = System.Drawing.Color.Transparent;
             this.lbl_remainingAmount.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lbl_remainingAmount.ForeColor = System.Drawing.Color.White;
-            this.lbl_remainingAmount.Location = new System.Drawing.Point(236, 520);
+            this.lbl_remainingAmount.Location = new System.Drawing.Point(236, 528);
             this.lbl_remainingAmount.Name = "lbl_remainingAmount";
             this.lbl_remainingAmount.Size = new System.Drawing.Size(49, 28);
             this.lbl_remainingAmount.TabIndex = 6;
@@ -699,6 +699,8 @@ namespace MobileShopManagementSystem
             this.cb_shopCategory.FormattingEnabled = true;
             this.cb_shopCategory.IsDerivedStyle = true;
             this.cb_shopCategory.ItemHeight = 20;
+            this.cb_shopCategory.Items.AddRange(new object[] {
+            "All"});
             this.cb_shopCategory.Location = new System.Drawing.Point(13, 37);
             this.cb_shopCategory.Name = "cb_shopCategory";
             this.cb_shopCategory.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));

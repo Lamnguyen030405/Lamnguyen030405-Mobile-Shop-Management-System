@@ -24,19 +24,18 @@ namespace MobileShopManagementSystem
         {
             using (var db = new MobileShopManagementDataContext())
             {
-                var lastOrderID = db.Orders
-                    .OrderByDescending(c => c.OrderID)
-                    .Select(c => c.OrderID)
-                    .FirstOrDefault();
+                var allIDs = db.Orders
+                    .Select(o => o.OrderID)
+                    .ToList(); // thực hiện truy vấn trước
 
-                if (lastOrderID == null)
-                {
-                    return "OID0";
-                }
+                var maxNumber = allIDs
+                    .Select(id => id.Substring(3))              // bỏ tiền tố "OID"
+                    .Where(s => int.TryParse(s, out var num))   // lọc ID có phần số hợp lệ
+                    .Select(s => int.Parse(s))                  // chuyển về số
+                    .DefaultIfEmpty(0)
+                    .Max();                                     // tìm số lớn nhất
 
-                int numberPart = int.Parse(lastOrderID.Substring(3));
-                numberPart++;
-                return $"OID{numberPart}";
+                return $"OID{maxNumber + 1}";
             }
         }
 
@@ -162,6 +161,7 @@ namespace MobileShopManagementSystem
                         {
                             cb_shopCategory.Items.Add(c.CategoryName);
                         }
+                        cb_shopCategory.Items.Add("All");
                     }
                     else
                     {
@@ -180,6 +180,7 @@ namespace MobileShopManagementSystem
         {
             LoadProducts();
             displayCategories();
+            cb_shopCategory.SelectedItem = "All";
         }
 
         bool check = false;
@@ -315,11 +316,12 @@ namespace MobileShopManagementSystem
             total_quantity.Text = "0 items";
             cb_shopTerm.SelectedIndex = -1;
             txt_description.Text = "";
+            cb_shopCategory.SelectedItem = "All";
         }
 
         public void refreshData()
         {
-            LoadProducts();
+            //LoadProducts();
             displayCategories();
             clearData();
             count = 1;
@@ -328,6 +330,7 @@ namespace MobileShopManagementSystem
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             refreshData();
+            LoadProducts();
         }
 
         private void btn_categoryRefresh_Click(object sender, EventArgs e)
@@ -336,14 +339,34 @@ namespace MobileShopManagementSystem
             {
                 using (var db = new MobileShopManagementDataContext())
                 {
-                    List<Product> products = db.Products.Where(p => p.Stock > 0 && p.Status == "Available" && p.Category == cb_shopCategory.SelectedItem.ToString()).ToList();
-                    flowLayoutPanel1.Controls.Clear();
-                    foreach (var product in products)
+                    if (cb_shopCategory.SelectedIndex == -1)
                     {
-                        Image productImage = product.Image != null && product.Image.Length > 0
-                            ? ImageHelper.ByteArrayToImage(product.Image.ToArray())
-                            : null;
-                        cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), productImage, product.ProductID, product.Category, "", product.Description);
+                        MessageBox.Show("Please select category", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (cb_shopCategory.SelectedItem.ToString() == "All")
+                    {
+                        List<Product> products = db.Products.Where(p => p.Stock > 0 && p.Status == "Available").ToList();
+                        flowLayoutPanel1.Controls.Clear();
+                        foreach (var product in products)
+                        {
+                            Image productImage = product.Image != null && product.Image.Length > 0
+                                ? ImageHelper.ByteArrayToImage(product.Image.ToArray())
+                                : null;
+                            cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), productImage, product.ProductID, product.Category, "", product.Description);
+                        }
+                    }
+                    else
+                    {
+                        List<Product> products = db.Products.Where(p => p.Stock > 0 && p.Status == "Available" && p.Category == cb_shopCategory.SelectedItem.ToString()).ToList();
+                        flowLayoutPanel1.Controls.Clear();
+                        foreach (var product in products)
+                        {
+                            Image productImage = product.Image != null && product.Image.Length > 0
+                                ? ImageHelper.ByteArrayToImage(product.Image.ToArray())
+                                : null;
+                            cardItems(product.ProductName, product.Stock.ToString(), product.SellingPrice.ToString(), product.RealPrice.ToString(), product.Discount.ToString(), productImage, product.ProductID, product.Category, "", product.Description);
+                        }
                     }
                 }
             }

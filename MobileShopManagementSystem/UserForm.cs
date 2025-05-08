@@ -89,6 +89,7 @@ namespace MobileShopManagementSystem
             cb_userGender.SelectedIndex = 0;
             cb_userRole.SelectedIndex = 0;
             cb_userStatus.SelectedIndex = 0;
+            cb_filter.SelectedItem = "All";
         }
         private void dgv_user_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -342,7 +343,14 @@ namespace MobileShopManagementSystem
                     {
                         result = db.Users.Where(x => x.Status == "Inactive").ToList();
                     }
-
+                    else if (cb_filter.SelectedItem.ToString() == "Admin")
+                    {
+                        result = db.Users.Where(x => x.Role == "Admin").ToList();
+                    }
+                    else if (cb_filter.SelectedItem.ToString() == "Staff")
+                    {
+                        result = db.Users.Where(x => x.Role == "Staff").ToList();
+                    }
                     if (result.Count > 0)
                     {
                         dgv_user.DataSource = result;

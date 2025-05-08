@@ -78,6 +78,7 @@ namespace MobileShopManagementSystem
                 parrotGroupBox2.Visible = false;
                 parrotGroupBox4.Visible = true;
             }
+            this.Load -= CardProduct_Load;
         }
     }
 

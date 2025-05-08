@@ -24,19 +24,23 @@ namespace MobileShopManagementSystem
         {
             using (var db = new MobileShopManagementDataContext())
             {
-                var lastCategoryID = db.Categories
-                    .OrderByDescending(c => c.CategoryID)
+                // Lấy tất cả CategoryID vào bộ nhớ
+                var allIDs = db.Categories
                     .Select(c => c.CategoryID)
-                    .FirstOrDefault();
-                if (lastCategoryID == null)
-                {
-                    return "CID0";
-                }
-                int numberPart = int.Parse(lastCategoryID.Substring(3));
-                numberPart++;
-                return $"CID{numberPart}";
+                    .ToList(); // chạy truy vấn tại đây
+
+                // Xử lý trong bộ nhớ
+                var maxNumber = allIDs
+                    .Select(id => id.Substring(3))              // bỏ tiền tố "CID"
+                    .Where(s => int.TryParse(s, out var num))   // lọc cái parse được
+                    .Select(s => int.Parse(s))
+                    .DefaultIfEmpty(0)
+                    .Max();
+
+                return $"CID{maxNumber + 1}";
             }
         }
+
         private void LoadData()
         {
             using (var db = new MobileShopManagementDataContext())
@@ -52,6 +56,7 @@ namespace MobileShopManagementSystem
             LoadData();
             cb_categoriesStatus.SelectedIndex = 0;
             cb_search.SelectedIndex = 0;
+            cb_filter.SelectedItem = "All";
         }
 
         private void btn_categoriesAdd_Click(object sender, EventArgs e)
