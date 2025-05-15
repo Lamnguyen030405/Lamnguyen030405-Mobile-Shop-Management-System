@@ -264,10 +264,10 @@
             this.linkLabel2.LinkColor = System.Drawing.Color.White;
             this.linkLabel2.Location = new System.Drawing.Point(103, 557);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(211, 20);
+            this.linkLabel2.Size = new System.Drawing.Size(216, 20);
             this.linkLabel2.TabIndex = 23;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "No account yet? Register here ";
+            this.linkLabel2.Text = "Not account yet? Register here ";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // txt_loginUsername

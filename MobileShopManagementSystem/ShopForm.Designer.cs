@@ -48,14 +48,12 @@ namespace MobileShopManagementSystem
             this.artanPanel5 = new ArtanComponent.ArtanPanel();
             this.artanPanel2 = new ArtanComponent.ArtanPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_description = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             this.total_quantity = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cb_shopTerm = new ReaLTaiizor.Controls.MetroComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.c_partialPayment = new ReaLTaiizor.Controls.CyberCheckBox();
             this.btn_refresh = new ReaLTaiizor.Controls.Button();
-            this.txt_downPaymentAmount = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             this.btn_delete = new ReaLTaiizor.Controls.Button();
             this.btn_placeOrder = new ReaLTaiizor.Controls.Button();
             this.artanPanel3 = new ArtanComponent.ArtanPanel();
@@ -70,6 +68,8 @@ namespace MobileShopManagementSystem
             this.cb_shopCategory = new ReaLTaiizor.Controls.MetroComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_description = new MobileShopManagementSystem.ExtendedDungeonTextBox();
+            this.txt_downPaymentAmount = new MobileShopManagementSystem.ExtendedDungeonTextBox();
             this.artanPanel1.SuspendLayout();
             this.artanPanel4.SuspendLayout();
             this.artanPanel5.SuspendLayout();
@@ -340,23 +340,6 @@ namespace MobileShopManagementSystem
             this.label8.TabIndex = 36;
             this.label8.Text = "Description :";
             // 
-            // txt_description
-            // 
-            this.txt_description.BackColor = System.Drawing.Color.Transparent;
-            this.txt_description.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_description.EdgeColor = System.Drawing.Color.White;
-            this.txt_description.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_description.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_description.Location = new System.Drawing.Point(10, 283);
-            this.txt_description.MaxLength = 32767;
-            this.txt_description.Multiline = true;
-            this.txt_description.Name = "txt_description";
-            this.txt_description.ReadOnly = true;
-            this.txt_description.Size = new System.Drawing.Size(429, 144);
-            this.txt_description.TabIndex = 35;
-            this.txt_description.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_description.UseSystemPasswordChar = false;
-            // 
             // total_quantity
             // 
             this.total_quantity.AutoSize = true;
@@ -490,26 +473,6 @@ namespace MobileShopManagementSystem
             this.btn_refresh.Text = "Refresh";
             this.btn_refresh.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
-            // 
-            // txt_downPaymentAmount
-            // 
-            this.txt_downPaymentAmount.BackColor = System.Drawing.Color.Transparent;
-            this.txt_downPaymentAmount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txt_downPaymentAmount.EdgeColor = System.Drawing.Color.White;
-            this.txt_downPaymentAmount.Enabled = false;
-            this.txt_downPaymentAmount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_downPaymentAmount.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_downPaymentAmount.Location = new System.Drawing.Point(174, 574);
-            this.txt_downPaymentAmount.MaxLength = 32767;
-            this.txt_downPaymentAmount.Multiline = false;
-            this.txt_downPaymentAmount.Name = "txt_downPaymentAmount";
-            this.txt_downPaymentAmount.ReadOnly = false;
-            this.txt_downPaymentAmount.Size = new System.Drawing.Size(271, 35);
-            this.txt_downPaymentAmount.TabIndex = 9;
-            this.txt_downPaymentAmount.Text = "0.0";
-            this.txt_downPaymentAmount.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_downPaymentAmount.UseSystemPasswordChar = false;
-            this.txt_downPaymentAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_downPaymentAmount_KeyDown);
             // 
             // btn_delete
             // 
@@ -739,6 +702,43 @@ namespace MobileShopManagementSystem
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(768, 78);
             this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // txt_description
+            // 
+            this.txt_description.BackColor = System.Drawing.Color.Transparent;
+            this.txt_description.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_description.EdgeColor = System.Drawing.Color.White;
+            this.txt_description.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_description.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_description.Location = new System.Drawing.Point(10, 283);
+            this.txt_description.MaxLength = 32767;
+            this.txt_description.Multiline = true;
+            this.txt_description.Name = "txt_description";
+            this.txt_description.ReadOnly = true;
+            this.txt_description.Size = new System.Drawing.Size(429, 144);
+            this.txt_description.TabIndex = 35;
+            this.txt_description.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_description.UseSystemPasswordChar = false;
+            // 
+            // txt_downPaymentAmount
+            // 
+            this.txt_downPaymentAmount.BackColor = System.Drawing.Color.Transparent;
+            this.txt_downPaymentAmount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txt_downPaymentAmount.EdgeColor = System.Drawing.Color.White;
+            this.txt_downPaymentAmount.Enabled = false;
+            this.txt_downPaymentAmount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_downPaymentAmount.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_downPaymentAmount.Location = new System.Drawing.Point(174, 574);
+            this.txt_downPaymentAmount.MaxLength = 32767;
+            this.txt_downPaymentAmount.Multiline = false;
+            this.txt_downPaymentAmount.Name = "txt_downPaymentAmount";
+            this.txt_downPaymentAmount.ReadOnly = false;
+            this.txt_downPaymentAmount.Size = new System.Drawing.Size(271, 35);
+            this.txt_downPaymentAmount.TabIndex = 9;
+            this.txt_downPaymentAmount.Text = "0.0";
+            this.txt_downPaymentAmount.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_downPaymentAmount.UseSystemPasswordChar = false;
+            this.txt_downPaymentAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_downPaymentAmount_KeyDown);
             // 
             // ShopForm
             // 

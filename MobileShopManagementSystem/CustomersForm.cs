@@ -17,7 +17,7 @@ namespace MobileShopManagementSystem
         {
             InitializeComponent();
         }
-        //MobileShopManagementDataContext db = new MobileShopManagementDataContext();
+
         private void LoadData()
         {
             using (var db = new MobileShopManagementDataContext())
@@ -82,9 +82,9 @@ namespace MobileShopManagementSystem
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,9 +130,9 @@ namespace MobileShopManagementSystem
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btn_customerClear_Click(object sender, EventArgs e)
@@ -195,9 +195,9 @@ namespace MobileShopManagementSystem
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

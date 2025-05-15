@@ -162,6 +162,7 @@ namespace MobileShopManagementSystem
                             cb_shopCategory.Items.Add(c.CategoryName);
                         }
                         cb_shopCategory.Items.Add("All");
+                        cb_shopCategory.Sorted = true;
                     }
                     else
                     {

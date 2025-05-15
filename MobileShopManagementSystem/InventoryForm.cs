@@ -25,7 +25,11 @@ namespace MobileShopManagementSystem
             {
                 using (var db = new MobileShopManagementDataContext())
                 {
-                    List<Category> cat = db.Categories.Where(c => c.Status == "Active").ToList();
+                    List<Category> cat = db.Categories
+                        .Where(c => c.Status == "Active")
+                        .OrderBy(c => c.CategoryName)
+                        .ToList();
+
                     if (cat.Count > 0)
                     {
                         cb_inventoryCategory.DataSource = null;
@@ -45,7 +49,6 @@ namespace MobileShopManagementSystem
                 MessageBox.Show("E: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         //private void updateStatus()
         //{
