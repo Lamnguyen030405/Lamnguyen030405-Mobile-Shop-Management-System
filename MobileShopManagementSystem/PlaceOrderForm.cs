@@ -212,5 +212,70 @@ namespace MobileShopManagementSystem
                 this.WindowState = FormWindowState.Normal;
             }
         }
+
+        private void btn_load_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txt_search.TextButton))
+                {
+                    MessageBox.Show("Please enter a phone number to search.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string searchText = txt_search.TextButton.Trim();
+                Customer cus;
+
+                using (var db = new MobileShopManagementDataContext())
+                {
+                    cus = db.Customers.FirstOrDefault(c => c.PhoneNumber == searchText);
+                }
+
+                if (cus == null)
+                {
+                    MessageBox.Show("No customer found with the given phone number.", "Customer Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    txt_customerID.TextButton = cus.CustomerID;
+                    txt_phoneNumber.TextButton = cus.PhoneNumber;
+                    txt_customerName.TextButton = cus.CustomerName;
+                    txt_address.TextButton = cus.Address;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void SetPlaceholder(ReaLTaiizor.Controls.CyberTextBox textBox, string placeholder)
+        {
+            //if (string.IsNullOrWhiteSpace(textBox.Text))
+            //{
+            //    textBox.ForeColor = Color.Gray;
+            //    textBox.TextButton = placeholder;
+            //}
+        }
+
+        private void RemovePlaceholder(ReaLTaiizor.Controls.CyberTextBox textBox, string placeholder)
+        {
+            //if (textBox.Text == placeholder)
+            //{
+            //    textBox.TextButton = null;
+            //    textBox.ForeColor = Color.Black;
+            //}
+        }
+
+        private void txt_search_Enter(object sender, EventArgs e)
+        {
+            RemovePlaceholder(txt_search, "Phone Number");
+        }
+
+        private void txt_search_Leave(object sender, EventArgs e)
+        {
+            SetPlaceholder(txt_search, "Phone Number");
+        }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.BillReport1 = new MobileShopManagementSystem.BillReport();
+            this.BillReport2 = new MobileShopManagementSystem.BillReport();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -39,8 +41,7 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = "D:\\Learning\\LaptrinhWin\\MobileShopManagementSystem\\MobileShopManagementSystem\\Bil" +
-    "lReport.rpt";
+            this.crystalReportViewer1.ReportSource = this.BillReport2;
             this.crystalReportViewer1.Size = new System.Drawing.Size(1371, 684);
             this.crystalReportViewer1.TabIndex = 0;
             // 
@@ -60,5 +61,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private BillReport BillReport2;
+        private BillReport BillReport1;
     }
 }
